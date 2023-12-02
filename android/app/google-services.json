@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "106996911565",
+    "project_id": "santehaggui-1b7f6",
+    "storage_bucket": "santehaggui-1b7f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106996911565:android:80d29a7a562fb254694884",
+        "android_client_info": {
+          "package_name": "com.mycompany.santehaggui"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6f_Aj4bqcI6jk94f5skAN7XxqWs3ac9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
