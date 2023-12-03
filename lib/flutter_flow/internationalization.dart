@@ -2041,7 +2041,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Profil médical d\'urgence',
     },
     'k10bgwi7': {
-      'en': 'Update',
+      'en': 'Add',
       'ar': 'تسجيل خروج',
       'fr': 'Se déconnecter',
     },
@@ -2079,7 +2079,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Profil médical d\'urgence',
     },
     'x6usq9ee': {
-      'en': 'Update',
+      'en': 'Add',
       'ar': 'تسجيل خروج',
       'fr': 'Se déconnecter',
     },
@@ -2268,22 +2268,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الملف الطبي للطوارئ',
       'fr': 'Profil médical d\'urgence',
     },
-    'hr1e9ua9': {
+    'zvlmc2ew': {
       'en': 'Address',
       'ar': '',
       'fr': '',
     },
-    'f02t7j63': {
+    '2jxbs0b2': {
       'en': 'City',
       'ar': '',
       'fr': '',
     },
-    'i4dpufiq': {
+    'gz3uoe6i': {
       'en': 'Province or Region',
       'ar': '',
       'fr': '',
     },
-    'etboqxhv': {
+    '0hisyyey': {
       'en': 'Country',
       'ar': '',
       'fr': '',
@@ -2326,22 +2326,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الملف الطبي للطوارئ',
       'fr': 'Profil médical d\'urgence',
     },
-    'vkh3jo76': {
+    'm473nmxl': {
       'en': 'Address',
       'ar': '',
       'fr': '',
     },
-    'juc4ly3a': {
+    'xyuukqdk': {
       'en': 'City',
       'ar': '',
       'fr': '',
     },
-    'eve9s7u6': {
+    'avl4jqfn': {
       'en': 'Province or Region',
       'ar': '',
       'fr': '',
     },
-    '3flv40gc': {
+    '8n26imqn': {
       'en': 'Country',
       'ar': '',
       'fr': '',

@@ -534,15 +534,16 @@ class _UpdateMedicaleProfilAllergiesComponentWidgetState
                                             : null;
                                     return FFButtonWidget(
                                       onPressed: () async {
-                                        await rowMedicalProfilRecord!.reference
-                                            .update(
-                                                createMedicalProfilRecordData(
-                                          allergies: _model.textController.text,
-                                        ));
+                                        await MedicalProfilRecord.collection
+                                            .doc()
+                                            .set(createMedicalProfilRecordData(
+                                              allergies:
+                                                  _model.textController.text,
+                                            ));
                                         Navigator.pop(context);
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        'x6usq9ee' /* Update */,
+                                        'x6usq9ee' /* Add */,
                                       ),
                                       options: FFButtonOptions(
                                         width: 250.0,

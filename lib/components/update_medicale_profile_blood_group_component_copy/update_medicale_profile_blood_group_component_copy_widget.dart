@@ -491,14 +491,15 @@ class _UpdateMedicaleProfileBloodGroupComponentCopyWidgetState
                                       : null;
                               return FFButtonWidget(
                                 onPressed: () async {
-                                  await buttonMedicalProfilRecord!.reference
-                                      .update(createMedicalProfilRecordData(
-                                    bloodType: _model.textController.text,
-                                  ));
+                                  await MedicalProfilRecord.collection
+                                      .doc()
+                                      .set(createMedicalProfilRecordData(
+                                        bloodType: _model.textController.text,
+                                      ));
                                   Navigator.pop(context);
                                 },
                                 text: FFLocalizations.of(context).getText(
-                                  'k10bgwi7' /* Update */,
+                                  'k10bgwi7' /* Add */,
                                 ),
                                 options: FFButtonOptions(
                                   width: 250.0,
