@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -191,17 +192,50 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                 alignment: const AlignmentDirectional(0.00, 0.00),
                               ),
                             ),
-                            AuthUserStreamWidget(
-                              builder: (context) => Text(
-                                '${valueOrDefault(currentUserDocument?.name, '')} ${valueOrDefault(currentUserDocument?.surname, '')}',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                            StreamBuilder<List<UsersRecord>>(
+                              stream: queryUsersRecord(
+                                singleRecord: true,
                               ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<UsersRecord> textUsersRecordList =
+                                    snapshot.data!;
+                                // Return an empty Container when the item does not exist.
+                                if (snapshot.data!.isEmpty) {
+                                  return Container();
+                                }
+                                final textUsersRecord =
+                                    textUsersRecordList.isNotEmpty
+                                        ? textUsersRecordList.first
+                                        : null;
+                                return Text(
+                                  valueOrDefault<String>(
+                                    textUsersRecord?.name,
+                                    'N/A',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                );
+                              },
                             ),
                             Text(
                               currentUserUid,

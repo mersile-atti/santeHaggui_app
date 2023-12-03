@@ -268,7 +268,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               .first
                                                           : null;
                                                   return Text(
-                                                    '${homePageUsersRecord.name} ${homePageUsersRecord.surname}',
+                                                    valueOrDefault<String>(
+                                                      textUsersRecord?.name,
+                                                      'N/A',
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .headlineMedium
@@ -482,7 +485,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ),
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          'te3ajpeo' /* Hello World */,
+                                          '6t4dfvbc' /* Hello World */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,

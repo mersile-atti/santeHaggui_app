@@ -133,7 +133,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اظهار الكل',
       'fr': 'Voir tout',
     },
-    'te3ajpeo': {
+    '6t4dfvbc': {
       'en': 'Hello World',
       'ar': '',
       'fr': '',
@@ -1972,18 +1972,53 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // EmergencyProfileComponent
   {
-    'zygzhfga': {
+    '145lm89x': {
       'en': 'UMI',
       'ar': '',
       'fr': '',
     },
-    'n3zbisen': {
-      'en': 'Phone Number',
-      'ar': 'رقم التليفون',
-      'fr': 'Numéro de téléphone',
-    },
     '1jthrh1k': {
       'en': 'Name',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'm6trvm6a': {
+      'en': 'Birthday ',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'zitt90uf': {
+      'en': 'Biological Sex',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'ij5andwv': {
+      'en': 'Blood Group',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'ci1rvj1y': {
+      'en': 'Allergies',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'u9offlve': {
+      'en': 'Medications',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    '9ujxgw3j': {
+      'en': 'Treatements & Procedures ',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    '00o3ztls': {
+      'en': 'Address ',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'quafqqam': {
+      'en': 'Emergency Contact',
       'ar': 'إعدادات',
       'fr': 'Paramètres',
     },
