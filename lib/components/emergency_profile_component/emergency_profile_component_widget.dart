@@ -135,7 +135,7 @@ class _EmergencyProfileComponentWidgetState
                       children: [
                         Text(
                           FFLocalizations.of(context).getText(
-                            'iaf9hv4t' /* UMI */,
+                            'zygzhfga' /* UMI */,
                           ),
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
@@ -318,7 +318,7 @@ class _EmergencyProfileComponentWidgetState
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
-                                          contentView1UsersRecord?.surname,
+                                          contentView1UsersRecord?.name,
                                           'N/A',
                                         ),
                                         style: FlutterFlowTheme.of(context)

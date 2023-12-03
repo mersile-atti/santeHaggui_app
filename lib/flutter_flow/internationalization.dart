@@ -133,7 +133,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اظهار الكل',
       'fr': 'Voir tout',
     },
-    'bpz8o3md': {
+    'te3ajpeo': {
       'en': 'Hello World',
       'ar': '',
       'fr': '',
@@ -1773,11 +1773,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الملف الطبي للطوارئ',
       'fr': 'Profil médical d\'urgence',
     },
-    '520zv2xq': {
-      'en': 'Name',
-      'ar': 'إعدادات',
-      'fr': 'Paramètres',
-    },
     'coibbmn7': {
       'en': 'Update',
       'ar': 'تسجيل خروج',
@@ -1977,7 +1972,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // EmergencyProfileComponent
   {
-    'iaf9hv4t': {
+    'zygzhfga': {
       'en': 'UMI',
       'ar': '',
       'fr': '',

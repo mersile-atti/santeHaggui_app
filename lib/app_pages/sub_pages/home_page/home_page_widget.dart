@@ -482,7 +482,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ),
                                       Text(
                                         FFLocalizations.of(context).getText(
-                                          'bpz8o3md' /* Hello World */,
+                                          'te3ajpeo' /* Hello World */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,

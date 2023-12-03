@@ -13,6 +13,11 @@ class UpdateMedicaleProfileNameComponentModel
   // State field(s) for Expandable widget.
   late ExpandableController expandableController;
 
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
+
   /// Initialization and disposal methods.
 
   @override
@@ -21,6 +26,8 @@ class UpdateMedicaleProfileNameComponentModel
   @override
   void dispose() {
     expandableController.dispose();
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
   }
 
   /// Action blocks are added here.
