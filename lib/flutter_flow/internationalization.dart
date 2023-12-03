@@ -1982,43 +1982,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'إعدادات',
       'fr': 'Paramètres',
     },
-    'm6trvm6a': {
-      'en': 'Birthday ',
-      'ar': 'إعدادات',
-      'fr': 'Paramètres',
-    },
-    'zitt90uf': {
-      'en': 'Biological Sex',
-      'ar': 'إعدادات',
-      'fr': 'Paramètres',
-    },
-    'ij5andwv': {
+    '235wvly7': {
       'en': 'Blood Group',
       'ar': 'إعدادات',
       'fr': 'Paramètres',
     },
-    'ci1rvj1y': {
+    'ahgl05wp': {
       'en': 'Allergies',
-      'ar': 'إعدادات',
-      'fr': 'Paramètres',
-    },
-    'u9offlve': {
-      'en': 'Medications',
-      'ar': 'إعدادات',
-      'fr': 'Paramètres',
-    },
-    '9ujxgw3j': {
-      'en': 'Treatements & Procedures ',
-      'ar': 'إعدادات',
-      'fr': 'Paramètres',
-    },
-    '00o3ztls': {
-      'en': 'Address ',
-      'ar': 'إعدادات',
-      'fr': 'Paramètres',
-    },
-    'quafqqam': {
-      'en': 'Emergency Contact',
       'ar': 'إعدادات',
       'fr': 'Paramètres',
     },
@@ -2026,6 +1996,140 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Generate Qr Code',
       'ar': 'تسجيل خروج',
       'fr': 'Se déconnecter',
+    },
+  },
+  // EmergencyProfileComponentCopy
+  {
+    '3r56nd4q': {
+      'en': 'UMI',
+      'ar': '',
+      'fr': '',
+    },
+    'ii7olgd8': {
+      'en': 'Name',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'l8hdoray': {
+      'en': 'Birthday ',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'j3fvofz9': {
+      'en': 'Biological Sex',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'y7rqcd58': {
+      'en': 'Blood Group',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'xzxjibio': {
+      'en': 'Allergies',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'd9i0dx7m': {
+      'en': 'Medications',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'v6rvjopw': {
+      'en': 'Treatements & Procedures ',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'tcly3udk': {
+      'en': 'Address ',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'jc1bd1t3': {
+      'en': 'Emergency Contact',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'gd22ybs8': {
+      'en': 'Generate Qr Code',
+      'ar': 'تسجيل خروج',
+      'fr': 'Se déconnecter',
+    },
+  },
+  // UpdateMedicaleProfileBloodGroupComponentCopy
+  {
+    'xgk7vqwt': {
+      'en': 'Edit ',
+      'ar': 'يحرر',
+      'fr': 'Modifier',
+    },
+    'ucx5utni': {
+      'en': 'Emergency Medical Profile',
+      'ar': 'الملف الطبي للطوارئ',
+      'fr': 'Profil médical d\'urgence',
+    },
+    'k10bgwi7': {
+      'en': 'Update',
+      'ar': 'تسجيل خروج',
+      'fr': 'Se déconnecter',
+    },
+    'ilk0b0px': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    '27xz48k3': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+    'osv5740u': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    '7ypflhkq': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+  },
+  // UpdateMedicaleProfilAllergiesComponent
+  {
+    '41igp4sk': {
+      'en': 'Edit ',
+      'ar': 'يحرر',
+      'fr': 'Modifier',
+    },
+    'ddl65gd0': {
+      'en': 'Emergency Medical Profile',
+      'ar': 'الملف الطبي للطوارئ',
+      'fr': 'Profil médical d\'urgence',
+    },
+    'x6usq9ee': {
+      'en': 'Update',
+      'ar': 'تسجيل خروج',
+      'fr': 'Se déconnecter',
+    },
+    'mttjlptg': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    '1cyvvgnw': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+    '8f6f8lz0': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    'lq6l8gxm': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
     },
   },
   // Miscellaneous

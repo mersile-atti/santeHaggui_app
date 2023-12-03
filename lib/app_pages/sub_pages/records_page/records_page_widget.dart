@@ -27,7 +27,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
     super.initState();
     _model = createModel(context, () => RecordsPageModel());
 
-    _model.expandableController1 = ExpandableController(initialExpanded: true);
+    _model.expandableController1 = ExpandableController(initialExpanded: false);
     _model.expandableController2 = ExpandableController(initialExpanded: false);
     _model.expandableController3 = ExpandableController(initialExpanded: false);
     _model.expandableController4 = ExpandableController(initialExpanded: false);
