@@ -1,5 +1,5 @@
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
-import '/components/profile_bottom_sheet/profile_bottom_sheet_widget.dart';
+import '/components/emergency_profile_component_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'records_page_widget.dart' show RecordsPageWidget;
 import 'package:expandable/expandable.dart';
@@ -12,8 +12,8 @@ class RecordsPageModel extends FlutterFlowModel<RecordsPageWidget> {
   // State field(s) for Expandable widget.
   late ExpandableController expandableController1;
 
-  // Model for ProfileBottomSheet component.
-  late ProfileBottomSheetModel profileBottomSheetModel;
+  // Model for EmergencyProfileComponent component.
+  late EmergencyProfileComponentModel emergencyProfileComponentModel;
   // State field(s) for Expandable widget.
   late ExpandableController expandableController2;
 
@@ -42,8 +42,8 @@ class RecordsPageModel extends FlutterFlowModel<RecordsPageWidget> {
 
   @override
   void initState(BuildContext context) {
-    profileBottomSheetModel =
-        createModel(context, () => ProfileBottomSheetModel());
+    emergencyProfileComponentModel =
+        createModel(context, () => EmergencyProfileComponentModel());
     bottomNavigationComponentModel =
         createModel(context, () => BottomNavigationComponentModel());
   }
@@ -52,7 +52,7 @@ class RecordsPageModel extends FlutterFlowModel<RecordsPageWidget> {
   void dispose() {
     unfocusNode.dispose();
     expandableController1.dispose();
-    profileBottomSheetModel.dispose();
+    emergencyProfileComponentModel.dispose();
     expandableController2.dispose();
     expandableController3.dispose();
     expandableController4.dispose();

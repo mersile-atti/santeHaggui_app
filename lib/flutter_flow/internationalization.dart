@@ -1932,6 +1932,64 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Veuillez choisir une option dans la liste déroulante',
     },
   },
+  // EmergencyProfileComponent
+  {
+    'eh4imi3l': {
+      'en': 'Universal Medical identity ',
+      'ar': 'الهوية الطبية العالمية',
+      'fr': 'Identité médicale universelle',
+    },
+    'iszauxfd': {
+      'en': 'Name',
+      'ar': 'اسم',
+      'fr': 'Nom',
+    },
+    'l6xoe9mi': {
+      'en': 'Birthday',
+      'ar': 'عيد ميلاد',
+      'fr': 'Anniversaire',
+    },
+    'f4p6s4jv': {
+      'en': 'Biological Sex',
+      'ar': 'الجنس البيولوجي',
+      'fr': 'Sexe biologique',
+    },
+    '7y2ihash': {
+      'en': 'Blood Group',
+      'ar': 'فصيلة الدم',
+      'fr': 'Groupe sanguin',
+    },
+    '3kgsqx0v': {
+      'en': 'Allergies',
+      'ar': 'الحساسية',
+      'fr': 'Allergies',
+    },
+    'uxm1qgqr': {
+      'en': 'Medications',
+      'ar': 'الأدوية',
+      'fr': 'Médicaments',
+    },
+    'or7swx84': {
+      'en': 'Treatments & Procedures ',
+      'ar': 'العلاجات والإجراءات',
+      'fr': 'Traitements et procédures',
+    },
+    'grebmchh': {
+      'en': 'Adresse',
+      'ar': 'العنوان',
+      'fr': 'Adresse',
+    },
+    'ffxgu6de': {
+      'en': 'Emergency Contact',
+      'ar': 'الاتصال بالطوارىء',
+      'fr': 'Personne à contacter en cas d\'urgence',
+    },
+    'nqaskt0x': {
+      'en': 'Generate Qr Code',
+      'ar': 'إنشاء رمز الاستجابة السريعة',
+      'fr': 'Générer du code QR',
+    },
+  },
   // Miscellaneous
   {
     'fslmhkfd': {

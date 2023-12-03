@@ -1,6 +1,6 @@
 import '/backend/backend.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
-import '/components/profile_bottom_sheet/profile_bottom_sheet_widget.dart';
+import '/components/emergency_profile_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:expandable/expandable.dart';
@@ -165,11 +165,11 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                 ),
                                                 expanded: wrapWithModel(
                                                   model: _model
-                                                      .profileBottomSheetModel,
+                                                      .emergencyProfileComponentModel,
                                                   updateCallback: () =>
                                                       setState(() {}),
                                                   child:
-                                                      const ProfileBottomSheetWidget(),
+                                                      const EmergencyProfileComponentWidget(),
                                                 ),
                                                 theme: const ExpandableThemeData(
                                                   tapHeaderToExpand: true,

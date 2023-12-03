@@ -178,7 +178,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               Flexible(
                                 child: Container(
                                   width: double.infinity,
-                                  height: 100.0,
+                                  height: 120.0,
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                       colors: [
