@@ -752,61 +752,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الملف الطبي للطوارئ',
       'fr': 'Profil médical d\'urgence',
     },
-    'hev04dpm': {
-      'en': 'Universal Medical identity ',
-      'ar': 'الهوية الطبية العالمية',
-      'fr': 'Identité médicale universelle',
-    },
-    'bdmesdee': {
-      'en': 'Name',
-      'ar': 'اسم',
-      'fr': 'Nom',
-    },
-    'xlf77dr8': {
-      'en': 'Birthday',
-      'ar': 'عيد ميلاد',
-      'fr': 'Anniversaire',
-    },
-    'elnui31l': {
-      'en': 'Biological Sex',
-      'ar': 'الجنس البيولوجي',
-      'fr': 'Sexe biologique',
-    },
-    'rmluhpd6': {
-      'en': 'Blood Group',
-      'ar': 'فصيلة الدم',
-      'fr': 'Groupe sanguin',
-    },
-    'mihskuav': {
-      'en': 'Allergies',
-      'ar': 'الحساسية',
-      'fr': 'Allergies',
-    },
-    'ykzlbo2d': {
-      'en': 'Medications',
-      'ar': 'الأدوية',
-      'fr': 'Médicaments',
-    },
-    'ul1pq1nu': {
-      'en': 'Treatments & Procedures ',
-      'ar': 'العلاجات والإجراءات',
-      'fr': 'Traitements et procédures',
-    },
-    't11oim65': {
-      'en': 'Adresse',
-      'ar': 'العنوان',
-      'fr': 'Adresse',
-    },
-    'ae1zurlq': {
-      'en': 'Emergency Contact',
-      'ar': 'الاتصال بالطوارىء',
-      'fr': 'Personne à contacter en cas d\'urgence',
-    },
-    'qdv9b964': {
-      'en': 'Generate Qr Code',
-      'ar': 'إنشاء رمز الاستجابة السريعة',
-      'fr': 'Générer du code QR',
-    },
     'bwsyxrn1': {
       'en': 'Health Metrics',
       'ar': 'المقاييس الصحية',
