@@ -340,8 +340,6 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
 
                     context.pushNamedAuth(
                         'CompleteProfilePage', context.mounted);
-
-                    Navigator.pop(context);
                   },
                   text: FFLocalizations.of(context).getText(
                     '4uvbos05' /* Continue */,

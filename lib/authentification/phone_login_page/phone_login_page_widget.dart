@@ -37,7 +37,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
     authManager.handlePhoneAuthStateChanges(context);
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
           _model.textController1?.text = FFLocalizations.of(context).getText(
-            'jt9kwc01' /* India */,
+            'afwa09y2' /* India */,
           );
         }));
   }
@@ -348,7 +348,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 0.0, 12.0, 0.0),
+                                        12.0, 0.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -360,11 +360,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                             shape: BoxShape.circle,
                                           ),
                                           child: Image.network(
-                                            valueOrDefault<String>(
-                                              functions.countryFlag(
-                                                  _model.textController1.text),
-                                              'https://flagcdn.com/h80/in.png',
-                                            ),
+                                            _model.textController1.text,
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -378,7 +374,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                                   text: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                'jt9kwc01' /* India */,
+                                                'afwa09y2' /* India */,
                                               )),
                                               optionsBuilder:
                                                   (textEditingValue) {
@@ -464,7 +460,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'vtbjvej6' /* Enter country name */,
+                                                      'kzwjx8sp' /* Enter country name */,
                                                     ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
@@ -617,7 +613,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                               hintText:
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                '4lv9vo8g' /* Enter your mobile number */,
+                                                'tqp40ne4' /* Enter your mobile number */,
                                               ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
@@ -690,38 +686,6 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 10.0, 0.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed('ForgotPasswordPage');
-                                      },
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'iqd6ha5x' /* Forgot Password? */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Colors.blue,
-                                              fontSize: 16.0,
-                                              decoration:
-                                                  TextDecoration.underline,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.end,
@@ -732,20 +696,11 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                           const AlignmentDirectional(0.00, 0.00),
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 20.0, 0.0, 0.0),
+                                            0.0, 16.0, 0.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            if (_model.formKey.currentState ==
-                                                    null ||
-                                                !_model.formKey.currentState!
-                                                    .validate()) {
-                                              return;
-                                            }
-                                            final phoneNumberVal = (_model
-                                                        .textFieldFocusNode2
-                                                        ?.hasFocus ??
-                                                    false)
-                                                .toString();
+                                            final phoneNumberVal =
+                                                '${functions.dialCode(_model.textController1.text)}${_model.textController2.text}';
                                             if (phoneNumberVal.isEmpty ||
                                                 !phoneNumberVal
                                                     .startsWith('+')) {
@@ -768,8 +723,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                                   queryParameters: {
                                                     'mobileNumber':
                                                         serializeParam(
-                                                      _model
-                                                          .textController2.text,
+                                                      '${functions.dialCode(_model.textController1.text)}${_model.textController2.text}',
                                                       ParamType.String,
                                                     ),
                                                   }.withoutNulls,
@@ -780,33 +734,25 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'mkwgocsn' /* Log In */,
-                                          ),
-                                          icon: const Icon(
-                                            Icons.arrow_forward,
-                                            size: 30.0,
+                                            'qggz4uec' /* Get OTP */,
                                           ),
                                           options: FFButtonOptions(
                                             width: 300.0,
                                             height: 50.0,
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 0.0, 24.0, 0.0),
+                                                    0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: const Color(0xFF019874),
-                                            textStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Outfit',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                  fontSize: 16.0,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      color: Colors.white,
+                                                    ),
                                             elevation: 3.0,
                                             borderSide: const BorderSide(
                                               color: Colors.transparent,
@@ -837,7 +783,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                       TextSpan(
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'ufcd3rae' /* Don’t have an account? */,
+                                          'ufcd3rae' /* Already have an account? */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -852,7 +798,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                       TextSpan(
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'rcdfzmmh' /*  Sign Up */,
+                                          'rcdfzmmh' /* Sign In */,
                                         ),
                                         style: GoogleFonts.getFont(
                                           'Outfit',

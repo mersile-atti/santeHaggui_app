@@ -1505,43 +1505,38 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'أو',
       'fr': 'Ou',
     },
-    'vtbjvej6': {
+    'kzwjx8sp': {
       'en': 'Enter country name',
       'ar': '',
       'fr': '',
     },
-    'jt9kwc01': {
+    'afwa09y2': {
       'en': 'India',
       'ar': '',
       'fr': '',
     },
-    'xwu4bwf6': {
+    'cbdi2leu': {
       'en': 'Option 1',
       'ar': '',
       'fr': '',
     },
-    '4lv9vo8g': {
+    'tqp40ne4': {
       'en': 'Enter your mobile number',
       'ar': '',
       'fr': '',
     },
-    'iqd6ha5x': {
-      'en': 'Forgot Password?',
-      'ar': 'هل نسيت كلمة السر؟',
-      'fr': 'Mot de passe oublié?',
-    },
-    'mkwgocsn': {
-      'en': 'Log In',
-      'ar': 'تسجيل الدخول',
-      'fr': 'Se connecter',
+    'qggz4uec': {
+      'en': 'Get OTP',
+      'ar': '',
+      'fr': '',
     },
     'ufcd3rae': {
-      'en': 'Don’t have an account?',
+      'en': 'Already have an account?',
       'ar': 'ليس لديك حساب؟',
       'fr': 'Vous n\'avez pas de compte ?',
     },
     'rcdfzmmh': {
-      'en': ' Sign Up',
+      'en': 'Sign In',
       'ar': 'اشتراك',
       'fr': 'S\'inscrire',
     },
