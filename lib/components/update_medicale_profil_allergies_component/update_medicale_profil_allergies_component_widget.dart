@@ -484,10 +484,11 @@ class _UpdateMedicaleProfilAllergiesComponentWidgetState
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          await rowMedicalProfilRecord!.reference
-                              .update(createMedicalProfilRecordData(
-                            allergies: _model.textController.text,
-                          ));
+                          await MedicalProfilRecord.collection
+                              .doc()
+                              .set(createMedicalProfilRecordData(
+                                allergies: _model.textController.text,
+                              ));
                           Navigator.pop(context);
                         },
                         child: Row(

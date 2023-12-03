@@ -2268,22 +2268,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الملف الطبي للطوارئ',
       'fr': 'Profil médical d\'urgence',
     },
-    'zvlmc2ew': {
+    '6bi5hcqu': {
       'en': 'Address',
       'ar': '',
       'fr': '',
     },
-    '2jxbs0b2': {
+    'ieqgpgf8': {
       'en': 'City',
       'ar': '',
       'fr': '',
     },
-    'gz3uoe6i': {
+    'xrcf5lkn': {
       'en': 'Province or Region',
       'ar': '',
       'fr': '',
     },
-    '0hisyyey': {
+    'ksjfe22t': {
       'en': 'Country',
       'ar': '',
       'fr': '',
@@ -2326,22 +2326,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الملف الطبي للطوارئ',
       'fr': 'Profil médical d\'urgence',
     },
-    'm473nmxl': {
+    'y0ow1txi': {
       'en': 'Address',
       'ar': '',
       'fr': '',
     },
-    'xyuukqdk': {
+    '2gif0cww': {
       'en': 'City',
       'ar': '',
       'fr': '',
     },
-    'avl4jqfn': {
+    '3w4qfl83': {
       'en': 'Province or Region',
       'ar': '',
       'fr': '',
     },
-    '8n26imqn': {
+    'qu3jiel2': {
       'en': 'Country',
       'ar': '',
       'fr': '',
