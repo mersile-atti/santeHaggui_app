@@ -1,6 +1,6 @@
 import '/backend/backend.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
-import '/components/emergency_profile_component_widget.dart';
+import '/components/emergency_profile_component/emergency_profile_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:expandable/expandable.dart';
@@ -27,7 +27,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
     super.initState();
     _model = createModel(context, () => RecordsPageModel());
 
-    _model.expandableController1 = ExpandableController(initialExpanded: false);
+    _model.expandableController1 = ExpandableController(initialExpanded: true);
     _model.expandableController2 = ExpandableController(initialExpanded: false);
     _model.expandableController3 = ExpandableController(initialExpanded: false);
     _model.expandableController4 = ExpandableController(initialExpanded: false);

@@ -1,23 +1,23 @@
 import '/backend/backend.dart';
-import '/components/update_medicale_profile_component/update_medicale_profile_component_widget.dart';
+import '/components/update_medicale_profile_name_component/update_medicale_profile_name_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'emergency_profile_component_model.dart';
-export 'emergency_profile_component_model.dart';
+import 'emergency_profie_mauvais_model.dart';
+export 'emergency_profie_mauvais_model.dart';
 
-class EmergencyProfileComponentWidget extends StatefulWidget {
-  const EmergencyProfileComponentWidget({super.key});
+class EmergencyProfieMauvaisWidget extends StatefulWidget {
+  const EmergencyProfieMauvaisWidget({super.key});
 
   @override
-  _EmergencyProfileComponentWidgetState createState() =>
-      _EmergencyProfileComponentWidgetState();
+  _EmergencyProfieMauvaisWidgetState createState() =>
+      _EmergencyProfieMauvaisWidgetState();
 }
 
-class _EmergencyProfileComponentWidgetState
-    extends State<EmergencyProfileComponentWidget> {
-  late EmergencyProfileComponentModel _model;
+class _EmergencyProfieMauvaisWidgetState
+    extends State<EmergencyProfieMauvaisWidget> {
+  late EmergencyProfieMauvaisModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -28,7 +28,7 @@ class _EmergencyProfileComponentWidgetState
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EmergencyProfileComponentModel());
+    _model = createModel(context, () => EmergencyProfieMauvaisModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -193,7 +193,7 @@ class _EmergencyProfileComponentWidgetState
                           builder: (context) {
                             return Padding(
                               padding: MediaQuery.viewInsetsOf(context),
-                              child: const UpdateMedicaleProfileComponentWidget(),
+                              child: const UpdateMedicaleProfileNameComponentWidget(),
                             );
                           },
                         ).then((value) => safeSetState(() {}));

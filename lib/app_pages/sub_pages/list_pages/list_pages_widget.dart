@@ -1,5 +1,5 @@
 import '/backend/backend.dart';
-import '/components/update_medicale_profile_component/update_medicale_profile_component_widget.dart';
+import '/components/update_medicale_profile_name_component/update_medicale_profile_name_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -367,7 +367,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                     .viewInsetsOf(
                                                                         context),
                                                                 child:
-                                                                    const UpdateMedicaleProfileComponentWidget(),
+                                                                    const UpdateMedicaleProfileNameComponentWidget(),
                                                               ),
                                                             );
                                                           },

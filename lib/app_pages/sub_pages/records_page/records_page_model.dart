@@ -1,5 +1,5 @@
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
-import '/components/emergency_profile_component_widget.dart';
+import '/components/emergency_profile_component/emergency_profile_component_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'records_page_widget.dart' show RecordsPageWidget;
 import 'package:expandable/expandable.dart';

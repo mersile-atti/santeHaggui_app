@@ -133,7 +133,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اظهار الكل',
       'fr': 'Voir tout',
     },
-    '8s8p3sn3': {
+    'bpz8o3md': {
       'en': 'Hello World',
       'ar': '',
       'fr': '',
@@ -1761,7 +1761,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Veuillez choisir une option dans la liste déroulante',
     },
   },
-  // UpdateMedicaleProfileComponent
+  // UpdateMedicaleProfileNameComponent
   {
     'fsj8jqxw': {
       'en': 'Edit ',
@@ -1773,15 +1773,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الملف الطبي للطوارئ',
       'fr': 'Profil médical d\'urgence',
     },
-    'i68k7epw': {
+    '520zv2xq': {
       'en': 'Name',
-      'ar': 'اسم',
-      'fr': 'Nom',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
     },
-    'qcx76o66': {
+    'coibbmn7': {
       'en': 'Update',
-      'ar': 'تحديث',
-      'fr': 'Mise à jour',
+      'ar': 'تسجيل خروج',
+      'fr': 'Se déconnecter',
     },
     'eza7cvjg': {
       'en': 'Field is required',
@@ -1917,7 +1917,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Veuillez choisir une option dans la liste déroulante',
     },
   },
-  // EmergencyProfileComponent
+  // EmergencyProfieMauvais
   {
     'eh4imi3l': {
       'en': 'Universal Medical identity ',
@@ -1973,6 +1973,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Generate Qr Code',
       'ar': 'إنشاء رمز الاستجابة السريعة',
       'fr': 'Générer du code QR',
+    },
+  },
+  // EmergencyProfileComponent
+  {
+    'iaf9hv4t': {
+      'en': 'UMI',
+      'ar': '',
+      'fr': '',
+    },
+    'n3zbisen': {
+      'en': 'Phone Number',
+      'ar': 'رقم التليفون',
+      'fr': 'Numéro de téléphone',
+    },
+    '1jthrh1k': {
+      'en': 'Name',
+      'ar': 'إعدادات',
+      'fr': 'Paramètres',
+    },
+    'sy4m0a7h': {
+      'en': 'Generate Qr Code',
+      'ar': 'تسجيل خروج',
+      'fr': 'Se déconnecter',
     },
   },
   // Miscellaneous
