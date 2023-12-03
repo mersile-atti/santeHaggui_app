@@ -123,35 +123,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'يبحث',
       'fr': 'Recherche',
     },
-    'qayxs77b': {
-      'en': 'Donation  Request',
-      'ar': 'طلب التبرع',
-      'fr': 'Demande de don',
-    },
-    'lwtju5cd': {
-      'en': 'See All',
-      'ar': 'اظهار الكل',
-      'fr': 'Voir tout',
-    },
-    'i4dt5lsf': {
-      'en': 'My health News',
+    't4hudjou': {
+      'en': 'Donation Request',
       'ar': 'أخبار صحتي',
       'fr': 'Mon actualité santé',
     },
-    'ys9panra': {
+    'uwe4hr7u': {
       'en': 'See All',
       'ar': 'اظهار الكل',
       'fr': 'Voir tout',
     },
-    'qezlofl8': {
-      'en': 'Services Catalogue',
-      'ar': 'كتالوج الخدمات',
-      'fr': 'Catalogue de services',
-    },
-    'w46j0tdl': {
-      'en': 'See All',
-      'ar': 'اظهار الكل',
-      'fr': 'Voir tout',
+    '8s8p3sn3': {
+      'en': 'Hello World',
+      'ar': '',
+      'fr': '',
     },
     '01w7irp3': {
       'en': '•',

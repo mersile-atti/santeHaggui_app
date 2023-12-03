@@ -43,9 +43,10 @@ class _EmergencyProfileComponentWidgetState
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
       child: Container(
         width: double.infinity,
+        height: 650.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
         ),
@@ -54,7 +55,7 @@ class _EmergencyProfileComponentWidgetState
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 5.0),
                 child: StreamBuilder<List<MedicalProfilRecord>>(
                   stream: queryMedicalProfilRecord(
                     singleRecord: true,

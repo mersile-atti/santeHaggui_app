@@ -416,7 +416,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     20.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'qayxs77b' /* Donation  Request */,
+                                    't4hudjou' /* Donation Request */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -432,7 +432,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     20.0, 0.0, 20.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'lwtju5cd' /* See All */,
+                                    'uwe4hr7u' /* See All */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -445,83 +445,50 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 16.0, 0.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'i4dt5lsf' /* My health News */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 0.0, 20.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'ys9panra' /* See All */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        color: const Color(0xFF5146D9),
-                                      ),
-                                ),
-                              ),
-                            ],
+                        Container(
+                          width: double.infinity,
+                          height: 150.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 16.0, 0.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          child: ListView(
+                            padding: EdgeInsets.zero,
+                            scrollDirection: Axis.horizontal,
                             children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'qezlofl8' /* Services Catalogue */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                              Container(
+                                width: 100.0,
+                                height: 100.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 0.0, 20.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'w46j0tdl' /* See All */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        color: const Color(0xFF5146D9),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 0.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.network(
+                                          'https://picsum.photos/seed/978/600',
+                                          width: 100.0,
+                                          height: 100.0,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          '8s8p3sn3' /* Hello World */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
