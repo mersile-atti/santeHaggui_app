@@ -32,6 +32,8 @@ dependencies:
   cloud_firestore_platform_interface: 5.15.0
   cloud_firestore_web: 3.6.0
   dropdown_button2: 2.3.9
+  emoji_flag_converter: 1.1.0
+  equatable: 2.0.5
   expandable: 5.0.1
   file_picker: 6.1.1
   firebase_auth: 4.6.2
@@ -92,6 +94,7 @@ dependencies:
   sqflite: 2.2.6
   stop_watch_timer: 3.0.2
   stream_transform: 2.1.0
+  substring_highlight: 1.0.33
   timeago: 3.2.2
   url_launcher: 6.1.10
   url_launcher_android: 6.0.27

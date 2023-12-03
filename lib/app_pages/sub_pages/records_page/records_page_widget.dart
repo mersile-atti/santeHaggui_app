@@ -530,8 +530,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     valueOrDefault<
                                                                         String>(
                                                                       containerHeightHealthMetricsRecord
-                                                                          ?.height
-                                                                          .toString(),
+                                                                          ?.height,
                                                                       '1,80',
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
@@ -647,8 +646,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     valueOrDefault<
                                                                         String>(
                                                                       containerWeightHealthMetricsRecord
-                                                                          ?.weight
-                                                                          .toString(),
+                                                                          ?.weight,
                                                                       '65,2',
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
@@ -764,8 +762,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     valueOrDefault<
                                                                         String>(
                                                                       containerImcHealthMetricsRecord
-                                                                          ?.indiceMasseCorporelle
-                                                                          .toString(),
+                                                                          ?.indiceMasseCorporelle,
                                                                       'N/A',
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
@@ -1809,8 +1806,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     valueOrDefault<
                                                                         String>(
                                                                       containerRapportTotalChholesAndHDLHealthMetricsRecord
-                                                                          ?.rapportTotalCholesAndHdl
-                                                                          .toString(),
+                                                                          ?.rapportTotalCholesAndHdl,
                                                                       'N/A',
                                                                     ),
                                                                     style: FlutterFlowTheme.of(

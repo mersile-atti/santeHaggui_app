@@ -1488,6 +1488,94 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
   },
+  // PhoneLoginPage
+  {
+    '4osoz5tu': {
+      'en': 'Welcome back!',
+      'ar': 'مرحبًا بعودتك!',
+      'fr': 'Content de te revoir!',
+    },
+    'm7w8ck94': {
+      'en': 'Please login to access',
+      'ar': 'الرجاء تسجيل الدخول للوصول',
+      'fr': 'Veuillez vous connecter pour accéder',
+    },
+    '519qwsp6': {
+      'en': 'Or',
+      'ar': 'أو',
+      'fr': 'Ou',
+    },
+    'vtbjvej6': {
+      'en': 'Enter country name',
+      'ar': '',
+      'fr': '',
+    },
+    'jt9kwc01': {
+      'en': 'India',
+      'ar': '',
+      'fr': '',
+    },
+    'xwu4bwf6': {
+      'en': 'Option 1',
+      'ar': '',
+      'fr': '',
+    },
+    '4lv9vo8g': {
+      'en': 'Enter your mobile number',
+      'ar': '',
+      'fr': '',
+    },
+    'iqd6ha5x': {
+      'en': 'Forgot Password?',
+      'ar': 'هل نسيت كلمة السر؟',
+      'fr': 'Mot de passe oublié?',
+    },
+    'mkwgocsn': {
+      'en': 'Log In',
+      'ar': 'تسجيل الدخول',
+      'fr': 'Se connecter',
+    },
+    'ufcd3rae': {
+      'en': 'Don’t have an account?',
+      'ar': 'ليس لديك حساب؟',
+      'fr': 'Vous n\'avez pas de compte ?',
+    },
+    'rcdfzmmh': {
+      'en': ' Sign Up',
+      'ar': 'اشتراك',
+      'fr': 'S\'inscrire',
+    },
+    'u5y2sgdk': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    '4bkhgw91': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+    '3qultmqq': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    'zbsvj6nk': {
+      'en': 'Password must be 6 or more characters ',
+      'ar': 'يجب أن تتكون كلمة المرور من 6 أحرف أو أكثر',
+      'fr': 'Le mot de passe doit contenir 6 caractères ou plus',
+    },
+    'jo0xho5u': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+    '85c04vm1': {
+      'en': 'Home',
+      'ar': 'بيت',
+      'fr': 'Maison',
+    },
+  },
   // ProfileBottomSheet
   {
     'xqln01gn': {
@@ -2268,22 +2356,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الملف الطبي للطوارئ',
       'fr': 'Profil médical d\'urgence',
     },
-    '6bi5hcqu': {
+    'kovb0u82': {
       'en': 'Address',
       'ar': '',
       'fr': '',
     },
-    'ieqgpgf8': {
+    'g15na0wq': {
       'en': 'City',
       'ar': '',
       'fr': '',
     },
-    'xrcf5lkn': {
+    'ms3ko90f': {
       'en': 'Province or Region',
       'ar': '',
       'fr': '',
     },
-    'ksjfe22t': {
+    'rb5vclya': {
       'en': 'Country',
       'ar': '',
       'fr': '',
@@ -2326,22 +2414,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الملف الطبي للطوارئ',
       'fr': 'Profil médical d\'urgence',
     },
-    'y0ow1txi': {
+    '7z2po5u3': {
       'en': 'Address',
       'ar': '',
       'fr': '',
     },
-    '2gif0cww': {
+    'aboylpi3': {
       'en': 'City',
       'ar': '',
       'fr': '',
     },
-    '3w4qfl83': {
+    'b4zmm20v': {
       'en': 'Province or Region',
       'ar': '',
       'fr': '',
     },
-    'qu3jiel2': {
+    'tbvxcn47': {
       'en': 'Country',
       'ar': '',
       'fr': '',

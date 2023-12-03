@@ -1,8 +1,8 @@
 import '/backend/backend.dart';
-import '/components/update_medicale_profile_name_component/update_medicale_profile_name_component_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/update_emergency_profile_components/update_medicale_profile_name_component/update_medicale_profile_name_component_widget.dart';
 import 'package:flutter/material.dart';
 import 'emergency_profie_mauvais_model.dart';
 export 'emergency_profie_mauvais_model.dart';

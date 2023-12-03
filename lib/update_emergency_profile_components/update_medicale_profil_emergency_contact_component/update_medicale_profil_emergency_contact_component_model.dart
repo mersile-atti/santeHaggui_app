@@ -1,5 +1,5 @@
-import '/components/update_medicale_profil_emergency_contact_component/update_medicale_profil_emergency_contact_component_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/update_emergency_profile_components/update_medicale_profil_emergency_contact_component/update_medicale_profil_emergency_contact_component_widget.dart';
 import 'update_medicale_profil_emergency_contact_component_widget.dart'
     show UpdateMedicaleProfilEmergencyContactComponentWidget;
 import 'package:expandable/expandable.dart';

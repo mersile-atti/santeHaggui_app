@@ -410,8 +410,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                               valueOrDefault<
                                                                   String>(
                                                                 containerHeightHealthMetricsRecord
-                                                                    ?.height
-                                                                    .toString(),
+                                                                    ?.height,
                                                                 '1,80',
                                                               ),
                                                               style: FlutterFlowTheme
@@ -515,8 +514,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                               valueOrDefault<
                                                                   String>(
                                                                 containerWeightHealthMetricsRecord
-                                                                    ?.weight
-                                                                    .toString(),
+                                                                    ?.weight,
                                                                 '65,2',
                                                               ),
                                                               style: FlutterFlowTheme
@@ -620,8 +618,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                               valueOrDefault<
                                                                   String>(
                                                                 containerImcHealthMetricsRecord
-                                                                    ?.indiceMasseCorporelle
-                                                                    .toString(),
+                                                                    ?.indiceMasseCorporelle,
                                                                 'N/A',
                                                               ),
                                                               style: FlutterFlowTheme
@@ -1557,8 +1554,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                               valueOrDefault<
                                                                   String>(
                                                                 containerRapportTotalChholesAndHDLHealthMetricsRecord
-                                                                    ?.rapportTotalCholesAndHdl
-                                                                    .toString(),
+                                                                    ?.rapportTotalCholesAndHdl,
                                                                 'N/A',
                                                               ),
                                                               style: FlutterFlowTheme

@@ -358,7 +358,7 @@ class _UpdateMedicaleProfilEmergencyContactComponentWidgetState
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                  'y0ow1txi' /* Address */,
+                                                                  '7z2po5u3' /* Address */,
                                                                 ),
                                                                 hintStyle: FlutterFlowTheme.of(
                                                                         context)
@@ -455,7 +455,7 @@ class _UpdateMedicaleProfilEmergencyContactComponentWidgetState
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                  '2gif0cww' /* City */,
+                                                                  'aboylpi3' /* City */,
                                                                 ),
                                                                 hintStyle: FlutterFlowTheme.of(
                                                                         context)
@@ -559,7 +559,7 @@ class _UpdateMedicaleProfilEmergencyContactComponentWidgetState
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                  '3w4qfl83' /* Province or Region */,
+                                                                  'b4zmm20v' /* Province or Region */,
                                                                 ),
                                                                 hintStyle: FlutterFlowTheme.of(
                                                                         context)
@@ -656,7 +656,7 @@ class _UpdateMedicaleProfilEmergencyContactComponentWidgetState
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                  'qu3jiel2' /* Country */,
+                                                                  'tbvxcn47' /* Country */,
                                                                 ),
                                                                 hintStyle: FlutterFlowTheme.of(
                                                                         context)

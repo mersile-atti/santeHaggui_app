@@ -24,21 +24,6 @@ class HealthMetricsRecord extends FirestoreRecord {
   String get bloodOxygen => _bloodOxygen ?? '';
   bool hasBloodOxygen() => _bloodOxygen != null;
 
-  // "height" field.
-  double? _height;
-  double get height => _height ?? 0.0;
-  bool hasHeight() => _height != null;
-
-  // "weight" field.
-  double? _weight;
-  double get weight => _weight ?? 0.0;
-  bool hasWeight() => _weight != null;
-
-  // "indiceMasseCorporelle" field.
-  double? _indiceMasseCorporelle;
-  double get indiceMasseCorporelle => _indiceMasseCorporelle ?? 0.0;
-  bool hasIndiceMasseCorporelle() => _indiceMasseCorporelle != null;
-
   // "heartRate" field.
   String? _heartRate;
   String get heartRate => _heartRate ?? '';
@@ -79,11 +64,6 @@ class HealthMetricsRecord extends FirestoreRecord {
   String get triglycerides => _triglycerides ?? '';
   bool hasTriglycerides() => _triglycerides != null;
 
-  // "rapportTotalCholesAndHdl" field.
-  double? _rapportTotalCholesAndHdl;
-  double get rapportTotalCholesAndHdl => _rapportTotalCholesAndHdl ?? 0.0;
-  bool hasRapportTotalCholesAndHdl() => _rapportTotalCholesAndHdl != null;
-
   // "glucose" field.
   String? _glucose;
   String get glucose => _glucose ?? '';
@@ -94,15 +74,31 @@ class HealthMetricsRecord extends FirestoreRecord {
   String get waistCircumference => _waistCircumference ?? '';
   bool hasWaistCircumference() => _waistCircumference != null;
 
+  // "rapportTotalCholesAndHdl" field.
+  String? _rapportTotalCholesAndHdl;
+  String get rapportTotalCholesAndHdl => _rapportTotalCholesAndHdl ?? '';
+  bool hasRapportTotalCholesAndHdl() => _rapportTotalCholesAndHdl != null;
+
+  // "height" field.
+  String? _height;
+  String get height => _height ?? '';
+  bool hasHeight() => _height != null;
+
+  // "weight" field.
+  String? _weight;
+  String get weight => _weight ?? '';
+  bool hasWeight() => _weight != null;
+
+  // "indiceMasseCorporelle" field.
+  String? _indiceMasseCorporelle;
+  String get indiceMasseCorporelle => _indiceMasseCorporelle ?? '';
+  bool hasIndiceMasseCorporelle() => _indiceMasseCorporelle != null;
+
   DocumentReference get parentReference => reference.parent.parent!;
 
   void _initializeFields() {
     _userName = snapshotData['userName'] as DocumentReference?;
     _bloodOxygen = snapshotData['bloodOxygen'] as String?;
-    _height = castToType<double>(snapshotData['height']);
-    _weight = castToType<double>(snapshotData['weight']);
-    _indiceMasseCorporelle =
-        castToType<double>(snapshotData['indiceMasseCorporelle']);
     _heartRate = snapshotData['heartRate'] as String?;
     _temperatureCorporelle = snapshotData['temperatureCorporelle'] as String?;
     _systolicPressionArterielle =
@@ -113,10 +109,13 @@ class HealthMetricsRecord extends FirestoreRecord {
     _ldlCholesterol = snapshotData['ldlCholesterol'] as String?;
     _hdlCholesterol = snapshotData['hdlCholesterol'] as String?;
     _triglycerides = snapshotData['triglycerides'] as String?;
-    _rapportTotalCholesAndHdl =
-        castToType<double>(snapshotData['rapportTotalCholesAndHdl']);
     _glucose = snapshotData['glucose'] as String?;
     _waistCircumference = snapshotData['waistCircumference'] as String?;
+    _rapportTotalCholesAndHdl =
+        snapshotData['rapportTotalCholesAndHdl'] as String?;
+    _height = snapshotData['height'] as String?;
+    _weight = snapshotData['weight'] as String?;
+    _indiceMasseCorporelle = snapshotData['indiceMasseCorporelle'] as String?;
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -161,9 +160,6 @@ class HealthMetricsRecord extends FirestoreRecord {
 Map<String, dynamic> createHealthMetricsRecordData({
   DocumentReference? userName,
   String? bloodOxygen,
-  double? height,
-  double? weight,
-  double? indiceMasseCorporelle,
   String? heartRate,
   String? temperatureCorporelle,
   String? systolicPressionArterielle,
@@ -172,17 +168,17 @@ Map<String, dynamic> createHealthMetricsRecordData({
   String? ldlCholesterol,
   String? hdlCholesterol,
   String? triglycerides,
-  double? rapportTotalCholesAndHdl,
   String? glucose,
   String? waistCircumference,
+  String? rapportTotalCholesAndHdl,
+  String? height,
+  String? weight,
+  String? indiceMasseCorporelle,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'userName': userName,
       'bloodOxygen': bloodOxygen,
-      'height': height,
-      'weight': weight,
-      'indiceMasseCorporelle': indiceMasseCorporelle,
       'heartRate': heartRate,
       'temperatureCorporelle': temperatureCorporelle,
       'systolicPressionArterielle': systolicPressionArterielle,
@@ -191,9 +187,12 @@ Map<String, dynamic> createHealthMetricsRecordData({
       'ldlCholesterol': ldlCholesterol,
       'hdlCholesterol': hdlCholesterol,
       'triglycerides': triglycerides,
-      'rapportTotalCholesAndHdl': rapportTotalCholesAndHdl,
       'glucose': glucose,
       'waistCircumference': waistCircumference,
+      'rapportTotalCholesAndHdl': rapportTotalCholesAndHdl,
+      'height': height,
+      'weight': weight,
+      'indiceMasseCorporelle': indiceMasseCorporelle,
     }.withoutNulls,
   );
 
@@ -208,9 +207,6 @@ class HealthMetricsRecordDocumentEquality
   bool equals(HealthMetricsRecord? e1, HealthMetricsRecord? e2) {
     return e1?.userName == e2?.userName &&
         e1?.bloodOxygen == e2?.bloodOxygen &&
-        e1?.height == e2?.height &&
-        e1?.weight == e2?.weight &&
-        e1?.indiceMasseCorporelle == e2?.indiceMasseCorporelle &&
         e1?.heartRate == e2?.heartRate &&
         e1?.temperatureCorporelle == e2?.temperatureCorporelle &&
         e1?.systolicPressionArterielle == e2?.systolicPressionArterielle &&
@@ -219,18 +215,18 @@ class HealthMetricsRecordDocumentEquality
         e1?.ldlCholesterol == e2?.ldlCholesterol &&
         e1?.hdlCholesterol == e2?.hdlCholesterol &&
         e1?.triglycerides == e2?.triglycerides &&
-        e1?.rapportTotalCholesAndHdl == e2?.rapportTotalCholesAndHdl &&
         e1?.glucose == e2?.glucose &&
-        e1?.waistCircumference == e2?.waistCircumference;
+        e1?.waistCircumference == e2?.waistCircumference &&
+        e1?.rapportTotalCholesAndHdl == e2?.rapportTotalCholesAndHdl &&
+        e1?.height == e2?.height &&
+        e1?.weight == e2?.weight &&
+        e1?.indiceMasseCorporelle == e2?.indiceMasseCorporelle;
   }
 
   @override
   int hash(HealthMetricsRecord? e) => const ListEquality().hash([
         e?.userName,
         e?.bloodOxygen,
-        e?.height,
-        e?.weight,
-        e?.indiceMasseCorporelle,
         e?.heartRate,
         e?.temperatureCorporelle,
         e?.systolicPressionArterielle,
@@ -239,9 +235,12 @@ class HealthMetricsRecordDocumentEquality
         e?.ldlCholesterol,
         e?.hdlCholesterol,
         e?.triglycerides,
-        e?.rapportTotalCholesAndHdl,
         e?.glucose,
-        e?.waistCircumference
+        e?.waistCircumference,
+        e?.rapportTotalCholesAndHdl,
+        e?.height,
+        e?.weight,
+        e?.indiceMasseCorporelle
       ]);
 
   @override

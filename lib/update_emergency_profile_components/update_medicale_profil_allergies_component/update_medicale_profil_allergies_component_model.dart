@@ -1,12 +1,12 @@
-import '/components/update_medicale_profile_medication_component/update_medicale_profile_medication_component_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'update_medicale_profile_medication_component_widget.dart'
-    show UpdateMedicaleProfileMedicationComponentWidget;
+import '/update_emergency_profile_components/update_medicale_profil_allergies_component/update_medicale_profil_allergies_component_widget.dart';
+import 'update_medicale_profil_allergies_component_widget.dart'
+    show UpdateMedicaleProfilAllergiesComponentWidget;
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 
-class UpdateMedicaleProfileMedicationComponentModel
-    extends FlutterFlowModel<UpdateMedicaleProfileMedicationComponentWidget> {
+class UpdateMedicaleProfilAllergiesComponentModel
+    extends FlutterFlowModel<UpdateMedicaleProfilAllergiesComponentWidget> {
   ///  State fields for stateful widgets in this component.
 
   final formKey = GlobalKey<FormState>();

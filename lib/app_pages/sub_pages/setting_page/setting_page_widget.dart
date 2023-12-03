@@ -1,5 +1,6 @@
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -656,6 +657,30 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                     ),
                                   ),
                                 ],
+                              ),
+                              Align(
+                                alignment: const AlignmentDirectional(0.00, 0.00),
+                                child: FlutterFlowLanguageSelector(
+                                  width: 200.0,
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).lineColor,
+                                  borderColor: Colors.transparent,
+                                  dropdownIconColor: Colors.white,
+                                  borderRadius: 8.0,
+                                  textStyle: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 13.0,
+                                  ),
+                                  hideFlags: false,
+                                  flagSize: 24.0,
+                                  flagTextGap: 8.0,
+                                  currentLanguage:
+                                      FFLocalizations.of(context).languageCode,
+                                  languages: FFLocalizations.languages(),
+                                  onChanged: (lang) =>
+                                      setAppLanguage(context, lang),
+                                ),
                               ),
                             ],
                           ),
