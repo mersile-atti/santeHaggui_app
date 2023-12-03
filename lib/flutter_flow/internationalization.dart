@@ -1972,34 +1972,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // EmergencyProfileComponent
   {
-    '145lm89x': {
-      'en': 'UMI',
-      'ar': '',
-      'fr': '',
-    },
-    '1jthrh1k': {
-      'en': 'Name',
-      'ar': 'إعدادات',
-      'fr': 'Paramètres',
-    },
-    '235wvly7': {
-      'en': 'Blood Group',
-      'ar': 'إعدادات',
-      'fr': 'Paramètres',
-    },
-    'ahgl05wp': {
-      'en': 'Allergies',
-      'ar': 'إعدادات',
-      'fr': 'Paramètres',
-    },
-    'sy4m0a7h': {
-      'en': 'Generate Qr Code',
-      'ar': 'تسجيل خروج',
-      'fr': 'Se déconnecter',
-    },
-  },
-  // EmergencyProfileComponentCopy
-  {
     '3r56nd4q': {
       'en': 'UMI',
       'ar': '',
@@ -2127,6 +2099,274 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Champ requis',
     },
     'lq6l8gxm': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+  },
+  // UpdateMedicaleProfilBirthdayComponent
+  {
+    'e3a6soct': {
+      'en': 'Edit ',
+      'ar': 'يحرر',
+      'fr': 'Modifier',
+    },
+    'xssvrkl9': {
+      'en': 'Emergency Medical Profile',
+      'ar': 'الملف الطبي للطوارئ',
+      'fr': 'Profil médical d\'urgence',
+    },
+    'miv48h0h': {
+      'en': 'Update',
+      'ar': 'تسجيل خروج',
+      'fr': 'Se déconnecter',
+    },
+    'mg2ul74e': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    'ej1h6pnc': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+    'drqapk2s': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    's8wm2441': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+  },
+  // UpdateMedicaleProfileUserSexComponent
+  {
+    'kifxs7ix': {
+      'en': 'Edit ',
+      'ar': 'يحرر',
+      'fr': 'Modifier',
+    },
+    '1zx54dej': {
+      'en': 'Emergency Medical Profile',
+      'ar': 'الملف الطبي للطوارئ',
+      'fr': 'Profil médical d\'urgence',
+    },
+    'c5eiyqt8': {
+      'en': 'Update',
+      'ar': 'تسجيل خروج',
+      'fr': 'Se déconnecter',
+    },
+    'hd9ydzrm': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    'jxgydza6': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+    '5p6ybi1j': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    'ulrkli46': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+  },
+  // UpdateMedicaleProfileMedicationComponent
+  {
+    'p12ve9o0': {
+      'en': 'Edit ',
+      'ar': 'يحرر',
+      'fr': 'Modifier',
+    },
+    '8azi7z70': {
+      'en': 'Emergency Medical Profile',
+      'ar': 'الملف الطبي للطوارئ',
+      'fr': 'Profil médical d\'urgence',
+    },
+    '2wbzvjl7': {
+      'en': 'Update',
+      'ar': 'تسجيل خروج',
+      'fr': 'Se déconnecter',
+    },
+    'qv5uisqc': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    'qb2ic7d7': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+    'xrotqwbs': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    'y3mc3pyd': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+  },
+  // UpdateMedicaleProfileMedicalconditionsComponent
+  {
+    'jg7i9nra': {
+      'en': 'Edit ',
+      'ar': 'يحرر',
+      'fr': 'Modifier',
+    },
+    'qvvskd2n': {
+      'en': 'Emergency Medical Profile',
+      'ar': 'الملف الطبي للطوارئ',
+      'fr': 'Profil médical d\'urgence',
+    },
+    'g7n0tcqa': {
+      'en': 'Update',
+      'ar': 'تسجيل خروج',
+      'fr': 'Se déconnecter',
+    },
+    'ojtsa7r6': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    'zhhgalqt': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+    'l6vj4qym': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    'mvdywuya': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+  },
+  // UpdateMedicaleProfilAddressComponent
+  {
+    'zludfkdv': {
+      'en': 'Edit ',
+      'ar': 'يحرر',
+      'fr': 'Modifier',
+    },
+    '9428w3lj': {
+      'en': 'Emergency Medical Profile',
+      'ar': 'الملف الطبي للطوارئ',
+      'fr': 'Profil médical d\'urgence',
+    },
+    'hr1e9ua9': {
+      'en': 'Address',
+      'ar': '',
+      'fr': '',
+    },
+    'f02t7j63': {
+      'en': 'City',
+      'ar': '',
+      'fr': '',
+    },
+    'i4dpufiq': {
+      'en': 'Province or Region',
+      'ar': '',
+      'fr': '',
+    },
+    'etboqxhv': {
+      'en': 'Country',
+      'ar': '',
+      'fr': '',
+    },
+    'sqev2rum': {
+      'en': 'Update',
+      'ar': 'تسجيل خروج',
+      'fr': 'Se déconnecter',
+    },
+    'q7j8j8nw': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    '04ttfnlv': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+    'o0jby69m': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    'imr33pvg': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+  },
+  // UpdateMedicaleProfilEmergencyContactComponent
+  {
+    'nw7z5bp2': {
+      'en': 'Edit ',
+      'ar': 'يحرر',
+      'fr': 'Modifier',
+    },
+    'kn8692t4': {
+      'en': 'Emergency Medical Profile',
+      'ar': 'الملف الطبي للطوارئ',
+      'fr': 'Profil médical d\'urgence',
+    },
+    'vkh3jo76': {
+      'en': 'Address',
+      'ar': '',
+      'fr': '',
+    },
+    'juc4ly3a': {
+      'en': 'City',
+      'ar': '',
+      'fr': '',
+    },
+    'eve9s7u6': {
+      'en': 'Province or Region',
+      'ar': '',
+      'fr': '',
+    },
+    '3flv40gc': {
+      'en': 'Country',
+      'ar': '',
+      'fr': '',
+    },
+    'yg3c3q1p': {
+      'en': 'Update',
+      'ar': 'تسجيل خروج',
+      'fr': 'Se déconnecter',
+    },
+    'oyia3vni': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    '1wy7rj8y': {
+      'en': 'Please choose an option from the dropdown',
+      'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
+      'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+    'rinyuyvl': {
+      'en': 'Field is required',
+      'ar': 'الحقل مطلوب',
+      'fr': 'Champ requis',
+    },
+    'cni1aajy': {
       'en': 'Please choose an option from the dropdown',
       'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
       'fr': 'Veuillez choisir une option dans la liste déroulante',
