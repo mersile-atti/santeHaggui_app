@@ -105,7 +105,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           20.0, 20.0, 20.0, 20.0),
                       child: Container(
                         width: double.infinity,
-                        height: 500.0,
+                        height: 550.0,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20.0),

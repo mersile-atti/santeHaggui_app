@@ -129,7 +129,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Text(
-                                        'Welcome back!',
+                                        'Get Started',
                                         style: FlutterFlowTheme.of(context)
                                             .headlineLarge
                                             .override(
@@ -150,7 +150,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      'Please login to access',
+                                      'Please register to start',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -781,8 +781,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                         mouseCursor: SystemMouseCursors.click,
                                         recognizer: TapGestureRecognizer()
                                           ..onTap = () async {
-                                            context
-                                                .pushNamed('CreateAccountPage');
+                                            context.pushNamed('LoginPage');
                                           },
                                       )
                                     ],
