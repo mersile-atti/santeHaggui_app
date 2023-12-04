@@ -12,9 +12,9 @@ class VerifySmsPageModel extends FlutterFlowModel<VerifySmsPageWidget> {
   TextEditingController? pinCodeController;
   String? Function(BuildContext, String?)? pinCodeControllerValidator;
   // State field(s) for Timer widget.
-  int timerMilliseconds = 30000;
+  int timerMilliseconds = 60000;
   String timerValue = StopWatchTimer.getDisplayTime(
-    30000,
+    60000,
     hours: false,
     milliSecond: false,
   );

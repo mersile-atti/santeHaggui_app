@@ -573,13 +573,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Profil complet',
     },
     '74mdtexg': {
-      'en': 'Upload a photo for us to easily identify you.',
+      'en': 'Complete your profile ',
       'ar': 'قم بتحميل صورة لنا للتعرف عليك بسهولة.',
       'fr':
           'Téléchargez une photo pour que nous puissions vous identifier facilement.',
     },
     'eqz3nakj': {
-      'en': 'Your Name',
+      'en': '',
       'ar': 'اسمك',
       'fr': 'votre nom',
     },
@@ -589,12 +589,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Nom et prénom',
     },
     '3h18wtd0': {
-      'en': 'Enter your email',
+      'en': '',
       'ar': 'أدخل بريدك الإلكتروني',
       'fr': 'Entrer votre Email',
     },
     'rc67tnwd': {
-      'en': 'Full Name',
+      'en': 'Username ',
+      'ar': 'الاسم الكامل',
+      'fr': 'Nom et prénom',
+    },
+    'qcpekls4': {
+      'en': '',
+      'ar': 'أدخل بريدك الإلكتروني',
+      'fr': 'Entrer votre Email',
+    },
+    's01lxdoj': {
+      'en': 'Email',
       'ar': 'الاسم الكامل',
       'fr': 'Nom et prénom',
     },
@@ -619,24 +629,64 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'Confirmer votre mot de passe',
     },
     '2r1pq56f': {
-      'en': 'Your Age',
+      'en': '',
       'ar': 'عمرك',
       'fr': 'Votre âge',
     },
     'mmxoqvlj': {
-      'en': 'i.e. 34',
+      'en': '30/09/2003',
       'ar': 'أي 34',
       'fr': 'soit 34',
     },
-    'no329w7k': {
-      'en': 'Ailments',
-      'ar': 'الامراض',
-      'fr': 'Maladies',
+    'ecghplaf': {
+      'en': 'A+',
+      'ar': 'ذكر',
+      'fr': 'Mâle',
     },
-    '0ki75pzv': {
-      'en': 'What types of allergies do you have..',
-      'ar': 'ما هي أنواع الحساسية لديك..',
-      'fr': 'Quels types d’allergies avez-vous ?',
+    '46jvyrny': {
+      'en': 'A-',
+      'ar': 'أنثى',
+      'fr': 'Femelle',
+    },
+    '75cnfiqh': {
+      'en': 'B+',
+      'ar': '',
+      'fr': '',
+    },
+    'w8ay5tp7': {
+      'en': 'B-',
+      'ar': '',
+      'fr': '',
+    },
+    'jndona6u': {
+      'en': 'O+',
+      'ar': '',
+      'fr': '',
+    },
+    '3v6zyl81': {
+      'en': 'O-',
+      'ar': '',
+      'fr': '',
+    },
+    'fcrou5qd': {
+      'en': 'AB+',
+      'ar': '',
+      'fr': '',
+    },
+    '6ydt5s6i': {
+      'en': 'AB-',
+      'ar': '',
+      'fr': '',
+    },
+    '2ln2rfpm': {
+      'en': 'Blood Type',
+      'ar': 'الجنس',
+      'fr': 'Sexe',
+    },
+    'mz136mi8': {
+      'en': 'Search for an item...',
+      'ar': 'البحث عن عنصر...',
+      'fr': 'Rechercher un article...',
     },
     'nqq8l64g': {
       'en': 'Your Birth Sex',
@@ -742,7 +792,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'المقاييس الصحية',
       'fr': 'Paramètres de santé',
     },
-    'kizwk7xg': {
+    'jz7wrbhs': {
       'en': 'Blood Oxygen',
       'ar': 'أكسجين الدم',
       'fr': 'Oxygène sanguin',
@@ -837,15 +887,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسم',
       'fr': 'Nom',
     },
-    '60rkbc4m': {
-      'en': 'Birthday',
-      'ar': 'عيد ميلاد',
-      'fr': 'Anniversaire',
-    },
-    '3knf9lmt': {
-      'en': 'Biological Sex',
-      'ar': 'الجنس البيولوجي',
-      'fr': 'Sexe biologique',
+    '4bmci9s1': {
+      'en': 'Hello World',
+      'ar': '',
+      'fr': '',
     },
     'r7nl5e6c': {
       'en': 'Prescriptions ',
@@ -862,50 +907,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مرحبا بالعالم',
       'fr': 'Bonjour le monde',
     },
-    'ceydwbsy': {
-      'en': 'Name',
-      'ar': 'اسم',
-      'fr': 'Nom',
-    },
-    '7tyndxb7': {
-      'en': 'Birthday',
-      'ar': 'عيد ميلاد',
-      'fr': 'Anniversaire',
-    },
-    'tcz0echc': {
-      'en': 'Biological Sex',
-      'ar': 'الجنس البيولوجي',
-      'fr': 'Sexe biologique',
-    },
     't3agtzzp': {
       'en': 'Vaccinations  ',
       'ar': 'التطعيمات',
       'fr': 'Vaccinations',
     },
-    'hqxpkuis': {
-      'en': 'Health Metrics',
-      'ar': 'المقاييس الصحية',
-      'fr': 'Paramètres de santé',
-    },
-    'wk6ulw5b': {
-      'en': 'Hello World',
-      'ar': 'مرحبا بالعالم',
-      'fr': 'Bonjour le monde',
-    },
-    '2cb1t1fj': {
-      'en': 'Name',
-      'ar': 'اسم',
-      'fr': 'Nom',
-    },
-    'k33br0sa': {
-      'en': 'Birthday',
-      'ar': 'عيد ميلاد',
-      'fr': 'Anniversaire',
-    },
     'xbiwu7z2': {
       'en': 'Biological Sex',
       'ar': 'الجنس البيولوجي',
       'fr': 'Sexe biologique',
+    },
+    'x83gffbf': {
+      'en': 'Hello World',
+      'ar': '',
+      'fr': '',
     },
     'y82wyag0': {
       'en': 'Lifestyle   ',
@@ -922,21 +937,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مرحبا بالعالم',
       'fr': 'Bonjour le monde',
     },
-    'g4zqe3bw': {
-      'en': 'Name',
-      'ar': 'اسم',
-      'fr': 'Nom',
-    },
-    'w5mvj090': {
-      'en': 'Birthday',
-      'ar': 'عيد ميلاد',
-      'fr': 'Anniversaire',
-    },
-    'g9aklzpg': {
-      'en': 'Biological Sex',
-      'ar': 'الجنس البيولوجي',
-      'fr': 'Sexe biologique',
-    },
     'x5dmyuxg': {
       'en': 'Pharmacy',
       'ar': 'مقابل',
@@ -952,50 +952,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مرحبا بالعالم',
       'fr': 'Bonjour le monde',
     },
-    'gko3w81t': {
-      'en': 'Name',
-      'ar': 'اسم',
-      'fr': 'Nom',
-    },
-    'srzddjad': {
-      'en': 'Birthday',
-      'ar': 'عيد ميلاد',
-      'fr': 'Anniversaire',
-    },
-    't7cwm5y8': {
-      'en': 'Biological Sex',
-      'ar': 'الجنس البيولوجي',
-      'fr': 'Sexe biologique',
-    },
     '70ad24rm': {
       'en': 'Insurance',
       'ar': 'تأمين',
       'fr': 'Assurance',
-    },
-    '92yibryp': {
-      'en': 'Health Metrics',
-      'ar': 'المقاييس الصحية',
-      'fr': 'Paramètres de santé',
-    },
-    '74eitvws': {
-      'en': 'Hello World',
-      'ar': 'مرحبا بالعالم',
-      'fr': 'Bonjour le monde',
     },
     'y5k0wsvu': {
       'en': 'Name',
       'ar': 'اسم',
       'fr': 'Nom',
     },
-    'bj0cg3by': {
-      'en': 'Birthday',
-      'ar': 'عيد ميلاد',
-      'fr': 'Anniversaire',
-    },
-    '7c3sihyj': {
-      'en': 'Biological Sex',
-      'ar': 'الجنس البيولوجي',
-      'fr': 'Sexe biologique',
+    'zkofpyxy': {
+      'en': 'Hello World',
+      'ar': '',
+      'fr': '',
     },
     's5qtuxvw': {
       'en': 'Home',
@@ -1177,6 +1147,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسم',
       'fr': 'Nom',
     },
+    'o4gre7nm': {
+      'en': 'Hello World',
+      'ar': '',
+      'fr': '',
+    },
     'p9q6eg2g': {
       'en': 'Birthday',
       'ar': 'عيد ميلاد',
@@ -1307,60 +1282,30 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'ملفات الصحة',
       'fr': 'Fichiers de santé',
     },
-    'qk9cnhd9': {
-      'en': 'Health Metrics',
-      'ar': 'المقاييس الصحية',
-      'fr': 'Paramètres de santé',
-    },
-    'gbnj36r7': {
-      'en': 'Hello World',
-      'ar': 'مرحبا بالعالم',
-      'fr': 'Bonjour le monde',
-    },
-    '3kc72pan': {
-      'en': 'Name',
-      'ar': 'اسم',
-      'fr': 'Nom',
-    },
     '5ytql0kx': {
       'en': 'Birthday',
       'ar': 'عيد ميلاد',
       'fr': 'Anniversaire',
     },
-    'rfhl0o6l': {
-      'en': 'Biological Sex',
-      'ar': 'الجنس البيولوجي',
-      'fr': 'Sexe biologique',
+    '9wr86e06': {
+      'en': 'Hello World',
+      'ar': '',
+      'fr': '',
     },
     'risfp30w': {
       'en': 'Prescriptions ',
       'ar': 'الوصفات الطبية',
       'fr': 'Ordonnances',
     },
-    'zgh43vtm': {
-      'en': 'Health Metrics',
-      'ar': 'المقاييس الصحية',
-      'fr': 'Paramètres de santé',
-    },
-    'dy1tahx4': {
-      'en': 'Hello World',
-      'ar': 'مرحبا بالعالم',
-      'fr': 'Bonjour le monde',
-    },
-    'crexu7at': {
-      'en': 'Name',
-      'ar': 'اسم',
-      'fr': 'Nom',
-    },
-    'ktxvmlwg': {
-      'en': 'Birthday',
-      'ar': 'عيد ميلاد',
-      'fr': 'Anniversaire',
-    },
     'pu29h06h': {
       'en': 'Biological Sex',
       'ar': 'الجنس البيولوجي',
       'fr': 'Sexe biologique',
+    },
+    '1sflmgxn': {
+      'en': 'Hello World',
+      'ar': '',
+      'fr': '',
     },
     '1sgvsu21': {
       'en': 'Vaccinations  ',
@@ -1377,21 +1322,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مرحبا بالعالم',
       'fr': 'Bonjour le monde',
     },
-    'iih522wx': {
-      'en': 'Name',
-      'ar': 'اسم',
-      'fr': 'Nom',
-    },
-    '65bk8god': {
-      'en': 'Birthday',
-      'ar': 'عيد ميلاد',
-      'fr': 'Anniversaire',
-    },
-    '4bmga8ox': {
-      'en': 'Biological Sex',
-      'ar': 'الجنس البيولوجي',
-      'fr': 'Sexe biologique',
-    },
     '637dd2b1': {
       'en': 'Lifestyle   ',
       'ar': 'نمط الحياة',
@@ -1407,80 +1337,35 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مرحبا بالعالم',
       'fr': 'Bonjour le monde',
     },
-    'nw6t5gzd': {
-      'en': 'Name',
-      'ar': 'اسم',
-      'fr': 'Nom',
-    },
-    'liolu3ug': {
-      'en': 'Birthday',
-      'ar': 'عيد ميلاد',
-      'fr': 'Anniversaire',
-    },
-    'wkcluog6': {
-      'en': 'Biological Sex',
-      'ar': 'الجنس البيولوجي',
-      'fr': 'Sexe biologique',
-    },
     'u75xyu73': {
       'en': 'Pharmacy',
       'ar': 'مقابل',
       'fr': 'Pharmacie',
-    },
-    'g8yq66fh': {
-      'en': 'Health Metrics',
-      'ar': 'المقاييس الصحية',
-      'fr': 'Paramètres de santé',
-    },
-    '4g51nd2c': {
-      'en': 'Hello World',
-      'ar': 'مرحبا بالعالم',
-      'fr': 'Bonjour le monde',
-    },
-    '3lo459w5': {
-      'en': 'Name',
-      'ar': 'اسم',
-      'fr': 'Nom',
-    },
-    'uqdtyxfv': {
-      'en': 'Birthday',
-      'ar': 'عيد ميلاد',
-      'fr': 'Anniversaire',
     },
     '00mggkv1': {
       'en': 'Biological Sex',
       'ar': 'الجنس البيولوجي',
       'fr': 'Sexe biologique',
     },
+    'g0y8u1th': {
+      'en': 'Hello World',
+      'ar': '',
+      'fr': '',
+    },
     'kij1jljy': {
       'en': 'Insurance',
       'ar': 'تأمين',
       'fr': 'Assurance',
     },
-    'n1ndkjcx': {
-      'en': 'Health Metrics',
-      'ar': 'المقاييس الصحية',
-      'fr': 'Paramètres de santé',
-    },
-    'zl8nz3ms': {
-      'en': 'Hello World',
-      'ar': 'مرحبا بالعالم',
-      'fr': 'Bonjour le monde',
-    },
-    'm1dlim96': {
-      'en': 'Name',
-      'ar': 'اسم',
-      'fr': 'Nom',
-    },
-    'kvkzkcoh': {
-      'en': 'Birthday',
-      'ar': 'عيد ميلاد',
-      'fr': 'Anniversaire',
-    },
     'xs70o3c7': {
       'en': 'Biological Sex',
       'ar': 'الجنس البيولوجي',
       'fr': 'Sexe biologique',
+    },
+    'pixyjjxj': {
+      'en': 'Hello World',
+      'ar': '',
+      'fr': '',
     },
     'eq0dk1yc': {
       'en': 'Home',
@@ -1505,27 +1390,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'أو',
       'fr': 'Ou',
     },
-    'kzwjx8sp': {
+    'bfx2xl0e': {
       'en': 'Enter country name',
       'ar': '',
       'fr': '',
     },
-    'afwa09y2': {
+    '6r93yn2z': {
       'en': 'India',
       'ar': '',
       'fr': '',
     },
-    'cbdi2leu': {
+    'bw8wntjb': {
       'en': 'Option 1',
       'ar': '',
       'fr': '',
     },
-    'tqp40ne4': {
+    'uogevi2i': {
       'en': 'Enter your mobile number',
       'ar': '',
       'fr': '',
     },
-    'qggz4uec': {
+    'sbvnh85q': {
       'en': 'Get OTP',
       'ar': '',
       'fr': '',
@@ -2453,6 +2338,94 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please choose an option from the dropdown',
       'ar': 'يرجى اختيار خيار من القائمة المنسدلة',
       'fr': 'Veuillez choisir une option dans la liste déroulante',
+    },
+  },
+  // HealthMetricsComponent
+  {
+    '5baxq7xx': {
+      'en': 'Add your health metrics',
+      'ar': '',
+      'fr': '',
+    },
+    'g58stdz8': {
+      'en': 'Blood Oxygen',
+      'ar': '',
+      'fr': '',
+    },
+    'c0rnaroq': {
+      'en': 'Height',
+      'ar': '',
+      'fr': '',
+    },
+    't8nxanme': {
+      'en': 'Weight',
+      'ar': '',
+      'fr': '',
+    },
+    'h7e78el4': {
+      'en': 'Boby Mass Index',
+      'ar': '',
+      'fr': '',
+    },
+    'e52c0o31': {
+      'en': 'Heart Rate',
+      'ar': '',
+      'fr': '',
+    },
+    'r60wi047': {
+      'en': 'Body Temperature ',
+      'ar': '',
+      'fr': '',
+    },
+    'y9kutcef': {
+      'en': 'Blood Pressure (systolic)',
+      'ar': '',
+      'fr': '',
+    },
+    'xhtjnxrs': {
+      'en': 'Blood Pressure (diastolic)',
+      'ar': '',
+      'fr': '',
+    },
+    'uxipg1au': {
+      'en': 'Total Cholesterol ',
+      'ar': '',
+      'fr': '',
+    },
+    '76qftugz': {
+      'en': 'LDL Cholesterol ',
+      'ar': '',
+      'fr': '',
+    },
+    'qqy5nclc': {
+      'en': 'HDL Cholesterol ',
+      'ar': '',
+      'fr': '',
+    },
+    '8cwiiwg3': {
+      'en': 'Triglycerides ',
+      'ar': '',
+      'fr': '',
+    },
+    'byo1wxha': {
+      'en': 'Total Cholesterol and HDL Ratio',
+      'ar': '',
+      'fr': '',
+    },
+    'gz2tbhrb': {
+      'en': 'Glucose',
+      'ar': '',
+      'fr': '',
+    },
+    'nvnqhu14': {
+      'en': 'Waist Circumference ',
+      'ar': '',
+      'fr': '',
+    },
+    '5ucvnpbl': {
+      'en': 'Add',
+      'ar': 'تسجيل خروج',
+      'fr': 'Se déconnecter',
     },
   },
   // Miscellaneous

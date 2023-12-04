@@ -228,7 +228,10 @@ class _EmergencyProfieMauvaisWidgetState
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Text(
-                                '${containerNameMedicalProfilRecord?.name?.id} ${containerNameMedicalProfilRecord?.surname?.id}',
+                                valueOrDefault<String>(
+                                  containerNameMedicalProfilRecord?.fullName,
+                                  'N/A',
+                                ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
                             ),
@@ -277,7 +280,7 @@ class _EmergencyProfieMauvaisWidgetState
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onLongPress: () async {
-                        await containerBirthdayMedicalProfilRecord.reference
+                        await containerBirthdayMedicalProfilRecord!.reference
                             .update(createMedicalProfilRecordData(
                           birthDate:
                               containerBirthdayMedicalProfilRecord.birthDate,
@@ -312,12 +315,10 @@ class _EmergencyProfieMauvaisWidgetState
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
                               child: Text(
-                                dateTimeFormat(
-                                  'd/M/y',
-                                  containerBirthdayMedicalProfilRecord!
-                                      .birthDate!,
-                                  locale:
-                                      FFLocalizations.of(context).languageCode,
+                                valueOrDefault<String>(
+                                  containerBirthdayMedicalProfilRecord
+                                      ?.birthDate,
+                                  '30/09/2002',
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
@@ -401,7 +402,7 @@ class _EmergencyProfieMauvaisWidgetState
                                   0.0, 5.0, 0.0, 0.0),
                               child: Text(
                                 valueOrDefault<String>(
-                                  containeSexMedicalProfilRecord?.userSex?.id,
+                                  containeSexMedicalProfilRecord?.userSex,
                                   'Male',
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
@@ -490,7 +491,7 @@ class _EmergencyProfieMauvaisWidgetState
                                 valueOrDefault<String>(
                                   containerBloodGroupMedicalProfilRecord
                                       ?.bloodType,
-                                  'Male',
+                                  'AB+',
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
@@ -578,7 +579,7 @@ class _EmergencyProfieMauvaisWidgetState
                                 valueOrDefault<String>(
                                   containerAllergiesMedicalProfilRecord
                                       ?.allergies,
-                                  'Male',
+                                  'N/A',
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
@@ -666,7 +667,7 @@ class _EmergencyProfieMauvaisWidgetState
                                 valueOrDefault<String>(
                                   containerMedicationsMedicalProfilRecord
                                       ?.medications,
-                                  'Male',
+                                  'N/A',
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
@@ -754,7 +755,7 @@ class _EmergencyProfieMauvaisWidgetState
                                 valueOrDefault<String>(
                                   containerTreatmentsMedicalProfilRecord
                                       ?.medications,
-                                  'Male',
+                                  'N/A',
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),

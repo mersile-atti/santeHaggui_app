@@ -37,7 +37,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
     authManager.handlePhoneAuthStateChanges(context);
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
           _model.textController1?.text = FFLocalizations.of(context).getText(
-            'afwa09y2' /* India */,
+            '6r93yn2z' /* India */,
           );
         }));
   }
@@ -374,7 +374,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                                   text: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                'afwa09y2' /* India */,
+                                                '6r93yn2z' /* India */,
                                               )),
                                               optionsBuilder:
                                                   (textEditingValue) {
@@ -460,7 +460,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'kzwjx8sp' /* Enter country name */,
+                                                      'bfx2xl0e' /* Enter country name */,
                                                     ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
@@ -613,7 +613,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                               hintText:
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                'tqp40ne4' /* Enter your mobile number */,
+                                                'uogevi2i' /* Enter your mobile number */,
                                               ),
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
@@ -734,7 +734,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'qggz4uec' /* Get OTP */,
+                                            'sbvnh85q' /* Get OTP */,
                                           ),
                                           options: FFButtonOptions(
                                             width: 300.0,

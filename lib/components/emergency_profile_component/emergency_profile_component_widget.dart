@@ -1,9 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
 import '/update_emergency_profile_components/update_medicale_profil_address_component/update_medicale_profil_address_component_widget.dart';
 import '/update_emergency_profile_components/update_medicale_profil_allergies_component/update_medicale_profil_allergies_component_widget.dart';
 import '/update_emergency_profile_components/update_medicale_profil_emergency_contact_component/update_medicale_profil_emergency_contact_component_widget.dart';
@@ -113,18 +115,6 @@ class _EmergencyProfileComponentWidgetState
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      width: 50.0,
-                      height: 50.0,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
-                      child: Image.network(
-                        'https://picsum.photos/seed/919/600',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -140,6 +130,112 @@ class _EmergencyProfileComponentWidgetState
                         ),
                       ],
                     ),
+                    StreamBuilder<List<MedicalProfilRecord>>(
+                      stream: queryMedicalProfilRecord(
+                        singleRecord: true,
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                        List<MedicalProfilRecord>
+                            containerMedicalProfilRecordList = snapshot.data!;
+                        // Return an empty Container when the item does not exist.
+                        if (snapshot.data!.isEmpty) {
+                          return Container();
+                        }
+                        final containerMedicalProfilRecord =
+                            containerMedicalProfilRecordList.isNotEmpty
+                                ? containerMedicalProfilRecordList.first
+                                : null;
+                        return InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            final selectedMedia =
+                                await selectMediaWithSourceBottomSheet(
+                              context: context,
+                              allowPhoto: true,
+                            );
+                            if (selectedMedia != null &&
+                                selectedMedia.every((m) => validateFileFormat(
+                                    m.storagePath, context))) {
+                              setState(() => _model.isDataUploading = true);
+                              var selectedUploadedFiles = <FFUploadedFile>[];
+
+                              var downloadUrls = <String>[];
+                              try {
+                                selectedUploadedFiles = selectedMedia
+                                    .map((m) => FFUploadedFile(
+                                          name: m.storagePath.split('/').last,
+                                          bytes: m.bytes,
+                                          height: m.dimensions?.height,
+                                          width: m.dimensions?.width,
+                                          blurHash: m.blurHash,
+                                        ))
+                                    .toList();
+
+                                downloadUrls = (await Future.wait(
+                                  selectedMedia.map(
+                                    (m) async => await uploadData(
+                                        m.storagePath, m.bytes),
+                                  ),
+                                ))
+                                    .where((u) => u != null)
+                                    .map((u) => u!)
+                                    .toList();
+                              } finally {
+                                _model.isDataUploading = false;
+                              }
+                              if (selectedUploadedFiles.length ==
+                                      selectedMedia.length &&
+                                  downloadUrls.length == selectedMedia.length) {
+                                setState(() {
+                                  _model.uploadedLocalFile =
+                                      selectedUploadedFiles.first;
+                                  _model.uploadedFileUrl = downloadUrls.first;
+                                });
+                              } else {
+                                setState(() {});
+                                return;
+                              }
+                            }
+                          },
+                          child: Container(
+                            width: 100.0,
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              color:
+                                  FlutterFlowTheme.of(context).primaryBtnText,
+                              image: DecorationImage(
+                                fit: BoxFit.contain,
+                                image: Image.network(
+                                  containerMedicalProfilRecord!.photoUrl,
+                                ).image,
+                              ),
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                width: 2.0,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
                 Column(
@@ -149,8 +245,8 @@ class _EmergencyProfileComponentWidgetState
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
-                      child: StreamBuilder<List<UsersRecord>>(
-                        stream: queryUsersRecord(
+                      child: StreamBuilder<List<MedicalProfilRecord>>(
+                        stream: queryMedicalProfilRecord(
                           singleRecord: true,
                         ),
                         builder: (context, snapshot) {
@@ -168,15 +264,16 @@ class _EmergencyProfileComponentWidgetState
                               ),
                             );
                           }
-                          List<UsersRecord> contentView1UsersRecordList =
+                          List<MedicalProfilRecord>
+                              contentView1MedicalProfilRecordList =
                               snapshot.data!;
                           // Return an empty Container when the item does not exist.
                           if (snapshot.data!.isEmpty) {
                             return Container();
                           }
-                          final contentView1UsersRecord =
-                              contentView1UsersRecordList.isNotEmpty
-                                  ? contentView1UsersRecordList.first
+                          final contentView1MedicalProfilRecord =
+                              contentView1MedicalProfilRecordList.isNotEmpty
+                                  ? contentView1MedicalProfilRecordList.first
                                   : null;
                           return InkWell(
                             splashColor: Colors.transparent,
@@ -243,7 +340,8 @@ class _EmergencyProfileComponentWidgetState
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
-                                          contentView1UsersRecord?.name,
+                                          contentView1MedicalProfilRecord
+                                              ?.fullName,
                                           'N/A',
                                         ),
                                         style: FlutterFlowTheme.of(context)
@@ -363,8 +461,7 @@ class _EmergencyProfileComponentWidgetState
                                       child: Text(
                                         valueOrDefault<String>(
                                           contentView1MedicalProfilRecord
-                                              ?.birthDate
-                                              ?.toString(),
+                                              ?.birthDate,
                                           'N/A',
                                         ),
                                         style: FlutterFlowTheme.of(context)

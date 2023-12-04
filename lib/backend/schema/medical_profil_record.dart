@@ -24,11 +24,6 @@ class MedicalProfilRecord extends FirestoreRecord {
   String get medicalCondition => _medicalCondition ?? '';
   bool hasMedicalCondition() => _medicalCondition != null;
 
-  // "birthDate" field.
-  DateTime? _birthDate;
-  DateTime? get birthDate => _birthDate;
-  bool hasBirthDate() => _birthDate != null;
-
   // "height" field.
   double? _height;
   double get height => _height ?? 0.0;
@@ -58,21 +53,6 @@ class MedicalProfilRecord extends FirestoreRecord {
   String? _medicalNotes;
   String get medicalNotes => _medicalNotes ?? '';
   bool hasMedicalNotes() => _medicalNotes != null;
-
-  // "name" field.
-  DocumentReference? _name;
-  DocumentReference? get name => _name;
-  bool hasName() => _name != null;
-
-  // "surname" field.
-  DocumentReference? _surname;
-  DocumentReference? get surname => _surname;
-  bool hasSurname() => _surname != null;
-
-  // "userSex" field.
-  DocumentReference? _userSex;
-  DocumentReference? get userSex => _userSex;
-  bool hasUserSex() => _userSex != null;
 
   // "adress" field.
   String? _adress;
@@ -129,19 +109,55 @@ class MedicalProfilRecord extends FirestoreRecord {
   String get emergencyContactRelanship => _emergencyContactRelanship ?? '';
   bool hasEmergencyContactRelanship() => _emergencyContactRelanship != null;
 
+  // "photo_url" field.
+  String? _photoUrl;
+  String get photoUrl => _photoUrl ?? '';
+  bool hasPhotoUrl() => _photoUrl != null;
+
+  // "birthDate" field.
+  String? _birthDate;
+  String get birthDate => _birthDate ?? '';
+  bool hasBirthDate() => _birthDate != null;
+
+  // "userName" field.
+  String? _userName;
+  String get userName => _userName ?? '';
+  bool hasUserName() => _userName != null;
+
+  // "fullName" field.
+  String? _fullName;
+  String get fullName => _fullName ?? '';
+  bool hasFullName() => _fullName != null;
+
+  // "userSex" field.
+  String? _userSex;
+  String get userSex => _userSex ?? '';
+  bool hasUserSex() => _userSex != null;
+
+  // "email" field.
+  String? _email;
+  String get email => _email ?? '';
+  bool hasEmail() => _email != null;
+
+  // "password" field.
+  String? _password;
+  String get password => _password ?? '';
+  bool hasPassword() => _password != null;
+
+  // "confirmPassword" field.
+  String? _confirmPassword;
+  String get confirmPassword => _confirmPassword ?? '';
+  bool hasConfirmPassword() => _confirmPassword != null;
+
   void _initializeFields() {
     _doctor = snapshotData['doctor'] as DocumentReference?;
     _medicalCondition = snapshotData['medicalCondition'] as String?;
-    _birthDate = snapshotData['birthDate'] as DateTime?;
     _height = castToType<double>(snapshotData['height']);
     _weight = castToType<double>(snapshotData['weight']);
     _bloodType = snapshotData['bloodType'] as String?;
     _allergies = snapshotData['allergies'] as String?;
     _medications = snapshotData['medications'] as String?;
     _medicalNotes = snapshotData['medicalNotes'] as String?;
-    _name = snapshotData['name'] as DocumentReference?;
-    _surname = snapshotData['surname'] as DocumentReference?;
-    _userSex = snapshotData['userSex'] as DocumentReference?;
     _adress = snapshotData['adress'] as String?;
     _city = snapshotData['city'] as String?;
     _country = snapshotData['country'] as String?;
@@ -157,6 +173,14 @@ class MedicalProfilRecord extends FirestoreRecord {
         snapshotData['emergencyContactAddress'] as String?;
     _emergencyContactRelanship =
         snapshotData['emergencyContactRelanship'] as String?;
+    _photoUrl = snapshotData['photo_url'] as String?;
+    _birthDate = snapshotData['birthDate'] as String?;
+    _userName = snapshotData['userName'] as String?;
+    _fullName = snapshotData['fullName'] as String?;
+    _userSex = snapshotData['userSex'] as String?;
+    _email = snapshotData['email'] as String?;
+    _password = snapshotData['password'] as String?;
+    _confirmPassword = snapshotData['confirmPassword'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -196,16 +220,12 @@ class MedicalProfilRecord extends FirestoreRecord {
 Map<String, dynamic> createMedicalProfilRecordData({
   DocumentReference? doctor,
   String? medicalCondition,
-  DateTime? birthDate,
   double? height,
   double? weight,
   String? bloodType,
   String? allergies,
   String? medications,
   String? medicalNotes,
-  DocumentReference? name,
-  DocumentReference? surname,
-  DocumentReference? userSex,
   String? adress,
   String? city,
   String? country,
@@ -217,21 +237,25 @@ Map<String, dynamic> createMedicalProfilRecordData({
   String? emergencyContactPhoneNumber,
   String? emergencyContactAddress,
   String? emergencyContactRelanship,
+  String? photoUrl,
+  String? birthDate,
+  String? userName,
+  String? fullName,
+  String? userSex,
+  String? email,
+  String? password,
+  String? confirmPassword,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'doctor': doctor,
       'medicalCondition': medicalCondition,
-      'birthDate': birthDate,
       'height': height,
       'weight': weight,
       'bloodType': bloodType,
       'allergies': allergies,
       'medications': medications,
       'medicalNotes': medicalNotes,
-      'name': name,
-      'surname': surname,
-      'userSex': userSex,
       'adress': adress,
       'city': city,
       'country': country,
@@ -243,6 +267,14 @@ Map<String, dynamic> createMedicalProfilRecordData({
       'emergencyContactPhoneNumber': emergencyContactPhoneNumber,
       'emergencyContactAddress': emergencyContactAddress,
       'emergencyContactRelanship': emergencyContactRelanship,
+      'photo_url': photoUrl,
+      'birthDate': birthDate,
+      'userName': userName,
+      'fullName': fullName,
+      'userSex': userSex,
+      'email': email,
+      'password': password,
+      'confirmPassword': confirmPassword,
     }.withoutNulls,
   );
 
@@ -257,16 +289,12 @@ class MedicalProfilRecordDocumentEquality
   bool equals(MedicalProfilRecord? e1, MedicalProfilRecord? e2) {
     return e1?.doctor == e2?.doctor &&
         e1?.medicalCondition == e2?.medicalCondition &&
-        e1?.birthDate == e2?.birthDate &&
         e1?.height == e2?.height &&
         e1?.weight == e2?.weight &&
         e1?.bloodType == e2?.bloodType &&
         e1?.allergies == e2?.allergies &&
         e1?.medications == e2?.medications &&
         e1?.medicalNotes == e2?.medicalNotes &&
-        e1?.name == e2?.name &&
-        e1?.surname == e2?.surname &&
-        e1?.userSex == e2?.userSex &&
         e1?.adress == e2?.adress &&
         e1?.city == e2?.city &&
         e1?.country == e2?.country &&
@@ -277,23 +305,27 @@ class MedicalProfilRecordDocumentEquality
         e1?.emergencyContact == e2?.emergencyContact &&
         e1?.emergencyContactPhoneNumber == e2?.emergencyContactPhoneNumber &&
         e1?.emergencyContactAddress == e2?.emergencyContactAddress &&
-        e1?.emergencyContactRelanship == e2?.emergencyContactRelanship;
+        e1?.emergencyContactRelanship == e2?.emergencyContactRelanship &&
+        e1?.photoUrl == e2?.photoUrl &&
+        e1?.birthDate == e2?.birthDate &&
+        e1?.userName == e2?.userName &&
+        e1?.fullName == e2?.fullName &&
+        e1?.userSex == e2?.userSex &&
+        e1?.email == e2?.email &&
+        e1?.password == e2?.password &&
+        e1?.confirmPassword == e2?.confirmPassword;
   }
 
   @override
   int hash(MedicalProfilRecord? e) => const ListEquality().hash([
         e?.doctor,
         e?.medicalCondition,
-        e?.birthDate,
         e?.height,
         e?.weight,
         e?.bloodType,
         e?.allergies,
         e?.medications,
         e?.medicalNotes,
-        e?.name,
-        e?.surname,
-        e?.userSex,
         e?.adress,
         e?.city,
         e?.country,
@@ -304,7 +336,15 @@ class MedicalProfilRecordDocumentEquality
         e?.emergencyContact,
         e?.emergencyContactPhoneNumber,
         e?.emergencyContactAddress,
-        e?.emergencyContactRelanship
+        e?.emergencyContactRelanship,
+        e?.photoUrl,
+        e?.birthDate,
+        e?.userName,
+        e?.fullName,
+        e?.userSex,
+        e?.email,
+        e?.password,
+        e?.confirmPassword
       ]);
 
   @override

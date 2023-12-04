@@ -338,7 +338,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               controller: _model.textController,
                                               focusNode:
                                                   _model.textFieldFocusNode,
-                                              autofocus: true,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 labelStyle:

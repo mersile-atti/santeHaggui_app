@@ -8,10 +8,19 @@ class CompleteProfilePageModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
   // State field(s) for yourName widget.
   FocusNode? yourNameFocusNode;
   TextEditingController? yourNameController;
   String? Function(BuildContext, String?)? yourNameControllerValidator;
+  // State field(s) for yourUsername widget.
+  FocusNode? yourUsernameFocusNode;
+  TextEditingController? yourUsernameController;
+  String? Function(BuildContext, String?)? yourUsernameControllerValidator;
   // State field(s) for yourEmail widget.
   FocusNode? yourEmailFocusNode;
   TextEditingController? yourEmailController;
@@ -26,14 +35,13 @@ class CompleteProfilePageModel
   TextEditingController? confirmPasswordController;
   late bool confirmPasswordVisibility;
   String? Function(BuildContext, String?)? confirmPasswordControllerValidator;
-  // State field(s) for yourAge widget.
-  FocusNode? yourAgeFocusNode;
-  TextEditingController? yourAgeController;
-  String? Function(BuildContext, String?)? yourAgeControllerValidator;
-  // State field(s) for ailments widget.
-  FocusNode? ailmentsFocusNode;
-  TextEditingController? ailmentsController;
-  String? Function(BuildContext, String?)? ailmentsControllerValidator;
+  // State field(s) for yourBirthhday widget.
+  FocusNode? yourBirthhdayFocusNode;
+  TextEditingController? yourBirthhdayController;
+  String? Function(BuildContext, String?)? yourBirthhdayControllerValidator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
 
@@ -51,6 +59,9 @@ class CompleteProfilePageModel
     yourNameFocusNode?.dispose();
     yourNameController?.dispose();
 
+    yourUsernameFocusNode?.dispose();
+    yourUsernameController?.dispose();
+
     yourEmailFocusNode?.dispose();
     yourEmailController?.dispose();
 
@@ -60,11 +71,8 @@ class CompleteProfilePageModel
     confirmPasswordFocusNode?.dispose();
     confirmPasswordController?.dispose();
 
-    yourAgeFocusNode?.dispose();
-    yourAgeController?.dispose();
-
-    ailmentsFocusNode?.dispose();
-    ailmentsController?.dispose();
+    yourBirthhdayFocusNode?.dispose();
+    yourBirthhdayController?.dispose();
   }
 
   /// Action blocks are added here.
