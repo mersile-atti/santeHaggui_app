@@ -218,7 +218,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                     decoration: BoxDecoration(
                                       color: const Color(0x66249689),
                                       image: DecorationImage(
-                                        fit: BoxFit.cover,
+                                        fit: BoxFit.contain,
                                         image: Image.network(
                                           containerMedicalProfilRecord!
                                               .photoUrl,
@@ -333,7 +333,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                               0.0, 5.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
@@ -441,7 +441,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                               0.0, 5.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(

@@ -210,6 +210,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .primaryBackground,
+                                                        fontSize: 18.0,
                                                       ),
                                             ),
                                           ],
@@ -277,6 +278,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
+                                                          fontSize: 14.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
@@ -443,44 +445,51 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                           ),
-                          child: ListView(
-                            padding: EdgeInsets.zero,
-                            scrollDirection: Axis.horizontal,
-                            children: [
-                              Container(
-                                width: 100.0,
-                                height: 100.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          'https://picsum.photos/seed/978/600',
-                                          width: 100.0,
-                                          height: 100.0,
-                                          fit: BoxFit.cover,
-                                        ),
+                          child: Align(
+                            alignment: const AlignmentDirectional(0.00, 0.00),
+                            child: ListView(
+                              padding: EdgeInsets.zero,
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                Container(
+                                  width: 100.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 0.0, 0.0),
+                                    child: SingleChildScrollView(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              'https://picsum.photos/seed/978/600',
+                                              width: 100.0,
+                                              height: 100.0,
+                                              fit: BoxFit.cover,
+                                              alignment: const Alignment(0.00, -1.00),
+                                            ),
+                                          ),
+                                          Text(
+                                            'Hello World',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
+                                          ),
+                                        ],
                                       ),
-                                      Text(
-                                        'Hello World',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ],

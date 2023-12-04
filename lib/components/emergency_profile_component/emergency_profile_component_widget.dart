@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -105,7 +104,7 @@ class _EmergencyProfileComponentWidgetState
             borderRadius: BorderRadius.circular(0.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -209,8 +208,8 @@ class _EmergencyProfileComponentWidgetState
                                 }
                               },
                               child: Container(
-                                width: 100.0,
-                                height: 100.0,
+                                width: 75.0,
+                                height: 75.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBtnText,
@@ -233,10 +232,6 @@ class _EmergencyProfileComponentWidgetState
                         ),
                         Text(
                           'UMI',
-                          style: FlutterFlowTheme.of(context).bodyMedium,
-                        ),
-                        Text(
-                          currentUserUid,
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                       ],
@@ -312,7 +307,7 @@ class _EmergencyProfileComponentWidgetState
                                     offset: Offset(0.0, 1.0),
                                   )
                                 ],
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(0.0),
                                 shape: BoxShape.rectangle,
                               ),
                               child: Padding(
@@ -333,7 +328,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -352,7 +347,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -430,7 +425,7 @@ class _EmergencyProfileComponentWidgetState
                                     offset: Offset(0.0, 1.0),
                                   )
                                 ],
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(0.0),
                                 shape: BoxShape.rectangle,
                               ),
                               child: Padding(
@@ -451,7 +446,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -470,7 +465,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -547,7 +542,7 @@ class _EmergencyProfileComponentWidgetState
                                     offset: Offset(0.0, 1.0),
                                   )
                                 ],
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(0.0),
                                 shape: BoxShape.rectangle,
                               ),
                               child: Padding(
@@ -568,7 +563,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -586,7 +581,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -664,7 +659,7 @@ class _EmergencyProfileComponentWidgetState
                                     offset: Offset(0.0, 1.0),
                                   )
                                 ],
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(0.0),
                                 shape: BoxShape.rectangle,
                               ),
                               child: Padding(
@@ -685,7 +680,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -704,7 +699,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -782,7 +777,7 @@ class _EmergencyProfileComponentWidgetState
                                     offset: Offset(0.0, 1.0),
                                   )
                                 ],
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(0.0),
                                 shape: BoxShape.rectangle,
                               ),
                               child: Padding(
@@ -803,7 +798,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -822,7 +817,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -900,7 +895,7 @@ class _EmergencyProfileComponentWidgetState
                                     offset: Offset(0.0, 1.0),
                                   )
                                 ],
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(0.0),
                                 shape: BoxShape.rectangle,
                               ),
                               child: Padding(
@@ -921,7 +916,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -940,7 +935,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1018,7 +1013,7 @@ class _EmergencyProfileComponentWidgetState
                                     offset: Offset(0.0, 1.0),
                                   )
                                 ],
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(0.0),
                                 shape: BoxShape.rectangle,
                               ),
                               child: Padding(
@@ -1039,7 +1034,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1058,7 +1053,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1136,7 +1131,7 @@ class _EmergencyProfileComponentWidgetState
                                     offset: Offset(0.0, 1.0),
                                   )
                                 ],
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(0.0),
                                 shape: BoxShape.rectangle,
                               ),
                               child: Padding(
@@ -1157,7 +1152,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1172,7 +1167,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1187,7 +1182,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1265,7 +1260,7 @@ class _EmergencyProfileComponentWidgetState
                                     offset: Offset(0.0, 1.0),
                                   )
                                 ],
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(0.0),
                                 shape: BoxShape.rectangle,
                               ),
                               child: Padding(
@@ -1286,7 +1281,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1301,7 +1296,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1316,7 +1311,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 16.0,
+                                              fontSize: 14.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
