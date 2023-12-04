@@ -178,18 +178,61 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
-                              child: Container(
-                                width: 90.0,
-                                height: 90.0,
-                                decoration: BoxDecoration(
-                                  color: const Color(0x66249689),
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: const Color(0xFF39D2C0),
-                                    width: 2.0,
-                                  ),
+                              child: StreamBuilder<List<MedicalProfilRecord>>(
+                                stream: queryMedicalProfilRecord(
+                                  singleRecord: true,
                                 ),
-                                alignment: const AlignmentDirectional(0.00, 0.00),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  List<MedicalProfilRecord>
+                                      containerMedicalProfilRecordList =
+                                      snapshot.data!;
+                                  // Return an empty Container when the item does not exist.
+                                  if (snapshot.data!.isEmpty) {
+                                    return Container();
+                                  }
+                                  final containerMedicalProfilRecord =
+                                      containerMedicalProfilRecordList
+                                              .isNotEmpty
+                                          ? containerMedicalProfilRecordList
+                                              .first
+                                          : null;
+                                  return Container(
+                                    width: 90.0,
+                                    height: 90.0,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0x66249689),
+                                      image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: Image.network(
+                                          containerMedicalProfilRecord!
+                                              .photoUrl,
+                                        ).image,
+                                      ),
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: const Color(0xFF39D2C0),
+                                        width: 2.0,
+                                      ),
+                                    ),
+                                    alignment: const AlignmentDirectional(0.00, 0.00),
+                                  );
+                                },
                               ),
                             ),
                             StreamBuilder<List<MedicalProfilRecord>>(
@@ -269,7 +312,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 15.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 15.0, 5.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         height: 60.0,
@@ -377,7 +420,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         height: 60.0,
@@ -453,7 +496,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,

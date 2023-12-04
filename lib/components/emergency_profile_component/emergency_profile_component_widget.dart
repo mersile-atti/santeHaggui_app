@@ -118,6 +118,119 @@ class _EmergencyProfileComponentWidgetState
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
+                        StreamBuilder<List<MedicalProfilRecord>>(
+                          stream: queryMedicalProfilRecord(
+                            singleRecord: true,
+                          ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).primary,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }
+                            List<MedicalProfilRecord>
+                                containerMedicalProfilRecordList =
+                                snapshot.data!;
+                            // Return an empty Container when the item does not exist.
+                            if (snapshot.data!.isEmpty) {
+                              return Container();
+                            }
+                            final containerMedicalProfilRecord =
+                                containerMedicalProfilRecordList.isNotEmpty
+                                    ? containerMedicalProfilRecordList.first
+                                    : null;
+                            return InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                final selectedMedia =
+                                    await selectMediaWithSourceBottomSheet(
+                                  context: context,
+                                  allowPhoto: true,
+                                );
+                                if (selectedMedia != null &&
+                                    selectedMedia.every((m) =>
+                                        validateFileFormat(
+                                            m.storagePath, context))) {
+                                  setState(() => _model.isDataUploading = true);
+                                  var selectedUploadedFiles =
+                                      <FFUploadedFile>[];
+
+                                  var downloadUrls = <String>[];
+                                  try {
+                                    selectedUploadedFiles = selectedMedia
+                                        .map((m) => FFUploadedFile(
+                                              name:
+                                                  m.storagePath.split('/').last,
+                                              bytes: m.bytes,
+                                              height: m.dimensions?.height,
+                                              width: m.dimensions?.width,
+                                              blurHash: m.blurHash,
+                                            ))
+                                        .toList();
+
+                                    downloadUrls = (await Future.wait(
+                                      selectedMedia.map(
+                                        (m) async => await uploadData(
+                                            m.storagePath, m.bytes),
+                                      ),
+                                    ))
+                                        .where((u) => u != null)
+                                        .map((u) => u!)
+                                        .toList();
+                                  } finally {
+                                    _model.isDataUploading = false;
+                                  }
+                                  if (selectedUploadedFiles.length ==
+                                          selectedMedia.length &&
+                                      downloadUrls.length ==
+                                          selectedMedia.length) {
+                                    setState(() {
+                                      _model.uploadedLocalFile =
+                                          selectedUploadedFiles.first;
+                                      _model.uploadedFileUrl =
+                                          downloadUrls.first;
+                                    });
+                                  } else {
+                                    setState(() {});
+                                    return;
+                                  }
+                                }
+                              },
+                              child: Container(
+                                width: 100.0,
+                                height: 100.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBtnText,
+                                  image: DecorationImage(
+                                    fit: BoxFit.contain,
+                                    image: Image.network(
+                                      containerMedicalProfilRecord!.photoUrl,
+                                    ).image,
+                                  ),
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    width: 2.0,
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        ),
                         Text(
                           'UMI',
                           style: FlutterFlowTheme.of(context).bodyMedium,
@@ -128,112 +241,6 @@ class _EmergencyProfileComponentWidgetState
                         ),
                       ],
                     ),
-                    StreamBuilder<List<MedicalProfilRecord>>(
-                      stream: queryMedicalProfilRecord(
-                        singleRecord: true,
-                      ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                            ),
-                          );
-                        }
-                        List<MedicalProfilRecord>
-                            containerMedicalProfilRecordList = snapshot.data!;
-                        // Return an empty Container when the item does not exist.
-                        if (snapshot.data!.isEmpty) {
-                          return Container();
-                        }
-                        final containerMedicalProfilRecord =
-                            containerMedicalProfilRecordList.isNotEmpty
-                                ? containerMedicalProfilRecordList.first
-                                : null;
-                        return InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            final selectedMedia =
-                                await selectMediaWithSourceBottomSheet(
-                              context: context,
-                              allowPhoto: true,
-                            );
-                            if (selectedMedia != null &&
-                                selectedMedia.every((m) => validateFileFormat(
-                                    m.storagePath, context))) {
-                              setState(() => _model.isDataUploading = true);
-                              var selectedUploadedFiles = <FFUploadedFile>[];
-
-                              var downloadUrls = <String>[];
-                              try {
-                                selectedUploadedFiles = selectedMedia
-                                    .map((m) => FFUploadedFile(
-                                          name: m.storagePath.split('/').last,
-                                          bytes: m.bytes,
-                                          height: m.dimensions?.height,
-                                          width: m.dimensions?.width,
-                                          blurHash: m.blurHash,
-                                        ))
-                                    .toList();
-
-                                downloadUrls = (await Future.wait(
-                                  selectedMedia.map(
-                                    (m) async => await uploadData(
-                                        m.storagePath, m.bytes),
-                                  ),
-                                ))
-                                    .where((u) => u != null)
-                                    .map((u) => u!)
-                                    .toList();
-                              } finally {
-                                _model.isDataUploading = false;
-                              }
-                              if (selectedUploadedFiles.length ==
-                                      selectedMedia.length &&
-                                  downloadUrls.length == selectedMedia.length) {
-                                setState(() {
-                                  _model.uploadedLocalFile =
-                                      selectedUploadedFiles.first;
-                                  _model.uploadedFileUrl = downloadUrls.first;
-                                });
-                              } else {
-                                setState(() {});
-                                return;
-                              }
-                            }
-                          },
-                          child: Container(
-                            width: 100.0,
-                            height: 100.0,
-                            decoration: BoxDecoration(
-                              color:
-                                  FlutterFlowTheme.of(context).primaryBtnText,
-                              image: DecorationImage(
-                                fit: BoxFit.contain,
-                                image: Image.network(
-                                  containerMedicalProfilRecord!.photoUrl,
-                                ).image,
-                              ),
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                width: 2.0,
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
                   ],
                 ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
                 Column(
@@ -242,7 +249,7 @@ class _EmergencyProfileComponentWidgetState
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                       child: StreamBuilder<List<MedicalProfilRecord>>(
                         stream: queryMedicalProfilRecord(
                           singleRecord: true,
@@ -360,7 +367,7 @@ class _EmergencyProfileComponentWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                       child: StreamBuilder<List<MedicalProfilRecord>>(
                         stream: queryMedicalProfilRecord(
                           singleRecord: true,
@@ -478,7 +485,7 @@ class _EmergencyProfileComponentWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                       child: StreamBuilder<List<UsersRecord>>(
                         stream: queryUsersRecord(
                           singleRecord: true,
@@ -594,7 +601,7 @@ class _EmergencyProfileComponentWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                       child: StreamBuilder<List<MedicalProfilRecord>>(
                         stream: queryMedicalProfilRecord(
                           singleRecord: true,
@@ -712,7 +719,7 @@ class _EmergencyProfileComponentWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                       child: StreamBuilder<List<MedicalProfilRecord>>(
                         stream: queryMedicalProfilRecord(
                           singleRecord: true,
@@ -830,7 +837,7 @@ class _EmergencyProfileComponentWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                       child: StreamBuilder<List<MedicalProfilRecord>>(
                         stream: queryMedicalProfilRecord(
                           singleRecord: true,
@@ -948,7 +955,7 @@ class _EmergencyProfileComponentWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                       child: StreamBuilder<List<MedicalProfilRecord>>(
                         stream: queryMedicalProfilRecord(
                           singleRecord: true,
@@ -1066,7 +1073,7 @@ class _EmergencyProfileComponentWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                       child: StreamBuilder<List<MedicalProfilRecord>>(
                         stream: queryMedicalProfilRecord(
                           singleRecord: true,
@@ -1195,7 +1202,7 @@ class _EmergencyProfileComponentWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                       child: StreamBuilder<List<MedicalProfilRecord>>(
                         stream: queryMedicalProfilRecord(
                           singleRecord: true,

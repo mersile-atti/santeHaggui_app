@@ -132,7 +132,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  10.0,
                                                                   0.0),
                                                       child: Text(
                                                         'Emergency Medical Profile',
@@ -144,7 +144,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Plus Jakarta Sans',
                                                               color: const Color(
                                                                   0xFF57636C),
-                                                              fontSize: 18.0,
+                                                              fontSize: 16.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -224,52 +224,57 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                               controller:
                                                   _model.expandableController2,
                                               child: ExpandablePanel(
-                                                header: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    const Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  16.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: FaIcon(
-                                                        FontAwesomeIcons
-                                                            .chartBar,
-                                                        color:
-                                                            Color(0xFF57636C),
-                                                        size: 24.0,
+                                                header: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 16.0, 0.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      const Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: FaIcon(
+                                                          FontAwesomeIcons
+                                                              .chartBar,
+                                                          color:
+                                                              Color(0xFF57636C),
+                                                          size: 24.0,
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  10.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Text(
-                                                        'Health Metrics',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .labelMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Plus Jakarta Sans',
-                                                              color: const Color(
-                                                                  0xFF57636C),
-                                                              fontSize: 18.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                            ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          'Health Metrics',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Plus Jakarta Sans',
+                                                                color: const Color(
+                                                                    0xFF57636C),
+                                                                fontSize: 18.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                              ),
+                                                        ),
                                                       ),
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
                                                 collapsed: Container(
                                                   width:
@@ -292,7 +297,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: Container(
                                                         width: double.infinity,
@@ -384,7 +389,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -516,7 +521,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -628,7 +633,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -740,7 +745,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -852,7 +857,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -964,7 +969,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -1076,7 +1081,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -1188,7 +1193,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -1300,7 +1305,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -1412,7 +1417,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -1524,7 +1529,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -1636,7 +1641,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -1748,7 +1753,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -1860,7 +1865,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
@@ -1972,7 +1977,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
-                                                                  0.0,
+                                                                  16.0,
                                                                   5.0),
                                                       child: StreamBuilder<
                                                           List<
