@@ -72,9 +72,7 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
         title: Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
           child: Text(
-            FFLocalizations.of(context).getText(
-              '3sv0n7bo' /* Back */,
-            ),
+            'Back',
             style: FlutterFlowTheme.of(context).displaySmall.override(
                   fontFamily: 'Outfit',
                   fontSize: 16.0,
@@ -129,9 +127,7 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'fs73sv2f' /* Back */,
-                            ),
+                            'Back',
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                         ),
@@ -142,9 +138,7 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                 child: Text(
-                  FFLocalizations.of(context).getText(
-                    '6ootrx7y' /* Forgot Password */,
-                  ),
+                  'Forgot Password',
                   style: FlutterFlowTheme.of(context).titleLarge.override(
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.bold,
@@ -154,9 +148,7 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                 child: Text(
-                  FFLocalizations.of(context).getText(
-                    'xlw0lupm' /* We will send you an email with... */,
-                  ),
+                  'We will send you an email with a link to reset your password, please enter the email associated with your account below.',
                   style: FlutterFlowTheme.of(context).labelMedium,
                 ),
               ),
@@ -170,13 +162,9 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
                     autofillHints: const [AutofillHints.email],
                     obscureText: false,
                     decoration: InputDecoration(
-                      labelText: FFLocalizations.of(context).getText(
-                        'pk2vsgej' /* Your email address... */,
-                      ),
+                      labelText: 'Your email address...',
                       labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                      hintText: FFLocalizations.of(context).getText(
-                        'diwtd0iu' /* Enter your email... */,
-                      ),
+                      hintText: 'Enter your email...',
                       hintStyle: FlutterFlowTheme.of(context).labelMedium,
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -237,9 +225,7 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
                             onPressed: () {
                               print('Button pressed ...');
                             },
-                            text: FFLocalizations.of(context).getText(
-                              'gvsl7abx' /* Send Link */,
-                            ),
+                            text: 'Send Link',
                             icon: const Icon(
                               Icons.arrow_forward,
                               size: 30.0,

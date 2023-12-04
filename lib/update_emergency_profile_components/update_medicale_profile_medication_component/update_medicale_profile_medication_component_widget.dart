@@ -105,9 +105,7 @@ class _UpdateMedicaleProfileMedicationComponentWidgetState
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 16.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'p12ve9o0' /* Edit  */,
-                            ),
+                            'Edit ',
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
@@ -185,10 +183,7 @@ class _UpdateMedicaleProfileMedicationComponentWidgetState
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '8azi7z70' /* Emergency Medical Profile */,
-                                                  ),
+                                                  'Emergency Medical Profile',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -505,9 +500,7 @@ class _UpdateMedicaleProfileMedicationComponentWidgetState
                                     ));
                                     Navigator.pop(context);
                                   },
-                                  text: FFLocalizations.of(context).getText(
-                                    '2wbzvjl7' /* Update */,
-                                  ),
+                                  text: 'Update',
                                   options: FFButtonOptions(
                                     width: 250.0,
                                     height: 56.0,

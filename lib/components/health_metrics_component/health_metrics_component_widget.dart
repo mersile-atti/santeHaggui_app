@@ -152,9 +152,7 @@ class _HealthMetricsComponentWidgetState
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
-                        FFLocalizations.of(context).getText(
-                          '5baxq7xx' /* Add your health metrics */,
-                        ),
+                        'Add your health metrics',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
                               fontSize: 18.0,
@@ -254,10 +252,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'g58stdz8' /* Blood Oxygen */,
-                                        ),
+                                        hintText: 'Blood Oxygen',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -315,10 +310,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'c0rnaroq' /* Height */,
-                                        ),
+                                        hintText: 'Height',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -381,10 +373,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          't8nxanme' /* Weight */,
-                                        ),
+                                        hintText: 'Weight',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -442,10 +431,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'h7e78el4' /* Boby Mass Index */,
-                                        ),
+                                        hintText: 'Boby Mass Index',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -503,10 +489,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'e52c0o31' /* Heart Rate */,
-                                        ),
+                                        hintText: 'Heart Rate',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -564,10 +547,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'r60wi047' /* Body Temperature  */,
-                                        ),
+                                        hintText: 'Body Temperature ',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -625,10 +605,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'y9kutcef' /* Blood Pressure (systolic) */,
-                                        ),
+                                        hintText: 'Blood Pressure (systolic)',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -686,10 +663,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'xhtjnxrs' /* Blood Pressure (diastolic) */,
-                                        ),
+                                        hintText: 'Blood Pressure (diastolic)',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -747,10 +721,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'uxipg1au' /* Total Cholesterol  */,
-                                        ),
+                                        hintText: 'Total Cholesterol ',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -808,10 +779,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          '76qftugz' /* LDL Cholesterol  */,
-                                        ),
+                                        hintText: 'LDL Cholesterol ',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -869,10 +837,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'qqy5nclc' /* HDL Cholesterol  */,
-                                        ),
+                                        hintText: 'HDL Cholesterol ',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -930,10 +895,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          '8cwiiwg3' /* Triglycerides  */,
-                                        ),
+                                        hintText: 'Triglycerides ',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -992,9 +954,7 @@ class _HealthMetricsComponentWidgetState
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'byo1wxha' /* Total Cholesterol and HDL Rati... */,
-                                        ),
+                                            'Total Cholesterol and HDL Ratio',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -1052,10 +1012,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'gz2tbhrb' /* Glucose */,
-                                        ),
+                                        hintText: 'Glucose',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -1113,10 +1070,7 @@ class _HealthMetricsComponentWidgetState
                                       decoration: InputDecoration(
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
-                                        hintText:
-                                            FFLocalizations.of(context).getText(
-                                          'nvnqhu14' /* Waist Circumference  */,
-                                        ),
+                                        hintText: 'Waist Circumference ',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         enabledBorder: OutlineInputBorder(
@@ -1276,11 +1230,7 @@ class _HealthMetricsComponentWidgetState
                                                     ));
                                                     Navigator.pop(context);
                                                   },
-                                                  text: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    '5ucvnpbl' /* Add */,
-                                                  ),
+                                                  text: 'Add',
                                                   options: FFButtonOptions(
                                                     width: 250.0,
                                                     height: 56.0,

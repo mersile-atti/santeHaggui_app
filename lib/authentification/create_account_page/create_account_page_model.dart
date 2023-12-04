@@ -14,9 +14,7 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
   String? Function(BuildContext, String?)? enterYourNameControllerValidator;
   String? _enterYourNameControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        '49m0j4yb' /* Field is required */,
-      );
+      return 'Field is required';
     }
 
     return null;
@@ -29,9 +27,7 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
   String? _enterYourEmailControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'if4j492e' /* Field is required */,
-      );
+      return 'Field is required';
     }
 
     return null;
@@ -45,9 +41,7 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
   String? _enterYourPhoneNumberControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'm47ymkif' /* Field is required */,
-      );
+      return 'Field is required';
     }
 
     return null;
@@ -63,9 +57,7 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
   String? Function(BuildContext, String?)? passwordFieldControllerValidator;
   String? _passwordFieldControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'wahd5pjz' /* Field is required */,
-      );
+      return 'Field is required';
     }
 
     if (val.length < 6) {
@@ -83,9 +75,7 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
   String? _confirmPasswordControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'snjartnf' /* Field is required */,
-      );
+      return 'Field is required';
     }
 
     if (val.length < 6) {

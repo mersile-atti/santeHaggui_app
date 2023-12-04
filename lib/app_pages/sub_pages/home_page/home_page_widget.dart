@@ -138,9 +138,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 ),
                               ),
                               Text(
-                                FFLocalizations.of(context).getText(
-                                  'oej4endn' /* SanteHaggui */,
-                                ),
+                                'SanteHaggui',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -203,10 +201,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'oazyhkmp' /* Good Morning */,
-                                              ),
+                                              'Good Morning',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .displaySmall
@@ -230,8 +225,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: StreamBuilder<
-                                                  List<UsersRecord>>(
-                                                stream: queryUsersRecord(
+                                                  List<MedicalProfilRecord>>(
+                                                stream:
+                                                    queryMedicalProfilRecord(
                                                   singleRecord: true,
                                                 ),
                                                 builder: (context, snapshot) {
@@ -254,22 +250,23 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       ),
                                                     );
                                                   }
-                                                  List<UsersRecord>
-                                                      textUsersRecordList =
+                                                  List<MedicalProfilRecord>
+                                                      textMedicalProfilRecordList =
                                                       snapshot.data!;
                                                   // Return an empty Container when the item does not exist.
                                                   if (snapshot.data!.isEmpty) {
                                                     return Container();
                                                   }
-                                                  final textUsersRecord =
-                                                      textUsersRecordList
+                                                  final textMedicalProfilRecord =
+                                                      textMedicalProfilRecordList
                                                               .isNotEmpty
-                                                          ? textUsersRecordList
+                                                          ? textMedicalProfilRecordList
                                                               .first
                                                           : null;
                                                   return Text(
                                                     valueOrDefault<String>(
-                                                      textUsersRecord?.name,
+                                                      textMedicalProfilRecord
+                                                          ?.fullName,
                                                       'N/A',
                                                     ),
                                                     style: FlutterFlowTheme.of(
@@ -343,11 +340,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium,
-                                                hintText:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  'shxj3c39' /* Search */,
-                                                ),
+                                                hintText: 'Search',
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium,
@@ -417,9 +410,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    't4hudjou' /* Donation Request */,
-                                  ),
+                                  'Donation Request',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -433,9 +424,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 20.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'uwe4hr7u' /* See All */,
-                                  ),
+                                  'See All',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -483,9 +472,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                       ),
                                       Text(
-                                        FFLocalizations.of(context).getText(
-                                          '6t4dfvbc' /* Hello World */,
-                                        ),
+                                        'Hello World',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
                                       ),

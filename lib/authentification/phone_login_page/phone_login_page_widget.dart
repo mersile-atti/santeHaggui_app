@@ -36,9 +36,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
 
     authManager.handlePhoneAuthStateChanges(context);
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
-          _model.textController1?.text = FFLocalizations.of(context).getText(
-            '6r93yn2z' /* India */,
-          );
+          _model.textController1?.text = 'India';
         }));
   }
 
@@ -131,9 +129,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          '4osoz5tu' /* Welcome back! */,
-                                        ),
+                                        'Welcome back!',
                                         style: FlutterFlowTheme.of(context)
                                             .headlineLarge
                                             .override(
@@ -154,9 +150,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      FFLocalizations.of(context).getText(
-                                        'm7w8ck94' /* Please login to access */,
-                                      ),
+                                      'Please login to access',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -307,9 +301,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                       ),
                                     ),
                                     Text(
-                                      FFLocalizations.of(context).getText(
-                                        '519qwsp6' /* Or */,
-                                      ),
+                                      'Or',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -370,12 +362,8 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 0.0, 0.0, 0.0),
                                             child: Autocomplete<String>(
-                                              initialValue: TextEditingValue(
-                                                  text: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                '6r93yn2z' /* India */,
-                                              )),
+                                              initialValue: const TextEditingValue(
+                                                  text: 'India'),
                                               optionsBuilder:
                                                   (textEditingValue) {
                                                 if (textEditingValue.text ==
@@ -457,11 +445,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     hintText:
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'bfx2xl0e' /* Enter country name */,
-                                                    ),
+                                                        'Enter country name',
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodySmall
@@ -611,10 +595,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               hintText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                'uogevi2i' /* Enter your mobile number */,
-                                              ),
+                                                  'Enter your mobile number',
                                               hintStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodySmall
@@ -732,10 +713,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                               },
                                             );
                                           },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'sbvnh85q' /* Get OTP */,
-                                          ),
+                                          text: 'Get OTP',
                                           options: FFButtonOptions(
                                             width: 300.0,
                                             height: 50.0,
@@ -781,10 +759,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                   text: TextSpan(
                                     children: [
                                       TextSpan(
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          'ufcd3rae' /* Already have an account? */,
-                                        ),
+                                        text: 'Already have an account?',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -796,10 +771,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                             ),
                                       ),
                                       TextSpan(
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          'rcdfzmmh' /* Sign In */,
-                                        ),
+                                        text: 'Sign In',
                                         style: GoogleFonts.getFont(
                                           'Outfit',
                                           color: FlutterFlowTheme.of(context)

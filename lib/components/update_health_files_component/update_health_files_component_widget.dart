@@ -87,9 +87,7 @@ class _UpdateHealthFilesComponentWidgetState
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 16.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'myzlelri' /* Edit  */,
-                            ),
+                            'Edit ',
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
@@ -165,10 +163,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '0n6n7vxg' /* Health Metrics */,
-                                                  ),
+                                                  'Health Metrics',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -284,11 +279,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'fexkuzdb' /* Blood Oxygen */,
-                                                              ),
+                                                              'Blood Oxygen',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -389,11 +380,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'jjghxtyh' /* Height  */,
-                                                            ),
+                                                            'Height ',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -493,11 +480,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              '9vlm349c' /* Weight  */,
-                                                            ),
+                                                            'Weight ',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -597,11 +580,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'a3dtyw7u' /* Body  Mass Index */,
-                                                            ),
+                                                            'Body  Mass Index',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -701,11 +680,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'jl5ie0j5' /* Heart Rate */,
-                                                            ),
+                                                            'Heart Rate',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -805,11 +780,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'qzspqifm' /* Body Temperature  */,
-                                                            ),
+                                                            'Body Temperature ',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -909,11 +880,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'ympilh9v' /* Blood Pressure (systolic) */,
-                                                            ),
+                                                            'Blood Pressure (systolic)',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1013,11 +980,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              '7tbs3ejy' /* Blood Pressure (diastolic) */,
-                                                            ),
+                                                            'Blood Pressure (diastolic)',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1117,11 +1080,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'q3ue1n73' /* Total Cholesterol */,
-                                                            ),
+                                                            'Total Cholesterol',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1221,11 +1180,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'c4ey0556' /* LDL Cholesterol */,
-                                                            ),
+                                                            'LDL Cholesterol',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1325,11 +1280,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'qzgjp1ay' /* HDL Cholesterol */,
-                                                            ),
+                                                            'HDL Cholesterol',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1429,11 +1380,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              '4snty7zo' /* Triglycerides */,
-                                                            ),
+                                                            'Triglycerides',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1533,11 +1480,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'y925m099' /* Total Cholesterol And HDL Rati... */,
-                                                            ),
+                                                            'Total Cholesterol And HDL Ratio',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1637,11 +1580,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'a19pkqxj' /* Glucose */,
-                                                            ),
+                                                            'Glucose',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1741,11 +1680,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'pk1lk387' /* Waist Circumference  */,
-                                                            ),
+                                                            'Waist Circumference ',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1857,10 +1792,7 @@ class _UpdateHealthFilesComponentWidgetState
                                                     createHealthMetricsRecordData());
                                             Navigator.pop(context);
                                           },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            'egkqh2va' /* Update */,
-                                          ),
+                                          text: 'Update',
                                           options: FFButtonOptions(
                                             width: 200.0,
                                             height: 40.0,

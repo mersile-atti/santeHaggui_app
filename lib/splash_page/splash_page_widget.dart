@@ -118,9 +118,7 @@ class _SplashPageWidgetState extends State<SplashPageWidget>
                 ).animateOnPageLoad(animationsMap['imageOnPageLoadAnimation']!),
               ),
               Text(
-                FFLocalizations.of(context).getText(
-                  '4pvc4vh9' /* SanteHaggui */,
-                ),
+                'SanteHaggui',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Outfit',
                       color: const Color(0xFF79C01D),
@@ -131,9 +129,7 @@ class _SplashPageWidgetState extends State<SplashPageWidget>
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 0.0),
                 child: Text(
-                  FFLocalizations.of(context).getText(
-                    'w1h79zhf' /* Empowering Your Health Journey... */,
-                  ),
+                  'Empowering Your Health Journey Through Digital Transformation',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Outfit',

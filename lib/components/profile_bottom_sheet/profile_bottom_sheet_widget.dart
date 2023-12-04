@@ -192,8 +192,8 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                 alignment: const AlignmentDirectional(0.00, 0.00),
                               ),
                             ),
-                            StreamBuilder<List<UsersRecord>>(
-                              stream: queryUsersRecord(
+                            StreamBuilder<List<MedicalProfilRecord>>(
+                              stream: queryMedicalProfilRecord(
                                 singleRecord: true,
                               ),
                               builder: (context, snapshot) {
@@ -212,19 +212,20 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                     ),
                                   );
                                 }
-                                List<UsersRecord> textUsersRecordList =
+                                List<MedicalProfilRecord>
+                                    textMedicalProfilRecordList =
                                     snapshot.data!;
                                 // Return an empty Container when the item does not exist.
                                 if (snapshot.data!.isEmpty) {
                                   return Container();
                                 }
-                                final textUsersRecord =
-                                    textUsersRecordList.isNotEmpty
-                                        ? textUsersRecordList.first
+                                final textMedicalProfilRecord =
+                                    textMedicalProfilRecordList.isNotEmpty
+                                        ? textMedicalProfilRecordList.first
                                         : null;
                                 return Text(
                                   valueOrDefault<String>(
-                                    textUsersRecord?.name,
+                                    textMedicalProfilRecord?.userName,
                                     'N/A',
                                   ),
                                   style: FlutterFlowTheme.of(context)
@@ -246,9 +247,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                   ),
                             ),
                             Text(
-                              FFLocalizations.of(context).getText(
-                                'xqln01gn' /* Universal Medical Identity  */,
-                              ),
+                              'Universal Medical Identity ',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -310,9 +309,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'oe3e4gey' /* User Email */,
-                                        ),
+                                        'User Email',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -329,12 +326,49 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 4.0, 0.0, 0.0),
-                                child: Text(
-                                  currentUserEmail,
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
-                                ).animateOnPageLoad(
-                                    animationsMap['textOnPageLoadAnimation1']!),
+                                child: StreamBuilder<List<MedicalProfilRecord>>(
+                                  stream: queryMedicalProfilRecord(
+                                    singleRecord: true,
+                                  ),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    List<MedicalProfilRecord>
+                                        textMedicalProfilRecordList =
+                                        snapshot.data!;
+                                    // Return an empty Container when the item does not exist.
+                                    if (snapshot.data!.isEmpty) {
+                                      return Container();
+                                    }
+                                    final textMedicalProfilRecord =
+                                        textMedicalProfilRecordList.isNotEmpty
+                                            ? textMedicalProfilRecordList.first
+                                            : null;
+                                    return Text(
+                                      valueOrDefault<String>(
+                                        textMedicalProfilRecord?.email,
+                                        'N/A',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium,
+                                    ).animateOnPageLoad(animationsMap[
+                                        'textOnPageLoadAnimation1']!);
+                                  },
+                                ),
                               ),
                             ],
                           ),
@@ -383,9 +417,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'ajh1jxeq' /* Phone Number */,
-                                        ),
+                                        'Phone Number',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -458,29 +490,24 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       const Icon(
                                         Icons.settings_outlined,
                                         color: Color(0xFF57636C),
                                         size: 24.0,
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'zwt5l8ol' /* Settings */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelLarge
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color: const Color(0xFF57636C),
-                                                fontSize: 16.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
+                                      Text(
+                                        'Settings',
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              color: const Color(0xFF57636C),
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -531,9 +558,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                               context.goNamedAuth(
                                   'SplashPage', context.mounted);
                             },
-                            text: FFLocalizations.of(context).getText(
-                              'q51w4d06' /* Logout */,
-                            ),
+                            text: 'Logout',
                             icon: const Icon(
                               Icons.logout_sharp,
                               size: 15.0,

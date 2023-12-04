@@ -164,10 +164,7 @@ class _AddChildProfileComponentWidgetState
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 4.0),
                                               child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'ulbdjn2j' /* Add your child's profile */,
-                                                ),
+                                                'Add your child\'s profile',
                                                 textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -185,10 +182,7 @@ class _AddChildProfileComponentWidgetState
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 8.0),
                                             child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '5sglfr0g' /* Add your child's legal informa... */,
-                                              ),
+                                              'Add your child\'s legal information to help with presciptions, insurance, lab tests and medical records. You can only add children below the age of 18. ',
                                               textAlign: TextAlign.justify,
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -241,10 +235,7 @@ class _AddChildProfileComponentWidgetState
                                           fontSize: 12.0,
                                           fontWeight: FontWeight.w500,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'z2wc594z' /* First Name */,
-                                    ),
+                                    hintText: 'First Name',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -312,10 +303,7 @@ class _AddChildProfileComponentWidgetState
                                           fontSize: 12.0,
                                           fontWeight: FontWeight.w500,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '409e0uoz' /* Last Name */,
-                                    ),
+                                    hintText: 'Last Name',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -436,10 +424,7 @@ class _AddChildProfileComponentWidgetState
                                           fontSize: 12.0,
                                           fontWeight: FontWeight.w500,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'wwh52o0u' /* dd/mm/yyyy */,
-                                    ),
+                                    hintText: 'dd/mm/yyyy',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -501,24 +486,14 @@ class _AddChildProfileComponentWidgetState
                                       controller:
                                           _model.dropDownValueController ??=
                                               FormFieldController<String>(null),
-                                      options: [
-                                        FFLocalizations.of(context).getText(
-                                          'yvvaducj' /* Male */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'k3n8vr8b' /* Female */,
-                                        )
-                                      ],
+                                      options: const ['Male', 'Female'],
                                       onChanged: (val) => setState(
                                           () => _model.dropDownValue = val),
                                       width: 340.0,
                                       height: 50.0,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium,
-                                      hintText:
-                                          FFLocalizations.of(context).getText(
-                                        '6ldslk8m' /* Sex */,
-                                      ),
+                                      hintText: 'Sex',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -583,10 +558,7 @@ class _AddChildProfileComponentWidgetState
                                                   ));
                                               Navigator.pop(context);
                                             },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              '3sf06hr0' /* Add */,
-                                            ),
+                                            text: 'Add',
                                             icon: const Icon(
                                               Icons.arrow_forward,
                                               size: 30.0,

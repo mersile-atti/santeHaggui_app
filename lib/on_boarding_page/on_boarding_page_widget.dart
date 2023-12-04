@@ -273,9 +273,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                 Align(
                                   alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'z6eqk5gj' /* Integrated Medical Records */,
-                                    ),
+                                    'Integrated Medical Records',
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
@@ -290,9 +288,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 10.0, 20.0, 0.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'fd8hgmd0' /* Access your health data anywhe... */,
-                                    ),
+                                    'Access your health data anywhere, anytime. Share it securely with your healthcare providers.',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -330,10 +326,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                                   curve: Curves.ease,
                                                 );
                                               },
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'fywwgo3y' /* Next */,
-                                              ),
+                                              text: 'Next',
                                               icon: const Icon(
                                                 Icons.arrow_forward,
                                                 size: 30.0,
@@ -414,9 +407,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                 Align(
                                   alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'tg37dxdf' /* Women's Health Hub */,
-                                    ),
+                                    'Women\'s Health Hub',
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
@@ -431,9 +422,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 10.0, 20.0, 0.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'ndygoemr' /* Personalized health and wellne... */,
-                                    ),
+                                    'Personalized health and wellness advice tailored to women\'s needs, from menstrual tracking to fertility insights and more.',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -471,10 +460,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                                   curve: Curves.ease,
                                                 );
                                               },
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'l3tkskzb' /* Next */,
-                                              ),
+                                              text: 'Next',
                                               icon: const Icon(
                                                 Icons.arrow_forward,
                                                 size: 30.0,
@@ -555,9 +541,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                 Align(
                                   alignment: const AlignmentDirectional(0.00, 0.00),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'wh8ju8se' /* Blood Services Centralized */,
-                                    ),
+                                    'Blood Services Centralized',
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
@@ -571,9 +555,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 10.0, 20.0, 0.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'oxjf76ac' /* Manage blood donations, tests,... */,
-                                    ),
+                                    'Manage blood donations, tests, and other related information. Bridge the gap between donors, hospitals, and health authorities.',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -606,10 +588,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                               onPressed: () async {
                                                 context.pushNamed('LoginPage');
                                               },
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'dx5j3pzw' /* Get Started */,
-                                              ),
+                                              text: 'Get Started',
                                               icon: const Icon(
                                                 Icons.arrow_forward,
                                                 size: 30.0,

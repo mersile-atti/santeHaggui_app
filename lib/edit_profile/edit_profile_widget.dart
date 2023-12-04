@@ -146,9 +146,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget>
               ),
             ),
             title: Text(
-              FFLocalizations.of(context).getText(
-                'lt269nyc' /* Edit Profile */,
-              ),
+              'Edit Profile',
               style: FlutterFlowTheme.of(context).headlineSmall,
             ),
             actions: const [],
@@ -250,9 +248,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget>
                             }
                           }
                         },
-                        text: FFLocalizations.of(context).getText(
-                          '4ybkxovq' /* Change Photo */,
-                        ),
+                        text: 'Change Photo',
                         options: FFButtonOptions(
                           width: 140.0,
                           height: 40.0,
@@ -284,9 +280,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                          hintText: FFLocalizations.of(context).getText(
-                            '10kqayra' /* Full Name */,
-                          ),
+                          hintText: 'Full Name',
                           hintStyle: FlutterFlowTheme.of(context).bodySmall,
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
@@ -339,9 +333,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                          hintText: FFLocalizations.of(context).getText(
-                            'xe85p80h' /* Email */,
-                          ),
+                          hintText: 'Email',
                           hintStyle: FlutterFlowTheme.of(context).bodySmall,
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
@@ -396,9 +388,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                          hintText: FFLocalizations.of(context).getText(
-                            '6feihaek' /* Your email */,
-                          ),
+                          hintText: 'Your email',
                           hintStyle: FlutterFlowTheme.of(context).bodySmall,
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
@@ -453,9 +443,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                          hintText: FFLocalizations.of(context).getText(
-                            '2vw62rb6' /* i.e. 34 */,
-                          ),
+                          hintText: 'i.e. 34',
                           hintStyle: FlutterFlowTheme.of(context).bodySmall,
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
@@ -508,13 +496,9 @@ class _EditProfileWidgetState extends State<EditProfileWidget>
                         focusNode: _model.yourAilmentsFocusNode,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: FFLocalizations.of(context).getText(
-                            '9wbxjs5y' /* Ailments */,
-                          ),
+                          labelText: 'Ailments',
                           labelStyle: FlutterFlowTheme.of(context).bodySmall,
-                          hintText: FFLocalizations.of(context).getText(
-                            'eiscg5nk' /* What types of allergies do you... */,
-                          ),
+                          hintText: 'What types of allergies do you have..',
                           hintStyle: FlutterFlowTheme.of(context).bodySmall,
                           enabledBorder: OutlineInputBorder(
                             borderSide: const BorderSide(
@@ -563,9 +547,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            FFLocalizations.of(context).getText(
-                              'szl9rbok' /* Your Birth Sex */,
-                            ),
+                            'Your Birth Sex',
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -578,14 +560,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           FlutterFlowRadioButton(
-                            options: [
-                              FFLocalizations.of(context).getText(
-                                '6s8x06bl' /* Male */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'px0xlr4m' /* Female */,
-                              )
-                            ].toList(),
+                            options: ['Male', 'Female'].toList(),
                             onChanged: (val) => setState(() {}),
                             controller: _model.radioButtonValueController ??=
                                 FormFieldController<String>(
@@ -620,9 +595,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget>
                           ));
                           Navigator.pop(context);
                         },
-                        text: FFLocalizations.of(context).getText(
-                          '4j1jv6sy' /* Save Changes */,
-                        ),
+                        text: 'Save Changes',
                         icon: const Icon(
                           Icons.arrow_forward,
                           color: Colors.white,

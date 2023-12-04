@@ -1,6 +1,5 @@
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -88,9 +87,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  '2afw7bw3' /* Settings Page */,
-                                ),
+                                'Settings Page',
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -145,9 +142,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'enu33vp4' /* Edit Profile */,
-                                            ),
+                                            'Edit Profile',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
                                                 .override(
@@ -209,9 +204,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'szid37bm' /* Notification Settings */,
-                                            ),
+                                            'Notification Settings',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
                                                 .override(
@@ -273,9 +266,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'q10lh7sp' /* About Us */,
-                                            ),
+                                            'About Us',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
                                                 .override(
@@ -307,9 +298,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 16.0, 0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'qu7m2gfh' /* App Settings */,
-                                  ),
+                                  'App Settings',
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
@@ -354,9 +343,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'jb28wpj9' /* Support */,
-                                            ),
+                                            'Support',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
                                                 .override(
@@ -418,9 +405,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'o7krpsus' /* Privacy Policy */,
-                                            ),
+                                            'Privacy Policy',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
                                                 .override(
@@ -482,9 +467,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'sozsb9rh' /* Terms & Conditions */,
-                                            ),
+                                            'Terms & Conditions',
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
                                                 .override(
@@ -535,10 +518,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                                   .fromSTEB(
                                                       16.0, 4.0, 0.0, 8.0),
                                               child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'g1pl5q79' /* Follow us on */,
-                                                ),
+                                                'Follow us on',
                                                 textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -657,30 +637,6 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                     ),
                                   ),
                                 ],
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(0.00, 0.00),
-                                child: FlutterFlowLanguageSelector(
-                                  width: 200.0,
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).lineColor,
-                                  borderColor: Colors.transparent,
-                                  dropdownIconColor: Colors.white,
-                                  borderRadius: 8.0,
-                                  textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 13.0,
-                                  ),
-                                  hideFlags: false,
-                                  flagSize: 24.0,
-                                  flagTextGap: 8.0,
-                                  currentLanguage:
-                                      FFLocalizations.of(context).languageCode,
-                                  languages: FFLocalizations.languages(),
-                                  onChanged: (lang) =>
-                                      setAppLanguage(context, lang),
-                                ),
                               ),
                             ],
                           ),

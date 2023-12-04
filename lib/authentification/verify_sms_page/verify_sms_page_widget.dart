@@ -99,9 +99,7 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                     child: Text(
-                      FFLocalizations.of(context).getText(
-                        'kwx198hg' /* Verify */,
-                      ),
+                      'Verify',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
                             fontSize: 36.0,
@@ -242,9 +240,7 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
                                       context.pushNamed('CreateAccountPage');
                                     },
                                     child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        '8009qqiv' /* Wrong number ? */,
-                                      ),
+                                      'Wrong number ?',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -276,9 +272,7 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: Text(
-                        FFLocalizations.of(context).getText(
-                          'cw4jrjkb' /* Didn't received the OTP? */,
-                        ),
+                        'Didn\'t received the OTP?',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
                               fontWeight: FontWeight.bold,
@@ -298,9 +292,7 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'httm6f2o' /* Resend */,
-                            ),
+                            'Resend',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -341,9 +333,7 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
                     context.pushNamedAuth(
                         'CompleteProfilePage', context.mounted);
                   },
-                  text: FFLocalizations.of(context).getText(
-                    '4uvbos05' /* Continue */,
-                  ),
+                  text: 'Continue',
                   icon: const Icon(
                     Icons.arrow_forward,
                     size: 30.0,

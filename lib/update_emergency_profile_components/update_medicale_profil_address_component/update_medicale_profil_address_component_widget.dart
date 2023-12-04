@@ -114,9 +114,7 @@ class _UpdateMedicaleProfilAddressComponentWidgetState
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 16.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'zludfkdv' /* Edit  */,
-                            ),
+                            'Edit ',
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
@@ -194,10 +192,7 @@ class _UpdateMedicaleProfilAddressComponentWidgetState
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '9428w3lj' /* Emergency Medical Profile */,
-                                                  ),
+                                                  'Emergency Medical Profile',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -354,11 +349,7 @@ class _UpdateMedicaleProfilAddressComponentWidgetState
                                                                         context)
                                                                     .labelMedium,
                                                                 hintText:
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                  'kovb0u82' /* Address */,
-                                                                ),
+                                                                    'Address',
                                                                 hintStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium,
@@ -451,11 +442,7 @@ class _UpdateMedicaleProfilAddressComponentWidgetState
                                                                         context)
                                                                     .labelMedium,
                                                                 hintText:
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                  'g15na0wq' /* City */,
-                                                                ),
+                                                                    'City',
                                                                 hintStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium
@@ -555,11 +542,7 @@ class _UpdateMedicaleProfilAddressComponentWidgetState
                                                                         context)
                                                                     .labelMedium,
                                                                 hintText:
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                  'ms3ko90f' /* Province or Region */,
-                                                                ),
+                                                                    'Province or Region',
                                                                 hintStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium,
@@ -652,11 +635,7 @@ class _UpdateMedicaleProfilAddressComponentWidgetState
                                                                         context)
                                                                     .labelMedium,
                                                                 hintText:
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                  'rb5vclya' /* Country */,
-                                                                ),
+                                                                    'Country',
                                                                 hintStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium,
@@ -871,9 +850,7 @@ class _UpdateMedicaleProfilAddressComponentWidgetState
                                                                                   ));
                                                                                   Navigator.pop(context);
                                                                                 },
-                                                                                text: FFLocalizations.of(context).getText(
-                                                                                  'sqev2rum' /* Update */,
-                                                                                ),
+                                                                                text: 'Update',
                                                                                 options: FFButtonOptions(
                                                                                   width: 250.0,
                                                                                   height: 56.0,

@@ -117,10 +117,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '6qa23rpk' /* Emergency Medical Profile */,
-                                                  ),
+                                                  'Emergency Medical Profile',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -254,11 +251,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                     .start,
                                                             children: [
                                                               Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '341c990d' /* Universal Medical identity  */,
-                                                                ),
+                                                                'Universal Medical identity ',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium,
@@ -403,11 +396,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'ysd1layp' /* Name */,
-                                                              ),
+                                                              'Name',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -421,11 +410,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'o4gre7nm' /* Hello World */,
-                                                                ),
+                                                                'Hello World',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium,
@@ -528,11 +513,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'p9q6eg2g' /* Birthday */,
-                                                              ),
+                                                              'Birthday',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -654,11 +635,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'cyau96g7' /* Biological Sex */,
-                                                              ),
+                                                              'Biological Sex',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -780,11 +757,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                '6iv8v109' /* Blood Group */,
-                                                              ),
+                                                              'Blood Group',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -906,11 +879,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'obin77m6' /* Allergies */,
-                                                              ),
+                                                              'Allergies',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -1032,11 +1001,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'qwzyd3n4' /* Medications */,
-                                                              ),
+                                                              'Medications',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -1158,11 +1123,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'u7bvokid' /* Treatments & Procedures  */,
-                                                              ),
+                                                              'Treatments & Procedures ',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -1263,11 +1224,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              '1q1t2jwk' /* Adresse */,
-                                                            ),
+                                                            'Adresse',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1377,11 +1334,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'ipz4y87b' /* Emergency Contact */,
-                                                            ),
+                                                            'Emergency Contact',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1506,11 +1459,8 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                   print(
                                                                       'Button pressed ...');
                                                                 },
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'gv10qb41' /* Generate Qr Code */,
-                                                                ),
+                                                                text:
+                                                                    'Generate Qr Code',
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 40.0,
@@ -1645,10 +1595,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '81jags6m' /* Health Metrics */,
-                                                  ),
+                                                  'Health Metrics',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -1764,11 +1711,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                '9qilt2tg' /* Blood Oxygen */,
-                                                              ),
+                                                              'Blood Oxygen',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -1869,11 +1812,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'qsrr9khc' /* Height  */,
-                                                            ),
+                                                            'Height ',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1973,11 +1912,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'ejek8l3k' /* Weight  */,
-                                                            ),
+                                                            'Weight ',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -2077,11 +2012,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              '56geaam0' /* Body  Mass Index */,
-                                                            ),
+                                                            'Body  Mass Index',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -2181,11 +2112,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              '2uib0959' /* Heart Rate */,
-                                                            ),
+                                                            'Heart Rate',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -2285,11 +2212,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'y39gj1x1' /* Body Temperature  */,
-                                                            ),
+                                                            'Body Temperature ',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -2389,11 +2312,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'xl8tvkj3' /* Blood Pressure (systolic) */,
-                                                            ),
+                                                            'Blood Pressure (systolic)',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -2493,11 +2412,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'iouctnv4' /* Blood Pressure (diastolic) */,
-                                                            ),
+                                                            'Blood Pressure (diastolic)',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -2597,11 +2512,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'cj41mfzb' /* Total Cholesterol */,
-                                                            ),
+                                                            'Total Cholesterol',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -2701,11 +2612,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'lot87why' /* LDL Cholesterol */,
-                                                            ),
+                                                            'LDL Cholesterol',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -2805,11 +2712,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'rnlbax08' /* HDL Cholesterol */,
-                                                            ),
+                                                            'HDL Cholesterol',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -2909,11 +2812,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'w9fs1n64' /* Triglycerides */,
-                                                            ),
+                                                            'Triglycerides',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -3013,11 +2912,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              '54nh2isg' /* Total Cholesterol And HDL Rati... */,
-                                                            ),
+                                                            'Total Cholesterol And HDL Ratio',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -3117,11 +3012,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'rue4gl6r' /* Glucose */,
-                                                            ),
+                                                            'Glucose',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -3221,11 +3112,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                 .start,
                                                         children: [
                                                           Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'y3t8c5b4' /* Waist Circumference  */,
-                                                            ),
+                                                            'Waist Circumference ',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -3330,10 +3217,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'gr2rxjog' /* Health Files */,
-                                                  ),
+                                                  'Health Files',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -3392,11 +3276,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          '5ytql0kx' /* Birthday */,
-                                                        ),
+                                                        'Birthday',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -3411,11 +3291,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            '9wr86e06' /* Hello World */,
-                                                          ),
+                                                          'Hello World',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium,
@@ -3500,10 +3376,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'risfp30w' /* Prescriptions  */,
-                                                  ),
+                                                  'Prescriptions ',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -3562,11 +3435,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'pu29h06h' /* Biological Sex */,
-                                                        ),
+                                                        'Biological Sex',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -3581,11 +3450,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            '1sflmgxn' /* Hello World */,
-                                                          ),
+                                                          'Hello World',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium,
@@ -3669,10 +3534,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '1sgvsu21' /* Vaccinations   */,
-                                                  ),
+                                                  'Vaccinations  ',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -3731,11 +3593,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'oxx9z1wi' /* Health Metrics */,
-                                                        ),
+                                                        'Health Metrics',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -3750,11 +3608,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            's9zas541' /* Hello World */,
-                                                          ),
+                                                          'Hello World',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium,
@@ -3838,10 +3692,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '637dd2b1' /* Lifestyle    */,
-                                                  ),
+                                                  'Lifestyle   ',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -3900,11 +3751,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'qm201o1u' /* Health Metrics */,
-                                                        ),
+                                                        'Health Metrics',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -3919,11 +3766,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            '429tx70p' /* Hello World */,
-                                                          ),
+                                                          'Hello World',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium,
@@ -4007,10 +3850,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'u75xyu73' /* Pharmacy */,
-                                                  ),
+                                                  'Pharmacy',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -4069,11 +3909,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          '00mggkv1' /* Biological Sex */,
-                                                        ),
+                                                        'Biological Sex',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -4088,11 +3924,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            'g0y8u1th' /* Hello World */,
-                                                          ),
+                                                          'Hello World',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium,
@@ -4176,10 +4008,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'kij1jljy' /* Insurance */,
-                                                  ),
+                                                  'Insurance',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -4238,11 +4067,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'xs70o3c7' /* Biological Sex */,
-                                                        ),
+                                                        'Biological Sex',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -4257,11 +4082,7 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            'pixyjjxj' /* Hello World */,
-                                                          ),
+                                                          'Hello World',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium,

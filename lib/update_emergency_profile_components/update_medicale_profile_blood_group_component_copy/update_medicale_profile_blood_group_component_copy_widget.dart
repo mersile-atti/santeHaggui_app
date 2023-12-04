@@ -106,9 +106,7 @@ class _UpdateMedicaleProfileBloodGroupComponentCopyWidgetState
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 16.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'xgk7vqwt' /* Edit  */,
-                            ),
+                            'Edit ',
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
@@ -186,10 +184,7 @@ class _UpdateMedicaleProfileBloodGroupComponentCopyWidgetState
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'ucx5utni' /* Emergency Medical Profile */,
-                                                  ),
+                                                  'Emergency Medical Profile',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -498,9 +493,7 @@ class _UpdateMedicaleProfileBloodGroupComponentCopyWidgetState
                                       ));
                                   Navigator.pop(context);
                                 },
-                                text: FFLocalizations.of(context).getText(
-                                  'k10bgwi7' /* Add */,
-                                ),
+                                text: 'Add',
                                 options: FFButtonOptions(
                                   width: 250.0,
                                   height: 56.0,

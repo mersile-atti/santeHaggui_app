@@ -125,9 +125,7 @@ class _EmergencyProfieMauvaisWidgetState
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                FFLocalizations.of(context).getText(
-                                  'eh4imi3l' /* Universal Medical identity  */,
-                                ),
+                                'Universal Medical identity ',
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
                               Padding(
@@ -219,9 +217,7 @@ class _EmergencyProfieMauvaisWidgetState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              FFLocalizations.of(context).getText(
-                                'iszauxfd' /* Name */,
-                              ),
+                              'Name',
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
                             Padding(
@@ -306,9 +302,7 @@ class _EmergencyProfieMauvaisWidgetState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              FFLocalizations.of(context).getText(
-                                'l6xoe9mi' /* Birthday */,
-                              ),
+                              'Birthday',
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
                             Padding(
@@ -392,9 +386,7 @@ class _EmergencyProfieMauvaisWidgetState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              FFLocalizations.of(context).getText(
-                                'f4p6s4jv' /* Biological Sex */,
-                              ),
+                              'Biological Sex',
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
                             Padding(
@@ -479,9 +471,7 @@ class _EmergencyProfieMauvaisWidgetState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              FFLocalizations.of(context).getText(
-                                '7y2ihash' /* Blood Group */,
-                              ),
+                              'Blood Group',
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
                             Padding(
@@ -567,9 +557,7 @@ class _EmergencyProfieMauvaisWidgetState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              FFLocalizations.of(context).getText(
-                                '3kgsqx0v' /* Allergies */,
-                              ),
+                              'Allergies',
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
                             Padding(
@@ -655,9 +643,7 @@ class _EmergencyProfieMauvaisWidgetState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              FFLocalizations.of(context).getText(
-                                'uxm1qgqr' /* Medications */,
-                              ),
+                              'Medications',
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
                             Padding(
@@ -743,9 +729,7 @@ class _EmergencyProfieMauvaisWidgetState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              FFLocalizations.of(context).getText(
-                                'or7swx84' /* Treatments & Procedures  */,
-                              ),
+                              'Treatments & Procedures ',
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
                             Padding(
@@ -817,9 +801,7 @@ class _EmergencyProfieMauvaisWidgetState
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            FFLocalizations.of(context).getText(
-                              'grebmchh' /* Adresse */,
-                            ),
+                            'Adresse',
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                           Padding(
@@ -896,9 +878,7 @@ class _EmergencyProfieMauvaisWidgetState
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            FFLocalizations.of(context).getText(
-                              'ffxgu6de' /* Emergency Contact */,
-                            ),
+                            'Emergency Contact',
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                           Padding(
@@ -981,9 +961,7 @@ class _EmergencyProfieMauvaisWidgetState
                                 onPressed: () {
                                   print('Button pressed ...');
                                 },
-                                text: FFLocalizations.of(context).getText(
-                                  'nqaskt0x' /* Generate Qr Code */,
-                                ),
+                                text: 'Generate Qr Code',
                                 options: FFButtonOptions(
                                   height: 40.0,
                                   padding: const EdgeInsetsDirectional.fromSTEB(

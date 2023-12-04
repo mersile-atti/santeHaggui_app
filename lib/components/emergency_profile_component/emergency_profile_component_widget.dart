@@ -119,9 +119,7 @@ class _EmergencyProfileComponentWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          FFLocalizations.of(context).getText(
-                            '3r56nd4q' /* UMI */,
-                          ),
+                          'UMI',
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                         Text(
@@ -322,9 +320,7 @@ class _EmergencyProfileComponentWidgetState
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'ii7olgd8' /* Name */,
-                                        ),
+                                        'Name',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -442,9 +438,7 @@ class _EmergencyProfileComponentWidgetState
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'l8hdoray' /* Birthday  */,
-                                        ),
+                                        'Birthday ',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -561,9 +555,7 @@ class _EmergencyProfileComponentWidgetState
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'j3fvofz9' /* Biological Sex */,
-                                        ),
+                                        'Biological Sex',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -680,9 +672,7 @@ class _EmergencyProfileComponentWidgetState
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'y7rqcd58' /* Blood Group */,
-                                        ),
+                                        'Blood Group',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -800,9 +790,7 @@ class _EmergencyProfileComponentWidgetState
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'xzxjibio' /* Allergies */,
-                                        ),
+                                        'Allergies',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -920,9 +908,7 @@ class _EmergencyProfileComponentWidgetState
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'd9i0dx7m' /* Medications */,
-                                        ),
+                                        'Medications',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -1040,9 +1026,7 @@ class _EmergencyProfileComponentWidgetState
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'v6rvjopw' /* Treatements & Procedures  */,
-                                        ),
+                                        'Treatements & Procedures ',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -1160,9 +1144,7 @@ class _EmergencyProfileComponentWidgetState
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'tcly3udk' /* Address  */,
-                                        ),
+                                        'Address ',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -1291,9 +1273,7 @@ class _EmergencyProfileComponentWidgetState
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'jc1bd1t3' /* Emergency Contact */,
-                                        ),
+                                        'Emergency Contact',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -1360,9 +1340,7 @@ class _EmergencyProfileComponentWidgetState
                               onPressed: () {
                                 print('Button pressed ...');
                               },
-                              text: FFLocalizations.of(context).getText(
-                                'gd22ybs8' /* Generate Qr Code */,
-                              ),
+                              text: 'Generate Qr Code',
                               icon: const Icon(
                                 Icons.qr_code_2_outlined,
                                 size: 15.0,

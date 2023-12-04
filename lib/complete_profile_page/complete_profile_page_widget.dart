@@ -341,9 +341,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
             ),
           ),
           title: Text(
-            FFLocalizations.of(context).getText(
-              'vgjcs2v3' /* Complete Profile */,
-            ),
+            'Complete Profile',
             style: FlutterFlowTheme.of(context).headlineSmall,
           ),
           actions: const [],
@@ -461,9 +459,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Text(
-                          FFLocalizations.of(context).getText(
-                            '74mdtexg' /* Complete your profile  */,
-                          ),
+                          'Complete your profile ',
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ).animateOnPageLoad(
                             animationsMap['textOnPageLoadAnimation1']!),
@@ -486,9 +482,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                                   fontSize: 12.0,
                                   fontWeight: FontWeight.w500,
                                 ),
-                            hintText: FFLocalizations.of(context).getText(
-                              'knup1auo' /* Full Name */,
-                            ),
+                            hintText: 'Full Name',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -552,9 +546,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                                   fontSize: 12.0,
                                   fontWeight: FontWeight.w500,
                                 ),
-                            hintText: FFLocalizations.of(context).getText(
-                              'rc67tnwd' /* Username  */,
-                            ),
+                            hintText: 'Username ',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -618,9 +610,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                                   fontSize: 12.0,
                                   fontWeight: FontWeight.w500,
                                 ),
-                            hintText: FFLocalizations.of(context).getText(
-                              's01lxdoj' /* Email */,
-                            ),
+                            hintText: 'Email',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -676,9 +666,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                           decoration: InputDecoration(
                             labelStyle:
                                 FlutterFlowTheme.of(context).labelMedium,
-                            hintText: FFLocalizations.of(context).getText(
-                              'gf6slok8' /* Enter your password */,
-                            ),
+                            hintText: 'Enter your password',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -749,9 +737,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                           decoration: InputDecoration(
                             labelStyle:
                                 FlutterFlowTheme.of(context).labelMedium,
-                            hintText: FFLocalizations.of(context).getText(
-                              '6z2y47dj' /* Confirm your password */,
-                            ),
+                            hintText: 'Confirm your password',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -830,9 +816,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                                   fontSize: 12.0,
                                   fontWeight: FontWeight.w500,
                                 ),
-                            hintText: FFLocalizations.of(context).getText(
-                              'mmxoqvlj' /* 30/09/2003 */,
-                            ),
+                            hintText: '30/09/2003',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -887,31 +871,15 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                             FlutterFlowDropDown<String>(
                               controller: _model.dropDownValueController ??=
                                   FormFieldController<String>(null),
-                              options: [
-                                FFLocalizations.of(context).getText(
-                                  'ecghplaf' /* A+ */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '46jvyrny' /* A- */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '75cnfiqh' /* B+ */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'w8ay5tp7' /* B- */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'jndona6u' /* O+ */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '3v6zyl81' /* O- */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  'fcrou5qd' /* AB+ */,
-                                ),
-                                FFLocalizations.of(context).getText(
-                                  '6ydt5s6i' /* AB- */,
-                                )
+                              options: const [
+                                'A+',
+                                'A-',
+                                'B+',
+                                'B-',
+                                'O+',
+                                'O-',
+                                'AB+',
+                                'AB-'
                               ],
                               onChanged: (val) =>
                                   setState(() => _model.dropDownValue = val),
@@ -919,9 +887,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                               height: 50.0,
                               textStyle:
                                   FlutterFlowTheme.of(context).bodyMedium,
-                              hintText: FFLocalizations.of(context).getText(
-                                '2ln2rfpm' /* Blood Type */,
-                              ),
+                              hintText: 'Blood Type',
                               icon: Icon(
                                 Icons.keyboard_arrow_down_rounded,
                                 color: FlutterFlowTheme.of(context).primaryText,
@@ -950,9 +916,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Text(
-                              FFLocalizations.of(context).getText(
-                                'nqq8l64g' /* Your Birth Sex */,
-                              ),
+                              'Your Birth Sex',
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ).animateOnPageLoad(
                                 animationsMap['textOnPageLoadAnimation2']!),
@@ -968,14 +932,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                             Align(
                               alignment: const AlignmentDirectional(0.00, 0.00),
                               child: FlutterFlowRadioButton(
-                                options: [
-                                  FFLocalizations.of(context).getText(
-                                    '6poj4bxd' /* Male */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    'utnd2hxz' /* Female */,
-                                  )
-                                ].toList(),
+                                options: ['Male', 'Female'].toList(),
                                 onChanged: (val) => setState(() {}),
                                 controller:
                                     _model.radioButtonValueController ??=
@@ -1015,9 +972,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                             onPressed: () async {
                               context.pushNamed('HomePage');
                             },
-                            text: FFLocalizations.of(context).getText(
-                              'u4b6gdqw' /* Add Another Profile */,
-                            ),
+                            text: 'Add Another Profile',
                             icon: const Icon(
                               Icons.add_rounded,
                               size: 15.0,
@@ -1103,9 +1058,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
 
                                 context.goNamed('HomePage');
                               },
-                              text: FFLocalizations.of(context).getText(
-                                'fessgn24' /* Complete Profile */,
-                              ),
+                              text: 'Complete Profile',
                               icon: const Icon(
                                 Icons.arrow_forward,
                                 color: Colors.white,

@@ -135,11 +135,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'ozgooxba' /* Emergency Medical Profile */,
-                                                        ),
+                                                        'Emergency Medical Profile',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .labelMedium
@@ -257,11 +253,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'bwsyxrn1' /* Health Metrics */,
-                                                        ),
+                                                        'Health Metrics',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .labelMedium
@@ -487,11 +479,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                         .start,
                                                                 children: [
                                                                   Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'jz7wrbhs' /* Blood Oxygen */,
-                                                                    ),
+                                                                    'Blood Oxygen',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium,
@@ -604,11 +592,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'i6rfn3fg' /* Height  */,
-                                                                  ),
+                                                                  'Height ',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -720,11 +704,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'pds5lje2' /* Weight  */,
-                                                                  ),
+                                                                  'Weight ',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -836,11 +816,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'che5lhds' /* Body  Mass Index */,
-                                                                  ),
+                                                                  'Body  Mass Index',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -952,11 +928,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'yl81hfh0' /* Heart Rate */,
-                                                                  ),
+                                                                  'Heart Rate',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -1068,11 +1040,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'fy1rmgq0' /* Body Temperature  */,
-                                                                  ),
+                                                                  'Body Temperature ',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -1184,11 +1152,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'pj3ucd6w' /* Blood Pressure (systolic) */,
-                                                                  ),
+                                                                  'Blood Pressure (systolic)',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -1300,11 +1264,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'rnv3d7qq' /* Blood Pressure (diastolic) */,
-                                                                  ),
+                                                                  'Blood Pressure (diastolic)',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -1416,11 +1376,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '27t0bdio' /* Total Cholesterol */,
-                                                                  ),
+                                                                  'Total Cholesterol',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -1532,11 +1488,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '5xm8wjkt' /* LDL Cholesterol */,
-                                                                  ),
+                                                                  'LDL Cholesterol',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -1648,11 +1600,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'y9waq138' /* HDL Cholesterol */,
-                                                                  ),
+                                                                  'HDL Cholesterol',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -1764,11 +1712,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'zycwhzpw' /* Triglycerides */,
-                                                                  ),
+                                                                  'Triglycerides',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -1880,11 +1824,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'g1fe5tpu' /* Total Cholesterol And HDL Rati... */,
-                                                                  ),
+                                                                  'Total Cholesterol And HDL Ratio',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -1996,11 +1936,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'blbsry6w' /* Glucose */,
-                                                                  ),
+                                                                  'Glucose',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -2112,11 +2048,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                       .start,
                                                               children: [
                                                                 Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '7i0sb0lj' /* Waist Circumference  */,
-                                                                  ),
+                                                                  'Waist Circumference ',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium,
@@ -2231,11 +2163,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'tl1gisbd' /* Health Files */,
-                                                        ),
+                                                        'Health Files',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .labelMedium
@@ -2302,11 +2230,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'a96txuqs' /* Health Metrics */,
-                                                              ),
+                                                              'Health Metrics',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -2320,11 +2244,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '3kvutcc6' /* Hello World */,
-                                                                ),
+                                                                'Hello World',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium,
@@ -2368,11 +2288,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'p1gn54qf' /* Name */,
-                                                              ),
+                                                              'Name',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -2386,11 +2302,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '4bmci9s1' /* Hello World */,
-                                                                ),
+                                                                'Hello World',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium,
@@ -2486,11 +2398,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'r7nl5e6c' /* Prescriptions  */,
-                                                        ),
+                                                        'Prescriptions ',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .labelMedium
@@ -2557,11 +2465,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'e0tq7pdf' /* Health Metrics */,
-                                                              ),
+                                                              'Health Metrics',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -2575,11 +2479,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'tvr67kjg' /* Hello World */,
-                                                                ),
+                                                                'Hello World',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium,
@@ -2675,11 +2575,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          't3agtzzp' /* Vaccinations   */,
-                                                        ),
+                                                        'Vaccinations  ',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .labelMedium
@@ -2746,11 +2642,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'xbiwu7z2' /* Biological Sex */,
-                                                              ),
+                                                              'Biological Sex',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -2764,11 +2656,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'x83gffbf' /* Hello World */,
-                                                                ),
+                                                                'Hello World',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium,
@@ -2864,11 +2752,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'y82wyag0' /* Lifestyle    */,
-                                                        ),
+                                                        'Lifestyle   ',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .labelMedium
@@ -2935,11 +2819,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                '9wcaf0oh' /* Health Metrics */,
-                                                              ),
+                                                              'Health Metrics',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -2953,11 +2833,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '1sbu3edj' /* Hello World */,
-                                                                ),
+                                                                'Hello World',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium,
@@ -3053,11 +2929,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'x5dmyuxg' /* Pharmacy */,
-                                                        ),
+                                                        'Pharmacy',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .labelMedium
@@ -3124,11 +2996,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                '6jyuyrco' /* Health Metrics */,
-                                                              ),
+                                                              'Health Metrics',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -3142,11 +3010,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'oams69zs' /* Hello World */,
-                                                                ),
+                                                                'Hello World',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium,
@@ -3242,11 +3106,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          '70ad24rm' /* Insurance */,
-                                                        ),
+                                                        'Insurance',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .labelMedium
@@ -3313,11 +3173,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'y5k0wsvu' /* Name */,
-                                                              ),
+                                                              'Name',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium,
@@ -3331,11 +3187,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'zkofpyxy' /* Hello World */,
-                                                                ),
+                                                                'Hello World',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium,

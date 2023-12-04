@@ -106,9 +106,7 @@ class _UpdateMedicaleProfileMedicalconditionsComponentWidgetState
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 16.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'jg7i9nra' /* Edit  */,
-                            ),
+                            'Edit ',
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
@@ -186,10 +184,7 @@ class _UpdateMedicaleProfileMedicalconditionsComponentWidgetState
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'qvvskd2n' /* Emergency Medical Profile */,
-                                                  ),
+                                                  'Emergency Medical Profile',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -509,9 +504,7 @@ class _UpdateMedicaleProfileMedicalconditionsComponentWidgetState
                                     ));
                                     Navigator.pop(context);
                                   },
-                                  text: FFLocalizations.of(context).getText(
-                                    'g7n0tcqa' /* Update */,
-                                  ),
+                                  text: 'Update',
                                   options: FFButtonOptions(
                                     width: 250.0,
                                     height: 56.0,

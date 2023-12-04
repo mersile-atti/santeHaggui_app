@@ -94,9 +94,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
               ),
             ),
             title: Text(
-              FFLocalizations.of(context).getText(
-                'qcuek6lg' /* Details */,
-              ),
+              'Details',
               style: FlutterFlowTheme.of(context).headlineSmall,
             ),
             actions: const [],
@@ -114,9 +112,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                     children: [
                       Expanded(
                         child: Text(
-                          FFLocalizations.of(context).getText(
-                            '51xnnh1k' /* Type of Appointment */,
-                          ),
+                          'Type of Appointment',
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                       ),
@@ -150,9 +146,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                     children: [
                       Expanded(
                         child: Text(
-                          FFLocalizations.of(context).getText(
-                            '0v01gbzk' /* What’s the problem? */,
-                          ),
+                          'What’s the problem?',
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                       ),
@@ -182,9 +176,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                     children: [
                       Expanded(
                         child: Text(
-                          FFLocalizations.of(context).getText(
-                            'lfesgqij' /* For */,
-                          ),
+                          'For',
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                       ),
@@ -312,9 +304,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'vrcrqp3q' /* When */,
-                            ),
+                            'When',
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                         ),
@@ -373,9 +363,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                         },
                       ).then((value) => safeSetState(() {}));
                     },
-                    text: FFLocalizations.of(context).getText(
-                      'ebm1vgyy' /* Reschedule */,
-                    ),
+                    text: 'Reschedule',
                     options: FFButtonOptions(
                       width: 300.0,
                       height: 50.0,
@@ -417,9 +405,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                       );
                       context.pop();
                     },
-                    text: FFLocalizations.of(context).getText(
-                      'axcx17t8' /* Cancel Appointment */,
-                    ),
+                    text: 'Cancel Appointment',
                     options: FFButtonOptions(
                       width: 230.0,
                       height: 50.0,

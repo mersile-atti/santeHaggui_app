@@ -94,9 +94,7 @@ class _AppointmentDetailsProfilWidgetState
               ),
             ),
             title: Text(
-              FFLocalizations.of(context).getText(
-                'q994in5o' /* Details */,
-              ),
+              'Details',
               style: FlutterFlowTheme.of(context).headlineSmall,
             ),
             actions: const [],
@@ -114,9 +112,7 @@ class _AppointmentDetailsProfilWidgetState
                     children: [
                       Expanded(
                         child: Text(
-                          FFLocalizations.of(context).getText(
-                            'hw8jd7q9' /* Type of Appointment */,
-                          ),
+                          'Type of Appointment',
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                       ),
@@ -151,9 +147,7 @@ class _AppointmentDetailsProfilWidgetState
                     children: [
                       Expanded(
                         child: Text(
-                          FFLocalizations.of(context).getText(
-                            'wokny0zh' /* What’s the problem? */,
-                          ),
+                          'What’s the problem?',
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                       ),
@@ -183,9 +177,7 @@ class _AppointmentDetailsProfilWidgetState
                     children: [
                       Expanded(
                         child: Text(
-                          FFLocalizations.of(context).getText(
-                            'tia27o70' /* For */,
-                          ),
+                          'For',
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                       ),
@@ -328,9 +320,7 @@ class _AppointmentDetailsProfilWidgetState
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'mxzgsjon' /* When */,
-                            ),
+                            'When',
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                         ),
@@ -376,9 +366,7 @@ class _AppointmentDetailsProfilWidgetState
                           .delete();
                       context.pop();
                     },
-                    text: FFLocalizations.of(context).getText(
-                      '3gr67wpt' /* Remove Appointment */,
-                    ),
+                    text: 'Remove Appointment',
                     options: FFButtonOptions(
                       width: 230.0,
                       height: 50.0,

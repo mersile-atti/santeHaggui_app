@@ -133,9 +133,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 10.0, 16.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'q0d6w7d2' /* Get Started! */,
-                                        ),
+                                        'Get Started!',
                                         style: FlutterFlowTheme.of(context)
                                             .headlineMedium
                                             .override(
@@ -158,9 +156,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      FFLocalizations.of(context).getText(
-                                        'i5a18976' /* Please register to start */,
-                                      ),
+                                      'Please register to start',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -195,10 +191,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                               ),
-                                          hintText: FFLocalizations.of(context)
-                                              .getText(
-                                            '4thaule6' /* Enter your Full Name */,
-                                          ),
+                                          hintText: 'Enter your Full Name',
                                           hintStyle: FlutterFlowTheme.of(
                                                   context)
                                               .labelMedium
@@ -281,10 +274,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'iww7steq' /* Enter your email */,
-                                    ),
+                                    hintText: 'Enter your email',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -356,10 +346,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'duvxib5t' /* Enter your phone number */,
-                                    ),
+                                    hintText: 'Enter your phone number',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -424,24 +411,14 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       controller:
                                           _model.dropDownValueController ??=
                                               FormFieldController<String>(null),
-                                      options: [
-                                        FFLocalizations.of(context).getText(
-                                          'pnj9dttj' /* Male */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'q4sk54qr' /* Female */,
-                                        )
-                                      ],
+                                      options: const ['Male', 'Female'],
                                       onChanged: (val) => setState(
                                           () => _model.dropDownValue = val),
                                       width: 320.0,
                                       height: 50.0,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium,
-                                      hintText:
-                                          FFLocalizations.of(context).getText(
-                                        'ny4te9ft' /* Sex */,
-                                      ),
+                                      hintText: 'Sex',
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -479,10 +456,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '6m8c7cfi' /* Enter your password  */,
-                                    ),
+                                    hintText: 'Enter your password ',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -568,10 +542,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '0zatqpsg' /* Enter your password  */,
-                                    ),
+                                    hintText: 'Enter your password ',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -656,10 +627,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         text: TextSpan(
                                           children: [
                                             TextSpan(
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'mub3x90d' /* You agree to the -  */,
-                                              ),
+                                              text: 'You agree to the - ',
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -672,12 +640,9 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                             ),
-                                            TextSpan(
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'rny6gjjp' /* Terms of use */,
-                                              ),
-                                              style: const TextStyle(
+                                            const TextSpan(
+                                              text: 'Terms of use',
+                                              style: TextStyle(
                                                 color: Color(0xFF019874),
                                               ),
                                             )
@@ -811,10 +776,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                               context.pushNamedAuth(
                                                   'HomePage', context.mounted);
                                             },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              'opjsvttg' /* Register */,
-                                            ),
+                                            text: 'Register',
                                             icon: const Icon(
                                               Icons.arrow_forward,
                                               size: 30.0,
@@ -867,10 +829,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                   text: TextSpan(
                                     children: [
                                       TextSpan(
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          '7afhb5cj' /* Already have an account? */,
-                                        ),
+                                        text: 'Already have an account?',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -882,10 +841,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                             ),
                                       ),
                                       TextSpan(
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          'p0nxc7bq' /*  Login here */,
-                                        ),
+                                        text: ' Login here',
                                         style: TextStyle(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,

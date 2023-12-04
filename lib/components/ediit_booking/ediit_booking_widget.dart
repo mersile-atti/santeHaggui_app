@@ -102,9 +102,7 @@ class _EdiitBookingWidgetState extends State<EdiitBookingWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'qefecgqb' /* Edit Appointment */,
-                            ),
+                            'Edit Appointment',
                             style: FlutterFlowTheme.of(context).headlineSmall,
                           ),
                         ),
@@ -116,9 +114,7 @@ class _EdiitBookingWidgetState extends State<EdiitBookingWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '1ljbkzal' /* Edit the fields below in order... */,
-                                  ),
+                                  'Edit the fields below in order to change your appointment.',
                                   style: FlutterFlowTheme.of(context).bodySmall,
                                 ),
                               ),
@@ -129,9 +125,7 @@ class _EdiitBookingWidgetState extends State<EdiitBookingWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'mzo2qymk' /* Emails will be sent to: */,
-                            ),
+                            'Emails will be sent to:',
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                         ),
@@ -156,9 +150,7 @@ class _EdiitBookingWidgetState extends State<EdiitBookingWidget> {
                             focusNode: _model.personsNameFocusNode,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: FFLocalizations.of(context).getText(
-                                'zdm89y8t' /* Booking For */,
-                              ),
+                              labelText: 'Booking For',
                               labelStyle:
                                   FlutterFlowTheme.of(context).bodySmall,
                               enabledBorder: OutlineInputBorder(
@@ -216,19 +208,11 @@ class _EdiitBookingWidgetState extends State<EdiitBookingWidget> {
                               _model.dropDownValue ??=
                                   widget.userAppointment?.appointmentType,
                             ),
-                            options: [
-                              FFLocalizations.of(context).getText(
-                                'kh78av0e' /* Type of Appointment */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                '5x9148y2' /* Doctors Visit */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'i3hj0xaq' /* Routine Checkup */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'zo4204jz' /* Scan/Update */,
-                              )
+                            options: const [
+                              'Type of Appointment',
+                              'Doctors Visit',
+                              'Routine Checkup',
+                              'Scan/Update'
                             ],
                             onChanged: (val) =>
                                 setState(() => _model.dropDownValue = val),
@@ -268,9 +252,7 @@ class _EdiitBookingWidgetState extends State<EdiitBookingWidget> {
                             focusNode: _model.problemDescriptionFocusNode,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: FFLocalizations.of(context).getText(
-                                'ti6n5th5' /* What's the problem? */,
-                              ),
+                              labelText: 'What\'s the problem?',
                               labelStyle:
                                   FlutterFlowTheme.of(context).bodySmall,
                               enabledBorder: OutlineInputBorder(
@@ -390,10 +372,7 @@ class _EdiitBookingWidgetState extends State<EdiitBookingWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'mcrppicg' /* Choose Date */,
-                                              ),
+                                              'Choose Date',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -496,9 +475,7 @@ class _EdiitBookingWidgetState extends State<EdiitBookingWidget> {
                                 onPressed: () async {
                                   context.pop();
                                 },
-                                text: FFLocalizations.of(context).getText(
-                                  'qj26kwe2' /* Cancel */,
-                                ),
+                                text: 'Cancel',
                                 options: FFButtonOptions(
                                   width: 100.0,
                                   height: 50.0,
@@ -536,9 +513,7 @@ class _EdiitBookingWidgetState extends State<EdiitBookingWidget> {
                                   ));
                                   context.pop();
                                 },
-                                text: FFLocalizations.of(context).getText(
-                                  'edfkzc87' /* Save Changes */,
-                                ),
+                                text: 'Save Changes',
                                 options: FFButtonOptions(
                                   width: 170.0,
                                   height: 50.0,
