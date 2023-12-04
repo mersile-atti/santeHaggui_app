@@ -24,16 +24,6 @@ class MedicalProfilRecord extends FirestoreRecord {
   String get medicalCondition => _medicalCondition ?? '';
   bool hasMedicalCondition() => _medicalCondition != null;
 
-  // "height" field.
-  double? _height;
-  double get height => _height ?? 0.0;
-  bool hasHeight() => _height != null;
-
-  // "weight" field.
-  double? _weight;
-  double get weight => _weight ?? 0.0;
-  bool hasWeight() => _weight != null;
-
   // "bloodType" field.
   String? _bloodType;
   String get bloodType => _bloodType ?? '';
@@ -149,11 +139,19 @@ class MedicalProfilRecord extends FirestoreRecord {
   String get confirmPassword => _confirmPassword ?? '';
   bool hasConfirmPassword() => _confirmPassword != null;
 
+  // "heigtht" field.
+  String? _heigtht;
+  String get heigtht => _heigtht ?? '';
+  bool hasHeigtht() => _heigtht != null;
+
+  // "weight" field.
+  String? _weight;
+  String get weight => _weight ?? '';
+  bool hasWeight() => _weight != null;
+
   void _initializeFields() {
     _doctor = snapshotData['doctor'] as DocumentReference?;
     _medicalCondition = snapshotData['medicalCondition'] as String?;
-    _height = castToType<double>(snapshotData['height']);
-    _weight = castToType<double>(snapshotData['weight']);
     _bloodType = snapshotData['bloodType'] as String?;
     _allergies = snapshotData['allergies'] as String?;
     _medications = snapshotData['medications'] as String?;
@@ -181,6 +179,8 @@ class MedicalProfilRecord extends FirestoreRecord {
     _email = snapshotData['email'] as String?;
     _password = snapshotData['password'] as String?;
     _confirmPassword = snapshotData['confirmPassword'] as String?;
+    _heigtht = snapshotData['heigtht'] as String?;
+    _weight = snapshotData['weight'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -220,8 +220,6 @@ class MedicalProfilRecord extends FirestoreRecord {
 Map<String, dynamic> createMedicalProfilRecordData({
   DocumentReference? doctor,
   String? medicalCondition,
-  double? height,
-  double? weight,
   String? bloodType,
   String? allergies,
   String? medications,
@@ -245,13 +243,13 @@ Map<String, dynamic> createMedicalProfilRecordData({
   String? email,
   String? password,
   String? confirmPassword,
+  String? heigtht,
+  String? weight,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'doctor': doctor,
       'medicalCondition': medicalCondition,
-      'height': height,
-      'weight': weight,
       'bloodType': bloodType,
       'allergies': allergies,
       'medications': medications,
@@ -275,6 +273,8 @@ Map<String, dynamic> createMedicalProfilRecordData({
       'email': email,
       'password': password,
       'confirmPassword': confirmPassword,
+      'heigtht': heigtht,
+      'weight': weight,
     }.withoutNulls,
   );
 
@@ -289,8 +289,6 @@ class MedicalProfilRecordDocumentEquality
   bool equals(MedicalProfilRecord? e1, MedicalProfilRecord? e2) {
     return e1?.doctor == e2?.doctor &&
         e1?.medicalCondition == e2?.medicalCondition &&
-        e1?.height == e2?.height &&
-        e1?.weight == e2?.weight &&
         e1?.bloodType == e2?.bloodType &&
         e1?.allergies == e2?.allergies &&
         e1?.medications == e2?.medications &&
@@ -313,15 +311,15 @@ class MedicalProfilRecordDocumentEquality
         e1?.userSex == e2?.userSex &&
         e1?.email == e2?.email &&
         e1?.password == e2?.password &&
-        e1?.confirmPassword == e2?.confirmPassword;
+        e1?.confirmPassword == e2?.confirmPassword &&
+        e1?.heigtht == e2?.heigtht &&
+        e1?.weight == e2?.weight;
   }
 
   @override
   int hash(MedicalProfilRecord? e) => const ListEquality().hash([
         e?.doctor,
         e?.medicalCondition,
-        e?.height,
-        e?.weight,
         e?.bloodType,
         e?.allergies,
         e?.medications,
@@ -344,7 +342,9 @@ class MedicalProfilRecordDocumentEquality
         e?.userSex,
         e?.email,
         e?.password,
-        e?.confirmPassword
+        e?.confirmPassword,
+        e?.heigtht,
+        e?.weight
       ]);
 
   @override

@@ -278,7 +278,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                         .titleLarge
                                         .override(
                                           fontFamily: 'Outfit',
-                                          fontSize: 26.0,
+                                          fontSize: 22.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ).animateOnPageLoad(animationsMap[
@@ -412,7 +412,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                         .titleLarge
                                         .override(
                                           fontFamily: 'Outfit',
-                                          fontSize: 26.0,
+                                          fontSize: 22.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ).animateOnPageLoad(animationsMap[

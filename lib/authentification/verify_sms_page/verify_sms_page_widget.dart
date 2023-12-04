@@ -108,13 +108,20 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
                           ),
                     ),
                   ),
-                  Text(
-                    'enter OTP sent to ${widget.mobileNumber}',
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w600,
-                        ),
+                  Align(
+                    alignment: const AlignmentDirectional(-1.00, 0.00),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                      child: Text(
+                        'enter OTP sent to ${widget.mobileNumber}',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.w600,
+                            ),
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -231,7 +238,7 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      90.0, 0.0, 0.0, 0.0),
+                                      50.0, 0.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
