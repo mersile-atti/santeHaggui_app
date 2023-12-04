@@ -297,7 +297,7 @@ class _EmergencyProfileComponentWidgetState
                             },
                             child: Container(
                               width: double.infinity,
-                              height: 56.0,
+                              height: 58.0,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 boxShadow: const [
@@ -347,7 +347,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -465,7 +465,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -581,7 +581,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -699,7 +699,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -935,7 +935,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1053,7 +1053,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1167,7 +1167,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1182,7 +1182,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1296,7 +1296,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -1311,7 +1311,7 @@ class _EmergencyProfileComponentWidgetState
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
                                               color: const Color(0xFF57636C),
-                                              fontSize: 14.0,
+                                              fontSize: 12.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),

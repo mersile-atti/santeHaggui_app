@@ -161,13 +161,21 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         .secondaryBackground,
                                                   ),
                                                 ),
-                                                expanded: wrapWithModel(
-                                                  model: _model
-                                                      .emergencyProfileComponentModel,
-                                                  updateCallback: () =>
-                                                      setState(() {}),
-                                                  child:
-                                                      const EmergencyProfileComponentWidget(),
+                                                expanded: SingleChildScrollView(
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      wrapWithModel(
+                                                        model: _model
+                                                            .emergencyProfileComponentModel,
+                                                        updateCallback: () =>
+                                                            setState(() {}),
+                                                        child:
+                                                            const EmergencyProfileComponentWidget(),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
                                                 theme: const ExpandableThemeData(
                                                   tapHeaderToExpand: true,
