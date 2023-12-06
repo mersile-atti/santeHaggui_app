@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -133,7 +132,7 @@ class _EdiitBookingWidgetState extends State<EdiitBookingWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 0.0, 12.0),
                           child: Text(
-                            currentUserEmail,
+                            'Emails will be sent to:',
                             style: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
@@ -501,17 +500,8 @@ class _EdiitBookingWidgetState extends State<EdiitBookingWidget> {
                                 ),
                               ),
                               FFButtonWidget(
-                                onPressed: () async {
-                                  await widget.userAppointment!.reference
-                                      .update(createAppointmentsRecordData(
-                                    appointmentName:
-                                        _model.personsNameController.text,
-                                    appointmentType: _model.dropDownValue,
-                                    appointmentDescription: _model
-                                        .problemDescriptionController.text,
-                                    appointmentTime: _model.datePicked,
-                                  ));
-                                  context.pop();
+                                onPressed: () {
+                                  print('Button pressed ...');
                                 },
                                 text: 'Save Changes',
                                 options: FFButtonOptions(

@@ -1,4 +1,4 @@
-import '/auth/firebase_auth/auth_util.dart';
+import '/auth/custom_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -34,7 +34,6 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    authManager.handlePhoneAuthStateChanges(context);
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
           _model.textController1?.text = 'India';
         }));
@@ -196,11 +195,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                           onTap: () async {
                                             GoRouter.of(context)
                                                 .prepareAuthEvent();
-                                            final user = await authManager
-                                                .signInWithGoogle(context);
-                                            if (user == null) {
-                                              return;
-                                            }
+                                            await authManager.signIn();
 
                                             context.pushNamedAuth(
                                                 'HomePage', context.mounted);
@@ -247,11 +242,7 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         GoRouter.of(context).prepareAuthEvent();
-                                        final user = await authManager
-                                            .signInWithFacebook(context);
-                                        if (user == null) {
-                                          return;
-                                        }
+                                        await authManager.signIn();
 
                                         context.goNamedAuth(
                                             'OnBoardingPage', context.mounted);
@@ -679,39 +670,8 @@ class _PhoneLoginPageWidgetState extends State<PhoneLoginPageWidget> {
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
                                         child: FFButtonWidget(
-                                          onPressed: () async {
-                                            final phoneNumberVal =
-                                                '${functions.dialCode(_model.textController1.text)}${_model.textController2.text}';
-                                            if (phoneNumberVal.isEmpty ||
-                                                !phoneNumberVal
-                                                    .startsWith('+')) {
-                                              ScaffoldMessenger.of(context)
-                                                  .showSnackBar(
-                                                const SnackBar(
-                                                  content: Text(
-                                                      'Phone Number is required and has to start with +.'),
-                                                ),
-                                              );
-                                              return;
-                                            }
-                                            await authManager.beginPhoneAuth(
-                                              context: context,
-                                              phoneNumber: phoneNumberVal,
-                                              onCodeSent: (context) async {
-                                                context.goNamedAuth(
-                                                  'VerifySmsPage',
-                                                  context.mounted,
-                                                  queryParameters: {
-                                                    'mobileNumber':
-                                                        serializeParam(
-                                                      '${functions.dialCode(_model.textController1.text)}${_model.textController2.text}',
-                                                      ParamType.String,
-                                                    ),
-                                                  }.withoutNulls,
-                                                  ignoreRedirect: true,
-                                                );
-                                              },
-                                            );
+                                          onPressed: () {
+                                            print('Button pressed ...');
                                           },
                                           text: 'Get OTP',
                                           options: FFButtonOptions(

@@ -31,3 +31,4 @@ export '/app_pages/sub_pages/list_pages/list_pages_widget.dart'
     show ListPagesWidget;
 export '/authentification/phone_login_page/phone_login_page_widget.dart'
     show PhoneLoginPageWidget;
+export '/qrcode_page/qrcode_page_widget.dart' show QrcodePageWidget;

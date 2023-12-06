@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
@@ -319,27 +318,8 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                 child: FFButtonWidget(
-                  onPressed: () async {
-                    GoRouter.of(context).prepareAuthEvent();
-                    final smsCodeVal = _model.pinCodeController!.text;
-                    if (smsCodeVal.isEmpty) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Enter SMS verification code.'),
-                        ),
-                      );
-                      return;
-                    }
-                    final phoneVerifiedUser = await authManager.verifySmsCode(
-                      context: context,
-                      smsCode: smsCodeVal,
-                    );
-                    if (phoneVerifiedUser == null) {
-                      return;
-                    }
-
-                    context.pushNamedAuth(
-                        'CompleteProfilePage', context.mounted);
+                  onPressed: () {
+                    print('Button pressed ...');
                   },
                   text: 'Continue',
                   icon: const Icon(

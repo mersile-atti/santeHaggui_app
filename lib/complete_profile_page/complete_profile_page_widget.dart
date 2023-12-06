@@ -1,5 +1,4 @@
-import '/backend/backend.dart';
-import '/backend/firebase_storage/storage.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
@@ -7,7 +6,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -82,58 +80,6 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
       ],
     ),
     'textFieldOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 600.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 600.ms,
-          begin: const Offset(1.0, 0.0),
-          end: const Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-    'textFieldOnPageLoadAnimation3': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 600.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 600.ms,
-          begin: const Offset(1.0, 0.0),
-          end: const Offset(1.0, 1.0),
-        ),
-      ],
-    ),
-    'textFieldOnPageLoadAnimation4': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -273,15 +219,6 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
     _model.yourNameController ??= TextEditingController();
     _model.yourNameFocusNode ??= FocusNode();
 
-    _model.yourUsernameController ??= TextEditingController();
-    _model.yourUsernameFocusNode ??= FocusNode();
-
-    _model.yourEmailController ??= TextEditingController();
-    _model.yourEmailFocusNode ??= FocusNode();
-
-    _model.enterYourPasswordController ??= TextEditingController();
-    _model.enterYourPasswordFocusNode ??= FocusNode();
-
     _model.confirmPasswordController ??= TextEditingController();
     _model.confirmPasswordFocusNode ??= FocusNode();
 
@@ -381,86 +318,23 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                             Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    final selectedMedia =
-                                        await selectMediaWithSourceBottomSheet(
-                                      context: context,
-                                      allowPhoto: true,
-                                    );
-                                    if (selectedMedia != null &&
-                                        selectedMedia.every((m) =>
-                                            validateFileFormat(
-                                                m.storagePath, context))) {
-                                      setState(
-                                          () => _model.isDataUploading = true);
-                                      var selectedUploadedFiles =
-                                          <FFUploadedFile>[];
-
-                                      var downloadUrls = <String>[];
-                                      try {
-                                        selectedUploadedFiles = selectedMedia
-                                            .map((m) => FFUploadedFile(
-                                                  name: m.storagePath
-                                                      .split('/')
-                                                      .last,
-                                                  bytes: m.bytes,
-                                                  height: m.dimensions?.height,
-                                                  width: m.dimensions?.width,
-                                                  blurHash: m.blurHash,
-                                                ))
-                                            .toList();
-
-                                        downloadUrls = (await Future.wait(
-                                          selectedMedia.map(
-                                            (m) async => await uploadData(
-                                                m.storagePath, m.bytes),
-                                          ),
-                                        ))
-                                            .where((u) => u != null)
-                                            .map((u) => u!)
-                                            .toList();
-                                      } finally {
-                                        _model.isDataUploading = false;
-                                      }
-                                      if (selectedUploadedFiles.length ==
-                                              selectedMedia.length &&
-                                          downloadUrls.length ==
-                                              selectedMedia.length) {
-                                        setState(() {
-                                          _model.uploadedLocalFile =
-                                              selectedUploadedFiles.first;
-                                          _model.uploadedFileUrl =
-                                              downloadUrls.first;
-                                        });
-                                      } else {
-                                        setState(() {});
-                                        return;
-                                      }
-                                    }
-                                  },
-                                  child: Container(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    decoration: BoxDecoration(
+                                Container(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBtnText,
+                                    image: DecorationImage(
+                                      fit: BoxFit.contain,
+                                      image: Image.network(
+                                        'https://cdn-icons-png.flaticon.com/128/2785/2785482.png',
+                                      ).image,
+                                    ),
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      image: DecorationImage(
-                                        fit: BoxFit.contain,
-                                        image: Image.network(
-                                          _model.uploadedFileUrl,
-                                        ).image,
-                                      ),
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        width: 2.0,
-                                      ),
+                                          .primaryText,
+                                      width: 2.0,
                                     ),
                                   ),
                                 ),
@@ -542,223 +416,15 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 16.0, 16.0, 0.0),
-                              child: TextFormField(
-                                controller: _model.yourUsernameController,
-                                focusNode: _model.yourUsernameFocusNode,
-                                autofocus: true,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  labelStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        fontSize: 12.0,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                  hintText: 'Username ',
-                                  hintStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Outfit',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0xFFE0E0E0),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0xFF019874),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                validator: _model
-                                    .yourUsernameControllerValidator
-                                    .asValidator(context),
-                              ).animateOnPageLoad(animationsMap[
-                                  'textFieldOnPageLoadAnimation2']!),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 16.0, 16.0, 0.0),
-                              child: TextFormField(
-                                controller: _model.yourEmailController,
-                                focusNode: _model.yourEmailFocusNode,
-                                autofocus: true,
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  labelStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        fontSize: 12.0,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                  hintText: 'Email',
-                                  hintStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Outfit',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0xFFE0E0E0),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0xFF019874),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                validator: _model.yourEmailControllerValidator
-                                    .asValidator(context),
-                              ).animateOnPageLoad(animationsMap[
-                                  'textFieldOnPageLoadAnimation3']!),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 10.0, 16.0, 0.0),
-                              child: TextFormField(
-                                controller: _model.enterYourPasswordController,
-                                focusNode: _model.enterYourPasswordFocusNode,
-                                obscureText:
-                                    !_model.enterYourPasswordVisibility,
-                                decoration: InputDecoration(
-                                  labelStyle:
-                                      FlutterFlowTheme.of(context).labelMedium,
-                                  hintText: 'Enter your password',
-                                  hintStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        fontSize: 14.0,
-                                      ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                      color: Color(0xFFE0E0E0),
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 32.0, 20.0, 12.0),
-                                  suffixIcon: InkWell(
-                                    onTap: () => setState(
-                                      () => _model.enterYourPasswordVisibility =
-                                          !_model.enterYourPasswordVisibility,
-                                    ),
-                                    focusNode: FocusNode(skipTraversal: true),
-                                    child: Icon(
-                                      _model.enterYourPasswordVisibility
-                                          ? Icons.visibility_outlined
-                                          : Icons.visibility_off_outlined,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 24.0,
-                                    ),
-                                  ),
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                validator: _model
-                                    .enterYourPasswordControllerValidator
-                                    .asValidator(context),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 10.0, 16.0, 0.0),
                               child: TextFormField(
                                 controller: _model.confirmPasswordController,
                                 focusNode: _model.confirmPasswordFocusNode,
-                                obscureText: !_model.confirmPasswordVisibility,
+                                obscureText: false,
                                 decoration: InputDecoration(
                                   labelStyle:
                                       FlutterFlowTheme.of(context).labelMedium,
-                                  hintText: 'Confirm your password',
+                                  hintText: 'Adresse',
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
@@ -797,21 +463,6 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                                   contentPadding:
                                       const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 32.0, 20.0, 12.0),
-                                  suffixIcon: InkWell(
-                                    onTap: () => setState(
-                                      () => _model.confirmPasswordVisibility =
-                                          !_model.confirmPasswordVisibility,
-                                    ),
-                                    focusNode: FocusNode(skipTraversal: true),
-                                    child: Icon(
-                                      _model.confirmPasswordVisibility
-                                          ? Icons.visibility_outlined
-                                          : Icons.visibility_off_outlined,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 24.0,
-                                    ),
-                                  ),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -888,7 +539,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                                     .yourBirthhdayControllerValidator
                                     .asValidator(context),
                               ).animateOnPageLoad(animationsMap[
-                                  'textFieldOnPageLoadAnimation4']!),
+                                  'textFieldOnPageLoadAnimation2']!),
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1041,10 +692,8 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
-                              child: StreamBuilder<List<MedicalProfilRecord>>(
-                                stream: queryMedicalProfilRecord(
-                                  singleRecord: true,
-                                ),
+                              child: FutureBuilder<ApiCallResponse>(
+                                future: CreateEmergencyProfileCall.call(),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
                                   if (!snapshot.hasData) {
@@ -1062,43 +711,26 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                                       ),
                                     );
                                   }
-                                  List<MedicalProfilRecord>
-                                      buttonLoginMedicalProfilRecordList =
+                                  final buttonLoginCreateEmergencyProfileResponse =
                                       snapshot.data!;
-                                  // Return an empty Container when the item does not exist.
-                                  if (snapshot.data!.isEmpty) {
-                                    return Container();
-                                  }
-                                  final buttonLoginMedicalProfilRecord =
-                                      buttonLoginMedicalProfilRecordList
-                                              .isNotEmpty
-                                          ? buttonLoginMedicalProfilRecordList
-                                              .first
-                                          : null;
                                   return FFButtonWidget(
                                     onPressed: () async {
-                                      await MedicalProfilRecord.collection
-                                          .doc()
-                                          .set(createMedicalProfilRecordData(
-                                            photoUrl: _model.uploadedFileUrl,
-                                            fullName:
-                                                _model.yourNameController.text,
-                                            userName: _model
-                                                .yourUsernameController.text,
-                                            bloodType: _model.dropDownValue,
-                                            userSex: _model.radioButtonValue,
-                                            email:
-                                                _model.yourEmailController.text,
-                                            birthDate: _model
-                                                .yourBirthhdayController.text,
-                                            password: _model
-                                                .enterYourPasswordController
-                                                .text,
-                                            confirmPassword: _model
-                                                .confirmPasswordController.text,
-                                          ));
+                                      _model.apiResult2l0 =
+                                          await CreateEmergencyProfileCall.call(
+                                        name: _model.yourNameController.text,
+                                        birthday:
+                                            _model.yourBirthhdayController.text,
+                                        bloodType: _model.dropDownValue,
+                                        sex: _model.radioButtonValue,
+                                        address: _model
+                                            .confirmPasswordController.text,
+                                      );
+                                      if ((_model.apiResult2l0?.succeeded ??
+                                          true)) {
+                                        context.pushNamed('HomePage');
+                                      }
 
-                                      context.goNamed('HomePage');
+                                      setState(() {});
                                     },
                                     text: 'Complete Profile',
                                     icon: const Icon(

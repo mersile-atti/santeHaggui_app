@@ -1,4 +1,4 @@
-import '/auth/firebase_auth/auth_util.dart';
+import '/auth/custom_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -235,62 +235,24 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                 },
                               ),
                             ),
-                            StreamBuilder<List<MedicalProfilRecord>>(
-                              stream: queryMedicalProfilRecord(
-                                singleRecord: true,
-                              ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          FlutterFlowTheme.of(context).primary,
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                }
-                                List<MedicalProfilRecord>
-                                    textMedicalProfilRecordList =
-                                    snapshot.data!;
-                                // Return an empty Container when the item does not exist.
-                                if (snapshot.data!.isEmpty) {
-                                  return Container();
-                                }
-                                final textMedicalProfilRecord =
-                                    textMedicalProfilRecordList.isNotEmpty
-                                        ? textMedicalProfilRecordList.first
-                                        : null;
-                                return Text(
-                                  valueOrDefault<String>(
-                                    textMedicalProfilRecord?.userName,
-                                    'N/A',
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                );
-                              },
-                            ),
                             Text(
-                              currentUserUid,
+                              valueOrDefault<String>(
+                                currentUserData?.username,
+                                'N/A',
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Outfit',
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
                                   ),
                             ),
                             Text(
-                              'Universal Medical Identity ',
+                              valueOrDefault<String>(
+                                currentUserData?.umi,
+                                'N/A',
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -369,49 +331,15 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 4.0, 0.0, 0.0),
-                                child: StreamBuilder<List<MedicalProfilRecord>>(
-                                  stream: queryMedicalProfilRecord(
-                                    singleRecord: true,
+                                child: Text(
+                                  valueOrDefault<String>(
+                                    currentUserData?.email,
+                                    'N/A',
                                   ),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: CircularProgressIndicator(
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                            ),
-                                          ),
-                                        ),
-                                      );
-                                    }
-                                    List<MedicalProfilRecord>
-                                        textMedicalProfilRecordList =
-                                        snapshot.data!;
-                                    // Return an empty Container when the item does not exist.
-                                    if (snapshot.data!.isEmpty) {
-                                      return Container();
-                                    }
-                                    final textMedicalProfilRecord =
-                                        textMedicalProfilRecordList.isNotEmpty
-                                            ? textMedicalProfilRecordList.first
-                                            : null;
-                                    return Text(
-                                      valueOrDefault<String>(
-                                        textMedicalProfilRecord?.email,
-                                        'N/A',
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
-                                    ).animateOnPageLoad(animationsMap[
-                                        'textOnPageLoadAnimation1']!);
-                                  },
-                                ),
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ).animateOnPageLoad(
+                                    animationsMap['textOnPageLoadAnimation1']!),
                               ),
                             ],
                           ),
@@ -477,17 +405,18 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 4.0, 0.0, 0.0),
-                                child: AuthUserStreamWidget(
-                                  builder: (context) => Text(
-                                    currentPhoneNumber,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                        ),
-                                  ).animateOnPageLoad(animationsMap[
-                                      'textOnPageLoadAnimation2']!),
-                                ),
+                                child: Text(
+                                  valueOrDefault<String>(
+                                    currentUserData?.phoneNumber,
+                                    'N/A',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                      ),
+                                ).animateOnPageLoad(
+                                    animationsMap['textOnPageLoadAnimation2']!),
                               ),
                             ],
                           ),

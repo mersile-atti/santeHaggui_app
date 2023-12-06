@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'login_page_widget.dart' show LoginPageWidget;
 import 'package:flutter/material.dart';
@@ -17,6 +18,8 @@ class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
   TextEditingController? passwordFieldController;
   late bool passwordFieldVisibility;
   String? Function(BuildContext, String?)? passwordFieldControllerValidator;
+  // Stores action output result for [Backend Call - API (authUser)] action in Button widget.
+  ApiCallResponse? apiResult6cu;
 
   /// Initialization and disposal methods.
 

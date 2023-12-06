@@ -1,7 +1,9 @@
-import '/auth/firebase_auth/auth_util.dart';
+import '/auth/custom_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/backend/schema/structs/index.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -192,11 +194,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           onTap: () async {
                                             GoRouter.of(context)
                                                 .prepareAuthEvent();
-                                            final user = await authManager
-                                                .signInWithGoogle(context);
-                                            if (user == null) {
-                                              return;
-                                            }
+                                            await authManager.signIn();
 
                                             context.pushNamedAuth(
                                                 'HomePage', context.mounted);
@@ -243,11 +241,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         GoRouter.of(context).prepareAuthEvent();
-                                        final user = await authManager
-                                            .signInWithFacebook(context);
-                                        if (user == null) {
-                                          return;
-                                        }
+                                        await authManager.signIn();
 
                                         context.goNamedAuth(
                                             'OnBoardingPage', context.mounted);
@@ -530,24 +524,57 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     .validate()) {
                                               return;
                                             }
-                                            GoRouter.of(context)
-                                                .prepareAuthEvent();
-
-                                            final user = await authManager
-                                                .signInWithEmail(
-                                              context,
-                                              _model
+                                            _model.apiResult6cu =
+                                                await AuthUserCall.call(
+                                              phoneNumber: _model
                                                   .emailAddressOrPhoneNumberController
                                                   .text,
-                                              _model
+                                              password: _model
                                                   .passwordFieldController.text,
                                             );
-                                            if (user == null) {
-                                              return;
+                                            if ((_model
+                                                    .apiResult6cu?.succeeded ??
+                                                true)) {
+                                              GoRouter.of(context)
+                                                  .prepareAuthEvent();
+                                              await authManager.signIn(
+                                                authenticationToken: ((_model
+                                                                        .apiResult6cu
+                                                                        ?.jsonBody ??
+                                                                    '') !=
+                                                                null &&
+                                                            (_model.apiResult6cu
+                                                                        ?.jsonBody ??
+                                                                    '') !=
+                                                                ''
+                                                        ? UserStruct.fromMap(
+                                                            (_model.apiResult6cu
+                                                                    ?.jsonBody ??
+                                                                ''))
+                                                        : null)
+                                                    ?.token
+                                                    .toString(),
+                                                userData: (_model.apiResult6cu
+                                                                    ?.jsonBody ??
+                                                                '') !=
+                                                            null &&
+                                                        (_model.apiResult6cu
+                                                                    ?.jsonBody ??
+                                                                '') !=
+                                                            ''
+                                                    ? UserStruct.fromMap((_model
+                                                            .apiResult6cu
+                                                            ?.jsonBody ??
+                                                        ''))
+                                                    : null,
+                                              );
                                             }
 
-                                            context.pushNamedAuth(
-                                                'HomePage', context.mounted);
+                                            context.goNamedAuth(
+                                                'OnBoardingPage',
+                                                context.mounted);
+
+                                            setState(() {});
                                           },
                                           text: 'Log In',
                                           icon: const Icon(
@@ -625,7 +652,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         mouseCursor: SystemMouseCursors.click,
                                         recognizer: TapGestureRecognizer()
                                           ..onTap = () async {
-                                            context.pushNamed('PhoneLoginPage');
+                                            context
+                                                .pushNamed('CreateAccountPage');
                                           },
                                       )
                                     ],

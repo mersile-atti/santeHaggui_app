@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '/auth/base_auth_user_provider.dart';
+import '/auth/custom_auth/custom_auth_user_provider.dart';
 
 import '/index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -19,8 +19,8 @@ class AppStateNotifier extends ChangeNotifier {
   static AppStateNotifier? _instance;
   static AppStateNotifier get instance => _instance ??= AppStateNotifier._();
 
-  BaseAuthUser? initialUser;
-  BaseAuthUser? user;
+  SantehagguiAuthUser? initialUser;
+  SantehagguiAuthUser? user;
   bool showSplashImage = true;
   String? _redirectLocation;
 
@@ -45,7 +45,7 @@ class AppStateNotifier extends ChangeNotifier {
   /// to perform subsequent actions (such as navigation) afterwards.
   void updateNotifyOnAuthChange(bool notify) => notifyOnAuthChange = notify;
 
-  void update(BaseAuthUser newUser) {
+  void update(SantehagguiAuthUser newUser) {
     final shouldUpdate =
         user?.uid == null || newUser.uid == null || user?.uid != newUser.uid;
     initialUser ??= newUser;
@@ -176,6 +176,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'PhoneLoginPage',
           path: '/phoneLoginPage',
           builder: (context, params) => const PhoneLoginPageWidget(),
+        ),
+        FFRoute(
+          name: 'QrcodePage',
+          path: '/qrcodePage',
+          builder: (context, params) => const QrcodePageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

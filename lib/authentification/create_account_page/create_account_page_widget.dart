@@ -1,10 +1,9 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/auth/custom_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
+import '/backend/schema/structs/index.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -37,9 +36,6 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
 
     _model.enterYourPhoneNumberController ??= TextEditingController();
     _model.enterYourPhoneNumberFocusNode ??= FocusNode();
-
-    _model.passwordFieldController ??= TextEditingController();
-    _model.passwordFieldFocusNode ??= FocusNode();
 
     _model.confirmPasswordController ??= TextEditingController();
     _model.confirmPasswordFocusNode ??= FocusNode();
@@ -403,131 +399,6 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                               ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 10.0, 0.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    FlutterFlowDropDown<String>(
-                                      controller:
-                                          _model.dropDownValueController ??=
-                                              FormFieldController<String>(null),
-                                      options: const ['Male', 'Female'],
-                                      onChanged: (val) => setState(
-                                          () => _model.dropDownValue = val),
-                                      width: 320.0,
-                                      height: 50.0,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
-                                      hintText: 'Sex',
-                                      icon: Icon(
-                                        Icons.keyboard_arrow_down_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
-                                      ),
-                                      fillColor: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      elevation: 2.0,
-                                      borderColor: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                      borderWidth: 2.0,
-                                      borderRadius: 8.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
-                                      hidesUnderline: true,
-                                      isSearchable: false,
-                                      isMultiSelect: false,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 10.0, 16.0, 0.0),
-                                child: TextFormField(
-                                  controller: _model.passwordFieldController,
-                                  focusNode: _model.passwordFieldFocusNode,
-                                  obscureText: !_model.passwordFieldVisibility,
-                                  decoration: InputDecoration(
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                        ),
-                                    hintText: 'Enter your password ',
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 14.0,
-                                        ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                        color: Color(0xFFE0E0E0),
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    contentPadding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 32.0, 20.0, 12.0),
-                                    suffixIcon: InkWell(
-                                      onTap: () => setState(
-                                        () => _model.passwordFieldVisibility =
-                                            !_model.passwordFieldVisibility,
-                                      ),
-                                      focusNode: FocusNode(skipTraversal: true),
-                                      child: Icon(
-                                        _model.passwordFieldVisibility
-                                            ? Icons.visibility_outlined
-                                            : Icons.visibility_off_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
-                                      ),
-                                    ),
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                  validator: _model
-                                      .passwordFieldControllerValidator
-                                      .asValidator(context),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 10.0, 16.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.confirmPasswordController,
@@ -699,9 +570,6 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                           .validate()) {
                                     return;
                                   }
-                                  if (_model.dropDownValue == null) {
-                                    return;
-                                  }
                                 },
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -723,58 +591,67 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                                       .validate()) {
                                                 return;
                                               }
-                                              if (_model.dropDownValue ==
-                                                  null) {
-                                                return;
-                                              }
-                                              GoRouter.of(context)
-                                                  .prepareAuthEvent();
-                                              if (_model.passwordFieldController
-                                                      .text !=
-                                                  _model
-                                                      .confirmPasswordController
-                                                      .text) {
-                                                ScaffoldMessenger.of(context)
-                                                    .showSnackBar(
-                                                  const SnackBar(
-                                                    content: Text(
-                                                      'Passwords don\'t match!',
-                                                    ),
-                                                  ),
-                                                );
-                                                return;
-                                              }
-
-                                              final user = await authManager
-                                                  .createAccountWithEmail(
-                                                context,
-                                                _model.enterYourEmailController
+                                              _model.apiResultct3 =
+                                                  await AddUserCall.call(
+                                                username: _model
+                                                    .enterYourNameController
                                                     .text,
-                                                _model.passwordFieldController
+                                                email: _model
+                                                    .enterYourEmailController
+                                                    .text,
+                                                phoneNumber: _model
+                                                    .enterYourPhoneNumberController
+                                                    .text,
+                                                password: _model
+                                                    .confirmPasswordController
                                                     .text,
                                               );
-                                              if (user == null) {
-                                                return;
+                                              if ((_model.apiResultct3
+                                                      ?.succeeded ??
+                                                  true)) {
+                                                GoRouter.of(context)
+                                                    .prepareAuthEvent();
+                                                await authManager.signIn(
+                                                  authenticationToken: ((_model
+                                                                          .apiResultct3
+                                                                          ?.jsonBody ??
+                                                                      '') !=
+                                                                  null &&
+                                                              (_model.apiResultct3
+                                                                          ?.jsonBody ??
+                                                                      '') !=
+                                                                  ''
+                                                          ? UserStruct.fromMap(
+                                                              (_model.apiResultct3
+                                                                      ?.jsonBody ??
+                                                                  ''))
+                                                          : null)
+                                                      ?.token
+                                                      .toString(),
+                                                  userData: (_model.apiResultct3
+                                                                      ?.jsonBody ??
+                                                                  '') !=
+                                                              null &&
+                                                          (_model.apiResultct3
+                                                                      ?.jsonBody ??
+                                                                  '') !=
+                                                              ''
+                                                      ? UserStruct.fromMap(
+                                                          (_model.apiResultct3
+                                                                  ?.jsonBody ??
+                                                              ''))
+                                                      : null,
+                                                );
+                                                if (Navigator.of(context)
+                                                    .canPop()) {
+                                                  context.pop();
+                                                }
+                                                context.pushNamedAuth(
+                                                    'CompleteProfilePage',
+                                                    context.mounted);
                                               }
 
-                                              await UsersRecord.collection
-                                                  .doc(user.uid)
-                                                  .update(createUsersRecordData(
-                                                    name: _model
-                                                        .enterYourNameController
-                                                        .text,
-                                                    phoneNumber: _model
-                                                        .enterYourPhoneNumberController
-                                                        .text,
-                                                    userSex:
-                                                        _model.dropDownValue,
-                                                    enteryourpassword: _model
-                                                        .passwordFieldController
-                                                        .text,
-                                                  ));
-
-                                              context.pushNamedAuth(
-                                                  'HomePage', context.mounted);
+                                              setState(() {});
                                             },
                                             text: 'Register',
                                             icon: const Icon(

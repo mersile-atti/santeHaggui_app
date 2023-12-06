@@ -1,5 +1,5 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'create_account_page_widget.dart' show CreateAccountPageWidget;
 import 'package:flutter/material.dart';
 
@@ -47,26 +47,6 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
     return null;
   }
 
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
-  // State field(s) for passwordField widget.
-  FocusNode? passwordFieldFocusNode;
-  TextEditingController? passwordFieldController;
-  late bool passwordFieldVisibility;
-  String? Function(BuildContext, String?)? passwordFieldControllerValidator;
-  String? _passwordFieldControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Field is required';
-    }
-
-    if (val.length < 6) {
-      return 'Requires at least 6 characters.';
-    }
-
-    return null;
-  }
-
   // State field(s) for ConfirmPassword widget.
   FocusNode? confirmPasswordFocusNode;
   TextEditingController? confirmPasswordController;
@@ -87,6 +67,8 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
 
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
+  // Stores action output result for [Backend Call - API (addUser)] action in Button widget.
+  ApiCallResponse? apiResultct3;
 
   /// Initialization and disposal methods.
 
@@ -96,8 +78,6 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
     enterYourEmailControllerValidator = _enterYourEmailControllerValidator;
     enterYourPhoneNumberControllerValidator =
         _enterYourPhoneNumberControllerValidator;
-    passwordFieldVisibility = false;
-    passwordFieldControllerValidator = _passwordFieldControllerValidator;
     confirmPasswordVisibility = false;
     confirmPasswordControllerValidator = _confirmPasswordControllerValidator;
   }
@@ -113,9 +93,6 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
 
     enterYourPhoneNumberFocusNode?.dispose();
     enterYourPhoneNumberController?.dispose();
-
-    passwordFieldFocusNode?.dispose();
-    passwordFieldController?.dispose();
 
     confirmPasswordFocusNode?.dispose();
     confirmPasswordController?.dispose();

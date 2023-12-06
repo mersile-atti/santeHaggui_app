@@ -1,17 +1,21 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'emergency_profile_component_widget.dart'
-    show EmergencyProfileComponentWidget;
+import 'qrcode_page_widget.dart' show QrcodePageWidget;
 import 'package:flutter/material.dart';
 
-class EmergencyProfileComponentModel
-    extends FlutterFlowModel<EmergencyProfileComponentWidget> {
+class QrcodePageModel extends FlutterFlowModel<QrcodePageWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  final unfocusNode = FocusNode();
+
   /// Initialization and disposal methods.
 
   @override
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {}
+  void dispose() {
+    unfocusNode.dispose();
+  }
 
   /// Action blocks are added here.
 
