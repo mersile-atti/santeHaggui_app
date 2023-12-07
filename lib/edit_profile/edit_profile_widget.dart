@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'edit_profile_model.dart';
 export 'edit_profile_model.dart';
 
@@ -105,6 +106,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget>
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return Scaffold(
       key: scaffoldKey,

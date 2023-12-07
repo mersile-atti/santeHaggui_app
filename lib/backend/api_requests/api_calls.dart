@@ -45,21 +45,18 @@ class AddUserCall {
     String? phoneNumber = '',
     String? password = '',
   }) async {
-    final ffApiRequestBody = '''
-{
-  "username": "$username",
-  "email": "$email",
-  "phoneNumber": "$phoneNumber",
-  "password": "$password"
-}''';
     return ApiManager.instance.makeApiCall(
       callName: 'addUser',
       apiUrl: 'https://santehaggui-app-af1d825f7530.herokuapp.com/api/users',
       callType: ApiCallType.POST,
       headers: {},
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
+      params: {
+        'username': username,
+        'email': email,
+        'phoneNumber': phoneNumber,
+        'password': password,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -84,28 +81,26 @@ class CreateEmergencyProfileCall {
     final treatmentsAndProcedures = _serializeList(treatmentsAndProceduresList);
     final medications = _serializeList(medicationsList);
     final emergencyContact = _serializeJson(emergencyContactJson);
-    final ffApiRequestBody = '''
-{
-  "profilePicture": "$profilePicture",
-  "name": "$name",
-  "birthday": "$birthday",
-  "bloodType": "$bloodType",
-  "sex": "$sex",
-  "allergies": "$allergies",
-  "medications": "$medications",
-  "treatmentsAndProcedures": "$treatmentsAndProcedures",
-  "address": "$address",
-  "emergencyContact": "$emergencyContact"
-}''';
+
     return ApiManager.instance.makeApiCall(
       callName: 'createEmergencyProfile',
       apiUrl:
           'https://santehaggui-app-af1d825f7530.herokuapp.com/api/users/profile/emergency-profile',
       callType: ApiCallType.POST,
       headers: {},
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
+      params: {
+        'name': name,
+        'birthday': birthday,
+        'bloodType': bloodType,
+        'sex': sex,
+        'treatmentsAndProcedures': treatmentsAndProcedures,
+        'allergies': allergies,
+        'medications': medications,
+        'address': address,
+        'emergencyContact': emergencyContact,
+        'profilePicture': profilePicture,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -118,21 +113,20 @@ class AuthUserCall {
   static Future<ApiCallResponse> call({
     String? phoneNumber = '',
     String? password = '',
+    String? email = '',
   }) async {
-    final ffApiRequestBody = '''
-{
-  "phoneNumber": "$phoneNumber",
-  "password": "$password"
-}''';
     return ApiManager.instance.makeApiCall(
       callName: 'authUser',
       apiUrl:
           'https://santehaggui-app-af1d825f7530.herokuapp.com/api/users/auth',
       callType: ApiCallType.POST,
       headers: {},
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
+      params: {
+        'email': email,
+        'phoneNumber': phoneNumber,
+        'password': password,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

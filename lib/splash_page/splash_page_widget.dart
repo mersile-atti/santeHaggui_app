@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'splash_page_model.dart';
 export 'splash_page_model.dart';
 
@@ -92,6 +93,8 @@ class _SplashPageWidgetState extends State<SplashPageWidget>
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus

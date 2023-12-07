@@ -15,20 +15,20 @@ class UserStruct extends FFFirebaseStruct {
     String? surname,
     String? email,
     String? image,
-    int? token,
     String? phoneNumber,
     String? umi,
     String? username,
+    String? token,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _id = id,
         _name = name,
         _surname = surname,
         _email = email,
         _image = image,
-        _token = token,
         _phoneNumber = phoneNumber,
         _umi = umi,
         _username = username,
+        _token = token,
         super(firestoreUtilData);
 
   // "id" field.
@@ -62,13 +62,6 @@ class UserStruct extends FFFirebaseStruct {
   set image(String? val) => _image = val;
   bool hasImage() => _image != null;
 
-  // "token" field.
-  int? _token;
-  int get token => _token ?? 0;
-  set token(int? val) => _token = val;
-  void incrementToken(int amount) => _token = token + amount;
-  bool hasToken() => _token != null;
-
   // "phoneNumber" field.
   String? _phoneNumber;
   String get phoneNumber => _phoneNumber ?? '';
@@ -87,16 +80,22 @@ class UserStruct extends FFFirebaseStruct {
   set username(String? val) => _username = val;
   bool hasUsername() => _username != null;
 
+  // "token" field.
+  String? _token;
+  String get token => _token ?? '';
+  set token(String? val) => _token = val;
+  bool hasToken() => _token != null;
+
   static UserStruct fromMap(Map<String, dynamic> data) => UserStruct(
         id: castToType<int>(data['id']),
         name: data['name'] as String?,
         surname: data['surname'] as String?,
         email: data['email'] as String?,
         image: data['image'] as String?,
-        token: castToType<int>(data['token']),
         phoneNumber: data['phoneNumber'] as String?,
         umi: data['umi'] as String?,
         username: data['username'] as String?,
+        token: data['token'] as String?,
       );
 
   static UserStruct? maybeFromMap(dynamic data) =>
@@ -108,10 +107,10 @@ class UserStruct extends FFFirebaseStruct {
         'surname': _surname,
         'email': _email,
         'image': _image,
-        'token': _token,
         'phoneNumber': _phoneNumber,
         'umi': _umi,
         'username': _username,
+        'token': _token,
       }.withoutNulls;
 
   @override
@@ -136,10 +135,6 @@ class UserStruct extends FFFirebaseStruct {
           _image,
           ParamType.String,
         ),
-        'token': serializeParam(
-          _token,
-          ParamType.int,
-        ),
         'phoneNumber': serializeParam(
           _phoneNumber,
           ParamType.String,
@@ -150,6 +145,10 @@ class UserStruct extends FFFirebaseStruct {
         ),
         'username': serializeParam(
           _username,
+          ParamType.String,
+        ),
+        'token': serializeParam(
+          _token,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -181,11 +180,6 @@ class UserStruct extends FFFirebaseStruct {
           ParamType.String,
           false,
         ),
-        token: deserializeParam(
-          data['token'],
-          ParamType.int,
-          false,
-        ),
         phoneNumber: deserializeParam(
           data['phoneNumber'],
           ParamType.String,
@@ -198,6 +192,11 @@ class UserStruct extends FFFirebaseStruct {
         ),
         username: deserializeParam(
           data['username'],
+          ParamType.String,
+          false,
+        ),
+        token: deserializeParam(
+          data['token'],
           ParamType.String,
           false,
         ),
@@ -214,15 +213,15 @@ class UserStruct extends FFFirebaseStruct {
         surname == other.surname &&
         email == other.email &&
         image == other.image &&
-        token == other.token &&
         phoneNumber == other.phoneNumber &&
         umi == other.umi &&
-        username == other.username;
+        username == other.username &&
+        token == other.token;
   }
 
   @override
   int get hashCode => const ListEquality().hash(
-      [id, name, surname, email, image, token, phoneNumber, umi, username]);
+      [id, name, surname, email, image, phoneNumber, umi, username, token]);
 }
 
 UserStruct createUserStruct({
@@ -231,10 +230,10 @@ UserStruct createUserStruct({
   String? surname,
   String? email,
   String? image,
-  int? token,
   String? phoneNumber,
   String? umi,
   String? username,
+  String? token,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -246,10 +245,10 @@ UserStruct createUserStruct({
       surname: surname,
       email: email,
       image: image,
-      token: token,
       phoneNumber: phoneNumber,
       umi: umi,
       username: username,
+      token: token,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

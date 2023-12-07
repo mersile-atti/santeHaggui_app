@@ -1,14 +1,15 @@
-import '/auth/custom_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/components/profile_bottom_sheet/profile_bottom_sheet_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/backend/schema/structs/index.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -52,6 +53,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return Scaffold(
       key: scaffoldKey,
@@ -226,7 +229,18 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   snapshot.data!;
                                               return Text(
                                                 valueOrDefault<String>(
-                                                  currentUserData?.phoneNumber,
+                                                  (textCreateEmergencyProfileResponse
+                                                                      .jsonBody !=
+                                                                  null &&
+                                                              textCreateEmergencyProfileResponse
+                                                                      .jsonBody !=
+                                                                  ''
+                                                          ? EmergencyProfileStruct
+                                                              .fromMap(
+                                                                  textCreateEmergencyProfileResponse
+                                                                      .jsonBody)
+                                                          : null)
+                                                      ?.name,
                                                   'N/A',
                                                 ),
                                                 style:

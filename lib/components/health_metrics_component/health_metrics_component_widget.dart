@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/update_emergency_profile_components/update_medicale_profil_address_component/update_medicale_profil_address_component_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'health_metrics_component_model.dart';
 export 'health_metrics_component_model.dart';
 
@@ -113,6 +114,8 @@ class _HealthMetricsComponentWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: const AlignmentDirectional(0.00, 0.00),
       child: Padding(

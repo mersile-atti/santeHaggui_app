@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'complete_profile_page_model.dart';
 export 'complete_profile_page_model.dart';
 
@@ -252,6 +253,8 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus

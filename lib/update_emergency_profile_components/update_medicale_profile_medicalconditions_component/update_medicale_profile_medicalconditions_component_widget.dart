@@ -7,6 +7,7 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'update_medicale_profile_medicalconditions_component_model.dart';
 export 'update_medicale_profile_medicalconditions_component_model.dart';
 
@@ -67,6 +68,8 @@ class _UpdateMedicaleProfileMedicalconditionsComponentWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
       child: Container(

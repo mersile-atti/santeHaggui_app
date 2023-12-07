@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'setting_page_model.dart';
 export 'setting_page_model.dart';
 
@@ -45,6 +46,8 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus

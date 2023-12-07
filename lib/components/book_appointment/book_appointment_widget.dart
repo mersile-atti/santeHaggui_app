@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'book_appointment_model.dart';
 export 'book_appointment_model.dart';
 
@@ -224,6 +225,8 @@ class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return ClipRRect(
       child: BackdropFilter(
         filter: ImageFilter.blur(

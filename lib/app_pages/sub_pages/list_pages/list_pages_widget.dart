@@ -7,6 +7,7 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'list_pages_model.dart';
 export 'list_pages_model.dart';
 
@@ -55,6 +56,8 @@ class _ListPagesWidgetState extends State<ListPagesWidget> {
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus

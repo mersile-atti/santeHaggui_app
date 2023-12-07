@@ -44,6 +44,10 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
       return 'Field is required';
     }
 
+    if (val.length < 6) {
+      return 'Requires at least 6 characters.';
+    }
+
     return null;
   }
 

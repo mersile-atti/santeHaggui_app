@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'appointment_details_model.dart';
 export 'appointment_details_model.dart';
 
@@ -51,6 +52,8 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return StreamBuilder<AppointmentsRecord>(
       stream: AppointmentsRecord.getDocument(widget.appointmentDetails!),

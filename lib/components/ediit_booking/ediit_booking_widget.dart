@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'ediit_booking_model.dart';
 export 'ediit_booking_model.dart';
 
@@ -55,6 +56,8 @@ class _EdiitBookingWidgetState extends State<EdiitBookingWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return ClipRRect(
       child: BackdropFilter(
         filter: ImageFilter.blur(

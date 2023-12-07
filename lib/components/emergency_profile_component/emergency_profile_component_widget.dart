@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -12,6 +13,7 @@ import '/update_emergency_profile_components/update_medicale_profile_name_compon
 import '/update_emergency_profile_components/update_medicale_profile_user_sex_component/update_medicale_profile_user_sex_component_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'emergency_profile_component_model.dart';
 export 'emergency_profile_component_model.dart';
 
@@ -90,6 +92,8 @@ class _EmergencyProfileComponentWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: const AlignmentDirectional(0.00, 0.00),
       child: Padding(
@@ -182,10 +186,8 @@ class _EmergencyProfileComponentWidgetState
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
-                      child: StreamBuilder<List<MedicalProfilRecord>>(
-                        stream: queryMedicalProfilRecord(
-                          singleRecord: true,
-                        ),
+                      child: FutureBuilder<ApiCallResponse>(
+                        future: CreateEmergencyProfileCall.call(),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
                           if (!snapshot.hasData) {
@@ -201,17 +203,8 @@ class _EmergencyProfileComponentWidgetState
                               ),
                             );
                           }
-                          List<MedicalProfilRecord>
-                              contentView1MedicalProfilRecordList =
+                          final contentView1CreateEmergencyProfileResponse =
                               snapshot.data!;
-                          // Return an empty Container when the item does not exist.
-                          if (snapshot.data!.isEmpty) {
-                            return Container();
-                          }
-                          final contentView1MedicalProfilRecord =
-                              contentView1MedicalProfilRecordList.isNotEmpty
-                                  ? contentView1MedicalProfilRecordList.first
-                                  : null;
                           return InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -275,8 +268,17 @@ class _EmergencyProfileComponentWidgetState
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
-                                          contentView1MedicalProfilRecord
-                                              ?.fullName,
+                                          (contentView1CreateEmergencyProfileResponse
+                                                              .jsonBody !=
+                                                          null &&
+                                                      contentView1CreateEmergencyProfileResponse
+                                                              .jsonBody !=
+                                                          ''
+                                                  ? EmergencyProfileStruct.fromMap(
+                                                      contentView1CreateEmergencyProfileResponse
+                                                          .jsonBody)
+                                                  : null)
+                                              ?.name,
                                           'N/A',
                                         ),
                                         style: FlutterFlowTheme.of(context)

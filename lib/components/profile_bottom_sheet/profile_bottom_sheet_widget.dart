@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'profile_bottom_sheet_model.dart';
 export 'profile_bottom_sheet_model.dart';
 
@@ -120,6 +121,8 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: const AlignmentDirectional(0.00, 0.00),
       child: Padding(
@@ -527,8 +530,8 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                               await authManager.signOut();
                               GoRouter.of(context).clearRedirectLocation();
 
-                              context.goNamedAuth(
-                                  'SplashPage', context.mounted);
+                              context.pushNamedAuth(
+                                  'LoginPage', context.mounted);
                             },
                             text: 'Logout',
                             icon: const Icon(

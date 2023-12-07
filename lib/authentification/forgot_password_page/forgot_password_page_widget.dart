@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'forgot_password_page_model.dart';
 export 'forgot_password_page_model.dart';
 
@@ -48,6 +49,8 @@ class _ForgotPasswordPageWidgetState extends State<ForgotPasswordPageWidget> {
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return Scaffold(
       key: scaffoldKey,

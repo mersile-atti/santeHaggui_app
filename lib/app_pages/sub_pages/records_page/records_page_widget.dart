@@ -9,6 +9,7 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'records_page_model.dart';
 export 'records_page_model.dart';
 
@@ -57,6 +58,8 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus

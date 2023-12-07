@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'login_page_model.dart';
 export 'login_page_model.dart';
 
@@ -55,6 +56,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
@@ -531,6 +534,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   .text,
                                               password: _model
                                                   .passwordFieldController.text,
+                                              email: _model
+                                                  .emailAddressOrPhoneNumberController
+                                                  .text,
                                             );
                                             if ((_model
                                                     .apiResult6cu?.succeeded ??
@@ -552,8 +558,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                                     ?.jsonBody ??
                                                                 ''))
                                                         : null)
-                                                    ?.token
-                                                    .toString(),
+                                                    ?.token,
                                                 userData: (_model.apiResult6cu
                                                                     ?.jsonBody ??
                                                                 '') !=
@@ -568,11 +573,32 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                         ''))
                                                     : null,
                                               );
-                                            }
 
-                                            context.goNamedAuth(
-                                                'OnBoardingPage',
-                                                context.mounted);
+                                              context.pushNamedAuth(
+                                                  'HomePage', context.mounted);
+                                            } else {
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title: const Text('Error'),
+                                                    content: Text((_model
+                                                                .apiResult6cu
+                                                                ?.jsonBody ??
+                                                            '')
+                                                        .toString()),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: const Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              );
+                                            }
 
                                             setState(() {});
                                           },

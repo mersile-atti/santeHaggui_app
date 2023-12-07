@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'update_health_files_component_model.dart';
 export 'update_health_files_component_model.dart';
 
@@ -44,6 +45,8 @@ class _UpdateHealthFilesComponentWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
       child: Container(

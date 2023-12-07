@@ -20,6 +20,7 @@ class EmergencyProfileStruct extends FFFirebaseStruct {
     List<String>? treatmentsAndProcedures,
     String? address,
     List<String>? emergencyContact,
+    String? token,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _name = name,
         _birthday = birthday,
@@ -31,6 +32,7 @@ class EmergencyProfileStruct extends FFFirebaseStruct {
         _treatmentsAndProcedures = treatmentsAndProcedures,
         _address = address,
         _emergencyContact = emergencyContact,
+        _token = token,
         super(firestoreUtilData);
 
   // "name" field.
@@ -103,6 +105,12 @@ class EmergencyProfileStruct extends FFFirebaseStruct {
       updateFn(_emergencyContact ??= []);
   bool hasEmergencyContact() => _emergencyContact != null;
 
+  // "token" field.
+  String? _token;
+  String get token => _token ?? '';
+  set token(String? val) => _token = val;
+  bool hasToken() => _token != null;
+
   static EmergencyProfileStruct fromMap(Map<String, dynamic> data) =>
       EmergencyProfileStruct(
         name: data['name'] as String?,
@@ -115,6 +123,7 @@ class EmergencyProfileStruct extends FFFirebaseStruct {
         treatmentsAndProcedures: getDataList(data['treatmentsAndProcedures']),
         address: data['address'] as String?,
         emergencyContact: getDataList(data['emergencyContact']),
+        token: data['token'] as String?,
       );
 
   static EmergencyProfileStruct? maybeFromMap(dynamic data) =>
@@ -133,6 +142,7 @@ class EmergencyProfileStruct extends FFFirebaseStruct {
         'treatmentsAndProcedures': _treatmentsAndProcedures,
         'address': _address,
         'emergencyContact': _emergencyContact,
+        'token': _token,
       }.withoutNulls;
 
   @override
@@ -180,6 +190,10 @@ class EmergencyProfileStruct extends FFFirebaseStruct {
           _emergencyContact,
           ParamType.String,
           true,
+        ),
+        'token': serializeParam(
+          _token,
+          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -236,6 +250,11 @@ class EmergencyProfileStruct extends FFFirebaseStruct {
           ParamType.String,
           true,
         ),
+        token: deserializeParam(
+          data['token'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -255,7 +274,8 @@ class EmergencyProfileStruct extends FFFirebaseStruct {
         listEquality.equals(
             treatmentsAndProcedures, other.treatmentsAndProcedures) &&
         address == other.address &&
-        listEquality.equals(emergencyContact, other.emergencyContact);
+        listEquality.equals(emergencyContact, other.emergencyContact) &&
+        token == other.token;
   }
 
   @override
@@ -269,7 +289,8 @@ class EmergencyProfileStruct extends FFFirebaseStruct {
         medications,
         treatmentsAndProcedures,
         address,
-        emergencyContact
+        emergencyContact,
+        token
       ]);
 }
 
@@ -280,6 +301,7 @@ EmergencyProfileStruct createEmergencyProfileStruct({
   String? profilePicture,
   String? sex,
   String? address,
+  String? token,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -292,6 +314,7 @@ EmergencyProfileStruct createEmergencyProfileStruct({
       profilePicture: profilePicture,
       sex: sex,
       address: address,
+      token: token,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

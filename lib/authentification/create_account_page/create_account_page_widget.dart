@@ -7,6 +7,7 @@ import '/backend/schema/structs/index.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'create_account_page_model.dart';
 export 'create_account_page_model.dart';
 
@@ -60,6 +61,8 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
@@ -540,7 +543,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                           ),
                                           unselectedWidgetColor:
                                               FlutterFlowTheme.of(context)
-                                                  .primaryText,
+                                                  .error,
                                         ),
                                         child: Checkbox(
                                           value: _model.checkboxValue ??= false,
@@ -626,8 +629,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                                                       ?.jsonBody ??
                                                                   ''))
                                                           : null)
-                                                      ?.token
-                                                      .toString(),
+                                                      ?.token,
                                                   userData: (_model.apiResultct3
                                                                       ?.jsonBody ??
                                                                   '') !=
@@ -642,12 +644,9 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                                               ''))
                                                       : null,
                                                 );
-                                                if (Navigator.of(context)
-                                                    .canPop()) {
-                                                  context.pop();
-                                                }
+
                                                 context.pushNamedAuth(
-                                                    'CompleteProfilePage',
+                                                    'HomePage',
                                                     context.mounted);
                                               }
 

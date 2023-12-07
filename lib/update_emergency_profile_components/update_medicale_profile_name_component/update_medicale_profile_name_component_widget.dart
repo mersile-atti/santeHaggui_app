@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -7,6 +8,7 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'update_medicale_profile_name_component_model.dart';
 export 'update_medicale_profile_name_component_model.dart';
 
@@ -66,6 +68,8 @@ class _UpdateMedicaleProfileNameComponentWidgetState
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
       child: Container(
@@ -490,45 +494,76 @@ class _UpdateMedicaleProfileNameComponentWidgetState
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 0.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    await rowUsersRecord!.reference
-                                        .update(createUsersRecordData(
-                                      name: _model.textController.text,
-                                    ));
-                                    Navigator.pop(context);
-                                  },
-                                  text: 'Update',
-                                  options: FFButtonOptions(
-                                    width: 250.0,
-                                    height: 56.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFF019874),
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          fontWeight: FontWeight.normal,
+                                child: FutureBuilder<ApiCallResponse>(
+                                  future: CreateEmergencyProfileCall.call(),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
                                         ),
-                                    elevation: 3.0,
-                                    borderSide: const BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: const BorderRadius.only(
-                                      bottomLeft: Radius.circular(25.0),
-                                      bottomRight: Radius.circular(15.0),
-                                      topLeft: Radius.circular(10.0),
-                                      topRight: Radius.circular(25.0),
-                                    ),
-                                  ),
-                                ).animateOnPageLoad(animationsMap[
-                                    'buttonOnPageLoadAnimation']!),
+                                      );
+                                    }
+                                    final buttonCreateEmergencyProfileResponse =
+                                        snapshot.data!;
+                                    return FFButtonWidget(
+                                      onPressed: () async {
+                                        _model.apiResultg6w =
+                                            await CreateEmergencyProfileCall
+                                                .call(
+                                          name: _model.textController.text,
+                                        );
+                                        if ((_model.apiResultg6w?.succeeded ??
+                                            true)) {
+                                          Navigator.pop(context);
+                                        }
+
+                                        setState(() {});
+                                      },
+                                      text: 'Update',
+                                      options: FFButtonOptions(
+                                        width: 250.0,
+                                        height: 56.0,
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: const Color(0xFF019874),
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                        elevation: 3.0,
+                                        borderSide: const BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius: const BorderRadius.only(
+                                          bottomLeft: Radius.circular(25.0),
+                                          bottomRight: Radius.circular(15.0),
+                                          topLeft: Radius.circular(10.0),
+                                          topRight: Radius.circular(25.0),
+                                        ),
+                                      ),
+                                    ).animateOnPageLoad(animationsMap[
+                                        'buttonOnPageLoadAnimation']!);
+                                  },
+                                ),
                               ),
                             ),
                           ],

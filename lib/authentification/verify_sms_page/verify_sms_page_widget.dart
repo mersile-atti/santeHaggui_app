@@ -10,6 +10,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'verify_sms_page_model.dart';
 export 'verify_sms_page_model.dart';
 
@@ -76,6 +77,8 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
