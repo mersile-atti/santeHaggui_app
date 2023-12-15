@@ -806,8 +806,8 @@ class _UpdateMedicaleProfilAddressComponentWidgetState
                                                                     children: [
                                                                       Align(
                                                                         alignment: const AlignmentDirectional(
-                                                                            0.00,
-                                                                            1.00),
+                                                                            0.0,
+                                                                            1.0),
                                                                         child:
                                                                             Padding(
                                                                           padding: const EdgeInsetsDirectional.fromSTEB(

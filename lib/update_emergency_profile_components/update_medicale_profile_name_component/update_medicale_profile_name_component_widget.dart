@@ -490,80 +490,52 @@ class _UpdateMedicaleProfileNameComponentWidgetState
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.00, 1.00),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 0.0),
-                                child: FutureBuilder<ApiCallResponse>(
-                                  future: CreateEmergencyProfileCall.call(),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: CircularProgressIndicator(
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                            ),
-                                          ),
-                                        ),
-                                      );
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    _model.apiResultg6w =
+                                        await UpdateEmergencyProfileCall.call();
+                                    if ((_model.apiResultg6w?.succeeded ??
+                                        true)) {
+                                      Navigator.pop(context);
                                     }
-                                    final buttonCreateEmergencyProfileResponse =
-                                        snapshot.data!;
-                                    return FFButtonWidget(
-                                      onPressed: () async {
-                                        _model.apiResultg6w =
-                                            await CreateEmergencyProfileCall
-                                                .call(
-                                          name: _model.textController.text,
-                                        );
-                                        if ((_model.apiResultg6w?.succeeded ??
-                                            true)) {
-                                          Navigator.pop(context);
-                                        }
 
-                                        setState(() {});
-                                      },
-                                      text: 'Update',
-                                      options: FFButtonOptions(
-                                        width: 250.0,
-                                        height: 56.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
-                                        iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: const Color(0xFF019874),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: const BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          bottomLeft: Radius.circular(25.0),
-                                          bottomRight: Radius.circular(15.0),
-                                          topLeft: Radius.circular(10.0),
-                                          topRight: Radius.circular(25.0),
-                                        ),
-                                      ),
-                                    ).animateOnPageLoad(animationsMap[
-                                        'buttonOnPageLoadAnimation']!);
+                                    setState(() {});
                                   },
-                                ),
+                                  text: 'Update',
+                                  options: FFButtonOptions(
+                                    width: 250.0,
+                                    height: 56.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: const Color(0xFF019874),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(25.0),
+                                      bottomRight: Radius.circular(15.0),
+                                      topLeft: Radius.circular(10.0),
+                                      topRight: Radius.circular(25.0),
+                                    ),
+                                  ),
+                                ).animateOnPageLoad(animationsMap[
+                                    'buttonOnPageLoadAnimation']!),
                               ),
                             ),
                           ],

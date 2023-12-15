@@ -78,13 +78,13 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Align(
-                alignment: const AlignmentDirectional(0.00, 0.00),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.00, 0.00),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
@@ -105,8 +105,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                     key: _model.formKey,
                     autovalidateMode: AutovalidateMode.always,
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          20.0, 20.0, 20.0, 20.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: Container(
                         width: double.infinity,
                         height: 850.0,
@@ -114,7 +113,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20.0),
                         ),
-                        alignment: const AlignmentDirectional(0.00, 0.00),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -487,7 +486,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.00, 0.00),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.end,
@@ -581,7 +580,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                     Flexible(
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.00, 0.00),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
@@ -595,14 +594,14 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                                 return;
                                               }
                                               _model.apiResultct3 =
-                                                  await AddUserCall.call(
+                                                  await CreateUserCall.call(
                                                 username: _model
                                                     .enterYourNameController
                                                     .text,
                                                 email: _model
                                                     .enterYourEmailController
                                                     .text,
-                                                phoneNumber: _model
+                                                phone: _model
                                                     .enterYourPhoneNumberController
                                                     .text,
                                                 password: _model

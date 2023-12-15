@@ -1,21 +1,15 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'phone_login_page_widget.dart' show PhoneLoginPageWidget;
+import 'new_component_widget.dart' show NewComponentWidget;
 import 'package:flutter/material.dart';
 
-class PhoneLoginPageModel extends FlutterFlowModel<PhoneLoginPageWidget> {
-  ///  State fields for stateful widgets in this page.
-
-  final unfocusNode = FocusNode();
-
+class NewComponentModel extends FlutterFlowModel<NewComponentWidget> {
   /// Initialization and disposal methods.
 
   @override
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 
   /// Action blocks are added here.
 

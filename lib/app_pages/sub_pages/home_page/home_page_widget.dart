@@ -203,8 +203,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 4.0, 0.0, 0.0),
                                           child: FutureBuilder<ApiCallResponse>(
-                                            future: CreateEmergencyProfileCall
-                                                .call(),
+                                            future: CreateUserCall.call(),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
                                               if (!snapshot.hasData) {
@@ -225,20 +224,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   ),
                                                 );
                                               }
-                                              final textCreateEmergencyProfileResponse =
+                                              final textCreateUserResponse =
                                                   snapshot.data!;
                                               return Text(
                                                 valueOrDefault<String>(
-                                                  (textCreateEmergencyProfileResponse
+                                                  (textCreateUserResponse
                                                                       .jsonBody !=
                                                                   null &&
-                                                              textCreateEmergencyProfileResponse
+                                                              textCreateUserResponse
                                                                       .jsonBody !=
                                                                   ''
-                                                          ? EmergencyProfileStruct
-                                                              .fromMap(
-                                                                  textCreateEmergencyProfileResponse
-                                                                      .jsonBody)
+                                                          ? UserStruct.fromMap(
+                                                              textCreateUserResponse
+                                                                  .jsonBody)
                                                           : null)
                                                       ?.name,
                                                   'N/A',
@@ -355,7 +353,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: FaIcon(
                                       FontAwesomeIcons.slidersH,
                                       color: FlutterFlowTheme.of(context)
@@ -414,48 +412,56 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Align(
-                        alignment: const AlignmentDirectional(0.00, 0.00),
-                        child: ListView(
-                          padding: EdgeInsets.zero,
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            Container(
-                              width: 100.0,
-                              height: 100.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 0.0, 0.0),
-                                child: SingleChildScrollView(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          'https://picsum.photos/seed/978/600',
-                                          width: 100.0,
-                                          height: 100.0,
-                                          fit: BoxFit.cover,
-                                          alignment: const Alignment(0.00, -1.00),
-                                        ),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: ListView(
+                            padding: EdgeInsets.zero,
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              Container(
+                                width: 100.0,
+                                height: 100.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                                child: Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 0.0, 0.0),
+                                    child: SingleChildScrollView(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              'https://picsum.photos/seed/978/600',
+                                              width: 100.0,
+                                              height: 100.0,
+                                              fit: BoxFit.cover,
+                                              alignment: const Alignment(0.0, -1.0),
+                                            ),
+                                          ),
+                                          Text(
+                                            'Hello World',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
+                                          ),
+                                        ],
                                       ),
-                                      Text(
-                                        'Hello World',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -464,7 +470,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.00, 1.00),
+              alignment: const AlignmentDirectional(0.0, 1.0),
               child: wrapWithModel(
                 model: _model.bottomNavigationComponentModel,
                 updateCallback: () => setState(() {}),

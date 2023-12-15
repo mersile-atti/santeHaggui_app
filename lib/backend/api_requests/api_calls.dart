@@ -6,146 +6,108 @@ export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
-class GetUsdCodeCall {
-  static Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'getUsdCode',
-      apiUrl: 'http://country.io/phone.json',
-      callType: ApiCallType.GET,
-      headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-    );
-  }
-}
-
-class CountryNamesCall {
-  static Future<ApiCallResponse> call() async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'countryNames',
-      apiUrl: 'http://country.io/names.json',
-      callType: ApiCallType.GET,
-      headers: {},
-      params: {},
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-    );
-  }
-}
-
-class AddUserCall {
+class CreateUserCall {
   static Future<ApiCallResponse> call({
     String? username = '',
     String? email = '',
-    String? phoneNumber = '',
+    String? phone = '',
     String? password = '',
   }) async {
+    final ffApiRequestBody = '''
+{
+  "username": "$username",
+  "email": "$email",
+  "phone": "$phone",
+  "password": "$password"
+}''';
     return ApiManager.instance.makeApiCall(
-      callName: 'addUser',
-      apiUrl: 'https://santehaggui-app-af1d825f7530.herokuapp.com/api/users',
+      callName: 'CreateUser',
+      apiUrl: 'https://santehaggui-b8e92b22721c.herokuapp.com/api/users/',
       callType: ApiCallType.POST,
       headers: {},
-      params: {
-        'username': username,
-        'email': email,
-        'phoneNumber': phoneNumber,
-        'password': password,
-      },
-      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      alwaysAllowBody: false,
     );
   }
 }
 
-class CreateEmergencyProfileCall {
+class LoginUserCall {
   static Future<ApiCallResponse> call({
-    String? name = '',
-    String? birthday = '',
-    String? bloodType = '',
-    String? sex = '',
-    List<String>? treatmentsAndProceduresList,
-    String? allergies = '',
-    List<String>? medicationsList,
-    String? address = '',
-    dynamic emergencyContactJson,
-    String? profilePicture = '',
-  }) async {
-    final treatmentsAndProcedures = _serializeList(treatmentsAndProceduresList);
-    final medications = _serializeList(medicationsList);
-    final emergencyContact = _serializeJson(emergencyContactJson);
-
-    return ApiManager.instance.makeApiCall(
-      callName: 'createEmergencyProfile',
-      apiUrl:
-          'https://santehaggui-app-af1d825f7530.herokuapp.com/api/users/profile/emergency-profile',
-      callType: ApiCallType.POST,
-      headers: {},
-      params: {
-        'name': name,
-        'birthday': birthday,
-        'bloodType': bloodType,
-        'sex': sex,
-        'treatmentsAndProcedures': treatmentsAndProcedures,
-        'allergies': allergies,
-        'medications': medications,
-        'address': address,
-        'emergencyContact': emergencyContact,
-        'profilePicture': profilePicture,
-      },
-      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-    );
-  }
-}
-
-class AuthUserCall {
-  static Future<ApiCallResponse> call({
-    String? phoneNumber = '',
-    String? password = '',
     String? email = '',
+    String? phone = '',
+    String? password = '',
   }) async {
+    final ffApiRequestBody = '''
+{
+  "email": "$email",
+  "phone": "$phone",
+  "password": "$password"
+}''';
     return ApiManager.instance.makeApiCall(
-      callName: 'authUser',
-      apiUrl:
-          'https://santehaggui-app-af1d825f7530.herokuapp.com/api/users/auth',
+      callName: 'loginUser',
+      apiUrl: 'https://santehaggui-b8e92b22721c.herokuapp.com/api/users/login',
       callType: ApiCallType.POST,
       headers: {},
-      params: {
-        'email': email,
-        'phoneNumber': phoneNumber,
-        'password': password,
-      },
-      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UpdateUserCall {
+  static Future<ApiCallResponse> call({
+    String? usermane = '',
+    String? email = '',
+    String? phone = '',
+    String? password = '',
+    String? authToken = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "username": "$usermane",
+  "email": "$email",
+  "phone": "$phone",
+  "password": "$phone"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'updateUser',
+      apiUrl: 'https://santehaggui-b8e92b22721c.herokuapp.com/api/users/update',
+      callType: ApiCallType.PUT,
+      headers: {
+        'Authorization': 'Bearer $authToken',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
     );
   }
 }
 
 class GetUserCall {
   static Future<ApiCallResponse> call({
-    String? username = '',
-    String? umi = '',
-    String? phoneNumber = '',
-    int? authToken,
+    String? authToken = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'getUser',
       apiUrl:
-          'https://santehaggui-app-af1d825f7530.herokuapp.com/api/users/profile',
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/users/current',
       callType: ApiCallType.GET,
       headers: {
         'Authorization': 'Bearer $authToken',
@@ -155,24 +117,311 @@ class GetUserCall {
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      alwaysAllowBody: false,
     );
   }
 }
 
-class UserLogoutCall {
-  static Future<ApiCallResponse> call() async {
+class DeleteUserCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+  }) async {
     return ApiManager.instance.makeApiCall(
-      callName: 'userLogout',
-      apiUrl:
-          'https://santehaggui-app-af1d825f7530.herokuapp.com/api/users/logout',
-      callType: ApiCallType.POST,
-      headers: {},
+      callName: 'deleteUser',
+      apiUrl: 'https://santehaggui-b8e92b22721c.herokuapp.com/api/users/delete',
+      callType: ApiCallType.DELETE,
+      headers: {
+        'Authorization': 'Bearer $authToken',
+      },
       params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class CreateEmergencyProfileCall {
+  static Future<ApiCallResponse> call({
+    String? name = '',
+    String? birthday = '',
+    String? gender = '',
+    String? bloodType = '',
+    String? allergies = '',
+    String? medications = '',
+    String? treatmentsAndProcedures = '',
+    String? emergencyContactName = '',
+    String? emergencyContactRelationship = '',
+    String? emergencyContactPhone = '',
+    String? emergencyContactAddress = '',
+    String? address = '',
+    String? notes = '',
+    String? authToken = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "name": "$name",
+  "birthday": "$birthday",
+  "gender": "$gender",
+  "bloodType": "$bloodType",
+  "allergies": "$allergies",
+  "medications": "$medications",
+  "treatmentsAndProcedures": "$treatmentsAndProcedures",
+  "emergencyContactName": "$emergencyContactName",
+  "emergencyContactRelationship": "$emergencyContactRelationship",
+  "emergencyContactPhone": "$emergencyContactPhone",
+  "emergencyContactAddress": "$emergencyContactAddress",
+  "address": "$address",
+  "notes": "$notes"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'createEmergencyProfile',
+      apiUrl:
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/healthRecords/profile',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer $authToken',
+      },
+      params: {},
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UpdateEmergencyProfileCall {
+  static Future<ApiCallResponse> call({
+    String? name = '',
+    String? birthday = '',
+    String? gender = '',
+    String? bloodType = '',
+    String? allergies = '',
+    String? medications = '',
+    String? treatmentsAndProcedures = '',
+    String? emergencyContactName = '',
+    String? emergencyContactRelationship = '',
+    String? emergencyContactPhone = '',
+    String? emergencyContactAddress = '',
+    String? address = '',
+    String? notes = '',
+    String? authToken = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "name": "$name",
+  "birthday": "$birthday",
+  "gender": "$gender",
+  "bloodType": "$bloodType",
+  "allergies": "$allergies",
+  "medications": "$medications",
+  "treatmentsAndProcedures": "$treatmentsAndProcedures",
+  "emergencyContactName": "$emergencyContactName",
+  "emergencyContactRelationship": "$emergencyContactRelationship",
+  "emergencyContactPhone": "$emergencyContactPhone",
+  "emergencyContactAddress": "$emergencyContactAddress",
+  "address": "$address",
+  "notes": "$notes"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'updateEmergencyProfile',
+      apiUrl:
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/healthRecords/profile',
+      callType: ApiCallType.PUT,
+      headers: {
+        'Authorization': 'Bearer $authToken',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetOneProfileCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getOneProfile',
+      apiUrl:
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/healthRecords/profile',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer $authToken',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetAllProfilesCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getAllProfiles',
+      apiUrl:
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/healthRecords/',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer $authToken',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class MakeBloodRequestCall {
+  static Future<ApiCallResponse> call({
+    String? bloodType = '',
+    String? hospitalName = '',
+    String? hospitalLocation = '',
+    String? status = '',
+    String? urgency = '',
+    int? pintsNeeded,
+    String? diagnosis = '',
+    String? shortDescription = '',
+    String? authToken = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "bloodType": "$bloodType",
+  "hospitalName": "$hospitalName",
+  "hospitalLocation": "$hospitalLocation",
+  "status": "$status",
+  "urgency": "$urgency",
+  "pintsNeeded": $pintsNeeded,
+  "diagnosis": "$diagnosis",
+  "shortDescription": "$shortDescription"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'makeBloodRequest',
+      apiUrl:
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/blood-requests/',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer $authToken',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetBloodRequestCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getBloodRequest',
+      apiUrl:
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/blood-requests',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer $authToken',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UpdateBloodRequestCall {
+  static Future<ApiCallResponse> call({
+    String? bloodType = '',
+    String? hospitalName = '',
+    String? hospitalLocation = '',
+    String? status = '',
+    String? urgency = '',
+    int? pintsNeeded,
+    String? diagnosis = '',
+    String? shortDescription = '',
+    String? authToken = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "bloodType": "$bloodType",
+  "hospitalName": "$hospitalName",
+  "hospitalLocation": "$hospitalLocation",
+  "status": "$status",
+  "urgency": "$urgency",
+  "pintsNeeded": $pintsNeeded,
+  "diagnosis": "$diagnosis",
+  "shortDescription": "$shortDescription"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'updateBloodRequest',
+      apiUrl:
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/blood-requests/update',
+      callType: ApiCallType.PUT,
+      headers: {
+        'Authorization': 'Bearer $authToken',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DeleteBloodRequestCall {
+  static Future<ApiCallResponse> call({
+    String? id = '',
+    String? authToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'deleteBloodRequest',
+      apiUrl:
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/blood-requests/$id',
+      callType: ApiCallType.DELETE,
+      headers: {
+        'Authorization': 'Bearer $authToken',
+      },
+      params: {
+        'id': id,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
     );
   }
 }

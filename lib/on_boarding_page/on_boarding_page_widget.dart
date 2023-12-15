@@ -265,23 +265,22 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                         ).animateOnPageLoad(
                             animationsMap['imageOnPageLoadAnimation1']!),
                         Align(
-                          alignment: const AlignmentDirectional(0.00, 0.00),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                24.0, 24.0, 24.0, 24.0),
+                            padding: const EdgeInsets.all(24.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     'Integrated Medical Records',
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
                                           fontFamily: 'Outfit',
-                                          fontSize: 22.0,
+                                          fontSize: 20.0,
                                           fontWeight: FontWeight.bold,
                                         ),
                                   ).animateOnPageLoad(animationsMap[
@@ -315,7 +314,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                       Flexible(
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
@@ -399,16 +398,15 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                         ).animateOnPageLoad(
                             animationsMap['imageOnPageLoadAnimation2']!),
                         Align(
-                          alignment: const AlignmentDirectional(0.00, 0.00),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                24.0, 24.0, 24.0, 24.0),
+                            padding: const EdgeInsets.all(24.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     'Women\'s Health Hub',
                                     style: FlutterFlowTheme.of(context)
@@ -449,7 +447,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                       Flexible(
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
@@ -533,16 +531,15 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                         ).animateOnPageLoad(
                             animationsMap['imageOnPageLoadAnimation3']!),
                         Align(
-                          alignment: const AlignmentDirectional(0.00, 0.00),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                24.0, 24.0, 24.0, 24.0),
+                            padding: const EdgeInsets.all(24.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.00, 0.00),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     'Blood Services Centralized',
                                     style: FlutterFlowTheme.of(context)
@@ -582,7 +579,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget>
                                       Flexible(
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(

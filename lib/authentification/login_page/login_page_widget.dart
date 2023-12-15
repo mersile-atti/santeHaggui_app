@@ -72,7 +72,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Align(
-                alignment: const AlignmentDirectional(0.00, 0.00),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: Row(
@@ -80,7 +80,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.00, 0.00),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 12.0),
@@ -106,8 +106,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     key: _model.formKey,
                     autovalidateMode: AutovalidateMode.disabled,
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          20.0, 20.0, 20.0, 20.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: Container(
                         width: double.infinity,
                         height: 550.0,
@@ -184,11 +183,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ],
                                         shape: BoxShape.circle,
                                       ),
-                                      alignment:
-                                          const AlignmentDirectional(0.00, 0.00),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.00, 0.00),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -228,8 +226,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ],
                                         shape: BoxShape.circle,
                                       ),
-                                      alignment:
-                                          const AlignmentDirectional(0.00, 0.00),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.apple_rounded,
                                         color: FlutterFlowTheme.of(context)
@@ -263,7 +260,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           shape: BoxShape.circle,
                                         ),
                                         alignment:
-                                            const AlignmentDirectional(0.00, 0.00),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: const FaIcon(
                                           FontAwesomeIcons.facebookF,
                                           color: Color(0xFF00A8FF),
@@ -514,8 +511,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 children: [
                                   Flexible(
                                     child: Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.00, 0.00),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 0.0),
@@ -528,15 +524,15 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               return;
                                             }
                                             _model.apiResult6cu =
-                                                await AuthUserCall.call(
-                                              phoneNumber: _model
+                                                await LoginUserCall.call(
+                                              email: _model
+                                                  .emailAddressOrPhoneNumberController
+                                                  .text,
+                                              phone: _model
                                                   .emailAddressOrPhoneNumberController
                                                   .text,
                                               password: _model
                                                   .passwordFieldController.text,
-                                              email: _model
-                                                  .emailAddressOrPhoneNumberController
-                                                  .text,
                                             );
                                             if ((_model
                                                     .apiResult6cu?.succeeded ??

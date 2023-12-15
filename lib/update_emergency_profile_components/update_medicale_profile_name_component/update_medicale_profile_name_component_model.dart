@@ -18,7 +18,7 @@ class UpdateMedicaleProfileNameComponentModel
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  // Stores action output result for [Backend Call - API (createEmergencyProfile)] action in Button widget.
+  // Stores action output result for [Backend Call - API (updateEmergencyProfile)] action in Button widget.
   ApiCallResponse? apiResultg6w;
 
   /// Initialization and disposal methods.

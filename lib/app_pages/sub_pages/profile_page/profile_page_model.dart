@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for yourName widget.
   FocusNode? yourNameFocusNode;
   TextEditingController? yourNameController;
@@ -41,7 +40,6 @@ class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     yourNameFocusNode?.dispose();
     yourNameController?.dispose();
 

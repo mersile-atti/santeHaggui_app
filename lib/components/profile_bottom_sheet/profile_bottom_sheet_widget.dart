@@ -124,7 +124,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.00, 0.00),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
         child: Container(
@@ -135,19 +135,19 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
             borderRadius: BorderRadius.circular(20.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(-1.00, 0.00),
+                  alignment: const AlignmentDirectional(-1.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Flexible(
                         child: Align(
-                          alignment: const AlignmentDirectional(1.00, 0.00),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           child: FlutterFlowIconButton(
                             borderColor: Colors.transparent,
                             borderRadius: 30.0,
@@ -172,7 +172,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                   children: [
                     Flexible(
                       child: Align(
-                        alignment: const AlignmentDirectional(0.00, 0.00),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -233,7 +233,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                         width: 2.0,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                   );
                                 },
                               ),
@@ -520,7 +520,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.00, 1.00),
+                        alignment: const AlignmentDirectional(0.0, 1.0),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),

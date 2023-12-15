@@ -9,10 +9,19 @@ class CompleteProfilePageModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
   // State field(s) for yourName widget.
   FocusNode? yourNameFocusNode;
   TextEditingController? yourNameController;
   String? Function(BuildContext, String?)? yourNameControllerValidator;
+  // State field(s) for address widget.
+  FocusNode? addressFocusNode;
+  TextEditingController? addressController;
+  String? Function(BuildContext, String?)? addressControllerValidator;
   // State field(s) for ConfirmPassword widget.
   FocusNode? confirmPasswordFocusNode;
   TextEditingController? confirmPasswordController;
@@ -39,6 +48,9 @@ class CompleteProfilePageModel
     unfocusNode.dispose();
     yourNameFocusNode?.dispose();
     yourNameController?.dispose();
+
+    addressFocusNode?.dispose();
+    addressController?.dispose();
 
     confirmPasswordFocusNode?.dispose();
     confirmPasswordController?.dispose();

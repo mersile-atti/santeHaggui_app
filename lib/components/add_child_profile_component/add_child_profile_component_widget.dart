@@ -110,7 +110,7 @@ class _AddChildProfileComponentWidgetState
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+              padding: const EdgeInsets.all(12.0),
               child: Container(
                 width: double.infinity,
                 constraints: const BoxConstraints(
@@ -140,8 +140,7 @@ class _AddChildProfileComponentWidgetState
                         key: _model.formKey,
                         autovalidateMode: AutovalidateMode.always,
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              24.0, 24.0, 24.0, 24.0),
+                          padding: const EdgeInsets.all(24.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -161,8 +160,8 @@ class _AddChildProfileComponentWidgetState
                                             CrossAxisAlignment.start,
                                         children: [
                                           Align(
-                                            alignment: const AlignmentDirectional(
-                                                0.00, 0.00),
+                                            alignment:
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 4.0),
@@ -529,7 +528,7 @@ class _AddChildProfileComponentWidgetState
                                     Flexible(
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.00, 0.00),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(

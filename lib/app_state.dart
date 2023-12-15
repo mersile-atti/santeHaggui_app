@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
+import 'backend/supabase/supabase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -35,6 +36,12 @@ class FFAppState extends ChangeNotifier {
   set token(String value) {
     _token = value;
     prefs.setString('ff_token', value);
+  }
+
+  String _ttTelephoneNumber = '';
+  String get ttTelephoneNumber => _ttTelephoneNumber;
+  set ttTelephoneNumber(String value) {
+    _ttTelephoneNumber = value;
   }
 }
 

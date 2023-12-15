@@ -152,4 +152,4 @@ class CustomAuthManager {
 }
 
 SantehagguiAuthUser? currentUser;
-bool get loggedIn => currentUser != null;
+bool get loggedIn => currentUser?.loggedIn ?? false;

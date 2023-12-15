@@ -117,7 +117,7 @@ class _HealthMetricsComponentWidgetState
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.00, 0.00),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
         child: Container(
@@ -128,7 +128,7 @@ class _HealthMetricsComponentWidgetState
             borderRadius: BorderRadius.circular(0.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+            padding: const EdgeInsets.all(16.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -833,7 +833,7 @@ class _HealthMetricsComponentWidgetState
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.00, 1.00),
+                                              const AlignmentDirectional(0.0, 1.0),
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(

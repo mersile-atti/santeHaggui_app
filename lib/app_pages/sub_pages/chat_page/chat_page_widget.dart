@@ -76,7 +76,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.00, 1.00),
+                  alignment: const AlignmentDirectional(0.0, 1.0),
                   child: wrapWithModel(
                     model: _model.bottomNavigationComponentModel,
                     updateCallback: () => setState(() {}),

@@ -111,7 +111,7 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(-1.00, 0.00),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
@@ -149,14 +149,14 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
                       ),
                     ),
                     child: Align(
-                      alignment: const AlignmentDirectional(0.00, 0.00),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.00, 0.00),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 22.0, 0.0, 0.0),
@@ -181,7 +181,12 @@ class _VerifySmsPageWidgetState extends State<VerifySmsPageWidget>
                                   fieldHeight: 44.0,
                                   fieldWidth: 44.0,
                                   borderWidth: 2.0,
-                                  borderRadius: BorderRadius.circular(12.0),
+                                  borderRadius: const BorderRadius.only(
+                                    bottomLeft: Radius.circular(12.0),
+                                    bottomRight: Radius.circular(12.0),
+                                    topLeft: Radius.circular(12.0),
+                                    topRight: Radius.circular(12.0),
+                                  ),
                                   shape: PinCodeFieldShape.box,
                                   activeColor: const Color(0xFF019874),
                                   inactiveColor: const Color(0xFF8B97A2),

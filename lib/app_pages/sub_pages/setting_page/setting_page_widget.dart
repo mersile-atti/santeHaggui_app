@@ -130,8 +130,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 12.0, 12.0, 12.0),
+                                    padding: const EdgeInsets.all(12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -159,8 +158,8 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                         ),
                                         const Expanded(
                                           child: Align(
-                                            alignment: AlignmentDirectional(
-                                                0.90, 0.00),
+                                            alignment:
+                                                AlignmentDirectional(0.9, 0.0),
                                             child: Icon(
                                               Icons.arrow_forward_ios,
                                               color: Color(0xFF57636C),
@@ -192,8 +191,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 12.0, 12.0, 12.0),
+                                    padding: const EdgeInsets.all(12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -221,8 +219,8 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                         ),
                                         const Expanded(
                                           child: Align(
-                                            alignment: AlignmentDirectional(
-                                                0.90, 0.00),
+                                            alignment:
+                                                AlignmentDirectional(0.9, 0.0),
                                             child: Icon(
                                               Icons.arrow_forward_ios,
                                               color: Color(0xFF57636C),
@@ -254,8 +252,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 12.0, 12.0, 12.0),
+                                    padding: const EdgeInsets.all(12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -283,8 +280,8 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                         ),
                                         const Expanded(
                                           child: Align(
-                                            alignment: AlignmentDirectional(
-                                                0.90, 0.00),
+                                            alignment:
+                                                AlignmentDirectional(0.9, 0.0),
                                             child: Icon(
                                               Icons.arrow_forward_ios,
                                               color: Color(0xFF57636C),
@@ -331,8 +328,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 12.0, 12.0, 12.0),
+                                    padding: const EdgeInsets.all(12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -360,8 +356,8 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                         ),
                                         const Expanded(
                                           child: Align(
-                                            alignment: AlignmentDirectional(
-                                                0.90, 0.00),
+                                            alignment:
+                                                AlignmentDirectional(0.9, 0.0),
                                             child: Icon(
                                               Icons.arrow_forward_ios,
                                               color: Color(0xFF57636C),
@@ -393,8 +389,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 12.0, 12.0, 12.0),
+                                    padding: const EdgeInsets.all(12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -422,8 +417,8 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                         ),
                                         const Expanded(
                                           child: Align(
-                                            alignment: AlignmentDirectional(
-                                                0.90, 0.00),
+                                            alignment:
+                                                AlignmentDirectional(0.9, 0.0),
                                             child: Icon(
                                               Icons.arrow_forward_ios,
                                               color: Color(0xFF57636C),
@@ -455,8 +450,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                     shape: BoxShape.rectangle,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 12.0, 12.0, 12.0),
+                                    padding: const EdgeInsets.all(12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -484,8 +478,8 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                         ),
                                         const Expanded(
                                           child: Align(
-                                            alignment: AlignmentDirectional(
-                                                0.90, 0.00),
+                                            alignment:
+                                                AlignmentDirectional(0.9, 0.0),
                                             child: Icon(
                                               Icons.arrow_forward_ios,
                                               color: Color(0xFF57636C),
@@ -514,8 +508,8 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                             CrossAxisAlignment.center,
                                         children: [
                                           Align(
-                                            alignment: const AlignmentDirectional(
-                                                0.00, 0.00),
+                                            alignment:
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
@@ -650,7 +644,7 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.00, 1.00),
+                alignment: const AlignmentDirectional(0.0, 1.0),
                 child: wrapWithModel(
                   model: _model.bottomNavigationComponentModel,
                   updateCallback: () => setState(() {}),

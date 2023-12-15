@@ -492,7 +492,7 @@ class _UpdateMedicaleProfilBirthdayComponentWidgetState
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.00, 1.00),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 0.0),

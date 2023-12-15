@@ -187,7 +187,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.00, 0.00),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 20.0, 0.0),
@@ -239,8 +239,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                                     borderRadius: BorderRadius.circular(40.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        2.0, 2.0, 2.0, 2.0),
+                                    padding: const EdgeInsets.all(2.0),
                                     child: Container(
                                       width: 40.0,
                                       height: 40.0,

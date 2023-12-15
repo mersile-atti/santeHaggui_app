@@ -244,8 +244,7 @@ class _AppointmentDetailsProfilWidgetState
                                             BorderRadius.circular(40.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            2.0, 2.0, 2.0, 2.0),
+                                        padding: const EdgeInsets.all(2.0),
                                         child: Container(
                                           width: 40.0,
                                           height: 40.0,

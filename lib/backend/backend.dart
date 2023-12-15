@@ -8,6 +8,7 @@ import 'schema/user_children_record.dart';
 import 'schema/medical_profil_record.dart';
 import 'schema/doctor_record.dart';
 import 'schema/health_metrics_record.dart';
+import 'schema/profile_pictures_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -21,6 +22,7 @@ export 'schema/user_children_record.dart';
 export 'schema/medical_profil_record.dart';
 export 'schema/doctor_record.dart';
 export 'schema/health_metrics_record.dart';
+export 'schema/profile_pictures_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -245,6 +247,43 @@ Future<List<HealthMetricsRecord>> queryHealthMetricsRecordOnce({
     queryCollectionOnce(
       HealthMetricsRecord.collection(parent),
       HealthMetricsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query ProfilePicturesRecords (as a Stream and as a Future).
+Future<int> queryProfilePicturesRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ProfilePicturesRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ProfilePicturesRecord>> queryProfilePicturesRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ProfilePicturesRecord.collection,
+      ProfilePicturesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ProfilePicturesRecord>> queryProfilePicturesRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ProfilePicturesRecord.collection,
+      ProfilePicturesRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

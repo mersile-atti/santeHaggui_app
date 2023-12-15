@@ -71,7 +71,7 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
 
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
-  // Stores action output result for [Backend Call - API (addUser)] action in Button widget.
+  // Stores action output result for [Backend Call - API (CreateUser)] action in Button widget.
   ApiCallResponse? apiResultct3;
 
   /// Initialization and disposal methods.

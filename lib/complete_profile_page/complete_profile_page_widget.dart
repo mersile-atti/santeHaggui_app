@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
@@ -6,6 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -81,6 +83,32 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
       ],
     ),
     'textFieldOnPageLoadAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 100.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 100.ms,
+          duration: 600.ms,
+          begin: const Offset(0.0, 20.0),
+          end: const Offset(0.0, 0.0),
+        ),
+        ScaleEffect(
+          curve: Curves.easeInOut,
+          delay: 100.ms,
+          duration: 600.ms,
+          begin: const Offset(1.0, 0.0),
+          end: const Offset(1.0, 1.0),
+        ),
+      ],
+    ),
+    'textFieldOnPageLoadAnimation3': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -220,6 +248,9 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
     _model.yourNameController ??= TextEditingController();
     _model.yourNameFocusNode ??= FocusNode();
 
+    _model.addressController ??= TextEditingController();
+    _model.addressFocusNode ??= FocusNode();
+
     _model.confirmPasswordController ??= TextEditingController();
     _model.confirmPasswordFocusNode ??= FocusNode();
 
@@ -321,23 +352,83 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                             Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Container(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBtnText,
-                                    image: DecorationImage(
-                                      fit: BoxFit.contain,
-                                      image: Image.network(
-                                        'https://cdn-icons-png.flaticon.com/128/2785/2785482.png',
-                                      ).image,
-                                    ),
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    final selectedMedia =
+                                        await selectMediaWithSourceBottomSheet(
+                                      context: context,
+                                      storageFolderPath: 'pics/upload',
+                                      allowPhoto: true,
+                                    );
+                                    if (selectedMedia != null &&
+                                        selectedMedia.every((m) =>
+                                            validateFileFormat(
+                                                m.storagePath, context))) {
+                                      setState(
+                                          () => _model.isDataUploading = true);
+                                      var selectedUploadedFiles =
+                                          <FFUploadedFile>[];
+
+                                      var downloadUrls = <String>[];
+                                      try {
+                                        selectedUploadedFiles = selectedMedia
+                                            .map((m) => FFUploadedFile(
+                                                  name: m.storagePath
+                                                      .split('/')
+                                                      .last,
+                                                  bytes: m.bytes,
+                                                  height: m.dimensions?.height,
+                                                  width: m.dimensions?.width,
+                                                  blurHash: m.blurHash,
+                                                ))
+                                            .toList();
+
+                                        downloadUrls =
+                                            await uploadSupabaseStorageFiles(
+                                          bucketName: 'profilePic',
+                                          selectedFiles: selectedMedia,
+                                        );
+                                      } finally {
+                                        _model.isDataUploading = false;
+                                      }
+                                      if (selectedUploadedFiles.length ==
+                                              selectedMedia.length &&
+                                          downloadUrls.length ==
+                                              selectedMedia.length) {
+                                        setState(() {
+                                          _model.uploadedLocalFile =
+                                              selectedUploadedFiles.first;
+                                          _model.uploadedFileUrl =
+                                              downloadUrls.first;
+                                        });
+                                      } else {
+                                        setState(() {});
+                                        return;
+                                      }
+                                    }
+                                  },
+                                  child: Container(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      width: 2.0,
+                                          .primaryBtnText,
+                                      image: DecorationImage(
+                                        fit: BoxFit.contain,
+                                        image: Image.network(
+                                          _model.uploadedFileUrl,
+                                        ).image,
+                                      ),
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        width: 2.0,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -416,6 +507,71 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                                     .asValidator(context),
                               ).animateOnPageLoad(animationsMap[
                                   'textFieldOnPageLoadAnimation1']!),
+                            ),
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 16.0, 16.0, 0.0),
+                              child: TextFormField(
+                                controller: _model.addressController,
+                                focusNode: _model.addressFocusNode,
+                                autofocus: true,
+                                obscureText: false,
+                                decoration: InputDecoration(
+                                  labelStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                  hintText: 'Address',
+                                  hintStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                      color: Color(0xFFE0E0E0),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                      color: Color(0xFF019874),
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context).error,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context).error,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Outfit',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                validator: _model.addressControllerValidator
+                                    .asValidator(context),
+                              ).animateOnPageLoad(animationsMap[
+                                  'textFieldOnPageLoadAnimation2']!),
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -542,7 +698,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                                     .yourBirthhdayControllerValidator
                                     .asValidator(context),
                               ).animateOnPageLoad(animationsMap[
-                                  'textFieldOnPageLoadAnimation2']!),
+                                  'textFieldOnPageLoadAnimation3']!),
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -615,7 +771,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(0.00, 0.00),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: FlutterFlowRadioButton(
                                       options: ['Male', 'Female'].toList(),
                                       onChanged: (val) => setState(() {}),
@@ -695,83 +851,60 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
-                              child: FutureBuilder<ApiCallResponse>(
-                                future: CreateEmergencyProfileCall.call(),
-                                builder: (context, snapshot) {
-                                  // Customize what your widget looks like when it's loading.
-                                  if (!snapshot.hasData) {
-                                    return Center(
-                                      child: SizedBox(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        child: CircularProgressIndicator(
-                                          valueColor:
-                                              AlwaysStoppedAnimation<Color>(
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                          ),
-                                        ),
-                                      ),
-                                    );
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  _model.apiResult2l0 =
+                                      await CreateEmergencyProfileCall.call(
+                                    name: _model.yourNameController.text,
+                                    gender: _model.radioButtonValue,
+                                    bloodType: _model.dropDownValue,
+                                    birthday:
+                                        _model.confirmPasswordController.text,
+                                    address: _model.addressController.text,
+                                    emergencyContactName:
+                                        _model.confirmPasswordController.text,
+                                  );
+                                  if ((_model.apiResult2l0?.succeeded ??
+                                      true)) {
+                                    context.pushNamed('HomePage');
                                   }
-                                  final buttonLoginCreateEmergencyProfileResponse =
-                                      snapshot.data!;
-                                  return FFButtonWidget(
-                                    onPressed: () async {
-                                      _model.apiResult2l0 =
-                                          await CreateEmergencyProfileCall.call(
-                                        name: _model.yourNameController.text,
-                                        birthday:
-                                            _model.yourBirthhdayController.text,
-                                        bloodType: _model.dropDownValue,
-                                        sex: _model.radioButtonValue,
-                                        address: _model
-                                            .confirmPasswordController.text,
-                                      );
-                                      if ((_model.apiResult2l0?.succeeded ??
-                                          true)) {
-                                        context.pushNamed('HomePage');
-                                      }
 
-                                      setState(() {});
-                                    },
-                                    text: 'Complete Profile',
-                                    icon: const Icon(
-                                      Icons.arrow_forward,
-                                      color: Colors.white,
-                                      size: 15.0,
-                                    ),
-                                    options: FFButtonOptions(
-                                      width: 300.0,
-                                      height: 50.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFF019874),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            fontSize: 18.0,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(25.0),
-                                        bottomRight: Radius.circular(15.0),
-                                        topLeft: Radius.circular(10.0),
-                                        topRight: Radius.circular(25.0),
-                                      ),
-                                    ),
-                                  ).animateOnPageLoad(animationsMap[
-                                      'buttonOnPageLoadAnimation2']!);
+                                  setState(() {});
                                 },
-                              ),
+                                text: 'Complete Profile',
+                                icon: const Icon(
+                                  Icons.arrow_forward,
+                                  color: Colors.white,
+                                  size: 15.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 300.0,
+                                  height: 50.0,
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: const Color(0xFF019874),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        fontSize: 18.0,
+                                      ),
+                                  elevation: 3.0,
+                                  borderSide: const BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: const BorderRadius.only(
+                                    bottomLeft: Radius.circular(25.0),
+                                    bottomRight: Radius.circular(15.0),
+                                    topLeft: Radius.circular(10.0),
+                                    topRight: Radius.circular(25.0),
+                                  ),
+                                ),
+                              ).animateOnPageLoad(
+                                  animationsMap['buttonOnPageLoadAnimation2']!),
                             ),
                           ],
                         ),
