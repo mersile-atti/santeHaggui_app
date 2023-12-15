@@ -1,4 +1,6 @@
+import '/auth/custom_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
+import '/backend/supabase/supabase.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -7,6 +9,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -81,6 +84,32 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
       ],
     ),
     'textFieldOnPageLoadAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 200.ms,
+          duration: 600.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 200.ms,
+          duration: 600.ms,
+          begin: const Offset(0.0, 40.0),
+          end: const Offset(0.0, 0.0),
+        ),
+        ScaleEffect(
+          curve: Curves.easeInOut,
+          delay: 200.ms,
+          duration: 600.ms,
+          begin: const Offset(1.0, 0.0),
+          end: const Offset(1.0, 1.0),
+        ),
+      ],
+    ),
+    'textFieldOnPageLoadAnimation3': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -220,11 +249,20 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
     _model.yourNameController ??= TextEditingController();
     _model.yourNameFocusNode ??= FocusNode();
 
-    _model.confirmPasswordController ??= TextEditingController();
-    _model.confirmPasswordFocusNode ??= FocusNode();
+    _model.birthdayController ??= TextEditingController();
+    _model.birthdayFocusNode ??= FocusNode();
 
-    _model.yourBirthhdayController ??= TextEditingController();
-    _model.yourBirthhdayFocusNode ??= FocusNode();
+    _model.addressController ??= TextEditingController();
+    _model.addressFocusNode ??= FocusNode();
+
+    _model.allergiesController ??= TextEditingController();
+    _model.allergiesFocusNode ??= FocusNode();
+
+    _model.medicationController ??= TextEditingController();
+    _model.medicationFocusNode ??= FocusNode();
+
+    _model.treatmentsController ??= TextEditingController();
+    _model.treatmentsFocusNode ??= FocusNode();
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -312,25 +350,108 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Container(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBtnText,
-                                                  image: DecorationImage(
-                                                    fit: BoxFit.contain,
-                                                    image: Image.network(
-                                                      'https://cdn-icons-png.flaticon.com/128/2785/2785482.png',
-                                                    ).image,
-                                                  ),
-                                                  shape: BoxShape.circle,
-                                                  border: Border.all(
+                                              InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  final selectedMedia =
+                                                      await selectMediaWithSourceBottomSheet(
+                                                    context: context,
+                                                    storageFolderPath:
+                                                        'pics/images',
+                                                    allowPhoto: true,
+                                                  );
+                                                  if (selectedMedia != null &&
+                                                      selectedMedia.every((m) =>
+                                                          validateFileFormat(
+                                                              m.storagePath,
+                                                              context))) {
+                                                    setState(() =>
+                                                        _model.isDataUploading =
+                                                            true);
+                                                    var selectedUploadedFiles =
+                                                        <FFUploadedFile>[];
+
+                                                    var downloadUrls =
+                                                        <String>[];
+                                                    try {
+                                                      selectedUploadedFiles =
+                                                          selectedMedia
+                                                              .map((m) =>
+                                                                  FFUploadedFile(
+                                                                    name: m
+                                                                        .storagePath
+                                                                        .split(
+                                                                            '/')
+                                                                        .last,
+                                                                    bytes:
+                                                                        m.bytes,
+                                                                    height: m
+                                                                        .dimensions
+                                                                        ?.height,
+                                                                    width: m
+                                                                        .dimensions
+                                                                        ?.width,
+                                                                    blurHash: m
+                                                                        .blurHash,
+                                                                  ))
+                                                              .toList();
+
+                                                      downloadUrls =
+                                                          await uploadSupabaseStorageFiles(
+                                                        bucketName:
+                                                            'profilePic',
+                                                        selectedFiles:
+                                                            selectedMedia,
+                                                      );
+                                                    } finally {
+                                                      _model.isDataUploading =
+                                                          false;
+                                                    }
+                                                    if (selectedUploadedFiles
+                                                                .length ==
+                                                            selectedMedia
+                                                                .length &&
+                                                        downloadUrls.length ==
+                                                            selectedMedia
+                                                                .length) {
+                                                      setState(() {
+                                                        _model.uploadedLocalFile =
+                                                            selectedUploadedFiles
+                                                                .first;
+                                                        _model.uploadedFileUrl =
+                                                            downloadUrls.first;
+                                                      });
+                                                    } else {
+                                                      setState(() {});
+                                                      return;
+                                                    }
+                                                  }
+                                                },
+                                                child: Container(
+                                                  width: 50.0,
+                                                  height: 50.0,
+                                                  decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryText,
-                                                    width: 2.0,
+                                                        .primaryBtnText,
+                                                    image: DecorationImage(
+                                                      fit: BoxFit.contain,
+                                                      image: Image.network(
+                                                        _model.uploadedFileUrl,
+                                                      ).image,
+                                                    ),
+                                                    shape: BoxShape.circle,
+                                                    border: Border.all(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      width: 2.0,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -434,10 +555,86 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 10.0, 16.0, 0.0),
                                           child: TextFormField(
-                                            controller: _model
-                                                .confirmPasswordController,
-                                            focusNode:
-                                                _model.confirmPasswordFocusNode,
+                                            controller:
+                                                _model.birthdayController,
+                                            focusNode: _model.birthdayFocusNode,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium,
+                                              hintText: '30/09/1991',
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        fontSize: 14.0,
+                                                      ),
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0xFFE0E0E0),
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              contentPadding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(20.0, 32.0,
+                                                          20.0, 12.0),
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                            validator: _model
+                                                .birthdayControllerValidator
+                                                .asValidator(context),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 10.0, 16.0, 0.0),
+                                          child: TextFormField(
+                                            controller:
+                                                _model.addressController,
+                                            focusNode: _model.addressFocusNode,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelStyle:
@@ -503,7 +700,85 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                             validator: _model
-                                                .confirmPasswordControllerValidator
+                                                .addressControllerValidator
+                                                .asValidator(context),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 10.0, 16.0, 0.0),
+                                          child: TextFormField(
+                                            controller:
+                                                _model.allergiesController,
+                                            focusNode:
+                                                _model.allergiesFocusNode,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium,
+                                              hintText: 'Allergies',
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        fontSize: 14.0,
+                                                      ),
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0xFFE0E0E0),
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              contentPadding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(20.0, 32.0,
+                                                          20.0, 12.0),
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                            validator: _model
+                                                .allergiesControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -513,9 +788,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                   16.0, 16.0, 16.0, 0.0),
                                           child: TextFormField(
                                             controller:
-                                                _model.yourBirthhdayController,
+                                                _model.medicationController,
                                             focusNode:
-                                                _model.yourBirthhdayFocusNode,
+                                                _model.medicationFocusNode,
                                             autofocus: true,
                                             obscureText: false,
                                             decoration: InputDecoration(
@@ -530,7 +805,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                     fontSize: 12.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
-                                              hintText: '30/09/2003',
+                                              hintText: 'Medications',
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
@@ -584,10 +859,93 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                             validator: _model
-                                                .yourBirthhdayControllerValidator
+                                                .medicationControllerValidator
                                                 .asValidator(context),
                                           ).animateOnPageLoad(animationsMap[
                                               'textFieldOnPageLoadAnimation2']!),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 16.0, 16.0, 0.0),
+                                          child: TextFormField(
+                                            controller:
+                                                _model.treatmentsController,
+                                            focusNode:
+                                                _model.treatmentsFocusNode,
+                                            autofocus: true,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    fontSize: 12.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                              hintText:
+                                                  'Treatments & Procédures',
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0xFFE0E0E0),
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0xFF019874),
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Outfit',
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                            validator: _model
+                                                .treatmentsControllerValidator
+                                                .asValidator(context),
+                                          ).animateOnPageLoad(animationsMap[
+                                              'textFieldOnPageLoadAnimation3']!),
                                         ),
                                         Padding(
                                           padding:
@@ -778,7 +1136,23 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                             onPressed: () async {
                                               _model.apiResult2l0 =
                                                   await CreateEmergencyProfileCall
-                                                      .call();
+                                                      .call(
+                                                jwt: currentAuthenticationToken,
+                                                name: _model
+                                                    .yourNameController.text,
+                                                birthday: _model
+                                                    .birthdayController.text,
+                                                gender: _model.radioButtonValue,
+                                                bloodType: _model.dropDownValue,
+                                                allergies: _model
+                                                    .allergiesController.text,
+                                                medications: _model
+                                                    .medicationController.text,
+                                                treatmentsAndProcedures: _model
+                                                    .treatmentsController.text,
+                                                address: _model
+                                                    .addressController.text,
+                                              );
                                               if ((_model.apiResult2l0
                                                       ?.succeeded ??
                                                   true)) {

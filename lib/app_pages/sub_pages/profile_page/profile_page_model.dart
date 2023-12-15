@@ -8,18 +8,35 @@ import 'package:flutter/material.dart';
 class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
   ///  State fields for stateful widgets in this page.
 
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
   // State field(s) for yourName widget.
   FocusNode? yourNameFocusNode;
   TextEditingController? yourNameController;
   String? Function(BuildContext, String?)? yourNameControllerValidator;
-  // State field(s) for ConfirmPassword widget.
-  FocusNode? confirmPasswordFocusNode;
-  TextEditingController? confirmPasswordController;
-  String? Function(BuildContext, String?)? confirmPasswordControllerValidator;
-  // State field(s) for yourBirthhday widget.
-  FocusNode? yourBirthhdayFocusNode;
-  TextEditingController? yourBirthhdayController;
-  String? Function(BuildContext, String?)? yourBirthhdayControllerValidator;
+  // State field(s) for birthday widget.
+  FocusNode? birthdayFocusNode;
+  TextEditingController? birthdayController;
+  String? Function(BuildContext, String?)? birthdayControllerValidator;
+  // State field(s) for address widget.
+  FocusNode? addressFocusNode;
+  TextEditingController? addressController;
+  String? Function(BuildContext, String?)? addressControllerValidator;
+  // State field(s) for allergies widget.
+  FocusNode? allergiesFocusNode;
+  TextEditingController? allergiesController;
+  String? Function(BuildContext, String?)? allergiesControllerValidator;
+  // State field(s) for medication widget.
+  FocusNode? medicationFocusNode;
+  TextEditingController? medicationController;
+  String? Function(BuildContext, String?)? medicationControllerValidator;
+  // State field(s) for treatments widget.
+  FocusNode? treatmentsFocusNode;
+  TextEditingController? treatmentsController;
+  String? Function(BuildContext, String?)? treatmentsControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -43,11 +60,20 @@ class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
     yourNameFocusNode?.dispose();
     yourNameController?.dispose();
 
-    confirmPasswordFocusNode?.dispose();
-    confirmPasswordController?.dispose();
+    birthdayFocusNode?.dispose();
+    birthdayController?.dispose();
 
-    yourBirthhdayFocusNode?.dispose();
-    yourBirthhdayController?.dispose();
+    addressFocusNode?.dispose();
+    addressController?.dispose();
+
+    allergiesFocusNode?.dispose();
+    allergiesController?.dispose();
+
+    medicationFocusNode?.dispose();
+    medicationController?.dispose();
+
+    treatmentsFocusNode?.dispose();
+    treatmentsController?.dispose();
 
     bottomNavigationComponentModel.dispose();
   }

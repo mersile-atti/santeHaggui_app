@@ -629,19 +629,6 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                                                   ''))
                                                           : null)
                                                       ?.token,
-                                                  userData: (_model.apiResultct3
-                                                                      ?.jsonBody ??
-                                                                  '') !=
-                                                              null &&
-                                                          (_model.apiResultct3
-                                                                      ?.jsonBody ??
-                                                                  '') !=
-                                                              ''
-                                                      ? UserStruct.fromMap(
-                                                          (_model.apiResultct3
-                                                                  ?.jsonBody ??
-                                                              ''))
-                                                      : null,
                                                 );
 
                                                 context.pushNamedAuth(

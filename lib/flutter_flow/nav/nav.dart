@@ -169,11 +169,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'listPages',
-          path: '/listPages',
-          builder: (context, params) => const ListPagesWidget(),
-        ),
-        FFRoute(
           name: 'PhoneLoginPage',
           path: '/phoneLoginPage',
           builder: (context, params) => const PhoneLoginPageWidget(),

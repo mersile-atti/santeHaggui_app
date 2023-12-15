@@ -1,5 +1,5 @@
 import '/auth/custom_auth/auth_util.dart';
-import '/backend/backend.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -181,89 +181,90 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
-                              child: StreamBuilder<List<MedicalProfilRecord>>(
-                                stream: queryMedicalProfilRecord(
-                                  singleRecord: true,
+                              child: Container(
+                                width: 90.0,
+                                height: 90.0,
+                                decoration: BoxDecoration(
+                                  color: const Color(0x66249689),
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: const Color(0xFF39D2C0),
+                                    width: 2.0,
+                                  ),
                                 ),
-                                builder: (context, snapshot) {
-                                  // Customize what your widget looks like when it's loading.
-                                  if (!snapshot.hasData) {
-                                    return Center(
-                                      child: SizedBox(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        child: CircularProgressIndicator(
-                                          valueColor:
-                                              AlwaysStoppedAnimation<Color>(
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                          ),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                              ),
+                            ),
+                            FutureBuilder<ApiCallResponse>(
+                              future: GetUserCall.call(
+                                jwt: currentAuthenticationToken,
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
                                         ),
                                       ),
-                                    );
-                                  }
-                                  List<MedicalProfilRecord>
-                                      containerMedicalProfilRecordList =
-                                      snapshot.data!;
-                                  // Return an empty Container when the item does not exist.
-                                  if (snapshot.data!.isEmpty) {
-                                    return Container();
-                                  }
-                                  final containerMedicalProfilRecord =
-                                      containerMedicalProfilRecordList
-                                              .isNotEmpty
-                                          ? containerMedicalProfilRecordList
-                                              .first
-                                          : null;
-                                  return Container(
-                                    width: 90.0,
-                                    height: 90.0,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0x66249689),
-                                      image: DecorationImage(
-                                        fit: BoxFit.contain,
-                                        image: Image.network(
-                                          containerMedicalProfilRecord!
-                                              .photoUrl,
-                                        ).image,
+                                    ),
+                                  );
+                                }
+                                final textGetUserResponse = snapshot.data!;
+                                return Text(
+                                  GetUserCall.username(
+                                    textGetUserResponse.jsonBody,
+                                  ).toString(),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
                                       ),
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                        color: const Color(0xFF39D2C0),
-                                        width: 2.0,
+                                );
+                              },
+                            ),
+                            FutureBuilder<ApiCallResponse>(
+                              future: GetUserCall.call(
+                                jwt: currentAuthenticationToken,
+                              ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                   );
-                                },
-                              ),
-                            ),
-                            Text(
-                              valueOrDefault<String>(
-                                currentUserData?.username,
-                                'N/A',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                            ),
-                            Text(
-                              valueOrDefault<String>(
-                                currentUserData?.umi,
-                                'N/A',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.bold,
-                                    decoration: TextDecoration.underline,
-                                  ),
+                                }
+                                final textGetUserResponse = snapshot.data!;
+                                return Text(
+                                  GetUserCall.umi(
+                                    textGetUserResponse.jsonBody,
+                                  ).toString(),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold,
+                                        decoration: TextDecoration.underline,
+                                      ),
+                                );
+                              },
                             ),
                           ],
                         ),
@@ -334,15 +335,38 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 4.0, 0.0, 0.0),
-                                child: Text(
-                                  valueOrDefault<String>(
-                                    currentUserData?.email,
-                                    'N/A',
+                                child: FutureBuilder<ApiCallResponse>(
+                                  future: GetUserCall.call(
+                                    jwt: currentAuthenticationToken,
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
-                                ).animateOnPageLoad(
-                                    animationsMap['textOnPageLoadAnimation1']!),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    final textGetUserResponse = snapshot.data!;
+                                    return Text(
+                                      GetUserCall.email(
+                                        textGetUserResponse.jsonBody,
+                                      ).toString(),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium,
+                                    ).animateOnPageLoad(animationsMap[
+                                        'textOnPageLoadAnimation1']!);
+                                  },
+                                ),
                               ),
                             ],
                           ),
@@ -408,18 +432,41 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 4.0, 0.0, 0.0),
-                                child: Text(
-                                  valueOrDefault<String>(
-                                    currentUserData?.phoneNumber,
-                                    'N/A',
+                                child: FutureBuilder<ApiCallResponse>(
+                                  future: GetUserCall.call(
+                                    jwt: currentAuthenticationToken,
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Outfit',
-                                      ),
-                                ).animateOnPageLoad(
-                                    animationsMap['textOnPageLoadAnimation2']!),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    final textGetUserResponse = snapshot.data!;
+                                    return Text(
+                                      GetUserCall.phone(
+                                        textGetUserResponse.jsonBody,
+                                      ).toString(),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                          ),
+                                    ).animateOnPageLoad(animationsMap[
+                                        'textOnPageLoadAnimation2']!);
+                                  },
+                                ),
                               ),
                             ],
                           ),

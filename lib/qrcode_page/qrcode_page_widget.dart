@@ -1,4 +1,3 @@
-import '/auth/custom_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -171,13 +170,13 @@ class _QrcodePageWidgetState extends State<QrcodePageWidget>
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 150.0,
                                     height: 300.0,
                                     child: custom_widgets.GenerateQrCode(
                                       width: 150.0,
                                       height: 300.0,
-                                      data: currentUserData!.umi,
+                                      data: 'www.santehaggui.com',
                                     ),
                                   ),
                                   Expanded(

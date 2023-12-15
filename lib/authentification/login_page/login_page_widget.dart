@@ -3,7 +3,6 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/backend/schema/structs/index.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -540,34 +539,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               GoRouter.of(context)
                                                   .prepareAuthEvent();
                                               await authManager.signIn(
-                                                authenticationToken: ((_model
-                                                                        .apiResult6cu
-                                                                        ?.jsonBody ??
-                                                                    '') !=
-                                                                null &&
-                                                            (_model.apiResult6cu
-                                                                        ?.jsonBody ??
-                                                                    '') !=
-                                                                ''
-                                                        ? UserStruct.fromMap(
-                                                            (_model.apiResult6cu
-                                                                    ?.jsonBody ??
-                                                                ''))
-                                                        : null)
-                                                    ?.token,
-                                                userData: (_model.apiResult6cu
-                                                                    ?.jsonBody ??
-                                                                '') !=
-                                                            null &&
-                                                        (_model.apiResult6cu
-                                                                    ?.jsonBody ??
-                                                                '') !=
-                                                            ''
-                                                    ? UserStruct.fromMap((_model
-                                                            .apiResult6cu
-                                                            ?.jsonBody ??
-                                                        ''))
-                                                    : null,
+                                                authenticationToken:
+                                                    LoginUserCall.jwt(
+                                                  (_model.apiResult6cu
+                                                          ?.jsonBody ??
+                                                      ''),
+                                                ).toString(),
                                               );
 
                                               context.pushNamedAuth(

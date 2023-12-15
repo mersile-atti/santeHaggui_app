@@ -27,8 +27,6 @@ export '/appointments/appointment_details/appointment_details_widget.dart'
 export '/appointments/appointment_details_profil/appointment_details_profil_widget.dart'
     show AppointmentDetailsProfilWidget;
 export '/edit_profile/edit_profile_widget.dart' show EditProfileWidget;
-export '/app_pages/sub_pages/list_pages/list_pages_widget.dart'
-    show ListPagesWidget;
 export '/authentification/phone_login_page/phone_login_page_widget.dart'
     show PhoneLoginPageWidget;
 export '/qrcode_page/qrcode_page_widget.dart' show QrcodePageWidget;

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
@@ -13,21 +14,18 @@ class CreateUserCall {
     String? phone = '',
     String? password = '',
   }) async {
-    final ffApiRequestBody = '''
-{
-  "username": "$username",
-  "email": "$email",
-  "phone": "$phone",
-  "password": "$password"
-}''';
     return ApiManager.instance.makeApiCall(
       callName: 'CreateUser',
       apiUrl: 'https://santehaggui-b8e92b22721c.herokuapp.com/api/users/',
       callType: ApiCallType.POST,
       headers: {},
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
+      params: {
+        'username': username,
+        'email': email,
+        'phone': phone,
+        'password': password,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -42,21 +40,23 @@ class LoginUserCall {
     String? email = '',
     String? phone = '',
     String? password = '',
+    String? authToken = '',
+    String? accessToken = '',
   }) async {
-    final ffApiRequestBody = '''
-{
-  "email": "$email",
-  "phone": "$phone",
-  "password": "$password"
-}''';
     return ApiManager.instance.makeApiCall(
       callName: 'loginUser',
       apiUrl: 'https://santehaggui-b8e92b22721c.herokuapp.com/api/users/login',
       callType: ApiCallType.POST,
-      headers: {},
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
+      headers: {
+        'Authorization': 'Bearer $accessToken',
+      },
+      params: {
+        'email': email,
+        'phone': phone,
+        'password': password,
+        'accessToken': accessToken,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -64,6 +64,11 @@ class LoginUserCall {
       alwaysAllowBody: false,
     );
   }
+
+  static dynamic jwt(dynamic response) => getJsonField(
+        response,
+        r'''$.accessToken''',
+      );
 }
 
 class UpdateUserCall {
@@ -72,7 +77,7 @@ class UpdateUserCall {
     String? email = '',
     String? phone = '',
     String? password = '',
-    String? authToken = '',
+    String? jwt = '',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -86,7 +91,7 @@ class UpdateUserCall {
       apiUrl: 'https://santehaggui-b8e92b22721c.herokuapp.com/api/users/update',
       callType: ApiCallType.PUT,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer $jwt',
       },
       params: {},
       body: ffApiRequestBody,
@@ -98,11 +103,24 @@ class UpdateUserCall {
       alwaysAllowBody: false,
     );
   }
+
+  static dynamic username(dynamic response) => getJsonField(
+        response,
+        r'''$.username''',
+      );
+  static dynamic email(dynamic response) => getJsonField(
+        response,
+        r'''$.email''',
+      );
+  static dynamic phone(dynamic response) => getJsonField(
+        response,
+        r'''$.phone''',
+      );
 }
 
 class GetUserCall {
   static Future<ApiCallResponse> call({
-    String? authToken = '',
+    String? jwt = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'getUser',
@@ -110,7 +128,7 @@ class GetUserCall {
           'https://santehaggui-b8e92b22721c.herokuapp.com/api/users/current',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer $jwt',
       },
       params: {},
       returnBody: true,
@@ -120,18 +138,35 @@ class GetUserCall {
       alwaysAllowBody: false,
     );
   }
+
+  static dynamic username(dynamic response) => getJsonField(
+        response,
+        r'''$.username''',
+      );
+  static dynamic email(dynamic response) => getJsonField(
+        response,
+        r'''$.email''',
+      );
+  static dynamic phone(dynamic response) => getJsonField(
+        response,
+        r'''$.phone''',
+      );
+  static dynamic umi(dynamic response) => getJsonField(
+        response,
+        r'''$.umi''',
+      );
 }
 
 class DeleteUserCall {
   static Future<ApiCallResponse> call({
-    String? authToken = '',
+    String? jwt = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'deleteUser',
       apiUrl: 'https://santehaggui-b8e92b22721c.herokuapp.com/api/users/delete',
       callType: ApiCallType.DELETE,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer $jwt',
       },
       params: {},
       returnBody: true,
@@ -158,35 +193,33 @@ class CreateEmergencyProfileCall {
     String? emergencyContactAddress = '',
     String? address = '',
     String? notes = '',
-    String? authToken = '',
+    String? jwt = '',
   }) async {
-    final ffApiRequestBody = '''
-{
-  "name": "$name",
-  "birthday": "$birthday",
-  "gender": "$gender",
-  "bloodType": "$bloodType",
-  "allergies": "$allergies",
-  "medications": "$medications",
-  "treatmentsAndProcedures": "$treatmentsAndProcedures",
-  "emergencyContactName": "$emergencyContactName",
-  "emergencyContactRelationship": "$emergencyContactRelationship",
-  "emergencyContactPhone": "$emergencyContactPhone",
-  "emergencyContactAddress": "$emergencyContactAddress",
-  "address": "$address",
-  "notes": "$notes"
-}''';
     return ApiManager.instance.makeApiCall(
       callName: 'createEmergencyProfile',
       apiUrl:
           'https://santehaggui-b8e92b22721c.herokuapp.com/api/healthRecords/profile',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer $jwt',
       },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
+      params: {
+        'name': name,
+        'birthday': birthday,
+        'gender': gender,
+        'bloodType': bloodType,
+        'allergies': allergies,
+        'medications': medications,
+        'treatmentsAndProcedures': treatmentsAndProcedures,
+        'emergencyContactName': emergencyContactName,
+        'emergencyContactRelationship': emergencyContactRelationship,
+        'emergencyContactPhone': emergencyContactPhone,
+        'emergencyContactAddress': emergencyContactAddress,
+        'address': address,
+        'notes': notes,
+        'jwt': jwt,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -194,6 +227,63 @@ class CreateEmergencyProfileCall {
       alwaysAllowBody: false,
     );
   }
+
+  static dynamic userId(dynamic response) => getJsonField(
+        response,
+        r'''$.user''',
+      );
+  static dynamic name(dynamic response) => getJsonField(
+        response,
+        r'''$.name''',
+      );
+  static dynamic birthday(dynamic response) => getJsonField(
+        response,
+        r'''$.birthday''',
+      );
+  static dynamic gender(dynamic response) => getJsonField(
+        response,
+        r'''$.gender''',
+      );
+  static dynamic bloodType(dynamic response) => getJsonField(
+        response,
+        r'''$.bloodType''',
+      );
+  static dynamic allergies(dynamic response) => getJsonField(
+        response,
+        r'''$.allergies''',
+      );
+  static dynamic medications(dynamic response) => getJsonField(
+        response,
+        r'''$.medications''',
+      );
+  static dynamic treatmentsAndProcedures(dynamic response) => getJsonField(
+        response,
+        r'''$.treatmentsAndProcedures''',
+      );
+  static dynamic address(dynamic response) => getJsonField(
+        response,
+        r'''$.address''',
+      );
+  static dynamic emergencyContact(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyContactName''',
+      );
+  static dynamic emergencyRelationship(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyContactRelationship''',
+      );
+  static dynamic emergencyPhone(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyContactPhone''',
+      );
+  static dynamic emergencyAddress(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyContactAddress''',
+      );
+  static dynamic notes(dynamic response) => getJsonField(
+        response,
+        r'''$.notes''',
+      );
 }
 
 class UpdateEmergencyProfileCall {
@@ -211,35 +301,33 @@ class UpdateEmergencyProfileCall {
     String? emergencyContactAddress = '',
     String? address = '',
     String? notes = '',
-    String? authToken = '',
+    String? jwt = '',
   }) async {
-    final ffApiRequestBody = '''
-{
-  "name": "$name",
-  "birthday": "$birthday",
-  "gender": "$gender",
-  "bloodType": "$bloodType",
-  "allergies": "$allergies",
-  "medications": "$medications",
-  "treatmentsAndProcedures": "$treatmentsAndProcedures",
-  "emergencyContactName": "$emergencyContactName",
-  "emergencyContactRelationship": "$emergencyContactRelationship",
-  "emergencyContactPhone": "$emergencyContactPhone",
-  "emergencyContactAddress": "$emergencyContactAddress",
-  "address": "$address",
-  "notes": "$notes"
-}''';
     return ApiManager.instance.makeApiCall(
       callName: 'updateEmergencyProfile',
       apiUrl:
           'https://santehaggui-b8e92b22721c.herokuapp.com/api/healthRecords/profile',
       callType: ApiCallType.PUT,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer $jwt',
       },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
+      params: {
+        'name': name,
+        'birthday': birthday,
+        'gender': gender,
+        'bloodType': bloodType,
+        'allergies': allergies,
+        'medications': medications,
+        'treatmentsAndProcedures': treatmentsAndProcedures,
+        'address': address,
+        'notes': notes,
+        'emergencyContactName': emergencyContactName,
+        'emergencyContactRelationship': emergencyContactRelationship,
+        'emergencyContactPhone': emergencyContactPhone,
+        'emergencyContactAddress': emergencyContactAddress,
+        'jwt': jwt,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -247,11 +335,72 @@ class UpdateEmergencyProfileCall {
       alwaysAllowBody: false,
     );
   }
+
+  static dynamic userId(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.user''',
+      );
+  static dynamic name(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.name''',
+      );
+  static dynamic birthday(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.birthday''',
+      );
+  static dynamic gender(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.gender''',
+      );
+  static dynamic bloodType(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.bloodType''',
+      );
+  static dynamic allergies(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.allergies''',
+      );
+  static dynamic medications(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.medications''',
+      );
+  static dynamic profileID(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile._id''',
+      );
+  static dynamic treatmentsAndProcedures(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.treatmentsAndProcedures''',
+      );
+  static dynamic address(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.address''',
+      );
+  static dynamic emergencyContact(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.emergencyContactName''',
+      );
+  static dynamic emergencyRelationship(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.emergencyContactRelationship''',
+      );
+  static dynamic emergencyPhone(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.emergencyContactPhone''',
+      );
+  static dynamic emergencyAddress(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.emergencyContactAddress''',
+      );
+  static dynamic notes(dynamic response) => getJsonField(
+        response,
+        r'''$.updatedEmergencyProfile.notes''',
+      );
 }
 
 class GetOneProfileCall {
   static Future<ApiCallResponse> call({
-    String? authToken = '',
+    String? jwt = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'getOneProfile',
@@ -259,9 +408,11 @@ class GetOneProfileCall {
           'https://santehaggui-b8e92b22721c.herokuapp.com/api/healthRecords/profile',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer $jwt',
       },
-      params: {},
+      params: {
+        'jwt': jwt,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -269,11 +420,68 @@ class GetOneProfileCall {
       alwaysAllowBody: false,
     );
   }
+
+  static dynamic userID(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.user''',
+      );
+  static dynamic name(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.name''',
+      );
+  static dynamic birthday(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.birthday''',
+      );
+  static dynamic gender(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.gender''',
+      );
+  static dynamic bloodType(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.bloodType''',
+      );
+  static dynamic allergies(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.allergies''',
+      );
+  static dynamic medications(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.medications''',
+      );
+  static dynamic treatmentsAndProcedures(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.treatmentsAndProcedures''',
+      );
+  static dynamic address(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.address''',
+      );
+  static dynamic emergencyContact(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.emergencyContactName''',
+      );
+  static dynamic emergencyContactRelationship(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.emergencyContactRelationship''',
+      );
+  static dynamic emergencyContactPhone(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.emergencyContactPhone''',
+      );
+  static dynamic emergencyContactAddress(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.emergencyContactAddress''',
+      );
+  static dynamic notes(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.notes''',
+      );
 }
 
 class GetAllProfilesCall {
   static Future<ApiCallResponse> call({
-    String? authToken = '',
+    String? jwt = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'getAllProfiles',
@@ -281,7 +489,7 @@ class GetAllProfilesCall {
           'https://santehaggui-b8e92b22721c.herokuapp.com/api/healthRecords/',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer $jwt',
       },
       params: {},
       returnBody: true,
@@ -303,30 +511,28 @@ class MakeBloodRequestCall {
     int? pintsNeeded,
     String? diagnosis = '',
     String? shortDescription = '',
-    String? authToken = '',
+    String? jwt = '',
   }) async {
-    final ffApiRequestBody = '''
-{
-  "bloodType": "$bloodType",
-  "hospitalName": "$hospitalName",
-  "hospitalLocation": "$hospitalLocation",
-  "status": "$status",
-  "urgency": "$urgency",
-  "pintsNeeded": $pintsNeeded,
-  "diagnosis": "$diagnosis",
-  "shortDescription": "$shortDescription"
-}''';
     return ApiManager.instance.makeApiCall(
       callName: 'makeBloodRequest',
       apiUrl:
           'https://santehaggui-b8e92b22721c.herokuapp.com/api/blood-requests/',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer $jwt',
       },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
+      params: {
+        'bloodType': bloodType,
+        'hospitalName': hospitalName,
+        'hospitalLocation': hospitalLocation,
+        'status': status,
+        'urgency': urgency,
+        'pinsNeeded': pintsNeeded,
+        'diagnosis': diagnosis,
+        'shortDescription': shortDescription,
+        'jwt': jwt,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -338,7 +544,7 @@ class MakeBloodRequestCall {
 
 class GetBloodRequestCall {
   static Future<ApiCallResponse> call({
-    String? authToken = '',
+    String? jwt = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'getBloodRequest',
@@ -346,9 +552,11 @@ class GetBloodRequestCall {
           'https://santehaggui-b8e92b22721c.herokuapp.com/api/blood-requests',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer $jwt',
       },
-      params: {},
+      params: {
+        'jwt': jwt,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -368,7 +576,7 @@ class UpdateBloodRequestCall {
     int? pintsNeeded,
     String? diagnosis = '',
     String? shortDescription = '',
-    String? authToken = '',
+    String? jwt = '',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -387,7 +595,7 @@ class UpdateBloodRequestCall {
           'https://santehaggui-b8e92b22721c.herokuapp.com/api/blood-requests/update',
       callType: ApiCallType.PUT,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer $jwt',
       },
       params: {},
       body: ffApiRequestBody,
@@ -404,7 +612,7 @@ class UpdateBloodRequestCall {
 class DeleteBloodRequestCall {
   static Future<ApiCallResponse> call({
     String? id = '',
-    String? authToken = '',
+    String? jwt = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'deleteBloodRequest',
@@ -412,10 +620,11 @@ class DeleteBloodRequestCall {
           'https://santehaggui-b8e92b22721c.herokuapp.com/api/blood-requests/$id',
       callType: ApiCallType.DELETE,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer $jwt',
       },
       params: {
         'id': id,
+        'jwt': jwt,
       },
       returnBody: true,
       encodeBodyUtf8: false,

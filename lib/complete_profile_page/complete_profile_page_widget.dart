@@ -863,6 +863,7 @@ class _CompleteProfilePageWidgetState extends State<CompleteProfilePageWidget>
                                     address: _model.addressController.text,
                                     emergencyContactName:
                                         _model.confirmPasswordController.text,
+                                    jwt: FFAppState().token,
                                   );
                                   if ((_model.apiResult2l0?.succeeded ??
                                       true)) {

@@ -1,4 +1,3 @@
-import '/backend/backend.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/components/emergency_profile_component/emergency_profile_component_widget.dart';
 import '/components/health_metrics_component/health_metrics_component_widget.dart';
@@ -402,128 +401,70 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
-                                                        ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containeBloodOxygenHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containeBloodOxygenHealthMetricsRecord =
-                                                              containeBloodOxygenHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containeBloodOxygenHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onLongPress:
-                                                                () async {
-                                                              await containeBloodOxygenHealthMetricsRecord!
-                                                                  .reference
-                                                                  .update(
-                                                                      createHealthMetricsRecordData());
-                                                              Navigator.pop(
-                                                                  context);
-                                                            },
-                                                            child: Container(
-                                                              width: double
-                                                                  .infinity,
-                                                              height: 45.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onLongPress: () async {
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                        child: Container(
+                                                          width:
+                                                              double.infinity,
+                                                          height: 45.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            boxShadow: const [
+                                                              BoxShadow(
+                                                                blurRadius: 4.0,
+                                                                color: Color(
+                                                                    0x33000000),
+                                                                offset: Offset(
+                                                                    0.0, 2.0),
+                                                              )
+                                                            ],
+                                                          ),
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Text(
+                                                                'Blood Oxygen',
+                                                                style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondaryBackground,
-                                                                boxShadow: const [
-                                                                  BoxShadow(
-                                                                    blurRadius:
-                                                                        4.0,
-                                                                    color: Color(
-                                                                        0x33000000),
-                                                                    offset:
-                                                                        Offset(
-                                                                            0.0,
-                                                                            2.0),
-                                                                  )
-                                                                ],
+                                                                    .bodyMedium,
                                                               ),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .start,
-                                                                children: [
-                                                                  Text(
-                                                                    'Blood Oxygen',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
-                                                                    child: Text(
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                        containeBloodOxygenHealthMetricsRecord
-                                                                            ?.bloodOxygen,
-                                                                        'N/A',
-                                                                      ),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
-                                                                    ),
-                                                                  ),
-                                                                ],
+                                                                child: Text(
+                                                                  'Hello World',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium,
+                                                                ),
                                                               ),
-                                                            ),
-                                                          );
-                                                        },
+                                                            ],
+                                                          ),
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -534,108 +475,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containerHeightHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containerHeightHealthMetricsRecord =
-                                                              containerHeightHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containerHeightHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Height ',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'Height ',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containerHeightHealthMetricsRecord
-                                                                          ?.height,
-                                                                      '1,80',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -646,108 +533,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containerWeightHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containerWeightHealthMetricsRecord =
-                                                              containerWeightHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containerWeightHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Weight ',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'Weight ',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containerWeightHealthMetricsRecord
-                                                                          ?.weight,
-                                                                      '65,2',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -758,108 +591,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containerImcHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containerImcHealthMetricsRecord =
-                                                              containerImcHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containerImcHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Body  Mass Index',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'Body  Mass Index',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containerImcHealthMetricsRecord
-                                                                          ?.indiceMasseCorporelle,
-                                                                      'N/A',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -870,108 +649,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containerHearthRateHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containerHearthRateHealthMetricsRecord =
-                                                              containerHearthRateHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containerHearthRateHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Heart Rate',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'Heart Rate',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containerHearthRateHealthMetricsRecord
-                                                                          ?.heartRate,
-                                                                      'N/A',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -982,108 +707,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containerBodyTemHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containerBodyTemHealthMetricsRecord =
-                                                              containerBodyTemHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containerBodyTemHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Body Temperature ',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'Body Temperature ',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containerBodyTemHealthMetricsRecord
-                                                                          ?.temperatureCorporelle,
-                                                                      'N/A',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -1094,108 +765,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containerBloddpressureSystolicHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containerBloddpressureSystolicHealthMetricsRecord =
-                                                              containerBloddpressureSystolicHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containerBloddpressureSystolicHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Blood Pressure (systolic)',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'Blood Pressure (systolic)',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containerBloddpressureSystolicHealthMetricsRecord
-                                                                          ?.systolicPressionArterielle,
-                                                                      'N/A',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -1206,108 +823,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containerBloodPressureDiastolicHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containerBloodPressureDiastolicHealthMetricsRecord =
-                                                              containerBloodPressureDiastolicHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containerBloodPressureDiastolicHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Blood Pressure (diastolic)',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'Blood Pressure (diastolic)',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containerBloodPressureDiastolicHealthMetricsRecord
-                                                                          ?.diastolicPressionArterielle,
-                                                                      'N/A',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -1318,108 +881,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containerTotalCholesterolHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containerTotalCholesterolHealthMetricsRecord =
-                                                              containerTotalCholesterolHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containerTotalCholesterolHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Total Cholesterol',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'Total Cholesterol',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containerTotalCholesterolHealthMetricsRecord
-                                                                          ?.cholesterol,
-                                                                      'N/A',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -1430,108 +939,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containeLdlCholesterolHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containeLdlCholesterolHealthMetricsRecord =
-                                                              containeLdlCholesterolHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containeLdlCholesterolHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'LDL Cholesterol',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'LDL Cholesterol',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containeLdlCholesterolHealthMetricsRecord
-                                                                          ?.ldlCholesterol,
-                                                                      'N/A',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -1542,108 +997,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containerHdlCholesterolHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containerHdlCholesterolHealthMetricsRecord =
-                                                              containerHdlCholesterolHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containerHdlCholesterolHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'HDL Cholesterol',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'HDL Cholesterol',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containerHdlCholesterolHealthMetricsRecord
-                                                                          ?.hdlCholesterol,
-                                                                      'N/A',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -1654,108 +1055,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containerTriglyceridesHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containerTriglyceridesHealthMetricsRecord =
-                                                              containerTriglyceridesHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containerTriglyceridesHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Triglycerides',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'Triglycerides',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containerTriglyceridesHealthMetricsRecord
-                                                                          ?.triglycerides,
-                                                                      'N/A',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -1766,108 +1113,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containerRapportTotalChholesAndHDLHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containerRapportTotalChholesAndHDLHealthMetricsRecord =
-                                                              containerRapportTotalChholesAndHDLHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containerRapportTotalChholesAndHDLHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Total Cholesterol And HDL Ratio',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'Total Cholesterol And HDL Ratio',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containerRapportTotalChholesAndHDLHealthMetricsRecord
-                                                                          ?.rapportTotalCholesAndHdl,
-                                                                      'N/A',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -1878,108 +1171,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containeGlucoseHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containeGlucoseHealthMetricsRecord =
-                                                              containeGlucoseHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containeGlucoseHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Glucose',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'Glucose',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containeGlucoseHealthMetricsRecord
-                                                                          ?.glucose,
-                                                                      'N/A',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -1990,108 +1229,54 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   0.0,
                                                                   16.0,
                                                                   5.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              HealthMetricsRecord>>(
-                                                        stream:
-                                                            queryHealthMetricsRecord(
-                                                          singleRecord: true,
+                                                      child: Container(
+                                                        width: double.infinity,
+                                                        height: 45.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          boxShadow: const [
+                                                            BoxShadow(
+                                                              blurRadius: 4.0,
+                                                              color: Color(
+                                                                  0x33000000),
+                                                              offset: Offset(
+                                                                  0.0, 2.0),
+                                                            )
+                                                          ],
                                                         ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child: SizedBox(
-                                                                width: 50.0,
-                                                                height: 50.0,
-                                                                child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<HealthMetricsRecord>
-                                                              containerCirconferenceTailleHealthMetricsRecordList =
-                                                              snapshot.data!;
-                                                          // Return an empty Container when the item does not exist.
-                                                          if (snapshot
-                                                              .data!.isEmpty) {
-                                                            return Container();
-                                                          }
-                                                          final containerCirconferenceTailleHealthMetricsRecord =
-                                                              containerCirconferenceTailleHealthMetricsRecordList
-                                                                      .isNotEmpty
-                                                                  ? containerCirconferenceTailleHealthMetricsRecordList
-                                                                      .first
-                                                                  : null;
-                                                          return Container(
-                                                            width:
-                                                                double.infinity,
-                                                            height: 45.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              'Waist Circumference ',
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .secondaryBackground,
-                                                              boxShadow: const [
-                                                                BoxShadow(
-                                                                  blurRadius:
-                                                                      4.0,
-                                                                  color: Color(
-                                                                      0x33000000),
-                                                                  offset:
-                                                                      Offset(
-                                                                          0.0,
-                                                                          2.0),
-                                                                )
-                                                              ],
+                                                                  .bodyMedium,
                                                             ),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                Text(
-                                                                  'Waist Circumference ',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
-                                                                ),
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      containerCirconferenceTailleHealthMetricsRecord
-                                                                          ?.waistCircumference,
-                                                                      'N/A',
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium,
-                                                                  ),
-                                                                ),
-                                                              ],
+                                                              child: Text(
+                                                                'Hello World',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium,
+                                                              ),
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                   ],
