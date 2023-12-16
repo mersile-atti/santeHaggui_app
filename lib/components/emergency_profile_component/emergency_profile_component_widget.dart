@@ -1165,9 +1165,9 @@ class _EmergencyProfileComponentWidgetState
                                       final textGetAllProfilesResponse =
                                           snapshot.data!;
                                       return Text(
-                                        '${GetAllProfilesCall.emergencyContactRelationship(
+                                        '${GetAllProfilesCall.emergencyRelationship(
                                           textGetAllProfilesResponse.jsonBody,
-                                        ).toString()}, ${GetAllProfilesCall.emergencyContactAddress(
+                                        ).toString()}, ${GetAllProfilesCall.emergencyAddress(
                                           textGetAllProfilesResponse.jsonBody,
                                         ).toString()}',
                                         style: FlutterFlowTheme.of(context)
