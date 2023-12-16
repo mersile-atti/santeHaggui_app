@@ -1,3 +1,5 @@
+import '/auth/custom_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -686,9 +688,35 @@ class _UpdateMedicaleProfilAddressComponentWidgetState
                                                                 child:
                                                                     FFButtonWidget(
                                                                   onPressed:
-                                                                      () {
-                                                                    print(
-                                                                        'Button pressed ...');
+                                                                      () async {
+                                                                    _model.apiResultdl8 =
+                                                                        await UpdateEmergencyProfileCall
+                                                                            .call(
+                                                                      emergencyContactName: _model
+                                                                          .addressController1
+                                                                          .text,
+                                                                      emergencyContactRelationship: _model
+                                                                          .cityController
+                                                                          .text,
+                                                                      emergencyContactPhone: _model
+                                                                          .addressController2
+                                                                          .text,
+                                                                      emergencyContactAddress: _model
+                                                                          .addressController3
+                                                                          .text,
+                                                                      jwt:
+                                                                          currentAuthenticationToken,
+                                                                    );
+                                                                    if ((_model
+                                                                            .apiResultdl8
+                                                                            ?.succeeded ??
+                                                                        true)) {
+                                                                      context.pushNamed(
+                                                                          'RecordsPage');
+                                                                    }
+
+                                                                    setState(
+                                                                        () {});
                                                                   },
                                                                   text:
                                                                       'Update',

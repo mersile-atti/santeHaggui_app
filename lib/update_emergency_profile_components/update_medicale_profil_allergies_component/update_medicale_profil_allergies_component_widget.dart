@@ -1,4 +1,5 @@
-import '/backend/backend.dart';
+import '/auth/custom_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -398,67 +399,62 @@ class _UpdateMedicaleProfilAllergiesComponentWidgetState
                 ),
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      await MedicalProfilRecord.collection
-                          .doc()
-                          .set(createMedicalProfilRecordData(
-                            allergies: _model.textController.text,
-                          ));
-                      Navigator.pop(context);
-                    },
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
-                            child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
-                              },
-                              text: 'Add',
-                              options: FFButtonOptions(
-                                width: 250.0,
-                                height: 56.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0xFF019874),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                                elevation: 3.0,
-                                borderSide: const BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  bottomLeft: Radius.circular(25.0),
-                                  bottomRight: Radius.circular(15.0),
-                                  topLeft: Radius.circular(10.0),
-                                  topRight: Radius.circular(25.0),
-                                ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 1.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 0.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              _model.apiResult6v2 =
+                                  await UpdateEmergencyProfileCall.call(
+                                allergies: _model.textController.text,
+                                jwt: currentAuthenticationToken,
+                              );
+                              if ((_model.apiResult6v2?.succeeded ?? true)) {
+                                context.pushNamed('RecordsPage');
+                              }
+
+                              setState(() {});
+                            },
+                            text: 'Add',
+                            options: FFButtonOptions(
+                              width: 250.0,
+                              height: 56.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  24.0, 0.0, 24.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: const Color(0xFF019874),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                              elevation: 3.0,
+                              borderSide: const BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
                               ),
-                            ).animateOnPageLoad(
-                                animationsMap['buttonOnPageLoadAnimation']!),
-                          ),
+                              borderRadius: const BorderRadius.only(
+                                bottomLeft: Radius.circular(25.0),
+                                bottomRight: Radius.circular(15.0),
+                                topLeft: Radius.circular(10.0),
+                                topRight: Radius.circular(25.0),
+                              ),
+                            ),
+                          ).animateOnPageLoad(
+                              animationsMap['buttonOnPageLoadAnimation']!),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ],
