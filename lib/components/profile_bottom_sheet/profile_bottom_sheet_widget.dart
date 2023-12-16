@@ -36,19 +36,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
         ),
       ],
     ),
-    'rowOnPageLoadAnimation1': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
-    'rowOnPageLoadAnimation2': AnimationInfo(
+    'rowOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
@@ -129,7 +117,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
         padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
         child: Container(
           width: double.infinity,
-          height: 570.0,
+          height: 600.0,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20.0),
@@ -140,35 +128,9 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Flexible(
-                        child: Align(
-                          alignment: const AlignmentDirectional(1.0, 0.0),
-                          child: FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 30.0,
-                            borderWidth: 1.0,
-                            icon: Icon(
-                              Icons.close_rounded,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              size: 30.0,
-                            ),
-                            onPressed: () async {
-                              Navigator.pop(context);
-                            },
-                          ),
-                        ),
-                      ),
-                    ],
-                  ).animateOnPageLoad(
-                      animationsMap['rowOnPageLoadAnimation1']!),
-                ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Flexible(
                       child: Align(
@@ -270,8 +232,23 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                         ),
                       ),
                     ),
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: FlutterFlowIconButton(
+                        borderRadius: 30.0,
+                        borderWidth: 1.0,
+                        icon: Icon(
+                          Icons.close_sharp,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          size: 30.0,
+                        ),
+                        onPressed: () async {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
                   ],
-                ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation2']!),
+                ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
                 Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -562,15 +539,15 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                   ],
                 ),
                 Flexible(
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 1.0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 0.0),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, 1.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               GoRouter.of(context).prepareAuthEvent();
@@ -616,8 +593,8 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                           ).animateOnPageLoad(
                               animationsMap['buttonOnPageLoadAnimation']!),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],

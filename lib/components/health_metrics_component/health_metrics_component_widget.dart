@@ -121,7 +121,7 @@ class _HealthMetricsComponentWidgetState
         padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
         child: Container(
           width: double.infinity,
-          height: 700.0,
+          height: 600.0,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(0.0),
