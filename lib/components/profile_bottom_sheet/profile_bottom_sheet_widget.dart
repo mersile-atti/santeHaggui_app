@@ -117,7 +117,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
         padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
         child: Container(
           width: double.infinity,
-          height: 600.0,
+          height: 500.0,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20.0),
