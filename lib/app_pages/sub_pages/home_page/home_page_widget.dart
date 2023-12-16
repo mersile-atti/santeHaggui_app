@@ -99,7 +99,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     builder: (dialogContext) {
                                       return const Material(
                                         color: Colors.transparent,
-                                        child: ProfileBottomSheetWidget(),
+                                        child: SizedBox(
+                                          height: 600.0,
+                                          child: ProfileBottomSheetWidget(),
+                                        ),
                                       );
                                     },
                                   ).then((value) => setState(() {}));
