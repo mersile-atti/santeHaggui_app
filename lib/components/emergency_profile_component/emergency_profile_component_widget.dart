@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/upload_data.dart';
 import '/update_emergency_profile_components/update_medicale_profil_address_component/update_medicale_profil_address_component_widget.dart';
 import '/update_emergency_profile_components/update_medicale_profil_allergies_component/update_medicale_profil_allergies_component_widget.dart';
 import '/update_emergency_profile_components/update_medicale_profil_emergency_contact_component/update_medicale_profil_emergency_contact_component_widget.dart';
@@ -120,68 +119,6 @@ class _EmergencyProfileComponentWidgetState
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            final selectedMedia =
-                                await selectMediaWithSourceBottomSheet(
-                              context: context,
-                              allowPhoto: true,
-                            );
-                            if (selectedMedia != null &&
-                                selectedMedia.every((m) => validateFileFormat(
-                                    m.storagePath, context))) {
-                              setState(() => _model.isDataUploading = true);
-                              var selectedUploadedFiles = <FFUploadedFile>[];
-
-                              try {
-                                selectedUploadedFiles = selectedMedia
-                                    .map((m) => FFUploadedFile(
-                                          name: m.storagePath.split('/').last,
-                                          bytes: m.bytes,
-                                          height: m.dimensions?.height,
-                                          width: m.dimensions?.width,
-                                          blurHash: m.blurHash,
-                                        ))
-                                    .toList();
-                              } finally {
-                                _model.isDataUploading = false;
-                              }
-                              if (selectedUploadedFiles.length ==
-                                  selectedMedia.length) {
-                                setState(() {
-                                  _model.uploadedLocalFile =
-                                      selectedUploadedFiles.first;
-                                });
-                              } else {
-                                setState(() {});
-                                return;
-                              }
-                            }
-                          },
-                          child: Container(
-                            width: 75.0,
-                            height: 75.0,
-                            decoration: BoxDecoration(
-                              color:
-                                  FlutterFlowTheme.of(context).primaryBtnText,
-                              image: DecorationImage(
-                                fit: BoxFit.contain,
-                                image: Image.network(
-                                  'https://cdn-icons-png.flaticon.com/128/2785/2785482.png',
-                                ).image,
-                              ),
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                width: 2.0,
-                              ),
-                            ),
-                          ),
-                        ),
                         FutureBuilder<ApiCallResponse>(
                           future: GetUserCall.call(
                             jwt: currentAuthenticationToken,
@@ -206,7 +143,12 @@ class _EmergencyProfileComponentWidgetState
                               GetUserCall.umi(
                                 textGetUserResponse.jsonBody,
                               ).toString(),
-                              style: FlutterFlowTheme.of(context).bodyMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    fontSize: 20.0,
+                                  ),
                             );
                           },
                         ),
@@ -283,7 +225,7 @@ class _EmergencyProfileComponentWidgetState
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: FutureBuilder<ApiCallResponse>(
-                                    future: GetOneProfileCall.call(
+                                    future: GetAllProfilesCall.call(
                                       jwt: currentAuthenticationToken,
                                     ),
                                     builder: (context, snapshot) {
@@ -303,11 +245,11 @@ class _EmergencyProfileComponentWidgetState
                                           ),
                                         );
                                       }
-                                      final textGetOneProfileResponse =
+                                      final textGetAllProfilesResponse =
                                           snapshot.data!;
                                       return Text(
-                                        GetOneProfileCall.name(
-                                          textGetOneProfileResponse.jsonBody,
+                                        GetAllProfilesCall.name(
+                                          textGetAllProfilesResponse.jsonBody,
                                         ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
@@ -392,7 +334,7 @@ class _EmergencyProfileComponentWidgetState
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: FutureBuilder<ApiCallResponse>(
-                                    future: GetOneProfileCall.call(
+                                    future: GetAllProfilesCall.call(
                                       jwt: currentAuthenticationToken,
                                     ),
                                     builder: (context, snapshot) {
@@ -412,11 +354,11 @@ class _EmergencyProfileComponentWidgetState
                                           ),
                                         );
                                       }
-                                      final textGetOneProfileResponse =
+                                      final textGetAllProfilesResponse =
                                           snapshot.data!;
                                       return Text(
-                                        GetOneProfileCall.birthday(
-                                          textGetOneProfileResponse.jsonBody,
+                                        GetAllProfilesCall.birthday(
+                                          textGetAllProfilesResponse.jsonBody,
                                         ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
@@ -501,7 +443,7 @@ class _EmergencyProfileComponentWidgetState
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: FutureBuilder<ApiCallResponse>(
-                                    future: GetOneProfileCall.call(
+                                    future: GetAllProfilesCall.call(
                                       jwt: currentAuthenticationToken,
                                     ),
                                     builder: (context, snapshot) {
@@ -521,11 +463,11 @@ class _EmergencyProfileComponentWidgetState
                                           ),
                                         );
                                       }
-                                      final textGetOneProfileResponse =
+                                      final textGetAllProfilesResponse =
                                           snapshot.data!;
                                       return Text(
-                                        GetOneProfileCall.gender(
-                                          textGetOneProfileResponse.jsonBody,
+                                        GetAllProfilesCall.gender(
+                                          textGetAllProfilesResponse.jsonBody,
                                         ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
@@ -610,7 +552,7 @@ class _EmergencyProfileComponentWidgetState
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: FutureBuilder<ApiCallResponse>(
-                                    future: GetOneProfileCall.call(
+                                    future: GetAllProfilesCall.call(
                                       jwt: currentAuthenticationToken,
                                     ),
                                     builder: (context, snapshot) {
@@ -630,11 +572,11 @@ class _EmergencyProfileComponentWidgetState
                                           ),
                                         );
                                       }
-                                      final textGetOneProfileResponse =
+                                      final textGetAllProfilesResponse =
                                           snapshot.data!;
                                       return Text(
-                                        GetOneProfileCall.bloodType(
-                                          textGetOneProfileResponse.jsonBody,
+                                        GetAllProfilesCall.bloodType(
+                                          textGetAllProfilesResponse.jsonBody,
                                         ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
@@ -719,7 +661,7 @@ class _EmergencyProfileComponentWidgetState
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: FutureBuilder<ApiCallResponse>(
-                                    future: GetOneProfileCall.call(
+                                    future: GetAllProfilesCall.call(
                                       jwt: currentAuthenticationToken,
                                     ),
                                     builder: (context, snapshot) {
@@ -739,11 +681,11 @@ class _EmergencyProfileComponentWidgetState
                                           ),
                                         );
                                       }
-                                      final textGetOneProfileResponse =
+                                      final textGetAllProfilesResponse =
                                           snapshot.data!;
                                       return Text(
-                                        GetOneProfileCall.allergies(
-                                          textGetOneProfileResponse.jsonBody,
+                                        GetAllProfilesCall.allergies(
+                                          textGetAllProfilesResponse.jsonBody,
                                         ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
@@ -828,7 +770,7 @@ class _EmergencyProfileComponentWidgetState
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: FutureBuilder<ApiCallResponse>(
-                                    future: GetOneProfileCall.call(
+                                    future: GetAllProfilesCall.call(
                                       jwt: currentAuthenticationToken,
                                     ),
                                     builder: (context, snapshot) {
@@ -848,11 +790,11 @@ class _EmergencyProfileComponentWidgetState
                                           ),
                                         );
                                       }
-                                      final textGetOneProfileResponse =
+                                      final textGetAllProfilesResponse =
                                           snapshot.data!;
                                       return Text(
-                                        GetOneProfileCall.medications(
-                                          textGetOneProfileResponse.jsonBody,
+                                        GetAllProfilesCall.medications(
+                                          textGetAllProfilesResponse.jsonBody,
                                         ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
@@ -937,7 +879,7 @@ class _EmergencyProfileComponentWidgetState
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: FutureBuilder<ApiCallResponse>(
-                                    future: GetOneProfileCall.call(
+                                    future: GetAllProfilesCall.call(
                                       jwt: currentAuthenticationToken,
                                     ),
                                     builder: (context, snapshot) {
@@ -957,12 +899,12 @@ class _EmergencyProfileComponentWidgetState
                                           ),
                                         );
                                       }
-                                      final textGetOneProfileResponse =
+                                      final textGetAllProfilesResponse =
                                           snapshot.data!;
                                       return Text(
-                                        GetOneProfileCall
+                                        GetAllProfilesCall
                                             .treatmentsAndProcedures(
-                                          textGetOneProfileResponse.jsonBody,
+                                          textGetAllProfilesResponse.jsonBody,
                                         ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
@@ -1047,7 +989,7 @@ class _EmergencyProfileComponentWidgetState
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: FutureBuilder<ApiCallResponse>(
-                                    future: GetOneProfileCall.call(
+                                    future: GetAllProfilesCall.call(
                                       jwt: currentAuthenticationToken,
                                     ),
                                     builder: (context, snapshot) {
@@ -1067,11 +1009,11 @@ class _EmergencyProfileComponentWidgetState
                                           ),
                                         );
                                       }
-                                      final textGetOneProfileResponse =
+                                      final textGetAllProfilesResponse =
                                           snapshot.data!;
                                       return Text(
-                                        GetOneProfileCall.address(
-                                          textGetOneProfileResponse.jsonBody,
+                                        GetAllProfilesCall.address(
+                                          textGetAllProfilesResponse.jsonBody,
                                         ).toString(),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
@@ -1156,7 +1098,7 @@ class _EmergencyProfileComponentWidgetState
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: FutureBuilder<ApiCallResponse>(
-                                    future: GetOneProfileCall.call(
+                                    future: GetAllProfilesCall.call(
                                       jwt: currentAuthenticationToken,
                                     ),
                                     builder: (context, snapshot) {
@@ -1176,13 +1118,13 @@ class _EmergencyProfileComponentWidgetState
                                           ),
                                         );
                                       }
-                                      final textGetOneProfileResponse =
+                                      final textGetAllProfilesResponse =
                                           snapshot.data!;
                                       return Text(
-                                        '${GetOneProfileCall.emergencyContact(
-                                          textGetOneProfileResponse.jsonBody,
-                                        ).toString()}, ${GetOneProfileCall.emergencyContactPhone(
-                                          textGetOneProfileResponse.jsonBody,
+                                        '${GetAllProfilesCall.emergencyContact(
+                                          textGetAllProfilesResponse.jsonBody,
+                                        ).toString()}, ${GetAllProfilesCall.emergencyPhone(
+                                          textGetAllProfilesResponse.jsonBody,
                                         ).toString()}',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
@@ -1200,7 +1142,7 @@ class _EmergencyProfileComponentWidgetState
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: FutureBuilder<ApiCallResponse>(
-                                    future: GetOneProfileCall.call(
+                                    future: GetAllProfilesCall.call(
                                       jwt: currentAuthenticationToken,
                                     ),
                                     builder: (context, snapshot) {
@@ -1220,13 +1162,13 @@ class _EmergencyProfileComponentWidgetState
                                           ),
                                         );
                                       }
-                                      final textGetOneProfileResponse =
+                                      final textGetAllProfilesResponse =
                                           snapshot.data!;
                                       return Text(
-                                        '${GetOneProfileCall.emergencyContactRelationship(
-                                          textGetOneProfileResponse.jsonBody,
-                                        ).toString()}, ${GetOneProfileCall.emergencyContactAddress(
-                                          textGetOneProfileResponse.jsonBody,
+                                        '${GetAllProfilesCall.emergencyContactRelationship(
+                                          textGetAllProfilesResponse.jsonBody,
+                                        ).toString()}, ${GetAllProfilesCall.emergencyContactAddress(
+                                          textGetAllProfilesResponse.jsonBody,
                                         ).toString()}',
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge

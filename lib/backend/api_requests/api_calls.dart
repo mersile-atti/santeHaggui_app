@@ -499,6 +499,59 @@ class GetAllProfilesCall {
       alwaysAllowBody: false,
     );
   }
+
+  static dynamic name(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.name''',
+      );
+  static dynamic birthday(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.birthday''',
+      );
+  static dynamic gender(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.gender''',
+      );
+  static dynamic bloodType(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.bloodType''',
+      );
+  static dynamic allergies(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.allergies''',
+      );
+  static dynamic medications(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.medications''',
+      );
+  static dynamic treatmentsAndProcedures(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.treatmentsAndProcedures''',
+      );
+  static dynamic address(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.address''',
+      );
+  static dynamic emergencyContact(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.emergencyContactName''',
+      );
+  static dynamic emergencyRelationship(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.emergencyContactRelationship''',
+      );
+  static dynamic emergencyPhone(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.emergencyContactPhone''',
+      );
+  static dynamic emergencyAddress(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.emergencyContactAddress''',
+      );
+  static dynamic notes(dynamic response) => getJsonField(
+        response,
+        r'''$.emergencyProfiles.notes''',
+      );
 }
 
 class MakeBloodRequestCall {
