@@ -422,7 +422,7 @@ class _UpdateMedicaleProfileBloodGroupComponentCopyWidgetState
 
                               setState(() {});
                             },
-                            text: 'Add',
+                            text: 'Update',
                             options: FFButtonOptions(
                               width: 250.0,
                               height: 56.0,

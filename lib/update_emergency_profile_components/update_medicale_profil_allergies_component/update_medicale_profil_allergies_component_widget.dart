@@ -416,12 +416,12 @@ class _UpdateMedicaleProfilAllergiesComponentWidgetState
                                 jwt: currentAuthenticationToken,
                               );
                               if ((_model.apiResult6v2?.succeeded ?? true)) {
-                                context.pushNamed('RecordsPage');
+                                Navigator.pop(context);
                               }
 
                               setState(() {});
                             },
-                            text: 'Add',
+                            text: 'Update',
                             options: FFButtonOptions(
                               width: 250.0,
                               height: 56.0,

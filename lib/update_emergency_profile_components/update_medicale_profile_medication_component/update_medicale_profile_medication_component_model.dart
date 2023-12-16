@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/update_emergency_profile_components/update_medicale_profile_medication_component/update_medicale_profile_medication_component_widget.dart';
 import 'update_medicale_profile_medication_component_widget.dart'
@@ -17,6 +18,8 @@ class UpdateMedicaleProfileMedicationComponentModel
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
+  // Stores action output result for [Backend Call - API (updateEmergencyProfile)] action in Button widget.
+  ApiCallResponse? apiResultl0n;
 
   /// Initialization and disposal methods.
 

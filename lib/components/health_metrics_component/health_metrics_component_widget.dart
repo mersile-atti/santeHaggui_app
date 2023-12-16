@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/update_emergency_profile_components/update_medicale_profil_address_component/update_medicale_profil_address_component_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
@@ -178,8 +177,7 @@ class _HealthMetricsComponentWidgetState
                           builder: (context) {
                             return Padding(
                               padding: MediaQuery.viewInsetsOf(context),
-                              child:
-                                  const UpdateMedicaleProfilAddressComponentWidget(),
+                              child: const HealthMetricsComponentWidget(),
                             );
                           },
                         ).then((value) => safeSetState(() {}));

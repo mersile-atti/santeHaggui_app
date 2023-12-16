@@ -1,3 +1,5 @@
+import '/auth/custom_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -407,8 +409,17 @@ class _UpdateMedicaleProfileMedicationComponentWidgetState
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              _model.apiResultl0n =
+                                  await UpdateEmergencyProfileCall.call(
+                                medications: _model.textController.text,
+                                jwt: currentAuthenticationToken,
+                              );
+                              if ((_model.apiResultl0n?.succeeded ?? true)) {
+                                Navigator.pop(context);
+                              }
+
+                              setState(() {});
                             },
                             text: 'Update',
                             options: FFButtonOptions(

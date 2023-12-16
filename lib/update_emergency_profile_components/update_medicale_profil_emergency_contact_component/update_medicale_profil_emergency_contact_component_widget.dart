@@ -1,3 +1,5 @@
+import '/auth/custom_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -82,7 +84,7 @@ class _UpdateMedicaleProfilEmergencyContactComponentWidgetState
       padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
       child: Container(
         width: double.infinity,
-        height: 500.0,
+        height: 550.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: BorderRadius.circular(16.0),
@@ -302,7 +304,7 @@ class _UpdateMedicaleProfilEmergencyContactComponentWidgetState
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium,
-                                                            hintText: 'Address',
+                                                            hintText: 'Name',
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -394,7 +396,8 @@ class _UpdateMedicaleProfilEmergencyContactComponentWidgetState
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium,
-                                                            hintText: 'City',
+                                                            hintText:
+                                                                'Relationship',
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -494,7 +497,7 @@ class _UpdateMedicaleProfilEmergencyContactComponentWidgetState
                                                                         context)
                                                                     .labelMedium,
                                                             hintText:
-                                                                'Province or Region',
+                                                                'Phone number ',
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -586,7 +589,8 @@ class _UpdateMedicaleProfilEmergencyContactComponentWidgetState
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .labelMedium,
-                                                            hintText: 'Country',
+                                                            hintText:
+                                                                'Address ',
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -688,8 +692,34 @@ class _UpdateMedicaleProfilEmergencyContactComponentWidgetState
                                                                     FFButtonWidget(
                                                                   onPressed:
                                                                       () async {
-                                                                    Navigator.pop(
-                                                                        context);
+                                                                    _model.apiResultin4 =
+                                                                        await UpdateEmergencyProfileCall
+                                                                            .call(
+                                                                      emergencyContactName: _model
+                                                                          .addressController1
+                                                                          .text,
+                                                                      emergencyContactRelationship: _model
+                                                                          .cityController
+                                                                          .text,
+                                                                      emergencyContactPhone: _model
+                                                                          .addressController2
+                                                                          .text,
+                                                                      emergencyContactAddress: _model
+                                                                          .addressController3
+                                                                          .text,
+                                                                      jwt:
+                                                                          currentAuthenticationToken,
+                                                                    );
+                                                                    if ((_model
+                                                                            .apiResultin4
+                                                                            ?.succeeded ??
+                                                                        true)) {
+                                                                      Navigator.pop(
+                                                                          context);
+                                                                    }
+
+                                                                    setState(
+                                                                        () {});
                                                                   },
                                                                   text:
                                                                       'Update',

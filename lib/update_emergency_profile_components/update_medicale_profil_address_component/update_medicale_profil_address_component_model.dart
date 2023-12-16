@@ -14,24 +14,12 @@ class UpdateMedicaleProfilAddressComponentModel
   // State field(s) for Expandable widget.
   late ExpandableController expandableController;
 
-  // State field(s) for Address widget.
-  FocusNode? addressFocusNode1;
-  TextEditingController? addressController1;
-  String? Function(BuildContext, String?)? addressController1Validator;
-  // State field(s) for city widget.
-  FocusNode? cityFocusNode;
-  TextEditingController? cityController;
-  String? Function(BuildContext, String?)? cityControllerValidator;
-  // State field(s) for Address widget.
-  FocusNode? addressFocusNode2;
-  TextEditingController? addressController2;
-  String? Function(BuildContext, String?)? addressController2Validator;
-  // State field(s) for Address widget.
-  FocusNode? addressFocusNode3;
-  TextEditingController? addressController3;
-  String? Function(BuildContext, String?)? addressController3Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
   // Stores action output result for [Backend Call - API (updateEmergencyProfile)] action in Button widget.
-  ApiCallResponse? apiResultdl8;
+  ApiCallResponse? apiResult6v2;
 
   /// Initialization and disposal methods.
 
@@ -41,17 +29,8 @@ class UpdateMedicaleProfilAddressComponentModel
   @override
   void dispose() {
     expandableController.dispose();
-    addressFocusNode1?.dispose();
-    addressController1?.dispose();
-
-    cityFocusNode?.dispose();
-    cityController?.dispose();
-
-    addressFocusNode2?.dispose();
-    addressController2?.dispose();
-
-    addressFocusNode3?.dispose();
-    addressController3?.dispose();
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
   }
 
   /// Action blocks are added here.
