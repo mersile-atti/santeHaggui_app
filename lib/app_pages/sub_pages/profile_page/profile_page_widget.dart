@@ -1289,8 +1289,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                   if ((_model.apiResult2l0
                                                           ?.succeeded ??
                                                       true)) {
-                                                    context
-                                                        .pushNamed('HomePage');
+                                                    context.pushNamed(
+                                                        'RecordsPage');
                                                   } else {
                                                     await showDialog(
                                                       context: context,

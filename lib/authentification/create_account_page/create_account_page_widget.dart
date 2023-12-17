@@ -632,7 +632,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                                 );
 
                                                 context.pushNamedAuth(
-                                                    'HomePage',
+                                                    'ProfilePage',
                                                     context.mounted);
                                               }
 
