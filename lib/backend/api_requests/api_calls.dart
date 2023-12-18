@@ -491,7 +491,9 @@ class GetAllProfilesCall {
       headers: {
         'Authorization': 'Bearer $jwt',
       },
-      params: {},
+      params: {
+        'jwt': jwt,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -580,7 +582,7 @@ class MakeBloodRequestCall {
         'hospitalLocation': hospitalLocation,
         'status': status,
         'urgency': urgency,
-        'pinsNeeded': pintsNeeded,
+        'pintsNeeded': pintsNeeded,
         'diagnosis': diagnosis,
         'shortDescription': shortDescription,
         'jwt': jwt,
@@ -593,6 +595,43 @@ class MakeBloodRequestCall {
       alwaysAllowBody: false,
     );
   }
+
+  static dynamic bloodType(dynamic response) => getJsonField(
+        response,
+        r'''$.bloodType''',
+      );
+  static dynamic hospitalName(dynamic response) => getJsonField(
+        response,
+        r'''$.hospitalName''',
+      );
+  static dynamic hospitalLocation(dynamic response) => getJsonField(
+        response,
+        r'''$.hospitalLocation''',
+      );
+  static dynamic status(dynamic response) => getJsonField(
+        response,
+        r'''$.status''',
+      );
+  static dynamic urgency(dynamic response) => getJsonField(
+        response,
+        r'''$.urgency''',
+      );
+  static dynamic pintsNeeded(dynamic response) => getJsonField(
+        response,
+        r'''$.pintsNeeded''',
+      );
+  static dynamic diagnosis(dynamic response) => getJsonField(
+        response,
+        r'''$.diagnosis''',
+      );
+  static dynamic shortDescription(dynamic response) => getJsonField(
+        response,
+        r'''$.shortDescription''',
+      );
+  static dynamic createdAt(dynamic response) => getJsonField(
+        response,
+        r'''$.createdAt''',
+      );
 }
 
 class GetBloodRequestCall {
@@ -617,6 +656,17 @@ class GetBloodRequestCall {
       alwaysAllowBody: false,
     );
   }
+
+  static List? bloodType(dynamic response) => getJsonField(
+        response,
+        r'''$.bloodRequest.bloodType''',
+        true,
+      ) as List?;
+  static List? hospitalname(dynamic response) => getJsonField(
+        response,
+        r'''$.bloodRequest.hospitalName''',
+        true,
+      ) as List?;
 }
 
 class UpdateBloodRequestCall {

@@ -1,9 +1,9 @@
 import '/auth/custom_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
+import '/components/registration_successfully_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/backend/schema/structs/index.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -108,7 +108,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                       padding: const EdgeInsets.all(20.0),
                       child: Container(
                         width: double.infinity,
-                        height: 850.0,
+                        height: 550.0,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20.0),
@@ -587,6 +587,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                                   0.0, 10.0, 0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
+                                              Function() navigate = () {};
                                               if (_model.formKey.currentState ==
                                                       null ||
                                                   !_model.formKey.currentState!
@@ -613,28 +614,43 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                                   true)) {
                                                 GoRouter.of(context)
                                                     .prepareAuthEvent();
-                                                await authManager.signIn(
-                                                  authenticationToken: ((_model
-                                                                          .apiResultct3
-                                                                          ?.jsonBody ??
-                                                                      '') !=
-                                                                  null &&
-                                                              (_model.apiResultct3
-                                                                          ?.jsonBody ??
-                                                                      '') !=
-                                                                  ''
-                                                          ? UserStruct.fromMap(
-                                                              (_model.apiResultct3
-                                                                      ?.jsonBody ??
-                                                                  ''))
-                                                          : null)
-                                                      ?.token,
-                                                );
-
-                                                context.pushNamedAuth(
-                                                    'ProfilePage',
-                                                    context.mounted);
+                                                await authManager.signIn();
+                                                navigate = () =>
+                                                    context.goNamedAuth(
+                                                        'OnBoardingPage',
+                                                        context.mounted);
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return GestureDetector(
+                                                      onTap: () => _model
+                                                              .unfocusNode
+                                                              .canRequestFocus
+                                                          ? FocusScope.of(
+                                                                  context)
+                                                              .requestFocus(_model
+                                                                  .unfocusNode)
+                                                          : FocusScope.of(
+                                                                  context)
+                                                              .unfocus(),
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child:
+                                                            const RegistrationSuccessfullyWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
                                               }
+
+                                              navigate();
 
                                               setState(() {});
                                             },

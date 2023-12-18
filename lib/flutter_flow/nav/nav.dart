@@ -177,6 +177,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'QrcodePage',
           path: '/qrcodePage',
           builder: (context, params) => const QrcodePageWidget(),
+        ),
+        FFRoute(
+          name: 'Profile08',
+          path: '/profile08',
+          builder: (context, params) => const Profile08Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -1,12 +1,10 @@
 import '/auth/custom_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 import 'profile_bottom_sheet_model.dart';
 export 'profile_bottom_sheet_model.dart';
@@ -19,48 +17,8 @@ class ProfileBottomSheetWidget extends StatefulWidget {
       _ProfileBottomSheetWidgetState();
 }
 
-class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
-    with TickerProviderStateMixin {
+class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget> {
   late ProfileBottomSheetModel _model;
-
-  final animationsMap = {
-    'textOnPageLoadAnimation1': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 200.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
-    'textOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 200.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
-    'buttonOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 800.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
-  };
 
   @override
   void setState(VoidCallback callback) {
@@ -95,7 +53,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
             padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: Container(
               width: double.infinity,
-              height: 500.0,
+              height: 400.0,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20.0),
@@ -112,147 +70,143 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                       children: [
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 12.0, 0.0, 0.0),
-                          child: Row(
+                              0.0, 0.0, 0.0, 16.0),
+                          child: Column(
                             mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Flexible(
-                                child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
-                                  child: SingleChildScrollView(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        FutureBuilder<ApiCallResponse>(
-                                          future: GetUserCall.call(
-                                            jwt: currentAuthenticationToken,
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
-                                                    ),
-                                                  ),
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 12.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Flexible(
+                                      child: Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: SingleChildScrollView(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              FutureBuilder<ApiCallResponse>(
+                                                future: GetUserCall.call(
+                                                  jwt:
+                                                      currentAuthenticationToken,
                                                 ),
-                                              );
-                                            }
-                                            final textGetUserResponse =
-                                                snapshot.data!;
-                                            return Text(
-                                              GetUserCall.username(
-                                                textGetUserResponse.jsonBody,
-                                              ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 16.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                          ),
+                                                        ),
                                                       ),
-                                            );
-                                          },
-                                        ),
-                                        FutureBuilder<ApiCallResponse>(
-                                          future: GetUserCall.call(
-                                            jwt: currentAuthenticationToken,
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
-                                                    ),
-                                                  ),
+                                                    );
+                                                  }
+                                                  final textGetUserResponse =
+                                                      snapshot.data!;
+                                                  return Text(
+                                                    GetUserCall.username(
+                                                      textGetUserResponse
+                                                          .jsonBody,
+                                                    ).toString(),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 16.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                  );
+                                                },
+                                              ),
+                                              FutureBuilder<ApiCallResponse>(
+                                                future: GetUserCall.call(
+                                                  jwt:
+                                                      currentAuthenticationToken,
                                                 ),
-                                              );
-                                            }
-                                            final textGetUserResponse =
-                                                snapshot.data!;
-                                            return Text(
-                                              GetUserCall.umi(
-                                                textGetUserResponse.jsonBody,
-                                              ).toString(),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 20.0,
-                                                    fontWeight: FontWeight.bold,
-                                                    decoration: TextDecoration
-                                                        .underline,
-                                                  ),
-                                            );
-                                          },
-                                        ),
-                                        Container(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBtnText,
-                                            image: DecorationImage(
-                                              fit: BoxFit.contain,
-                                              image: Image.network(
-                                                'https://cdn-icons-png.flaticon.com/128/2785/2785482.png',
-                                              ).image,
-                                            ),
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              width: 2.0,
-                                            ),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          valueColor:
+                                                              AlwaysStoppedAnimation<
+                                                                  Color>(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  final textGetUserResponse =
+                                                      snapshot.data!;
+                                                  return Text(
+                                                    GetUserCall.umi(
+                                                      textGetUserResponse
+                                                          .jsonBody,
+                                                    ).toString(),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 20.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          decoration:
+                                                              TextDecoration
+                                                                  .underline,
+                                                        ),
+                                                  );
+                                                },
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      ],
+                                      ),
                                     ),
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
-                                child: FlutterFlowIconButton(
-                                  borderRadius: 30.0,
-                                  borderWidth: 1.0,
-                                  icon: Icon(
-                                    Icons.close_sharp,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 30.0,
-                                  ),
-                                  onPressed: () async {
-                                    Navigator.pop(context);
-                                  },
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: FlutterFlowIconButton(
+                                        borderRadius: 30.0,
+                                        borderWidth: 1.0,
+                                        icon: Icon(
+                                          Icons.close_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 30.0,
+                                        ),
+                                        onPressed: () async {
+                                          Navigator.pop(context);
+                                        },
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
@@ -368,8 +322,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium,
-                                                ).animateOnPageLoad(animationsMap[
-                                                    'textOnPageLoadAnimation1']!);
+                                                );
                                               },
                                             ),
                                           ),
@@ -487,8 +440,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                                       .override(
                                                         fontFamily: 'Outfit',
                                                       ),
-                                                ).animateOnPageLoad(animationsMap[
-                                                    'textOnPageLoadAnimation2']!);
+                                                );
                                               },
                                             ),
                                           ),
@@ -526,14 +478,14 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                     ),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 5.0, 0.0, 0.0),
+                                          0.0, 20.0, 0.0, 0.0),
                                       child: SingleChildScrollView(
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                              CrossAxisAlignment.center,
                                           children: [
                                             Padding(
                                               padding: const EdgeInsetsDirectional
@@ -542,13 +494,20 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
-                                                  const Icon(
-                                                    Icons.settings_outlined,
-                                                    color: Color(0xFF57636C),
-                                                    size: 24.0,
+                                                  const Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                12.0, 0.0),
+                                                    child: Icon(
+                                                      Icons.settings_outlined,
+                                                      color: Color(0xFF57636C),
+                                                      size: 24.0,
+                                                    ),
                                                   ),
                                                   Text(
                                                     'Settings',
@@ -568,7 +527,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(120.0,
+                                                            .fromSTEB(150.0,
                                                                 0.0, 0.0, 0.0),
                                                     child: InkWell(
                                                       splashColor:
@@ -653,8 +612,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget>
                                   topRight: Radius.circular(25.0),
                                 ),
                               ),
-                            ).animateOnPageLoad(
-                                animationsMap['buttonOnPageLoadAnimation']!),
+                            ),
                           ),
                         ),
                       ],

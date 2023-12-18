@@ -66,7 +66,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: const Color(0xFFECF1EF),
         body: SafeArea(
           top: true,
           child: Stack(
@@ -446,7 +446,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Container(
                                                             width:
                                                                 double.infinity,
-                                                            height: 45.0,
+                                                            height: 56.0,
                                                             decoration:
                                                                 BoxDecoration(
                                                               color: FlutterFlowTheme
@@ -464,6 +464,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                           2.0),
                                                                 )
                                                               ],
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12.0),
                                                             ),
                                                             child: Column(
                                                               mainAxisSize:
@@ -473,16 +477,30 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   CrossAxisAlignment
                                                                       .start,
                                                               children: [
-                                                                Text(
-                                                                  'Blood Oxygen',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium,
+                                                                Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          12.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    'Blood Oxygen',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          color:
+                                                                              const Color(0xFF57636C),
+                                                                        ),
+                                                                  ),
                                                                 ),
                                                                 Padding(
                                                                   padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
+                                                                          12.0,
                                                                           5.0,
                                                                           0.0,
                                                                           0.0),
@@ -490,7 +508,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     'Hello World',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyMedium,
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          color:
+                                                                              const Color(0xFF57636C),
+                                                                        ),
                                                                   ),
                                                                 ),
                                                               ],
@@ -509,7 +533,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -524,6 +548,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -533,17 +561,117 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'Height ',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'Height ',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
+                                                                            12.0,
+                                                                            5.0,
                                                                             0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'Hello World',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    5.0),
+                                                        child: Container(
+                                                          width:
+                                                              double.infinity,
+                                                          height: 56.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            boxShadow: const [
+                                                              BoxShadow(
+                                                                blurRadius: 4.0,
+                                                                color: Color(
+                                                                    0x33000000),
+                                                                offset: Offset(
+                                                                    0.0, 2.0),
+                                                              )
+                                                            ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
+                                                          ),
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'Weight ',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -569,7 +697,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -584,6 +712,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -593,17 +725,32 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'Weight ',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'Body  Mass Index',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -611,7 +758,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Hello World',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -629,7 +782,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -644,6 +797,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -653,17 +810,32 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'Body  Mass Index',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'Heart Rate',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -671,7 +843,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Hello World',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -689,7 +867,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -704,6 +882,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -713,17 +895,32 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'Heart Rate',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'Body Temperature ',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -731,7 +928,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Hello World',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -749,7 +952,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -764,6 +967,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -773,17 +980,32 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'Body Temperature ',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'Blood Pressure (systolic)',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -791,7 +1013,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Hello World',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -809,7 +1037,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -824,6 +1052,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -833,17 +1065,32 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'Blood Pressure (systolic)',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'Blood Pressure (diastolic)',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -851,7 +1098,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Hello World',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -869,7 +1122,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -884,6 +1137,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -893,17 +1150,32 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'Blood Pressure (diastolic)',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'Total Cholesterol',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -911,7 +1183,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Hello World',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -929,7 +1207,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -944,6 +1222,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -953,17 +1235,32 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'Total Cholesterol',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'LDL Cholesterol',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -971,7 +1268,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Hello World',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -989,7 +1292,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -1004,6 +1307,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1013,17 +1320,32 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'LDL Cholesterol',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'HDL Cholesterol',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -1031,7 +1353,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Hello World',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -1049,7 +1377,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -1064,6 +1392,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1073,17 +1405,32 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'HDL Cholesterol',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'Triglycerides',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -1091,7 +1438,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Hello World',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -1109,7 +1462,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -1124,6 +1477,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1133,17 +1490,32 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'Triglycerides',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'Total Cholesterol And HDL Ratio',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -1151,7 +1523,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Hello World',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -1169,7 +1547,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -1184,6 +1562,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1193,17 +1575,32 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'Total Cholesterol And HDL Ratio',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'Glucose',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -1211,7 +1608,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Hello World',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -1229,7 +1632,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 45.0,
+                                                          height: 56.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -1244,6 +1647,10 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                     0.0, 2.0),
                                                               )
                                                             ],
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -1253,77 +1660,32 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                'Glucose',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
-                                                              ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
+                                                                            12.0,
                                                                             0.0,
-                                                                            5.0,
                                                                             0.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  'Hello World',
+                                                                  'Waist Circumference ',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    0.0,
-                                                                    16.0,
-                                                                    5.0),
-                                                        child: Container(
-                                                          width:
-                                                              double.infinity,
-                                                          height: 45.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryBackground,
-                                                            boxShadow: const [
-                                                              BoxShadow(
-                                                                blurRadius: 4.0,
-                                                                color: Color(
-                                                                    0x33000000),
-                                                                offset: Offset(
-                                                                    0.0, 2.0),
-                                                              )
-                                                            ],
-                                                          ),
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Text(
-                                                                'Waist Circumference ',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium,
-                                                              ),
                                                               Padding(
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
+                                                                            12.0,
                                                                             5.0,
                                                                             0.0,
                                                                             0.0),
@@ -1331,7 +1693,13 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                                   'Hello World',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        color: const Color(
+                                                                            0xFF57636C),
+                                                                      ),
                                                                 ),
                                                               ),
                                                             ],

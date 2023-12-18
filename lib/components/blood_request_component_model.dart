@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'profile_page_widget.dart' show ProfilePageWidget;
+import 'blood_request_component_widget.dart' show BloodRequestComponentWidget;
 import 'package:flutter/material.dart';
 
-class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
+class BloodRequestComponentModel
+    extends FlutterFlowModel<BloodRequestComponentWidget> {
   /// Initialization and disposal methods.
 
   @override

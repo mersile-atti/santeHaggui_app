@@ -1,7 +1,9 @@
 import '/auth/custom_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
+import '/components/create_emergency_profile_widget.dart';
 import '/components/new_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -102,7 +104,7 @@ class _EmergencyProfileComponentWidgetState
         Align(
           alignment: const AlignmentDirectional(0.0, 0.0),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(1.0, 0.0, 1.0, 16.0),
             child: FutureBuilder<ApiCallResponse>(
               future: GetAllProfilesCall.call(
                 jwt: currentAuthenticationToken,
@@ -125,10 +127,15 @@ class _EmergencyProfileComponentWidgetState
                 final containerGetAllProfilesResponse = snapshot.data!;
                 return Container(
                   width: double.infinity,
-                  height: 750.0,
-                  decoration: BoxDecoration(
+                  height: 650.0,
+                  decoration: const BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(0.0),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(10.0),
+                      bottomRight: Radius.circular(10.0),
+                      topLeft: Radius.circular(10.0),
+                      topRight: Radius.circular(10.0),
+                    ),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(15.0),
@@ -138,57 +145,106 @@ class _EmergencyProfileComponentWidgetState
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              SingleChildScrollView(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    FutureBuilder<ApiCallResponse>(
-                                      future: GetUserCall.call(
-                                        jwt: currentAuthenticationToken,
-                                      ),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50.0,
-                                              height: 50.0,
-                                              child: CircularProgressIndicator(
-                                                valueColor:
-                                                    AlwaysStoppedAnimation<
-                                                        Color>(
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                                ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 10.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Flexible(
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            FutureBuilder<ApiCallResponse>(
+                                              future: GetUserCall.call(
+                                                jwt: currentAuthenticationToken,
                                               ),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        valueColor:
+                                                            AlwaysStoppedAnimation<
+                                                                Color>(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                final textGetUserResponse =
+                                                    snapshot.data!;
+                                                return Text(
+                                                  GetUserCall.umi(
+                                                    textGetUserResponse
+                                                        .jsonBody,
+                                                  ).toString(),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        fontSize: 20.0,
+                                                      ),
+                                                );
+                                              },
                                             ),
-                                          );
-                                        }
-                                        final textGetUserResponse =
-                                            snapshot.data!;
-                                        return Text(
-                                          GetUserCall.umi(
-                                            textGetUserResponse.jsonBody,
-                                          ).toString(),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                fontSize: 20.0,
+                                            FlutterFlowIconButton(
+                                              borderRadius: 20.0,
+                                              borderWidth: 1.0,
+                                              buttonSize: 40.0,
+                                              icon: Icon(
+                                                Icons.add,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                size: 24.0,
                                               ),
-                                        );
-                                      },
+                                              onPressed: () async {
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          const CreateEmergencyProfileWidget(),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      ],
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ).animateOnPageLoad(
-                              animationsMap['rowOnPageLoadAnimation']!),
+                              ],
+                            ).animateOnPageLoad(
+                                animationsMap['rowOnPageLoadAnimation']!),
+                          ),
                           SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -221,17 +277,21 @@ class _EmergencyProfileComponentWidgetState
                                     child: Container(
                                       width: double.infinity,
                                       height: 58.0,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         color: Colors.white,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 3.0,
                                             color: Color(0x33000000),
                                             offset: Offset(0.0, 1.0),
                                           )
                                         ],
-                                        borderRadius:
-                                            BorderRadius.circular(0.0),
+                                        borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(12.0),
+                                          bottomRight: Radius.circular(12.0),
+                                          topLeft: Radius.circular(12.0),
+                                          topRight: Radius.circular(12.0),
+                                        ),
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
@@ -363,7 +423,7 @@ class _EmergencyProfileComponentWidgetState
                                           )
                                         ],
                                         borderRadius:
-                                            BorderRadius.circular(0.0),
+                                            BorderRadius.circular(12.0),
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
@@ -496,7 +556,7 @@ class _EmergencyProfileComponentWidgetState
                                           )
                                         ],
                                         borderRadius:
-                                            BorderRadius.circular(0.0),
+                                            BorderRadius.circular(12.0),
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
@@ -628,7 +688,7 @@ class _EmergencyProfileComponentWidgetState
                                           )
                                         ],
                                         borderRadius:
-                                            BorderRadius.circular(0.0),
+                                            BorderRadius.circular(12.0),
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
@@ -761,7 +821,7 @@ class _EmergencyProfileComponentWidgetState
                                           )
                                         ],
                                         borderRadius:
-                                            BorderRadius.circular(0.0),
+                                            BorderRadius.circular(12.0),
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
@@ -894,7 +954,7 @@ class _EmergencyProfileComponentWidgetState
                                           )
                                         ],
                                         borderRadius:
-                                            BorderRadius.circular(0.0),
+                                            BorderRadius.circular(12.0),
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
@@ -1027,7 +1087,7 @@ class _EmergencyProfileComponentWidgetState
                                           )
                                         ],
                                         borderRadius:
-                                            BorderRadius.circular(0.0),
+                                            BorderRadius.circular(12.0),
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
@@ -1149,7 +1209,7 @@ class _EmergencyProfileComponentWidgetState
                                     },
                                     child: Container(
                                       width: double.infinity,
-                                      height: 65.0,
+                                      height: 56.0,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
                                         boxShadow: const [
@@ -1160,7 +1220,7 @@ class _EmergencyProfileComponentWidgetState
                                           )
                                         ],
                                         borderRadius:
-                                            BorderRadius.circular(0.0),
+                                            BorderRadius.circular(12.0),
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
@@ -1282,7 +1342,7 @@ class _EmergencyProfileComponentWidgetState
                                     },
                                     child: Container(
                                       width: double.infinity,
-                                      height: 65.0,
+                                      height: 70.0,
                                       decoration: BoxDecoration(
                                         color: Colors.white,
                                         boxShadow: const [
@@ -1293,7 +1353,7 @@ class _EmergencyProfileComponentWidgetState
                                           )
                                         ],
                                         borderRadius:
-                                            BorderRadius.circular(0.0),
+                                            BorderRadius.circular(12.0),
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(

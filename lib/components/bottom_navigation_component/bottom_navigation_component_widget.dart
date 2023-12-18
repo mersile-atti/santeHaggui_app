@@ -311,17 +311,8 @@ class _BottomNavigationComponentWidgetState
                       color: Colors.white,
                       size: 24.0,
                     ),
-                    onPressed: () async {
-                      context.goNamed(
-                        'ProfilePage',
-                        extra: <String, dynamic>{
-                          kTransitionInfoKey: const TransitionInfo(
-                            hasTransition: true,
-                            transitionType: PageTransitionType.fade,
-                            duration: Duration(milliseconds: 0),
-                          ),
-                        },
-                      );
+                    onPressed: () {
+                      print('ProfilIconButton pressed ...');
                     },
                   ),
                 ),
@@ -354,8 +345,8 @@ class _BottomNavigationComponentWidgetState
                       size: 24.0,
                     ),
                     onPressed: () async {
-                      context.goNamed(
-                        'SettingPage',
+                      context.pushNamed(
+                        'Profile08',
                         extra: <String, dynamic>{
                           kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,

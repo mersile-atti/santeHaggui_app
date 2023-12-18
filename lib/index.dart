@@ -30,3 +30,4 @@ export '/edit_profile/edit_profile_widget.dart' show EditProfileWidget;
 export '/authentification/phone_login_page/phone_login_page_widget.dart'
     show PhoneLoginPageWidget;
 export '/qrcode_page/qrcode_page_widget.dart' show QrcodePageWidget;
+export '/profile08/profile08_widget.dart' show Profile08Widget;
