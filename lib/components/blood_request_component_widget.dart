@@ -1,5 +1,4 @@
 import '/auth/custom_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -83,45 +82,13 @@ class _BloodRequestComponentWidgetState
                           color: Color(0xFFEC0202),
                           size: 14.0,
                         ),
-                        FutureBuilder<ApiCallResponse>(
-                          future: GetBloodRequestCall.call(
-                            jwt: currentAuthenticationToken,
-                          ),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }
-                            final textGetBloodRequestResponse = snapshot.data!;
-                            return Text(
-                              valueOrDefault<String>(
-                                (GetBloodRequestCall.bloodType(
-                                  textGetBloodRequestResponse.jsonBody,
-                                ) as List)
-                                    .map<String>((s) => s.toString())
-                                    .toList()
-                                    .length
-                                    .toString(),
-                                'N/A',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
+                        Text(
+                          'AB+',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Readex Pro',
                                     fontSize: 12.0,
                                   ),
-                            );
-                          },
                         ),
                       ],
                     ),
@@ -142,40 +109,9 @@ class _BloodRequestComponentWidgetState
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                    child: FutureBuilder<ApiCallResponse>(
-                      future: GetBloodRequestCall.call(
-                        jwt: currentAuthenticationToken,
-                      ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                            ),
-                          );
-                        }
-                        final textGetBloodRequestResponse = snapshot.data!;
-                        return Text(
-                          valueOrDefault<String>(
-                            (GetBloodRequestCall.bloodType(
-                              textGetBloodRequestResponse.jsonBody,
-                            ) as List)
-                                .map<String>((s) => s.toString())
-                                .toList()
-                                .length
-                                .toString(),
-                            'N/A',
-                          ),
-                          style: FlutterFlowTheme.of(context).bodyMedium,
-                        );
-                      },
+                    child: Text(
+                      'Hello World',
+                      style: FlutterFlowTheme.of(context).bodyMedium,
                     ),
                   ),
                 ],
@@ -194,52 +130,9 @@ class _BloodRequestComponentWidgetState
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                    child: FutureBuilder<ApiCallResponse>(
-                      future: GetBloodRequestCall.call(
-                        jwt: currentAuthenticationToken,
-                      ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                            ),
-                          );
-                        }
-                        final textGetBloodRequestResponse = snapshot.data!;
-                        return Text(
-                          valueOrDefault<String>(
-                            '${valueOrDefault<String>(
-                              (GetBloodRequestCall.hospitalname(
-                                textGetBloodRequestResponse.jsonBody,
-                              ) as List)
-                                  .map<String>((s) => s.toString())
-                                  .toList()
-                                  .length
-                                  .toString(),
-                              'N/A',
-                            )}, ${valueOrDefault<String>(
-                              (GetBloodRequestCall.hospitalname(
-                                textGetBloodRequestResponse.jsonBody,
-                              ) as List)
-                                  .map<String>((s) => s.toString())
-                                  .toList()
-                                  .length
-                                  .toString(),
-                              'N/A',
-                            )}',
-                            'N/A',
-                          ),
-                          style: FlutterFlowTheme.of(context).bodyMedium,
-                        );
-                      },
+                    child: Text(
+                      'Hello World',
+                      style: FlutterFlowTheme.of(context).bodyMedium,
                     ),
                   ),
                 ],
@@ -258,40 +151,9 @@ class _BloodRequestComponentWidgetState
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                    child: FutureBuilder<ApiCallResponse>(
-                      future: GetBloodRequestCall.call(
-                        jwt: currentAuthenticationToken,
-                      ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                            ),
-                          );
-                        }
-                        final textGetBloodRequestResponse = snapshot.data!;
-                        return Text(
-                          valueOrDefault<String>(
-                            (GetBloodRequestCall.bloodType(
-                              textGetBloodRequestResponse.jsonBody,
-                            ) as List)
-                                .map<String>((s) => s.toString())
-                                .toList()
-                                .length
-                                .toString(),
-                            'N/A',
-                          ),
-                          style: FlutterFlowTheme.of(context).bodyMedium,
-                        );
-                      },
+                    child: Text(
+                      'Hello World',
+                      style: FlutterFlowTheme.of(context).bodyMedium,
                     ),
                   ),
                 ],
@@ -310,40 +172,9 @@ class _BloodRequestComponentWidgetState
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
-                    child: FutureBuilder<ApiCallResponse>(
-                      future: GetBloodRequestCall.call(
-                        jwt: currentAuthenticationToken,
-                      ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
-                                ),
-                              ),
-                            ),
-                          );
-                        }
-                        final textGetBloodRequestResponse = snapshot.data!;
-                        return Text(
-                          valueOrDefault<String>(
-                            (GetBloodRequestCall.bloodType(
-                              textGetBloodRequestResponse.jsonBody,
-                            ) as List)
-                                .map<String>((s) => s.toString())
-                                .toList()
-                                .length
-                                .toString(),
-                            'N/A',
-                          ),
-                          style: FlutterFlowTheme.of(context).bodyMedium,
-                        );
-                      },
+                    child: Text(
+                      'Hello World',
+                      style: FlutterFlowTheme.of(context).bodyMedium,
                     ),
                   ),
                 ],

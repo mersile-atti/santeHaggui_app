@@ -401,7 +401,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                       child: Container(
                         width: double.infinity,
-                        height: 280.0,
+                        height: 200.0,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
@@ -418,7 +418,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 10.0),
                             child: FutureBuilder<ApiCallResponse>(
-                              future: GetBloodRequestCall.call(
+                              future: GetAllBloodRequestCall.call(
                                 jwt: currentAuthenticationToken,
                               ),
                               builder: (context, snapshot) {
@@ -437,34 +437,34 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     ),
                                   );
                                 }
-                                final listViewGetBloodRequestResponse =
+                                final listViewGetAllBloodRequestResponse =
                                     snapshot.data!;
                                 return Builder(
                                   builder: (context) {
-                                    final bloodType =
-                                        GetBloodRequestCall.bloodType(
-                                              listViewGetBloodRequestResponse
-                                                  .jsonBody,
-                                            )?.toList() ??
-                                            [];
+                                    final bloodRequest = getJsonField(
+                                      listViewGetAllBloodRequestResponse
+                                          .jsonBody,
+                                      r'''$[*]''',
+                                    ).toList();
                                     return ListView.builder(
                                       padding: EdgeInsets.zero,
                                       scrollDirection: Axis.horizontal,
-                                      itemCount: bloodType.length,
-                                      itemBuilder: (context, bloodTypeIndex) {
-                                        final bloodTypeItem =
-                                            bloodType[bloodTypeIndex];
+                                      itemCount: bloodRequest.length,
+                                      itemBuilder:
+                                          (context, bloodRequestIndex) {
+                                        final bloodRequestItem =
+                                            bloodRequest[bloodRequestIndex];
                                         return Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 12.0, 16.0, 12.0),
+                                                  16.0, 1.0, 16.0, 1.0),
                                           child: Container(
                                             width: 200.0,
-                                            height: 250.0,
+                                            height: 150.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
+                                                      .lineColor,
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                             ),
@@ -507,7 +507,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               MainAxisSize.max,
                                                           mainAxisAlignment:
                                                               MainAxisAlignment
-                                                                  .center,
+                                                                  .start,
                                                           children: [
                                                             const Icon(
                                                               Icons
@@ -520,11 +520,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               valueOrDefault<
                                                                   String>(
                                                                 getJsonField(
-                                                                  bloodTypeItem,
-                                                                  r'''$.bloodRequest.bloodType''',
+                                                                  bloodRequestItem,
+                                                                  r'''$.bloodType''',
                                                                 ).toString(),
                                                                 'N/A',
                                                               ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium
@@ -532,7 +535,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                     fontFamily:
                                                                         'Readex Pro',
                                                                     fontSize:
-                                                                        12.0,
+                                                                        8.0,
                                                                   ),
                                                             ),
                                                           ],
@@ -556,7 +559,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
-                                                        size: 24.0,
+                                                        size: 12.0,
                                                       ),
                                                       Padding(
                                                         padding:
@@ -570,14 +573,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           valueOrDefault<
                                                               String>(
                                                             getJsonField(
-                                                              bloodTypeItem,
-                                                              r'''$.bloodRequest.hospitalName''',
+                                                              bloodRequestItem,
+                                                              r'''$.hospitalName''',
                                                             ).toString(),
                                                             'N/A',
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                fontSize: 12.0,
+                                                              ),
                                                         ),
                                                       ),
                                                     ],
@@ -586,7 +594,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          12.0, 10.0, 0.0, 0.0),
+                                                          12.0, 5.0, 0.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -597,7 +605,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
-                                                        size: 24.0,
+                                                        size: 12.0,
                                                       ),
                                                       Padding(
                                                         padding:
@@ -607,75 +615,23 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
-                                                        child: FutureBuilder<
-                                                            ApiCallResponse>(
-                                                          future:
-                                                              GetBloodRequestCall
-                                                                  .call(
-                                                            jwt:
-                                                                currentAuthenticationToken,
+                                                        child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            getJsonField(
+                                                              bloodRequestItem,
+                                                              r'''$.hospitalLocation''',
+                                                            ).toString(),
+                                                            'N/A',
                                                           ),
-                                                          builder: (context,
-                                                              snapshot) {
-                                                            // Customize what your widget looks like when it's loading.
-                                                            if (!snapshot
-                                                                .hasData) {
-                                                              return Center(
-                                                                child: SizedBox(
-                                                                  width: 50.0,
-                                                                  height: 50.0,
-                                                                  child:
-                                                                      CircularProgressIndicator(
-                                                                    valueColor:
-                                                                        AlwaysStoppedAnimation<
-                                                                            Color>(
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              );
-                                                            }
-                                                            final textGetBloodRequestResponse =
-                                                                snapshot.data!;
-                                                            return Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                '${valueOrDefault<String>(
-                                                                  (GetBloodRequestCall
-                                                                          .hospitalname(
-                                                                    textGetBloodRequestResponse
-                                                                        .jsonBody,
-                                                                  ) as List)
-                                                                      .map<String>(
-                                                                          (s) =>
-                                                                              s.toString())
-                                                                      .toList()
-                                                                      .length
-                                                                      .toString(),
-                                                                  'N/A',
-                                                                )}, ${valueOrDefault<String>(
-                                                                  (GetBloodRequestCall
-                                                                          .hospitalname(
-                                                                    textGetBloodRequestResponse
-                                                                        .jsonBody,
-                                                                  ) as List)
-                                                                      .map<String>(
-                                                                          (s) =>
-                                                                              s.toString())
-                                                                      .toList()
-                                                                      .length
-                                                                      .toString(),
-                                                                  'N/A',
-                                                                )}',
-                                                                'N/A',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                fontSize: 12.0,
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium,
-                                                            );
-                                                          },
                                                         ),
                                                       ),
                                                     ],
@@ -684,7 +640,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          12.0, 10.0, 0.0, 0.0),
+                                                          12.0, 5.0, 0.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -695,7 +651,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
-                                                        size: 24.0,
+                                                        size: 12.0,
                                                       ),
                                                       Padding(
                                                         padding:
@@ -705,59 +661,23 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
-                                                        child: FutureBuilder<
-                                                            ApiCallResponse>(
-                                                          future:
-                                                              GetBloodRequestCall
-                                                                  .call(
-                                                            jwt:
-                                                                currentAuthenticationToken,
+                                                        child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            getJsonField(
+                                                              bloodRequestItem,
+                                                              r'''$.pintsNeeded''',
+                                                            ).toString(),
+                                                            'N/A',
                                                           ),
-                                                          builder: (context,
-                                                              snapshot) {
-                                                            // Customize what your widget looks like when it's loading.
-                                                            if (!snapshot
-                                                                .hasData) {
-                                                              return Center(
-                                                                child: SizedBox(
-                                                                  width: 50.0,
-                                                                  height: 50.0,
-                                                                  child:
-                                                                      CircularProgressIndicator(
-                                                                    valueColor:
-                                                                        AlwaysStoppedAnimation<
-                                                                            Color>(
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              );
-                                                            }
-                                                            final textGetBloodRequestResponse =
-                                                                snapshot.data!;
-                                                            return Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                (GetBloodRequestCall
-                                                                        .bloodType(
-                                                                  textGetBloodRequestResponse
-                                                                      .jsonBody,
-                                                                ) as List)
-                                                                    .map<String>(
-                                                                        (s) => s
-                                                                            .toString())
-                                                                    .toList()
-                                                                    .length
-                                                                    .toString(),
-                                                                'N/A',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                fontSize: 12.0,
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium,
-                                                            );
-                                                          },
                                                         ),
                                                       ),
                                                     ],
@@ -766,7 +686,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          12.0, 10.0, 0.0, 0.0),
+                                                          12.0, 5.0, 0.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -778,7 +698,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
-                                                        size: 24.0,
+                                                        size: 12.0,
                                                       ),
                                                       Padding(
                                                         padding:
@@ -788,59 +708,23 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
-                                                        child: FutureBuilder<
-                                                            ApiCallResponse>(
-                                                          future:
-                                                              GetBloodRequestCall
-                                                                  .call(
-                                                            jwt:
-                                                                currentAuthenticationToken,
+                                                        child: Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            getJsonField(
+                                                              bloodRequestItem,
+                                                              r'''$.urgency''',
+                                                            ).toString(),
+                                                            'N/A',
                                                           ),
-                                                          builder: (context,
-                                                              snapshot) {
-                                                            // Customize what your widget looks like when it's loading.
-                                                            if (!snapshot
-                                                                .hasData) {
-                                                              return Center(
-                                                                child: SizedBox(
-                                                                  width: 50.0,
-                                                                  height: 50.0,
-                                                                  child:
-                                                                      CircularProgressIndicator(
-                                                                    valueColor:
-                                                                        AlwaysStoppedAnimation<
-                                                                            Color>(
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              );
-                                                            }
-                                                            final textGetBloodRequestResponse =
-                                                                snapshot.data!;
-                                                            return Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                (GetBloodRequestCall
-                                                                        .bloodType(
-                                                                  textGetBloodRequestResponse
-                                                                      .jsonBody,
-                                                                ) as List)
-                                                                    .map<String>(
-                                                                        (s) => s
-                                                                            .toString())
-                                                                    .toList()
-                                                                    .length
-                                                                    .toString(),
-                                                                'N/A',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                fontSize: 12.0,
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium,
-                                                            );
-                                                          },
                                                         ),
                                                       ),
                                                     ],
@@ -867,28 +751,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                       0.0,
                                                                       0.0),
                                                           child: FFButtonWidget(
-                                                            onPressed:
-                                                                () async {
-                                                              GoRouter.of(
-                                                                      context)
-                                                                  .prepareAuthEvent();
-                                                              await authManager
-                                                                  .signOut();
-                                                              GoRouter.of(
-                                                                      context)
-                                                                  .clearRedirectLocation();
-
-                                                              context.pushNamedAuth(
-                                                                  'LoginPage',
-                                                                  context
-                                                                      .mounted);
+                                                            onPressed: () {
+                                                              print(
+                                                                  'Button pressed ...');
                                                             },
                                                             text:
                                                                 'I am your hero',
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 150.0,
-                                                              height: 36.0,
+                                                              height: 26.0,
                                                               padding:
                                                                   const EdgeInsetsDirectional
                                                                       .fromSTEB(
@@ -914,6 +786,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                             'Readex Pro',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
+                                                                        fontSize:
+                                                                            14.0,
                                                                         fontWeight:
                                                                             FontWeight.normal,
                                                                       ),

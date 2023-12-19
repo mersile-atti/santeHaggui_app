@@ -634,41 +634,6 @@ class MakeBloodRequestCall {
       );
 }
 
-class GetBloodRequestCall {
-  static Future<ApiCallResponse> call({
-    String? jwt = '',
-  }) async {
-    return ApiManager.instance.makeApiCall(
-      callName: 'getBloodRequest',
-      apiUrl:
-          'https://santehaggui-b8e92b22721c.herokuapp.com/api/blood-requests',
-      callType: ApiCallType.GET,
-      headers: {
-        'Authorization': 'Bearer $jwt',
-      },
-      params: {
-        'jwt': jwt,
-      },
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
-  }
-
-  static List? bloodType(dynamic response) => getJsonField(
-        response,
-        r'''$.bloodRequest.bloodType''',
-        true,
-      ) as List?;
-  static List? hospitalname(dynamic response) => getJsonField(
-        response,
-        r'''$.bloodRequest.hospitalName''',
-        true,
-      ) as List?;
-}
-
 class UpdateBloodRequestCall {
   static Future<ApiCallResponse> call({
     String? bloodType = '',
@@ -736,6 +701,80 @@ class DeleteBloodRequestCall {
       alwaysAllowBody: false,
     );
   }
+}
+
+class GetAllBloodRequestCall {
+  static Future<ApiCallResponse> call({
+    String? jwt = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getAllBloodRequest',
+      apiUrl:
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/blood-requests/',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+      },
+      params: {
+        'jwt': jwt,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<String>? bloodType(dynamic response) => (getJsonField(
+        response,
+        r'''$..bloodType''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .cast<String>();
+  static List<String>? hospitalName(dynamic response) => (getJsonField(
+        response,
+        r'''$.bloodRequests[:].hospitalName''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .cast<String>();
+  static List<String>? hospitalLocation(dynamic response) => (getJsonField(
+        response,
+        r'''$.bloodRequests[:].hospitalLocation''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .cast<String>();
+  static List<String>? urgency(dynamic response) => (getJsonField(
+        response,
+        r'''$.bloodRequests[:].urgency''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .cast<String>();
+  static List<int>? pintsNeeded(dynamic response) => (getJsonField(
+        response,
+        r'''$.bloodRequests[:].pintsNeeded''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .cast<int>();
+  static List<String>? diagnosis(dynamic response) => (getJsonField(
+        response,
+        r'''$.bloodRequests[:].diagnosis''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .cast<String>();
+  static List<String>? description(dynamic response) => (getJsonField(
+        response,
+        r'''$.bloodRequests[:].shortDescription''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .cast<String>();
 }
 
 class ApiPagingParams {
