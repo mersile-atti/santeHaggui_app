@@ -12,8 +12,8 @@ export '/authentification/create_account_page/create_account_page_widget.dart'
     show CreateAccountPageWidget;
 export '/authentification/verify_sms_page/verify_sms_page_widget.dart'
     show VerifySmsPageWidget;
-export '/complete_profile_page/complete_profile_page_widget.dart'
-    show CompleteProfilePageWidget;
+export '/blood_request_full_page/blood_request_full_page_widget.dart'
+    show BloodRequestFullPageWidget;
 export '/app_pages/sub_pages/profile_page/profile_page_widget.dart'
     show ProfilePageWidget;
 export '/app_pages/sub_pages/setting_page/setting_page_widget.dart'

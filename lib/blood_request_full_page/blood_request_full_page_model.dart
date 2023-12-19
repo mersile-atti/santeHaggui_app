@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'complete_profile_page_widget.dart' show CompleteProfilePageWidget;
+import 'blood_request_full_page_widget.dart' show BloodRequestFullPageWidget;
 import 'package:flutter/material.dart';
 
-class CompleteProfilePageModel
-    extends FlutterFlowModel<CompleteProfilePageWidget> {
+class BloodRequestFullPageModel
+    extends FlutterFlowModel<BloodRequestFullPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

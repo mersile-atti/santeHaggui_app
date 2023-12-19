@@ -383,14 +383,23 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 20.0, 0.0),
-                            child: Text(
-                              'See All',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Readex Pro',
-                                    color: const Color(0xFF5146D9),
-                                  ),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed('BloodRequestFullPage');
+                              },
+                              child: Text(
+                                'See All',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      color: const Color(0xFF5146D9),
+                                    ),
+                              ),
                             ),
                           ),
                         ],
@@ -405,12 +414,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(10.0),
-                            bottomRight: Radius.circular(10.0),
-                            topLeft: Radius.circular(10.0),
-                            topRight: Radius.circular(10.0),
-                          ),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: Align(
                           alignment: const AlignmentDirectional(0.0, 0.0),
@@ -457,14 +461,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         return Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 1.0, 16.0, 1.0),
+                                                  10.0, 1.0, 0.0, 1.0),
                                           child: Container(
                                             width: 200.0,
                                             height: 150.0,
                                             decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .lineColor,
+                                              color: const Color(0xFFECF1EF),
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                             ),
@@ -940,36 +942,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       width: 100.0,
                                       height: 80.0,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .lineColor,
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 0.0, 0.0, 0.0),
-                                    child: Container(
-                                      width: 100.0,
-                                      height: 80.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .lineColor,
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 0.0, 0.0, 0.0),
-                                    child: Container(
-                                      width: 100.0,
-                                      height: 80.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .lineColor,
+                                        color: const Color(0xFFECF1EF),
                                         borderRadius:
                                             BorderRadius.circular(16.0),
                                       ),
