@@ -1,9 +1,7 @@
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
 import 'health_metrics_component_model.dart';
 export 'health_metrics_component_model.dart';
@@ -17,23 +15,8 @@ class HealthMetricsComponentWidget extends StatefulWidget {
 }
 
 class _HealthMetricsComponentWidgetState
-    extends State<HealthMetricsComponentWidget> with TickerProviderStateMixin {
+    extends State<HealthMetricsComponentWidget> {
   late HealthMetricsComponentModel _model;
-
-  final animationsMap = {
-    'buttonOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 800.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
-  };
 
   @override
   void setState(VoidCallback callback) {
@@ -770,8 +753,7 @@ class _HealthMetricsComponentWidgetState
                                               topRight: Radius.circular(25.0),
                                             ),
                                           ),
-                                        ).animateOnPageLoad(animationsMap[
-                                            'buttonOnPageLoadAnimation']!),
+                                        ),
                                       ),
                                     ),
                                   ],
