@@ -205,6 +205,9 @@ class _EmergencyProfileComponentWidgetState
                                               },
                                             ),
                                             FlutterFlowIconButton(
+                                              borderColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
                                               borderRadius: 20.0,
                                               borderWidth: 1.0,
                                               buttonSize: 40.0,
