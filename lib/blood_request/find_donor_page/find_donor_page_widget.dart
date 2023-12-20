@@ -78,7 +78,11 @@ class _FindDonorPageWidgetState extends State<FindDonorPageWidget> {
           ),
           title: Text(
             'Find Donor',
-            style: FlutterFlowTheme.of(context).headlineSmall,
+            style: FlutterFlowTheme.of(context).headlineSmall.override(
+                  fontFamily: 'Outfit',
+                  fontSize: 26.0,
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           actions: const [],
           centerTitle: false,
