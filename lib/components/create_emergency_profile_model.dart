@@ -29,15 +29,10 @@ class CreateEmergencyProfileModel
   TextEditingController? medicationsController;
   String? Function(BuildContext, String?)? medicationsControllerValidator;
   // State field(s) for treatmentsAndProcedures widget.
-  FocusNode? treatmentsAndProceduresFocusNode1;
-  TextEditingController? treatmentsAndProceduresController1;
+  FocusNode? treatmentsAndProceduresFocusNode;
+  TextEditingController? treatmentsAndProceduresController;
   String? Function(BuildContext, String?)?
-      treatmentsAndProceduresController1Validator;
-  // State field(s) for treatmentsAndProcedures widget.
-  FocusNode? treatmentsAndProceduresFocusNode2;
-  TextEditingController? treatmentsAndProceduresController2;
-  String? Function(BuildContext, String?)?
-      treatmentsAndProceduresController2Validator;
+      treatmentsAndProceduresControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -86,11 +81,8 @@ class CreateEmergencyProfileModel
     medicationsFocusNode?.dispose();
     medicationsController?.dispose();
 
-    treatmentsAndProceduresFocusNode1?.dispose();
-    treatmentsAndProceduresController1?.dispose();
-
-    treatmentsAndProceduresFocusNode2?.dispose();
-    treatmentsAndProceduresController2?.dispose();
+    treatmentsAndProceduresFocusNode?.dispose();
+    treatmentsAndProceduresController?.dispose();
 
     emergencyContactFocusNode?.dispose();
     emergencyContactController?.dispose();

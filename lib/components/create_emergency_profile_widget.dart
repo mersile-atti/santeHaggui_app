@@ -133,11 +133,8 @@ class _CreateEmergencyProfileWidgetState
     _model.medicationsController ??= TextEditingController();
     _model.medicationsFocusNode ??= FocusNode();
 
-    _model.treatmentsAndProceduresController1 ??= TextEditingController();
-    _model.treatmentsAndProceduresFocusNode1 ??= FocusNode();
-
-    _model.treatmentsAndProceduresController2 ??= TextEditingController();
-    _model.treatmentsAndProceduresFocusNode2 ??= FocusNode();
+    _model.treatmentsAndProceduresController ??= TextEditingController();
+    _model.treatmentsAndProceduresFocusNode ??= FocusNode();
 
     _model.emergencyContactController ??= TextEditingController();
     _model.emergencyContactFocusNode ??= FocusNode();
@@ -574,8 +571,8 @@ class _CreateEmergencyProfileWidgetState
                   padding:
                       const EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 0.0),
                   child: TextFormField(
-                    controller: _model.treatmentsAndProceduresController1,
-                    focusNode: _model.treatmentsAndProceduresFocusNode1,
+                    controller: _model.treatmentsAndProceduresController,
+                    focusNode: _model.treatmentsAndProceduresFocusNode,
                     autofocus: true,
                     obscureText: false,
                     decoration: InputDecoration(
@@ -626,69 +623,7 @@ class _CreateEmergencyProfileWidgetState
                           fontFamily: 'Outfit',
                           fontWeight: FontWeight.w500,
                         ),
-                    validator: _model
-                        .treatmentsAndProceduresController1Validator
-                        .asValidator(context),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 0.0),
-                  child: TextFormField(
-                    controller: _model.treatmentsAndProceduresController2,
-                    focusNode: _model.treatmentsAndProceduresFocusNode2,
-                    autofocus: true,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      labelText: 'Treatments & Procedures',
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Readex Pro',
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                fontSize: 12.0,
-                                fontWeight: FontWeight.w500,
-                              ),
-                      hintText: 'Treatments & Procedures',
-                      hintStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Outfit',
-                                fontWeight: FontWeight.w500,
-                              ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color(0xFFE0E0E0),
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Color(0xFF019874),
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.w500,
-                        ),
-                    validator: _model
-                        .treatmentsAndProceduresController2Validator
+                    validator: _model.treatmentsAndProceduresControllerValidator
                         .asValidator(context),
                   ),
                 ),
@@ -1039,7 +974,7 @@ class _CreateEmergencyProfileWidgetState
                         allergies: _model.allergiesController.text,
                         medications: _model.medicationsController.text,
                         treatmentsAndProcedures:
-                            _model.treatmentsAndProceduresController1.text,
+                            _model.treatmentsAndProceduresController.text,
                         emergencyContactName:
                             _model.emergencyContactController.text,
                         emergencyContactRelationship:
