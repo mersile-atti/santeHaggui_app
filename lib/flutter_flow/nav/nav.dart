@@ -198,6 +198,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'MakeRequestPage',
           path: '/makeRequestPage',
           builder: (context, params) => const MakeRequestPageWidget(),
+        ),
+        FFRoute(
+          name: 'ServiceCategoryPage',
+          path: '/serviceCategoryPage',
+          builder: (context, params) => const ServiceCategoryPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -37,3 +37,5 @@ export '/blood_request/find_donor_page/find_donor_page_widget.dart'
     show FindDonorPageWidget;
 export '/blood_request/make_request_page/make_request_page_widget.dart'
     show MakeRequestPageWidget;
+export '/blood_request/service_category_page/service_category_page_widget.dart'
+    show ServiceCategoryPageWidget;
