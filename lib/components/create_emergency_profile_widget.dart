@@ -173,7 +173,7 @@ class _CreateEmergencyProfileWidgetState
       padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
       child: Container(
         width: double.infinity,
-        height: 750.0,
+        height: 720.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: const BorderRadius.only(
@@ -708,8 +708,8 @@ class _CreateEmergencyProfileWidgetState
                   children: [
                     Flexible(
                       child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 10.0, 0.0, 10.0),
                         child: Container(
                           width: double.infinity,
                           height: 200.0,
@@ -1072,7 +1072,7 @@ class _CreateEmergencyProfileWidgetState
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       _model.apiResulthqu =
