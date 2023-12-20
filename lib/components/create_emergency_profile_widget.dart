@@ -173,7 +173,7 @@ class _CreateEmergencyProfileWidgetState
       padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
       child: Container(
         width: double.infinity,
-        height: 700.0,
+        height: 750.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: const BorderRadius.only(
@@ -187,7 +187,7 @@ class _CreateEmergencyProfileWidgetState
           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
           child: SingleChildScrollView(
             child: Column(
-              mainAxisSize: MainAxisSize.max,
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
@@ -707,346 +707,372 @@ class _CreateEmergencyProfileWidgetState
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Flexible(
-                      child: Container(
-                        width: double.infinity,
-                        height: 200.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 10.0, 16.0, 0.0),
-                                    child: TextFormField(
-                                      controller:
-                                          _model.emergencyContactController,
-                                      focusNode:
-                                          _model.emergencyContactFocusNode,
-                                      autofocus: true,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Emergency Contact Name',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 200.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 10.0, 16.0, 0.0),
+                                      child: TextFormField(
+                                        controller:
+                                            _model.emergencyContactController,
+                                        focusNode:
+                                            _model.emergencyContactFocusNode,
+                                        autofocus: true,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelText: 'Emergency Contact Name',
+                                          labelStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 12.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                          hintText: 'Emergency Contact Name',
+                                          hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Outfit',
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFFE0E0E0),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFF019874),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              fontSize: 12.0,
-                                              fontWeight: FontWeight.w500,
+                                                      .error,
+                                              width: 2.0,
                                             ),
-                                        hintText: 'Emergency Contact Name',
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
                                             .override(
                                               fontFamily: 'Outfit',
                                               fontWeight: FontWeight.w500,
                                             ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                            color: Color(0xFFE0E0E0),
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                            color: Color(0xFF019874),
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
+                                        validator: _model
+                                            .emergencyContactControllerValidator
+                                            .asValidator(context),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                      validator: _model
-                                          .emergencyContactControllerValidator
-                                          .asValidator(context),
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 10.0, 2.0, 0.0),
-                                    child: TextFormField(
-                                      controller: _model
-                                          .emergencyRelationshipController,
-                                      focusNode:
-                                          _model.emergencyRelationshipFocusNode,
-                                      autofocus: true,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Relationship',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
+                                ],
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 10.0, 2.0, 0.0),
+                                      child: TextFormField(
+                                        controller: _model
+                                            .emergencyRelationshipController,
+                                        focusNode: _model
+                                            .emergencyRelationshipFocusNode,
+                                        autofocus: true,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelText: 'Relationship',
+                                          labelStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 12.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                          hintText: 'Relationship ',
+                                          hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Outfit',
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFFE0E0E0),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFF019874),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              fontSize: 12.0,
-                                              fontWeight: FontWeight.w500,
+                                                      .error,
+                                              width: 2.0,
                                             ),
-                                        hintText: 'Relationship ',
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
                                             .override(
                                               fontFamily: 'Outfit',
                                               fontWeight: FontWeight.w500,
                                             ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                            color: Color(0xFFE0E0E0),
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                            color: Color(0xFF019874),
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
+                                        validator: _model
+                                            .emergencyRelationshipControllerValidator
+                                            .asValidator(context),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                      validator: _model
-                                          .emergencyRelationshipControllerValidator
-                                          .asValidator(context),
                                     ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        2.0, 10.0, 16.0, 0.0),
-                                    child: TextFormField(
-                                      controller:
-                                          _model.emergencyPhoneController,
-                                      focusNode: _model.emergencyPhoneFocusNode,
-                                      autofocus: true,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Phone Number',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          2.0, 10.0, 16.0, 0.0),
+                                      child: TextFormField(
+                                        controller:
+                                            _model.emergencyPhoneController,
+                                        focusNode:
+                                            _model.emergencyPhoneFocusNode,
+                                        autofocus: true,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelText: 'Phone Number',
+                                          labelStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 12.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                          hintText: 'Phone Number',
+                                          hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Outfit',
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFFE0E0E0),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFF019874),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              fontSize: 12.0,
-                                              fontWeight: FontWeight.w500,
+                                                      .error,
+                                              width: 2.0,
                                             ),
-                                        hintText: 'Phone Number',
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
                                             .override(
                                               fontFamily: 'Outfit',
                                               fontWeight: FontWeight.w500,
                                             ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                            color: Color(0xFFE0E0E0),
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                            color: Color(0xFF019874),
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
+                                        validator: _model
+                                            .emergencyPhoneControllerValidator
+                                            .asValidator(context),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                      validator: _model
-                                          .emergencyPhoneControllerValidator
-                                          .asValidator(context),
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 10.0, 16.0, 0.0),
-                                    child: TextFormField(
-                                      controller:
-                                          _model.emergencyAddressController,
-                                      focusNode:
-                                          _model.emergencyAddressFocusNode,
-                                      autofocus: true,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Emergency Contact Address ',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
+                                ],
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 10.0, 16.0, 0.0),
+                                      child: TextFormField(
+                                        controller:
+                                            _model.emergencyAddressController,
+                                        focusNode:
+                                            _model.emergencyAddressFocusNode,
+                                        autofocus: true,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          labelText:
+                                              'Emergency Contact Address ',
+                                          labelStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 12.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                          hintText: 'Emergency Contact Address',
+                                          hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Outfit',
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFFE0E0E0),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: const BorderSide(
+                                              color: Color(0xFF019874),
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              fontSize: 12.0,
-                                              fontWeight: FontWeight.w500,
+                                                      .error,
+                                              width: 2.0,
                                             ),
-                                        hintText: 'Emergency Contact Address',
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 2.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
                                             .override(
                                               fontFamily: 'Outfit',
                                               fontWeight: FontWeight.w500,
                                             ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                            color: Color(0xFFE0E0E0),
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                            color: Color(0xFF019874),
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
+                                        validator: _model
+                                            .emergencyAddressControllerValidator
+                                            .asValidator(context),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                      validator: _model
-                                          .emergencyAddressControllerValidator
-                                          .asValidator(context),
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       _model.apiResulthqu =
