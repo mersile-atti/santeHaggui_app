@@ -635,7 +635,7 @@ class _CreateEmergencyProfileWidgetState
                     options: const ['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'],
                     onChanged: (val) =>
                         setState(() => _model.dropDownValue = val),
-                    width: 330.0,
+                    width: 360.0,
                     height: 50.0,
                     textStyle: FlutterFlowTheme.of(context).bodyMedium,
                     hintText: 'Blood Type',
