@@ -149,7 +149,7 @@ class _BloodRequestSuccessfullyWidgetState
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      context.pushNamed('BloodRequestFullPage');
+                      context.pushNamed('HomePage');
                     },
                     text: 'Done',
                     options: FFButtonOptions(

@@ -68,7 +68,7 @@ class _BloodRequestFullPageWidgetState
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
-              context.pop();
+              context.safePop();
             },
             child: Icon(
               Icons.chevron_left_rounded,
@@ -78,7 +78,11 @@ class _BloodRequestFullPageWidgetState
           ),
           title: Text(
             'All Blood Request',
-            style: FlutterFlowTheme.of(context).headlineSmall,
+            style: FlutterFlowTheme.of(context).headlineSmall.override(
+                  fontFamily: 'Outfit',
+                  fontSize: 26.0,
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           actions: const [],
           centerTitle: false,
@@ -86,7 +90,7 @@ class _BloodRequestFullPageWidgetState
         ),
         body: SingleChildScrollView(
           child: Column(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
@@ -139,7 +143,7 @@ class _BloodRequestFullPageWidgetState
                                       bloodRequest[bloodRequestIndex];
                                   return Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 1.0, 0.0, 10.0),
+                                        12.0, 1.0, 12.0, 10.0),
                                     child: Container(
                                       width: 200.0,
                                       height: 180.0,

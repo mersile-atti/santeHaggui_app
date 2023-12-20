@@ -152,7 +152,7 @@ class _MakeRequestPageWidgetState extends State<MakeRequestPageWidget>
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     child: Container(
                       width: double.infinity,
-                      height: 520.0,
+                      height: 550.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         borderRadius: BorderRadius.circular(12.0),
@@ -163,6 +163,7 @@ class _MakeRequestPageWidgetState extends State<MakeRequestPageWidget>
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
