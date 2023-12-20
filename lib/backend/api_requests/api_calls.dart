@@ -563,10 +563,11 @@ class MakeBloodRequestCall {
     String? hospitalLocation = '',
     String? status = '',
     String? urgency = '',
-    int? pintsNeeded,
+    String? pintsNeeded = '',
     String? diagnosis = '',
     String? shortDescription = '',
     String? jwt = '',
+    String? createdAt = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'makeBloodRequest',
@@ -586,6 +587,7 @@ class MakeBloodRequestCall {
         'diagnosis': diagnosis,
         'shortDescription': shortDescription,
         'jwt': jwt,
+        'createdAt': createdAt,
       },
       bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
@@ -775,6 +777,11 @@ class GetAllBloodRequestCall {
       ) as List?)
           ?.withoutNulls
           .cast<String>();
+  static List? createdAt(dynamic response) => getJsonField(
+        response,
+        r'''$.bloodRequests[:].createdAt''',
+        true,
+      ) as List?;
 }
 
 class ApiPagingParams {

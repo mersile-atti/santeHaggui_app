@@ -12,7 +12,7 @@ export '/authentification/create_account_page/create_account_page_widget.dart'
     show CreateAccountPageWidget;
 export '/authentification/verify_sms_page/verify_sms_page_widget.dart'
     show VerifySmsPageWidget;
-export '/blood_request_full_page/blood_request_full_page_widget.dart'
+export '/blood_request/blood_request_full_page/blood_request_full_page_widget.dart'
     show BloodRequestFullPageWidget;
 export '/app_pages/sub_pages/profile_page/profile_page_widget.dart'
     show ProfilePageWidget;
@@ -31,3 +31,9 @@ export '/authentification/phone_login_page/phone_login_page_widget.dart'
     show PhoneLoginPageWidget;
 export '/qrcode_page/qrcode_page_widget.dart' show QrcodePageWidget;
 export '/profile08/profile08_widget.dart' show Profile08Widget;
+export '/blood_request/blood_donation_page/blood_donation_page_widget.dart'
+    show BloodDonationPageWidget;
+export '/blood_request/find_donor_page/find_donor_page_widget.dart'
+    show FindDonorPageWidget;
+export '/blood_request/make_request_page/make_request_page_widget.dart'
+    show MakeRequestPageWidget;

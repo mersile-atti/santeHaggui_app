@@ -182,6 +182,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Profile08',
           path: '/profile08',
           builder: (context, params) => const Profile08Widget(),
+        ),
+        FFRoute(
+          name: 'bloodDonationPage',
+          path: '/BloodRequestFullPageCopy',
+          builder: (context, params) => const BloodDonationPageWidget(),
+        ),
+        FFRoute(
+          name: 'FindDonorPage',
+          path: '/findDonorPage',
+          builder: (context, params) => const FindDonorPageWidget(),
+        ),
+        FFRoute(
+          name: 'MakeRequestPage',
+          path: '/makeRequestPage',
+          builder: (context, params) => const MakeRequestPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

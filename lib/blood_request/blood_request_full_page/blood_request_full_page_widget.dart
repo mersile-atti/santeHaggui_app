@@ -131,6 +131,7 @@ class _BloodRequestFullPageWidgetState
                               ).toList();
                               return ListView.builder(
                                 padding: EdgeInsets.zero,
+                                shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
                                 itemCount: bloodRequest.length,
                                 itemBuilder: (context, bloodRequestIndex) {
@@ -138,7 +139,7 @@ class _BloodRequestFullPageWidgetState
                                       bloodRequest[bloodRequestIndex];
                                   return Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 1.0, 0.0, 1.0),
+                                        10.0, 1.0, 0.0, 10.0),
                                     child: Container(
                                       width: 200.0,
                                       height: 180.0,
@@ -438,50 +439,80 @@ class _BloodRequestFullPageWidgetState
                                               ),
                                             ],
                                           ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    40.0, 12.0, 0.0, 0.0),
-                                            child: Container(
-                                              width: 75.0,
-                                              height: 75.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .lineColor,
-                                                shape: BoxShape.circle,
-                                              ),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  const Icon(
-                                                    Icons.bloodtype_sharp,
-                                                    color: Color(0xFFEC0202),
-                                                    size: 25.0,
-                                                  ),
-                                                  Text(
-                                                    valueOrDefault<String>(
-                                                      getJsonField(
-                                                        bloodRequestItem,
-                                                        r'''$.bloodType''',
-                                                      ).toString(),
-                                                      'N/A',
-                                                    ),
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme.of(
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 12.0, 0.0, 0.0),
+                                                child: Container(
+                                                  width: 75.0,
+                                                  height: 75.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          fontSize: 16.0,
-                                                        ),
+                                                        .lineColor,
+                                                    shape: BoxShape.circle,
                                                   ),
-                                                ],
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      const Icon(
+                                                        Icons.bloodtype_sharp,
+                                                        color:
+                                                            Color(0xFFEC0202),
+                                                        size: 25.0,
+                                                      ),
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          getJsonField(
+                                                            bloodRequestItem,
+                                                            r'''$.bloodType''',
+                                                          ).toString(),
+                                                          'N/A',
+                                                        ),
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Readex Pro',
+                                                              fontSize: 16.0,
+                                                            ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
                                               ),
-                                            ),
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    getJsonField(
+                                                      bloodRequestItem,
+                                                      r'''$.createdAt''',
+                                                    ).toString(),
+                                                    'N/A',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ],
                                       ),
