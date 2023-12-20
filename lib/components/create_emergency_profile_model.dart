@@ -29,16 +29,21 @@ class CreateEmergencyProfileModel
   TextEditingController? medicationsController;
   String? Function(BuildContext, String?)? medicationsControllerValidator;
   // State field(s) for treatmentsAndProcedures widget.
-  FocusNode? treatmentsAndProceduresFocusNode;
-  TextEditingController? treatmentsAndProceduresController;
+  FocusNode? treatmentsAndProceduresFocusNode1;
+  TextEditingController? treatmentsAndProceduresController1;
   String? Function(BuildContext, String?)?
-      treatmentsAndProceduresControllerValidator;
+      treatmentsAndProceduresController1Validator;
+  // State field(s) for treatmentsAndProcedures widget.
+  FocusNode? treatmentsAndProceduresFocusNode2;
+  TextEditingController? treatmentsAndProceduresController2;
+  String? Function(BuildContext, String?)?
+      treatmentsAndProceduresController2Validator;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
   // State field(s) for RadioButton widget.
   FormFieldController<String>? radioButtonValueController;
-  // State field(s) for EmergencyContact widget.
+  // State field(s) for emergencyContact widget.
   FocusNode? emergencyContactFocusNode;
   TextEditingController? emergencyContactController;
   String? Function(BuildContext, String?)? emergencyContactControllerValidator;
@@ -51,10 +56,11 @@ class CreateEmergencyProfileModel
   FocusNode? emergencyPhoneFocusNode;
   TextEditingController? emergencyPhoneController;
   String? Function(BuildContext, String?)? emergencyPhoneControllerValidator;
-  // State field(s) for EmergencyAddress widget.
-  FocusNode? emergencyAddressFocusNode;
-  TextEditingController? emergencyAddressController;
-  String? Function(BuildContext, String?)? emergencyAddressControllerValidator;
+  // State field(s) for emergencyContactAddress widget.
+  FocusNode? emergencyContactAddressFocusNode;
+  TextEditingController? emergencyContactAddressController;
+  String? Function(BuildContext, String?)?
+      emergencyContactAddressControllerValidator;
   // Stores action output result for [Backend Call - API (createEmergencyProfile)] action in Button-Login widget.
   ApiCallResponse? apiResulthqu;
 
@@ -80,8 +86,11 @@ class CreateEmergencyProfileModel
     medicationsFocusNode?.dispose();
     medicationsController?.dispose();
 
-    treatmentsAndProceduresFocusNode?.dispose();
-    treatmentsAndProceduresController?.dispose();
+    treatmentsAndProceduresFocusNode1?.dispose();
+    treatmentsAndProceduresController1?.dispose();
+
+    treatmentsAndProceduresFocusNode2?.dispose();
+    treatmentsAndProceduresController2?.dispose();
 
     emergencyContactFocusNode?.dispose();
     emergencyContactController?.dispose();
@@ -92,8 +101,8 @@ class CreateEmergencyProfileModel
     emergencyPhoneFocusNode?.dispose();
     emergencyPhoneController?.dispose();
 
-    emergencyAddressFocusNode?.dispose();
-    emergencyAddressController?.dispose();
+    emergencyContactAddressFocusNode?.dispose();
+    emergencyContactAddressController?.dispose();
   }
 
   /// Action blocks are added here.
