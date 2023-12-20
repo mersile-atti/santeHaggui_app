@@ -1,4 +1,3 @@
-import '/components/health_metrics_component/health_metrics_component_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'health_metrics_component_widget.dart' show HealthMetricsComponentWidget;
 import 'package:flutter/material.dart';
