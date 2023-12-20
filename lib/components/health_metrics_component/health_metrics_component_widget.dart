@@ -21,30 +21,6 @@ class _HealthMetricsComponentWidgetState
   late HealthMetricsComponentModel _model;
 
   final animationsMap = {
-    'columnOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: const Offset(0.0, 24.0),
-          end: const Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'rowOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
     'buttonOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
@@ -163,7 +139,7 @@ class _HealthMetricsComponentWidgetState
                       ),
                     ),
                   ],
-                ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
+                ),
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                   child: InkWell(
@@ -810,7 +786,7 @@ class _HealthMetricsComponentWidgetState
                 ),
               ],
             ),
-          ).animateOnPageLoad(animationsMap['columnOnPageLoadAnimation']!),
+          ),
         ),
       ),
     );

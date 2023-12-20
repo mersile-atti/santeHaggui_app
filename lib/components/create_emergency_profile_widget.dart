@@ -173,7 +173,7 @@ class _CreateEmergencyProfileWidgetState
       padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
       child: Container(
         width: double.infinity,
-        height: 750.0,
+        height: 800.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: const BorderRadius.only(
