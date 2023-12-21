@@ -784,6 +784,61 @@ class GetAllBloodRequestCall {
       ) as List?;
 }
 
+class SetProfilePicCall {
+  static Future<ApiCallResponse> call({
+    String? jwt = '',
+    String? images = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'setProfilePic',
+      apiUrl:
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/healthRecords/profile/pic',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+      },
+      params: {
+        'photUrl': images,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class GetProfilePicCall {
+  static Future<ApiCallResponse> call({
+    String? jwt = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getProfilePic',
+      apiUrl:
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/healthRecords/profile/pic',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+      },
+      params: {
+        'jwt': jwt,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static dynamic photoUrl(dynamic response) => getJsonField(
+        response,
+        r'''$.userPic.photUrl''',
+      );
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;
