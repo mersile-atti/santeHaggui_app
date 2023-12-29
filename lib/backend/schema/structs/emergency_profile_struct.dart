@@ -126,10 +126,9 @@ class EmergencyProfileStruct extends FFFirebaseStruct {
         token: data['token'] as String?,
       );
 
-  static EmergencyProfileStruct? maybeFromMap(dynamic data) =>
-      data is Map<String, dynamic>
-          ? EmergencyProfileStruct.fromMap(data)
-          : null;
+  static EmergencyProfileStruct? maybeFromMap(dynamic data) => data is Map
+      ? EmergencyProfileStruct.fromMap(data.cast<String, dynamic>())
+      : null;
 
   Map<String, dynamic> toMap() => {
         'name': _name,

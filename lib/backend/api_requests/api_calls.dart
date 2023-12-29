@@ -65,10 +65,10 @@ class LoginUserCall {
     );
   }
 
-  static dynamic jwt(dynamic response) => getJsonField(
+  static String? jwt(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.accessToken''',
-      );
+      ));
 }
 
 class UpdateUserCall {
@@ -139,18 +139,18 @@ class GetUserCall {
     );
   }
 
-  static dynamic username(dynamic response) => getJsonField(
+  static String? username(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.username''',
-      );
-  static dynamic email(dynamic response) => getJsonField(
+      ));
+  static String? email(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.email''',
-      );
-  static dynamic phone(dynamic response) => getJsonField(
+      ));
+  static String? phone(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.phone''',
-      );
+      ));
   static dynamic umi(dynamic response) => getJsonField(
         response,
         r'''$.umi''',
@@ -502,58 +502,64 @@ class GetAllProfilesCall {
     );
   }
 
-  static dynamic name(dynamic response) => getJsonField(
+  static String? name(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.name''',
-      );
-  static dynamic birthday(dynamic response) => getJsonField(
+      ));
+  static String? birthday(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.birthday''',
-      );
-  static dynamic gender(dynamic response) => getJsonField(
+      ));
+  static String? gender(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.gender''',
-      );
-  static dynamic bloodType(dynamic response) => getJsonField(
+      ));
+  static String? bloodType(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.bloodType''',
-      );
-  static dynamic allergies(dynamic response) => getJsonField(
+      ));
+  static String? allergies(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.allergies''',
-      );
-  static dynamic medications(dynamic response) => getJsonField(
+      ));
+  static String? medications(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.medications''',
-      );
-  static dynamic treatmentsAndProcedures(dynamic response) => getJsonField(
+      ));
+  static String? treatmentsAndProcedures(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.treatmentsAndProcedures''',
-      );
-  static dynamic address(dynamic response) => getJsonField(
+      ));
+  static String? address(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.address''',
-      );
-  static dynamic emergencyContact(dynamic response) => getJsonField(
+      ));
+  static String? emergencyContact(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.emergencyContactName''',
-      );
-  static dynamic emergencyRelationship(dynamic response) => getJsonField(
+      ));
+  static String? emergencyRelationship(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.emergencyContactRelationship''',
-      );
-  static dynamic emergencyPhone(dynamic response) => getJsonField(
+      ));
+  static String? emergencyPhone(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.emergencyContactPhone''',
-      );
-  static dynamic emergencyAddress(dynamic response) => getJsonField(
+      ));
+  static String? emergencyAddress(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.emergencyContactAddress''',
-      );
-  static dynamic notes(dynamic response) => getJsonField(
+      ));
+  static String? notes(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.emergencyProfiles.notes''',
-      );
+      ));
 }
 
 class MakeBloodRequestCall {
@@ -598,42 +604,46 @@ class MakeBloodRequestCall {
     );
   }
 
-  static dynamic bloodType(dynamic response) => getJsonField(
+  static String? bloodType(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.bloodType''',
-      );
-  static dynamic hospitalName(dynamic response) => getJsonField(
+      ));
+  static String? hospitalName(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.hospitalName''',
-      );
-  static dynamic hospitalLocation(dynamic response) => getJsonField(
+      ));
+  static String? hospitalLocation(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.hospitalLocation''',
-      );
-  static dynamic status(dynamic response) => getJsonField(
+      ));
+  static String? status(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.status''',
-      );
-  static dynamic urgency(dynamic response) => getJsonField(
+      ));
+  static String? urgency(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.urgency''',
-      );
-  static dynamic pintsNeeded(dynamic response) => getJsonField(
+      ));
+  static String? pintsNeeded(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.pintsNeeded''',
-      );
-  static dynamic diagnosis(dynamic response) => getJsonField(
+      ));
+  static String? diagnosis(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.diagnosis''',
-      );
-  static dynamic shortDescription(dynamic response) => getJsonField(
+      ));
+  static String? shortDescription(dynamic response) =>
+      castToType<String>(getJsonField(
         response,
         r'''$.shortDescription''',
-      );
-  static dynamic createdAt(dynamic response) => getJsonField(
+      ));
+  static String? createdAt(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.createdAt''',
-      );
+      ));
 }
 
 class UpdateBloodRequestCall {
@@ -734,49 +744,63 @@ class GetAllBloodRequestCall {
         true,
       ) as List?)
           ?.withoutNulls
-          .cast<String>();
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
   static List<String>? hospitalName(dynamic response) => (getJsonField(
         response,
         r'''$.bloodRequests[:].hospitalName''',
         true,
       ) as List?)
           ?.withoutNulls
-          .cast<String>();
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
   static List<String>? hospitalLocation(dynamic response) => (getJsonField(
         response,
         r'''$.bloodRequests[:].hospitalLocation''',
         true,
       ) as List?)
           ?.withoutNulls
-          .cast<String>();
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
   static List<String>? urgency(dynamic response) => (getJsonField(
         response,
         r'''$.bloodRequests[:].urgency''',
         true,
       ) as List?)
           ?.withoutNulls
-          .cast<String>();
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
   static List<int>? pintsNeeded(dynamic response) => (getJsonField(
         response,
         r'''$.bloodRequests[:].pintsNeeded''',
         true,
       ) as List?)
           ?.withoutNulls
-          .cast<int>();
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
   static List<String>? diagnosis(dynamic response) => (getJsonField(
         response,
         r'''$.bloodRequests[:].diagnosis''',
         true,
       ) as List?)
           ?.withoutNulls
-          .cast<String>();
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
   static List<String>? description(dynamic response) => (getJsonField(
         response,
         r'''$.bloodRequests[:].shortDescription''',
         true,
       ) as List?)
           ?.withoutNulls
-          .cast<String>();
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
   static List? createdAt(dynamic response) => getJsonField(
         response,
         r'''$.bloodRequests[:].createdAt''',
@@ -817,7 +841,7 @@ class GetProfilePicCall {
     return ApiManager.instance.makeApiCall(
       callName: 'getProfilePic',
       apiUrl:
-          'https://santehaggui-b8e92b22721c.herokuapp.com/api/healthRecords/profile/pic',
+          'https://backend-server-santehaggui.omamcollection.shop/api/healthRecords/profile/pic',
       callType: ApiCallType.GET,
       headers: {
         'Authorization': 'Bearer $jwt',
@@ -833,10 +857,10 @@ class GetProfilePicCall {
     );
   }
 
-  static dynamic photoUrl(dynamic response) => getJsonField(
+  static String? photoUrl(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.userPic.photUrl''',
-      );
+      ));
 }
 
 class ApiPagingParams {

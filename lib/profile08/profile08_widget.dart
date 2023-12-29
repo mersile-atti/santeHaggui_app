@@ -1,5 +1,6 @@
 import '/auth/custom_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
+import '/components/add_photo_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -126,7 +127,7 @@ class _Profile08WidgetState extends State<Profile08Widget> {
                                     valueOrDefault<String>(
                                       GetProfilePicCall.photoUrl(
                                         avatarGetProfilePicResponse.jsonBody,
-                                      ).toString(),
+                                      ),
                                       'N/A',
                                     ),
                                     width: 100.0,
@@ -169,16 +170,27 @@ class _Profile08WidgetState extends State<Profile08Widget> {
                                   size: 24.0,
                                 ),
                                 onPressed: () async {
-                                  _model.apiResult0eq =
-                                      await SetProfilePicCall.call(
-                                    jwt: currentAuthenticationToken,
-                                  );
-                                  if ((_model.apiResult0eq?.succeeded ??
-                                      true)) {
-                                    Navigator.pop(context);
-                                  }
-
-                                  setState(() {});
+                                  await showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    backgroundColor: Colors.transparent,
+                                    enableDrag: false,
+                                    context: context,
+                                    builder: (context) {
+                                      return GestureDetector(
+                                        onTap: () => _model
+                                                .unfocusNode.canRequestFocus
+                                            ? FocusScope.of(context)
+                                                .requestFocus(
+                                                    _model.unfocusNode)
+                                            : FocusScope.of(context).unfocus(),
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: const AddPhotoComponentWidget(),
+                                        ),
+                                      );
+                                    },
+                                  ).then((value) => safeSetState(() {}));
                                 },
                               ),
                             ),
