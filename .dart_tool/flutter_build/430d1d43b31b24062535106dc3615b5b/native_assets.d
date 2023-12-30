@@ -1,0 +1,1 @@
+ /Users/mersileattioumar/Documents/santeHaggui_app/.dart_tool/flutter_build/430d1d43b31b24062535106dc3615b5b/native_assets.yaml: 
