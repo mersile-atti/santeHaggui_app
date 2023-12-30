@@ -14,8 +14,6 @@ export '/authentification/verify_sms_page/verify_sms_page_widget.dart'
     show VerifySmsPageWidget;
 export '/blood_request/blood_request_full_page/blood_request_full_page_widget.dart'
     show BloodRequestFullPageWidget;
-export '/app_pages/sub_pages/profile_page/profile_page_widget.dart'
-    show ProfilePageWidget;
 export '/app_pages/sub_pages/setting_page/setting_page_widget.dart'
     show SettingPageWidget;
 export '/app_pages/sub_pages/records_page/records_page_widget.dart'
@@ -29,8 +27,10 @@ export '/appointments/appointment_details_profil/appointment_details_profil_widg
 export '/edit_profile/edit_profile_widget.dart' show EditProfileWidget;
 export '/authentification/phone_login_page/phone_login_page_widget.dart'
     show PhoneLoginPageWidget;
-export '/qrcode_page/qrcode_page_widget.dart' show QrcodePageWidget;
-export '/profile08/profile08_widget.dart' show Profile08Widget;
+export '/app_pages/sub_pages/qrcode_page/qrcode_page_widget.dart'
+    show QrcodePageWidget;
+export '/app_pages/sub_pages/profile08/profile08_widget.dart'
+    show Profile08Widget;
 export '/blood_request/blood_donation_page/blood_donation_page_widget.dart'
     show BloodDonationPageWidget;
 export '/blood_request/find_donor_page/find_donor_page_widget.dart'

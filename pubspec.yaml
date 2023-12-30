@@ -49,8 +49,6 @@ dependencies:
   google_fonts: 4.0.3
   gotrue: 1.12.6
   hive: 2.2.3
-  image_downloader: ^0.31.0
-  image_downloader_web: ^1.0.1
   intl: 0.18.1
   json_path: 0.6.2
   mime_type: 1.0.0

@@ -93,7 +93,7 @@ class _BloodRequestFullPageWidgetState
             mainAxisSize: MainAxisSize.min,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 12.0, 10.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   height: 700.0,
@@ -141,7 +141,7 @@ class _BloodRequestFullPageWidgetState
                                     bloodRequest[bloodRequestIndex];
                                 return Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 1.0, 12.0, 10.0),
+                                      10.0, 1.0, 10.0, 10.0),
                                   child: Container(
                                     width: 200.0,
                                     height: 180.0,
@@ -197,7 +197,7 @@ class _BloodRequestFullPageWidgetState
                                                           getJsonField(
                                                             bloodRequestItem,
                                                             r'''$.hospitalName''',
-                                                          ).toString(),
+                                                          )?.toString(),
                                                           'N/A',
                                                         ),
                                                         style: FlutterFlowTheme
@@ -242,7 +242,7 @@ class _BloodRequestFullPageWidgetState
                                                           getJsonField(
                                                             bloodRequestItem,
                                                             r'''$.hospitalLocation''',
-                                                          ).toString(),
+                                                          )?.toString(),
                                                           'N/A',
                                                         ),
                                                         style: FlutterFlowTheme
@@ -287,7 +287,7 @@ class _BloodRequestFullPageWidgetState
                                                           getJsonField(
                                                             bloodRequestItem,
                                                             r'''$.pintsNeeded''',
-                                                          ).toString(),
+                                                          )?.toString(),
                                                           'N/A',
                                                         ),
                                                         style: FlutterFlowTheme
@@ -332,7 +332,7 @@ class _BloodRequestFullPageWidgetState
                                                           getJsonField(
                                                             bloodRequestItem,
                                                             r'''$.urgency''',
-                                                          ).toString(),
+                                                          )?.toString(),
                                                           'N/A',
                                                         ),
                                                         style: FlutterFlowTheme
@@ -490,7 +490,7 @@ class _BloodRequestFullPageWidgetState
                                                             getJsonField(
                                                               bloodRequestItem,
                                                               r'''$.bloodType''',
-                                                            ).toString(),
+                                                            )?.toString(),
                                                             'N/A',
                                                           ),
                                                           textAlign:
@@ -517,7 +517,7 @@ class _BloodRequestFullPageWidgetState
                                                       getJsonField(
                                                         bloodRequestItem,
                                                         r'''$.createdAt''',
-                                                      ).toString(),
+                                                      )?.toString(),
                                                       'N/A',
                                                     ),
                                                     style: FlutterFlowTheme.of(

@@ -359,7 +359,7 @@ class _FindDonorPageWidgetState extends State<FindDonorPageWidget> {
                                                         textGetAllBloodRequestResponse
                                                             .jsonBody,
                                                         r'''$.hospitalLocation''',
-                                                      ).toString(),
+                                                      )?.toString(),
                                                       'N/A',
                                                     ),
                                                     style: FlutterFlowTheme.of(
