@@ -126,11 +126,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const BloodRequestFullPageWidget(),
         ),
         FFRoute(
-          name: 'ProfilePage',
-          path: '/profilePage',
-          builder: (context, params) => const ProfilePageWidget(),
-        ),
-        FFRoute(
           name: 'SettingPage',
           path: '/settingPage',
           builder: (context, params) => const SettingPageWidget(),

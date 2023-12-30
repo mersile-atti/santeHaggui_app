@@ -524,7 +524,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 getJsonField(
                                                                   bloodRequestItem,
                                                                   r'''$.bloodType''',
-                                                                ).toString(),
+                                                                )?.toString(),
                                                                 'N/A',
                                                               ),
                                                               textAlign:
@@ -577,7 +577,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             getJsonField(
                                                               bloodRequestItem,
                                                               r'''$.hospitalName''',
-                                                            ).toString(),
+                                                            )?.toString(),
                                                             'N/A',
                                                           ),
                                                           style: FlutterFlowTheme
@@ -623,7 +623,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             getJsonField(
                                                               bloodRequestItem,
                                                               r'''$.hospitalLocation''',
-                                                            ).toString(),
+                                                            )?.toString(),
                                                             'N/A',
                                                           ),
                                                           style: FlutterFlowTheme
@@ -669,7 +669,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             getJsonField(
                                                               bloodRequestItem,
                                                               r'''$.pintsNeeded''',
-                                                            ).toString(),
+                                                            )?.toString(),
                                                             'N/A',
                                                           ),
                                                           style: FlutterFlowTheme
@@ -716,7 +716,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             getJsonField(
                                                               bloodRequestItem,
                                                               r'''$.urgency''',
-                                                            ).toString(),
+                                                            )?.toString(),
                                                             'N/A',
                                                           ),
                                                           style: FlutterFlowTheme

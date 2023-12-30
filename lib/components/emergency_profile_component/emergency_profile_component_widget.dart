@@ -1,7 +1,6 @@
 import '/auth/custom_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/components/create_emergency_profile_widget.dart';
-import '/components/new_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -1527,25 +1526,8 @@ class _EmergencyProfileComponentWidgetState
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          await showModalBottomSheet(
-                                            isScrollControlled: true,
-                                            backgroundColor: Colors.transparent,
-                                            enableDrag: false,
-                                            useSafeArea: true,
-                                            context: context,
-                                            builder: (context) {
-                                              return Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: const NewComponentWidget(
-                                                  qrCode: '',
-                                                ),
-                                              );
-                                            },
-                                          ).then(
-                                              (value) => safeSetState(() {}));
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text: 'Generate Qr Code',
                                         icon: const Icon(

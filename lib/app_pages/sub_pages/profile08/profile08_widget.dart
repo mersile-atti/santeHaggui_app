@@ -1,10 +1,9 @@
 import '/auth/custom_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
-import '/backend/supabase/supabase.dart';
+import '/components/add_photo_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -93,25 +92,52 @@ class _Profile08WidgetState extends State<Profile08Widget> {
                       child: Padding(
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                        child: Container(
-                          width: 100.0,
-                          height: 100.0,
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
+                        child: FutureBuilder<ApiCallResponse>(
+                          future: GetProfilePicCall.call(
+                            jwt: currentAuthenticationToken,
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(2.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(50.0),
-                              child: Image.network(
-                                _model.uploadedFileUrl,
-                                width: 100.0,
-                                height: 100.0,
-                                fit: BoxFit.cover,
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).primary,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }
+                            final avatarGetProfilePicResponse = snapshot.data!;
+                            return Container(
+                              width: 100.0,
+                              height: 100.0,
+                              decoration: const BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
                               ),
-                            ),
-                          ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(2.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(50.0),
+                                  child: Image.network(
+                                    valueOrDefault<String>(
+                                      GetProfilePicCall.photoUrl(
+                                        avatarGetProfilePicResponse.jsonBody,
+                                      ),
+                                      'N/A',
+                                    ),
+                                    width: 100.0,
+                                    height: 100.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ),
@@ -144,58 +170,27 @@ class _Profile08WidgetState extends State<Profile08Widget> {
                                   size: 24.0,
                                 ),
                                 onPressed: () async {
-                                  final selectedMedia =
-                                      await selectMediaWithSourceBottomSheet(
+                                  await showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    backgroundColor: Colors.transparent,
+                                    enableDrag: false,
                                     context: context,
-                                    storageFolderPath: 'images',
-                                    allowPhoto: true,
-                                  );
-                                  if (selectedMedia != null &&
-                                      selectedMedia.every((m) =>
-                                          validateFileFormat(
-                                              m.storagePath, context))) {
-                                    setState(
-                                        () => _model.isDataUploading = true);
-                                    var selectedUploadedFiles =
-                                        <FFUploadedFile>[];
-
-                                    var downloadUrls = <String>[];
-                                    try {
-                                      selectedUploadedFiles = selectedMedia
-                                          .map((m) => FFUploadedFile(
-                                                name: m.storagePath
-                                                    .split('/')
-                                                    .last,
-                                                bytes: m.bytes,
-                                                height: m.dimensions?.height,
-                                                width: m.dimensions?.width,
-                                                blurHash: m.blurHash,
-                                              ))
-                                          .toList();
-
-                                      downloadUrls =
-                                          await uploadSupabaseStorageFiles(
-                                        bucketName: 'profilePic',
-                                        selectedFiles: selectedMedia,
+                                    builder: (context) {
+                                      return GestureDetector(
+                                        onTap: () => _model
+                                                .unfocusNode.canRequestFocus
+                                            ? FocusScope.of(context)
+                                                .requestFocus(
+                                                    _model.unfocusNode)
+                                            : FocusScope.of(context).unfocus(),
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: const AddPhotoComponentWidget(),
+                                        ),
                                       );
-                                    } finally {
-                                      _model.isDataUploading = false;
-                                    }
-                                    if (selectedUploadedFiles.length ==
-                                            selectedMedia.length &&
-                                        downloadUrls.length ==
-                                            selectedMedia.length) {
-                                      setState(() {
-                                        _model.uploadedLocalFile =
-                                            selectedUploadedFiles.first;
-                                        _model.uploadedFileUrl =
-                                            downloadUrls.first;
-                                      });
-                                    } else {
-                                      setState(() {});
-                                      return;
-                                    }
-                                  }
+                                    },
+                                  ).then((value) => safeSetState(() {}));
                                 },
                               ),
                             ),

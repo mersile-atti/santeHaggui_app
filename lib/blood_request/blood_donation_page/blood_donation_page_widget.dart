@@ -768,7 +768,7 @@ class _BloodDonationPageWidgetState extends State<BloodDonationPageWidget> {
                                                                     getJsonField(
                                                                       bloodRequestItem,
                                                                       r'''$.hospitalName''',
-                                                                    ).toString(),
+                                                                    )?.toString(),
                                                                     'N/A',
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
@@ -820,7 +820,7 @@ class _BloodDonationPageWidgetState extends State<BloodDonationPageWidget> {
                                                                     getJsonField(
                                                                       bloodRequestItem,
                                                                       r'''$.hospitalLocation''',
-                                                                    ).toString(),
+                                                                    )?.toString(),
                                                                     'N/A',
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
@@ -872,7 +872,7 @@ class _BloodDonationPageWidgetState extends State<BloodDonationPageWidget> {
                                                                     getJsonField(
                                                                       bloodRequestItem,
                                                                       r'''$.pintsNeeded''',
-                                                                    ).toString(),
+                                                                    )?.toString(),
                                                                     'N/A',
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
@@ -924,7 +924,7 @@ class _BloodDonationPageWidgetState extends State<BloodDonationPageWidget> {
                                                                     getJsonField(
                                                                       bloodRequestItem,
                                                                       r'''$.urgency''',
-                                                                    ).toString(),
+                                                                    )?.toString(),
                                                                     'N/A',
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
@@ -1090,7 +1090,7 @@ class _BloodDonationPageWidgetState extends State<BloodDonationPageWidget> {
                                                                       getJsonField(
                                                                         bloodRequestItem,
                                                                         r'''$.bloodType''',
-                                                                      ).toString(),
+                                                                      )?.toString(),
                                                                       'N/A',
                                                                     ),
                                                                     textAlign:
@@ -1125,7 +1125,7 @@ class _BloodDonationPageWidgetState extends State<BloodDonationPageWidget> {
                                                               getJsonField(
                                                                 bloodRequestItem,
                                                                 r'''$.createdAt''',
-                                                              ).toString(),
+                                                              )?.toString(),
                                                               'N/A',
                                                             ),
                                                             style: FlutterFlowTheme

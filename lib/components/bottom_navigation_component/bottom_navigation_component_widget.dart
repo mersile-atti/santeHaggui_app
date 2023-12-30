@@ -307,12 +307,12 @@ class _BottomNavigationComponentWidgetState
                     buttonSize: 50.0,
                     hoverColor: const Color(0xFF019874),
                     icon: const Icon(
-                      Icons.person_outline,
+                      Icons.qr_code_2_outlined,
                       color: Colors.white,
                       size: 24.0,
                     ),
-                    onPressed: () {
-                      print('ProfilIconButton pressed ...');
+                    onPressed: () async {
+                      context.pushNamed('QrcodePage');
                     },
                   ),
                 ),
