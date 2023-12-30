@@ -131,16 +131,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const SettingPageWidget(),
         ),
         FFRoute(
-          name: 'RecordsPage',
-          path: '/recordsPage',
-          builder: (context, params) => const RecordsPageWidget(),
-        ),
-        FFRoute(
-          name: 'ChatPage',
-          path: '/chatPage',
-          builder: (context, params) => const ChatPageWidget(),
-        ),
-        FFRoute(
           name: 'AppointmentDetails',
           path: '/appointmentDetails',
           builder: (context, params) => AppointmentDetailsWidget(
@@ -170,11 +160,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const PhoneLoginPageWidget(),
         ),
         FFRoute(
-          name: 'QrcodePage',
-          path: '/qrcodePage',
-          builder: (context, params) => const QrcodePageWidget(),
-        ),
-        FFRoute(
           name: 'Profile08',
           path: '/profile08',
           builder: (context, params) => const Profile08Widget(),
@@ -198,6 +183,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ServiceCategoryPage',
           path: '/serviceCategoryPage',
           builder: (context, params) => const ServiceCategoryPageWidget(),
+        ),
+        FFRoute(
+          name: 'qrcodePage',
+          path: '/qrcodePage',
+          builder: (context, params) => const QrcodePageWidget(),
+        ),
+        FFRoute(
+          name: 'RecordsPage',
+          path: '/recordsPage',
+          builder: (context, params) => const RecordsPageWidget(),
+        ),
+        FFRoute(
+          name: 'ChatPage',
+          path: '/chatPage',
+          builder: (context, params) => const ChatPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

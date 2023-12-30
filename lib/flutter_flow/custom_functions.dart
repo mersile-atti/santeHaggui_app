@@ -827,3 +827,11 @@ String? dialCode(String? countryName) {
 
   return null;
 }
+
+bool isNull(List<String>? widgetState) {
+  if (widgetState == null || widgetState.isEmpty) {
+    return true;
+  } else {
+    return false;
+  }
+}

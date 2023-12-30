@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/update_emergency_profile_components/update_medicale_profil_address_component/update_medicale_profil_address_component_widget.dart';
 import '/update_emergency_profile_components/update_medicale_profil_allergies_component/update_medicale_profil_allergies_component_widget.dart';
 import '/update_emergency_profile_components/update_medicale_profil_birthday_component/update_medicale_profil_birthday_component_widget.dart';
@@ -53,18 +52,6 @@ class _EmergencyProfileComponentWidgetState
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-      ],
-    ),
-    'buttonOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 800.ms,
           duration: 600.ms,
           begin: 0.0,
           end: 1.0,
@@ -1511,67 +1498,6 @@ class _EmergencyProfileComponentWidgetState
                                   ),
                                 ),
                               ],
-                            ),
-                          ),
-                          Flexible(
-                            child: Align(
-                              alignment: const AlignmentDirectional(0.0, -1.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, -1.0),
-                                    child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 10.0, 0.0, 0.0),
-                                      child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
-                                        },
-                                        text: 'Generate Qr Code',
-                                        icon: const Icon(
-                                          Icons.qr_code_2_outlined,
-                                          size: 15.0,
-                                        ),
-                                        options: FFButtonOptions(
-                                          width: 250.0,
-                                          height: 56.0,
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  24.0, 0.0, 24.0, 0.0),
-                                          iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: const Color(0xFF019874),
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                          elevation: 3.0,
-                                          borderSide: const BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius: const BorderRadius.only(
-                                            bottomLeft: Radius.circular(25.0),
-                                            bottomRight: Radius.circular(15.0),
-                                            topLeft: Radius.circular(10.0),
-                                            topRight: Radius.circular(25.0),
-                                          ),
-                                        ),
-                                      ).animateOnPageLoad(animationsMap[
-                                          'buttonOnPageLoadAnimation']!),
-                                    ),
-                                  ),
-                                ],
-                              ),
                             ),
                           ),
                         ],

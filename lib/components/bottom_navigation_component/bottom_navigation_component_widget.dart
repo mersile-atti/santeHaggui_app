@@ -312,7 +312,7 @@ class _BottomNavigationComponentWidgetState
                       size: 24.0,
                     ),
                     onPressed: () async {
-                      context.pushNamed('QrcodePage');
+                      context.pushNamed('qrcodePage');
                     },
                   ),
                 ),

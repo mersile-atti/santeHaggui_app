@@ -53,7 +53,36 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: const Color(0xFFECF1EF),
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFECF1EF),
+          automaticallyImplyLeading: false,
+          leading: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.safePop();
+            },
+            child: Icon(
+              Icons.chevron_left_rounded,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 32.0,
+            ),
+          ),
+          title: Text(
+            'Chat',
+            style: FlutterFlowTheme.of(context).headlineSmall.override(
+                  fontFamily: 'Outfit',
+                  fontSize: 26.0,
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
+          actions: const [],
+          centerTitle: false,
+          elevation: 0.0,
+        ),
         body: SafeArea(
           top: true,
           child: Container(

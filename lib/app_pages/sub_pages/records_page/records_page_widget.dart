@@ -67,6 +67,35 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: const Color(0xFFECF1EF),
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFECF1EF),
+          automaticallyImplyLeading: false,
+          leading: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.safePop();
+            },
+            child: Icon(
+              Icons.chevron_left_rounded,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 32.0,
+            ),
+          ),
+          title: Text(
+            'Health Records',
+            style: FlutterFlowTheme.of(context).headlineSmall.override(
+                  fontFamily: 'Outfit',
+                  fontSize: 26.0,
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
+          actions: const [],
+          centerTitle: false,
+          elevation: 0.0,
+        ),
         body: SafeArea(
           top: true,
           child: Stack(
@@ -79,29 +108,6 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 0.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'Records',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 26.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [

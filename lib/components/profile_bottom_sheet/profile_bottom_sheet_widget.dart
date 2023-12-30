@@ -53,13 +53,13 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget> {
             padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
             child: Container(
               width: double.infinity,
-              height: 400.0,
+              height: 500.0,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20.0),
               ),
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: SingleChildScrollView(
