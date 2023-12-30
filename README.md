@@ -1,2 +1,7 @@
-# santeHaggui_app
-SanteHaggui is a comprehensive health management application designed to empower users in monitoring their well-being.
+# santehaggui
+
+A new Flutter project.
+
+## Getting Started
+
+FlutterFlow projects are built to run on the Flutter _stable_ release.

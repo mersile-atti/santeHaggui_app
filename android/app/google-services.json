@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "106996911565",
+    "project_id": "santehaggui-1b7f6",
+    "storage_bucket": "santehaggui-1b7f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106996911565:android:80d29a7a562fb254694884",
+        "android_client_info": {
+          "package_name": "com.mycompany.santehaggui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106996911565-rsd230dnbg2nolvtluihsvc5fcd885fs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.santehaggui",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "106996911565-3imkard5rpaf4l11hb3g3s821p2qksqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6f_Aj4bqcI6jk94f5skAN7XxqWs3ac9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106996911565-3imkard5rpaf4l11hb3g3s821p2qksqd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "106996911565-ashn7cgc6qem996mq3kam7l9rn3t8alm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.santehaggui"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
