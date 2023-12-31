@@ -312,7 +312,7 @@ class _BottomNavigationComponentWidgetState
                       size: 24.0,
                     ),
                     onPressed: () async {
-                      context.pushNamed('qrcodePage');
+                      context.pushNamed('QrcodePage');
                     },
                   ),
                 ),
@@ -346,7 +346,7 @@ class _BottomNavigationComponentWidgetState
                     ),
                     onPressed: () async {
                       context.pushNamed(
-                        'Profile08',
+                        'SettingPage',
                         extra: <String, dynamic>{
                           kTransitionInfoKey: const TransitionInfo(
                             hasTransition: true,

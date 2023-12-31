@@ -185,11 +185,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ServiceCategoryPageWidget(),
         ),
         FFRoute(
-          name: 'qrcodePage',
-          path: '/qrcodePage',
-          builder: (context, params) => const QrcodePageWidget(),
-        ),
-        FFRoute(
           name: 'RecordsPage',
           path: '/recordsPage',
           builder: (context, params) => const RecordsPageWidget(),
@@ -198,6 +193,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ChatPage',
           path: '/chatPage',
           builder: (context, params) => const ChatPageWidget(),
+        ),
+        FFRoute(
+          name: 'QrcodePage',
+          path: '/qrcodePage',
+          builder: (context, params) => const QrcodePageWidget(),
+        ),
+        FFRoute(
+          name: 'SettingPageCopy',
+          path: '/settingPageCopy',
+          builder: (context, params) => const SettingPageCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -33,9 +33,11 @@ export '/blood_request/make_request_page/make_request_page_widget.dart'
     show MakeRequestPageWidget;
 export '/blood_request/service_category_page/service_category_page_widget.dart'
     show ServiceCategoryPageWidget;
-export '/app_pages/sub_pages/qrcode_page/qrcode_page_widget.dart'
-    show QrcodePageWidget;
 export '/app_pages/sub_pages/records_page/records_page_widget.dart'
     show RecordsPageWidget;
 export '/app_pages/sub_pages/chat_page/chat_page_widget.dart'
     show ChatPageWidget;
+export '/app_pages/sub_pages/qrcode_page/qrcode_page_widget.dart'
+    show QrcodePageWidget;
+export '/app_pages/sub_pages/setting_page_copy/setting_page_copy_widget.dart'
+    show SettingPageCopyWidget;

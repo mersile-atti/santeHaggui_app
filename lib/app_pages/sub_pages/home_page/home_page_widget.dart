@@ -240,7 +240,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBtnText,
-                                                          fontSize: 18.0,
+                                                          fontSize: 16.0,
                                                           fontWeight:
                                                               FontWeight.w800,
                                                         ),
