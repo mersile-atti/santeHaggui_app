@@ -579,6 +579,7 @@ class _QrcodePageWidgetState extends State<QrcodePageWidget>
                   model: _model.bottomNavigationComponentModel,
                   updateCallback: () => setState(() {}),
                   child: const BottomNavigationComponentWidget(
+                    selectedPageIndex: 4,
                     hidden: false,
                   ),
                 ),
