@@ -394,7 +394,7 @@ class _QrcodePageWidgetState extends State<QrcodePageWidget>
                                                                         color: Colors
                                                                             .white,
                                                                         fontSize:
-                                                                            14.0,
+                                                                            12.0,
                                                                         fontWeight:
                                                                             FontWeight.bold,
                                                                       ),

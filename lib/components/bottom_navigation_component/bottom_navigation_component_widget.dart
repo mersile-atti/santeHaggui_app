@@ -312,7 +312,16 @@ class _BottomNavigationComponentWidgetState
                       size: 24.0,
                     ),
                     onPressed: () async {
-                      context.pushNamed('QrcodePage');
+                      context.goNamed(
+                        'QrcodePage',
+                        extra: <String, dynamic>{
+                          kTransitionInfoKey: const TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
+                          ),
+                        },
+                      );
                     },
                   ),
                 ),
