@@ -131,7 +131,7 @@ class _ProfileBottomSheetWidgetState extends State<ProfileBottomSheetWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Outfit',
-                                                          fontSize: 16.0,
+                                                          fontSize: 28.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),

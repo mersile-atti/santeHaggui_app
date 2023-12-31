@@ -57,9 +57,9 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFF57636C),
+        backgroundColor: const Color(0xFFECF1EF),
         appBar: AppBar(
-          backgroundColor: const Color(0xFF57636C),
+          backgroundColor: const Color(0xFFECF1EF),
           automaticallyImplyLeading: false,
           leading: InkWell(
             splashColor: Colors.transparent,
@@ -76,10 +76,10 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
             ),
           ),
           title: Text(
-            'Setting',
+            'Settings',
             style: FlutterFlowTheme.of(context).headlineSmall.override(
                   fontFamily: 'Outfit',
-                  color: FlutterFlowTheme.of(context).primaryBtnText,
+                  color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 26.0,
                   fontWeight: FontWeight.bold,
                 ),
@@ -263,8 +263,9 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                   .headlineSmall
                                   .override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: Colors.white,
-                                    fontSize: 22.0,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    fontSize: 28.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             );
@@ -302,7 +303,8 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                 .titleSmall
                                 .override(
                                   fontFamily: 'Plus Jakarta Sans',
-                                  color: const Color(0xCCFFFFFF),
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -345,7 +347,8 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                         .titleSmall
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: Colors.white,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
                                           fontSize: 16.0,
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -386,7 +389,8 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                           .titleSmall
                                           .override(
                                             fontFamily: 'Plus Jakarta Sans',
-                                            color: Colors.white,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -424,7 +428,8 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                         .titleSmall
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: Colors.white,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
                                           fontSize: 16.0,
                                           fontWeight: FontWeight.w500,
                                         ),
@@ -468,21 +473,6 @@ class _SettingPageWidgetState extends State<SettingPageWidget> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 12.0),
-                                        child: Text(
-                                          'Settings',
-                                          style: FlutterFlowTheme.of(context)
-                                              .headlineSmall
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color: const Color(0xFF101213),
-                                                fontSize: 22.0,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                        ),
-                                      ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 8.0),

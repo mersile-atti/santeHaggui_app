@@ -728,8 +728,8 @@ class _BloodDonationPageWidgetState extends State<BloodDonationPageWidget> {
                                                       padding:
                                                           const EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  0.0,
-                                                                  10.0,
+                                                                  12.0,
+                                                                  20.0,
                                                                   0.0,
                                                                   0.0),
                                                       child: Row(
@@ -1001,16 +1001,16 @@ class _BloodDonationPageWidgetState extends State<BloodDonationPageWidget> {
                                                                   Padding(
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            16.0,
+                                                                            0.0,
                                                                             12.0,
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          75.0,
+                                                                          60.0,
                                                                       height:
-                                                                          75.0,
+                                                                          60.0,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
@@ -1019,35 +1019,35 @@ class _BloodDonationPageWidgetState extends State<BloodDonationPageWidget> {
                                                                             .circle,
                                                                       ),
                                                                       child:
-                                                                          SingleChildScrollView(
-                                                                        child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.min,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            const Icon(
-                                                                              Icons.bloodtype_sharp,
-                                                                              color: Color(0xFFEC0202),
-                                                                              size: 25.0,
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.min,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        children: [
+                                                                          const Icon(
+                                                                            Icons.bloodtype_sharp,
+                                                                            color:
+                                                                                Color(0xFFEC0202),
+                                                                            size:
+                                                                                14.0,
+                                                                          ),
+                                                                          Text(
+                                                                            valueOrDefault<String>(
+                                                                              getJsonField(
+                                                                                bloodRequestItem,
+                                                                                r'''$.bloodType''',
+                                                                              )?.toString(),
+                                                                              'N/A',
                                                                             ),
-                                                                            Text(
-                                                                              valueOrDefault<String>(
-                                                                                getJsonField(
-                                                                                  bloodRequestItem,
-                                                                                  r'''$.bloodType''',
-                                                                                )?.toString(),
-                                                                                'N/A',
-                                                                              ),
-                                                                              textAlign: TextAlign.center,
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Readex Pro',
-                                                                                    fontSize: 16.0,
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
+                                                                            textAlign:
+                                                                                TextAlign.center,
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Readex Pro',
+                                                                                  fontSize: 12.0,
+                                                                                ),
+                                                                          ),
+                                                                        ],
                                                                       ),
                                                                     ),
                                                                   ),
@@ -1055,7 +1055,7 @@ class _BloodDonationPageWidgetState extends State<BloodDonationPageWidget> {
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
-                                                                            0.0,
+                                                                            5.0,
                                                                             0.0,
                                                                             0.0),
                                                                     child: Text(
@@ -1074,7 +1074,7 @@ class _BloodDonationPageWidgetState extends State<BloodDonationPageWidget> {
                                                                             fontFamily:
                                                                                 'Readex Pro',
                                                                             fontSize:
-                                                                                10.0,
+                                                                                12.0,
                                                                           ),
                                                                     ),
                                                                   ),

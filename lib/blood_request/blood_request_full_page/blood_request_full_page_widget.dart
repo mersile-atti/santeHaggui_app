@@ -190,7 +190,7 @@ class _BloodRequestFullPageWidgetState
                                           Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 0.0),
+                                                    12.0, 20.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -227,46 +227,44 @@ class _BloodRequestFullPageWidgetState
                                               ],
                                             ),
                                           ),
-                                          Row(
-                                            mainAxisSize: MainAxisSize.min,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              SingleChildScrollView(
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Container(
-                                                      width: 230.0,
-                                                      height: 150.0,
-                                                      decoration:
-                                                          const BoxDecoration(),
-                                                      child:
-                                                          SingleChildScrollView(
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Row(
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    12.0, 0.0, 0.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                SingleChildScrollView(
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Container(
+                                                        width: 230.0,
+                                                        height: 150.0,
+                                                        decoration:
+                                                            const BoxDecoration(),
+                                                        child:
+                                                            SingleChildScrollView(
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,
@@ -308,236 +306,215 @@ class _BloodRequestFullPageWidgetState
                                                                   ),
                                                                 ],
                                                               ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Icon(
-                                                                    Icons
-                                                                        .person_add,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                                    size: 20.0,
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            12.0,
                                                                             0.0,
+                                                                            5.0,
                                                                             0.0,
                                                                             0.0),
-                                                                    child: Text(
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                        getJsonField(
-                                                                          bloodRequestItem,
-                                                                          r'''$.pintsNeeded''',
-                                                                        )?.toString(),
-                                                                        'N/A',
-                                                                      ),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Readex Pro',
-                                                                            fontSize:
-                                                                                14.0,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Icon(
-                                                                    Icons
-                                                                        .emergency_outlined,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                                    size: 20.0,
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                        getJsonField(
-                                                                          bloodRequestItem,
-                                                                          r'''$.urgency''',
-                                                                        )?.toString(),
-                                                                        'N/A',
-                                                                      ),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Readex Pro',
-                                                                            fontSize:
-                                                                                12.0,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child:
-                                                                  SingleChildScrollView(
-                                                                scrollDirection:
-                                                                    Axis.horizontal,
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
-                                                                          .min,
+                                                                          .max,
                                                                   children: [
-                                                                    Align(
-                                                                      alignment:
-                                                                          const AlignmentDirectional(
-                                                                              0.0,
-                                                                              1.0),
+                                                                    Icon(
+                                                                      Icons
+                                                                          .person_add,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                      size:
+                                                                          20.0,
+                                                                    ),
+                                                                    Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          12.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
-                                                                          Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            FFButtonWidget(
-                                                                          onPressed:
-                                                                              () {
-                                                                            print('Button pressed ...');
-                                                                          },
-                                                                          text:
-                                                                              'I am your hero',
-                                                                          options:
-                                                                              FFButtonOptions(
-                                                                            width:
-                                                                                150.0,
-                                                                            height:
-                                                                                26.0,
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                24.0,
-                                                                                0.0,
-                                                                                24.0,
-                                                                                0.0),
-                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            color:
-                                                                                const Color(0xB0EC2525),
-                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Readex Pro',
-                                                                                  color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                  fontSize: 14.0,
-                                                                                  fontWeight: FontWeight.normal,
-                                                                                ),
-                                                                            elevation:
-                                                                                3.0,
-                                                                            borderSide:
-                                                                                const BorderSide(
-                                                                              color: Colors.transparent,
-                                                                              width: 1.0,
-                                                                            ),
-                                                                            borderRadius:
-                                                                                const BorderRadius.only(
-                                                                              bottomLeft: Radius.circular(25.0),
-                                                                              bottomRight: Radius.circular(15.0),
-                                                                              topLeft: Radius.circular(10.0),
-                                                                              topRight: Radius.circular(25.0),
-                                                                            ),
-                                                                          ),
+                                                                          Text(
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          getJsonField(
+                                                                            bloodRequestItem,
+                                                                            r'''$.pintsNeeded''',
+                                                                          )?.toString(),
+                                                                          'N/A',
                                                                         ),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Readex Pro',
+                                                                              fontSize: 14.0,
+                                                                            ),
                                                                       ),
                                                                     ),
                                                                   ],
                                                                 ),
                                                               ),
-                                                            ),
-                                                          ],
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Icon(
+                                                                      Icons
+                                                                          .emergency_outlined,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                      size:
+                                                                          20.0,
+                                                                    ),
+                                                                    Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          12.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Text(
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          getJsonField(
+                                                                            bloodRequestItem,
+                                                                            r'''$.urgency''',
+                                                                          )?.toString(),
+                                                                          'N/A',
+                                                                        ),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Readex Pro',
+                                                                              fontSize: 12.0,
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child:
+                                                                    SingleChildScrollView(
+                                                                  scrollDirection:
+                                                                      Axis.horizontal,
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .min,
+                                                                    children: [
+                                                                      Align(
+                                                                        alignment: const AlignmentDirectional(
+                                                                            0.0,
+                                                                            1.0),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              10.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              FFButtonWidget(
+                                                                            onPressed:
+                                                                                () {
+                                                                              print('Button pressed ...');
+                                                                            },
+                                                                            text:
+                                                                                'I am your hero',
+                                                                            options:
+                                                                                FFButtonOptions(
+                                                                              width: 150.0,
+                                                                              height: 26.0,
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              color: const Color(0xB0EC2525),
+                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                    fontFamily: 'Readex Pro',
+                                                                                    color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                    fontSize: 14.0,
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
+                                                                              elevation: 3.0,
+                                                                              borderSide: const BorderSide(
+                                                                                color: Colors.transparent,
+                                                                                width: 1.0,
+                                                                              ),
+                                                                              borderRadius: const BorderRadius.only(
+                                                                                bottomLeft: Radius.circular(25.0),
+                                                                                bottomRight: Radius.circular(15.0),
+                                                                                topLeft: Radius.circular(10.0),
+                                                                                topRight: Radius.circular(25.0),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
                                                         ),
                                                       ),
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
-                                              ),
-                                              Flexible(
-                                                child: Container(
-                                                  width: 110.0,
-                                                  height: 180.0,
-                                                  decoration: const BoxDecoration(),
-                                                  child: SingleChildScrollView(
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      16.0,
-                                                                      12.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Container(
-                                                            width: 75.0,
-                                                            height: 75.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .lineColor,
-                                                              shape: BoxShape
-                                                                  .circle,
-                                                            ),
-                                                            child:
-                                                                SingleChildScrollView(
+                                                Flexible(
+                                                  child: Container(
+                                                    width: 110.0,
+                                                    height: 180.0,
+                                                    decoration: const BoxDecoration(),
+                                                    child:
+                                                        SingleChildScrollView(
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        12.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Container(
+                                                              width: 60.0,
+                                                              height: 60.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .lineColor,
+                                                                shape: BoxShape
+                                                                    .circle,
+                                                              ),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -551,7 +528,7 @@ class _BloodRequestFullPageWidgetState
                                                                         .bloodtype_sharp,
                                                                     color: Color(
                                                                         0xFFEC0202),
-                                                                    size: 25.0,
+                                                                    size: 14.0,
                                                                   ),
                                                                   Text(
                                                                     valueOrDefault<
@@ -572,48 +549,48 @@ class _BloodRequestFullPageWidgetState
                                                                           fontFamily:
                                                                               'Readex Pro',
                                                                           fontSize:
-                                                                              16.0,
+                                                                              12.0,
                                                                         ),
                                                                   ),
                                                                 ],
                                                               ),
                                                             ),
                                                           ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      16.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              getJsonField(
-                                                                bloodRequestItem,
-                                                                r'''$.createdAt''',
-                                                              )?.toString(),
-                                                              'N/A',
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                getJsonField(
+                                                                  bloodRequestItem,
+                                                                  r'''$.createdAt''',
+                                                                )?.toString(),
+                                                                'N/A',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Readex Pro',
+                                                                    fontSize:
+                                                                        12.0,
+                                                                  ),
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Readex Pro',
-                                                                  fontSize:
-                                                                      10.0,
-                                                                ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
