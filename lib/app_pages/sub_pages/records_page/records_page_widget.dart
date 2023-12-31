@@ -106,7 +106,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 26.0, 0.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
-                      mainAxisSize: MainAxisSize.max,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Row(
                           mainAxisSize: MainAxisSize.max,
@@ -114,7 +114,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                             Flexible(
                               child: SingleChildScrollView(
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
@@ -197,7 +197,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                       SingleChildScrollView(
                                                     child: Column(
                                                       mainAxisSize:
-                                                          MainAxisSize.max,
+                                                          MainAxisSize.min,
                                                       children: [
                                                         wrapWithModel(
                                                           model: _model
@@ -243,7 +243,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                             Flexible(
                               child: SingleChildScrollView(
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
@@ -333,7 +333,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                   ),
                                                   expanded: Column(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                        MainAxisSize.min,
                                                     children: [
                                                       Padding(
                                                         padding:
@@ -478,7 +478,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
-                                                                      .max,
+                                                                      .min,
                                                               crossAxisAlignment:
                                                                   CrossAxisAlignment
                                                                       .start,
@@ -562,7 +562,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -647,7 +647,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -726,7 +726,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -811,7 +811,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -896,7 +896,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -981,7 +981,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -1066,7 +1066,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -1151,7 +1151,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -1236,7 +1236,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -1321,7 +1321,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -1406,7 +1406,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -1491,7 +1491,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -1576,7 +1576,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -1661,7 +1661,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -1747,7 +1747,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                             Flexible(
                               child: SingleChildScrollView(
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
@@ -1829,7 +1829,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                   ),
                                                   expanded: Column(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                        MainAxisSize.min,
                                                     children: [
                                                       Padding(
                                                         padding:
@@ -1861,7 +1861,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -1921,7 +1921,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -1986,7 +1986,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                             Flexible(
                               child: SingleChildScrollView(
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
@@ -2069,7 +2069,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                   ),
                                                   expanded: Column(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                        MainAxisSize.min,
                                                     children: [
                                                       Padding(
                                                         padding:
@@ -2101,7 +2101,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -2166,7 +2166,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                             Flexible(
                               child: SingleChildScrollView(
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
@@ -2249,7 +2249,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                   ),
                                                   expanded: Column(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                        MainAxisSize.min,
                                                     children: [
                                                       Padding(
                                                         padding:
@@ -2281,7 +2281,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -2346,7 +2346,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                             Flexible(
                               child: SingleChildScrollView(
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
@@ -2429,7 +2429,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                   ),
                                                   expanded: Column(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                        MainAxisSize.min,
                                                     children: [
                                                       Padding(
                                                         padding:
@@ -2461,7 +2461,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -2526,7 +2526,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                             Flexible(
                               child: SingleChildScrollView(
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
@@ -2609,7 +2609,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                   ),
                                                   expanded: Column(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                        MainAxisSize.min,
                                                     children: [
                                                       Padding(
                                                         padding:
@@ -2641,7 +2641,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,
@@ -2706,7 +2706,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                             Flexible(
                               child: SingleChildScrollView(
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
@@ -2789,7 +2789,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                   ),
                                                   expanded: Column(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                        MainAxisSize.min,
                                                     children: [
                                                       Padding(
                                                         padding:
@@ -2821,7 +2821,7 @@ class _RecordsPageWidgetState extends State<RecordsPageWidget> {
                                                           child: Column(
                                                             mainAxisSize:
                                                                 MainAxisSize
-                                                                    .max,
+                                                                    .min,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
                                                                     .start,

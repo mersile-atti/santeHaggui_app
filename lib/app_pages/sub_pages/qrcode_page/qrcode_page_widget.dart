@@ -255,7 +255,7 @@ class _QrcodePageWidgetState extends State<QrcodePageWidget>
                                                       SingleChildScrollView(
                                                         child: Column(
                                                           mainAxisSize:
-                                                              MainAxisSize.max,
+                                                              MainAxisSize.min,
                                                           mainAxisAlignment:
                                                               MainAxisAlignment
                                                                   .center,
