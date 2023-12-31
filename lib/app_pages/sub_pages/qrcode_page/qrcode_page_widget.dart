@@ -252,163 +252,158 @@ class _QrcodePageWidgetState extends State<QrcodePageWidget>
                                                         CrossAxisAlignment
                                                             .start,
                                                     children: [
-                                                      SingleChildScrollView(
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .center,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .center,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          5.0),
-                                                                  child: FutureBuilder<
-                                                                      ApiCallResponse>(
-                                                                    future:
-                                                                        GetUserCall
-                                                                            .call(
-                                                                      jwt:
-                                                                          currentAuthenticationToken,
-                                                                    ),
-                                                                    builder:
-                                                                        (context,
-                                                                            snapshot) {
-                                                                      // Customize what your widget looks like when it's loading.
-                                                                      if (!snapshot
-                                                                          .hasData) {
-                                                                        return Center(
+                                                      Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0),
+                                                                child: FutureBuilder<
+                                                                    ApiCallResponse>(
+                                                                  future:
+                                                                      GetUserCall
+                                                                          .call(
+                                                                    jwt:
+                                                                        currentAuthenticationToken,
+                                                                  ),
+                                                                  builder: (context,
+                                                                      snapshot) {
+                                                                    // Customize what your widget looks like when it's loading.
+                                                                    if (!snapshot
+                                                                        .hasData) {
+                                                                      return Center(
+                                                                        child:
+                                                                            SizedBox(
+                                                                          width:
+                                                                              50.0,
+                                                                          height:
+                                                                              50.0,
                                                                           child:
-                                                                              SizedBox(
-                                                                            width:
-                                                                                50.0,
-                                                                            height:
-                                                                                50.0,
-                                                                            child:
-                                                                                CircularProgressIndicator(
-                                                                              valueColor: AlwaysStoppedAnimation<Color>(
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                              ),
+                                                                              CircularProgressIndicator(
+                                                                            valueColor:
+                                                                                AlwaysStoppedAnimation<Color>(
+                                                                              FlutterFlowTheme.of(context).primary,
                                                                             ),
                                                                           ),
-                                                                        );
-                                                                      }
-                                                                      final textGetUserResponse =
-                                                                          snapshot
-                                                                              .data!;
-                                                                      return Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          GetUserCall
-                                                                              .umi(
-                                                                            textGetUserResponse.jsonBody,
-                                                                          ).toString(),
-                                                                          'N/A',
                                                                         ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .titleMedium,
                                                                       );
-                                                                    },
-                                                                  ),
-                                                                ),
-                                                                const Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: FaIcon(
-                                                                    FontAwesomeIcons
-                                                                        .copy,
-                                                                    color: Colors
-                                                                        .white,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          12.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: FutureBuilder<
-                                                                  ApiCallResponse>(
-                                                                future:
-                                                                    GetAllProfilesCall
-                                                                        .call(
-                                                                  jwt:
-                                                                      currentAuthenticationToken,
-                                                                ),
-                                                                builder: (context,
-                                                                    snapshot) {
-                                                                  // Customize what your widget looks like when it's loading.
-                                                                  if (!snapshot
-                                                                      .hasData) {
-                                                                    return Center(
-                                                                      child:
-                                                                          SizedBox(
-                                                                        width:
-                                                                            50.0,
-                                                                        height:
-                                                                            50.0,
-                                                                        child:
-                                                                            CircularProgressIndicator(
-                                                                          valueColor:
-                                                                              AlwaysStoppedAnimation<Color>(
-                                                                            FlutterFlowTheme.of(context).primary,
-                                                                          ),
-                                                                        ),
+                                                                    }
+                                                                    final textGetUserResponse =
+                                                                        snapshot
+                                                                            .data!;
+                                                                    return Text(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        GetUserCall
+                                                                            .umi(
+                                                                          textGetUserResponse
+                                                                              .jsonBody,
+                                                                        ).toString(),
+                                                                        'N/A',
                                                                       ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium,
                                                                     );
-                                                                  }
-                                                                  final textGetAllProfilesResponse =
-                                                                      snapshot
-                                                                          .data!;
-                                                                  return Text(
-                                                                    getJsonField(
-                                                                      textGetAllProfilesResponse
-                                                                          .jsonBody,
-                                                                      r'''$.emergencyProfiles.name''',
-                                                                    ).toString(),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Readex Pro',
-                                                                          color:
-                                                                              Colors.white,
-                                                                          fontSize:
-                                                                              14.0,
-                                                                          fontWeight:
-                                                                              FontWeight.bold,
-                                                                        ),
-                                                                  );
-                                                                },
+                                                                  },
+                                                                ),
                                                               ),
+                                                              const Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: FaIcon(
+                                                                  FontAwesomeIcons
+                                                                      .copy,
+                                                                  color: Colors
+                                                                      .white,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          FutureBuilder<
+                                                              ApiCallResponse>(
+                                                            future:
+                                                                GetAllProfilesCall
+                                                                    .call(
+                                                              jwt:
+                                                                  currentAuthenticationToken,
                                                             ),
-                                                          ],
-                                                        ),
+                                                            builder: (context,
+                                                                snapshot) {
+                                                              // Customize what your widget looks like when it's loading.
+                                                              if (!snapshot
+                                                                  .hasData) {
+                                                                return Center(
+                                                                  child:
+                                                                      SizedBox(
+                                                                    width: 50.0,
+                                                                    height:
+                                                                        50.0,
+                                                                    child:
+                                                                        CircularProgressIndicator(
+                                                                      valueColor:
+                                                                          AlwaysStoppedAnimation<
+                                                                              Color>(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                );
+                                                              }
+                                                              final textGetAllProfilesResponse =
+                                                                  snapshot
+                                                                      .data!;
+                                                              return Text(
+                                                                getJsonField(
+                                                                  textGetAllProfilesResponse
+                                                                      .jsonBody,
+                                                                  r'''$.emergencyProfiles.name''',
+                                                                ).toString(),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      color: Colors
+                                                                          .white,
+                                                                      fontSize:
+                                                                          14.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                    ),
+                                                              );
+                                                            },
+                                                          ),
+                                                        ],
                                                       ),
                                                     ],
                                                   ),
