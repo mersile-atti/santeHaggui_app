@@ -161,7 +161,7 @@ class _RegistrationSuccessfullyWidgetState
                       'Your account  creation is completed',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
-                            fontSize: 18.0,
+                            fontSize: 16.0,
                             fontWeight: FontWeight.normal,
                           ),
                     ),

@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/components/bottom_navigation_component/bottom_navigation_component_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'home_page_widget.dart' show HomePageWidget;
@@ -10,6 +11,8 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
+  // Stores action output result for [Backend Call - API (responseBloodRequest)] action in Button widget.
+  ApiCallResponse? apiResultyei;
   // Model for BottomNavigationComponent component.
   late BottomNavigationComponentModel bottomNavigationComponentModel;
 

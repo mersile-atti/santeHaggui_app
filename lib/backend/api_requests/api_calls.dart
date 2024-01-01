@@ -801,11 +801,24 @@ class GetAllBloodRequestCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  static List? createdAt(dynamic response) => getJsonField(
+  static List<String>? createdAt(dynamic response) => (getJsonField(
         response,
         r'''$.bloodRequests[:].createdAt''',
         true,
-      ) as List?;
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? bloodRequestID(dynamic response) => (getJsonField(
+        response,
+        r'''$.bloodRequests[:]._id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
 }
 
 class SetProfilePicCall {
@@ -861,6 +874,51 @@ class GetProfilePicCall {
         response,
         r'''$.userPic.photUrl''',
       ));
+}
+
+class ResponseBloodRequestCall {
+  static Future<ApiCallResponse> call({
+    String? id = '',
+    String? jwt = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'responseBloodRequest',
+      apiUrl:
+          'https://santehaggui-b8e92b22721c.herokuapp.com/api/blood-requests/respond/$id',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer $jwt',
+      },
+      params: {
+        'jwt': jwt,
+        'id': id,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class JnjCall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'jnj',
+      apiUrl:
+          'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
 }
 
 class ApiPagingParams {

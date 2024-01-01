@@ -7,6 +7,10 @@ class QrcodePageModel extends FlutterFlowModel<QrcodePageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
   // Model for BottomNavigationComponent component.
   late BottomNavigationComponentModel bottomNavigationComponentModel;
 
@@ -21,6 +25,9 @@ class QrcodePageModel extends FlutterFlowModel<QrcodePageWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
+
     bottomNavigationComponentModel.dispose();
   }
 

@@ -803,9 +803,27 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                   child:
                                                                       FFButtonWidget(
                                                                     onPressed:
-                                                                        () {
-                                                                      print(
-                                                                          'Button pressed ...');
+                                                                        () async {
+                                                                      _model.apiResultyei =
+                                                                          await ResponseBloodRequestCall
+                                                                              .call(
+                                                                        id: getJsonField(
+                                                                          bloodRequestItem,
+                                                                          r'''$.bloodRequestID''',
+                                                                        ).toString(),
+                                                                        jwt:
+                                                                            currentAuthenticationToken,
+                                                                      );
+                                                                      if ((_model
+                                                                              .apiResultyei
+                                                                              ?.succeeded ??
+                                                                          true)) {
+                                                                        context.pushNamed(
+                                                                            'BloodRequestFullPage');
+                                                                      }
+
+                                                                      setState(
+                                                                          () {});
                                                                     },
                                                                     text:
                                                                         'I am your hero',
